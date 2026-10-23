@@ -48,6 +48,13 @@
     with permission), LOST & FOUND pet notices as a public service, and adoptables from
     Sammie's Friends / Nevada County Animal Shelter when published. Lost-pet notices run with
     the owner's contact only as they ask, get verified like a tip, and come down once resolved.
+11. **Citizen o' the Day.** A spotlight on a fine citizen of Nevada City: the volunteer, the
+    crossing guard, the person who organized the cleanup. Nominated through the approved-sender
+    channel, and run ONLY with the honoree's consent; the write-up draws on the nomination and
+    what the person has publicly done (events, volunteering, civic roles), never their private
+    life or home details. People already in public roles (officials, performers, business
+    owners as such) can be featured from the public record alone. Always flattering, always
+    accurate, never a surprise to the subject.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
