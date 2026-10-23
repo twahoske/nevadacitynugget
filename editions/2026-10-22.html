@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The Nevada City Nugget: a daily paper for Nevada City, California. City Hall, Planning Commission, fire and weather, amusements, the KVMR radio log, and the stars over Deer Creek.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Nevada City Nugget</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Grenze+Gotisch:wght@800;900&display=swap">
+<style>
+/* Layout: 1941 Nevada City Nugget vernacular — boxed masthead ears, folio line, dense columns, boxed Amusements ads */
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+
+/* ——— Masthead ——— */
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(15px,3.4vw,21px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+.masthead{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.ear{border:2px solid var(--ink);padding:8px 10px;font-family:var(--display);font-size:11.5px;line-height:1.45;text-align:center}
+.nameplate{text-align:center;min-width:0}
+.nameplate h1{font-family:"Grenze Gotisch",var(--display);font-weight:900;font-size:clamp(34px,7.4vw,62px);line-height:.92;margin:0;letter-spacing:.005em;position:relative;text-wrap:balance}
+.nameplate .np-art{width:min(540px,94%);height:auto;display:block;margin:0 auto -30px;color:var(--ink-soft)}
+@media (min-width:700px){.nameplate h1{white-space:nowrap}}
+.nameplate .motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0}
+.folio{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 18px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:5px 2px;font-family:var(--display);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+.folio b{font-weight:800}
+@media (max-width:620px){
+  .masthead{grid-template-columns:1fr}
+  .ear{display:none}
+}
+
+/* ——— The Weather strip ——— */
+.engraving{width:100%;height:auto;display:block;color:var(--ink)}
+.cutline{text-align:center;font-family:var(--display);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mid);margin:4px 0 0}
+.listenlive{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;margin:0 0 10px;text-decoration:none}
+.listenlive:hover{background:var(--panel);color:var(--red)}
+
+.weatherline{display:flex;flex-wrap:wrap;gap:4px 20px;justify-content:center;align-items:baseline;border-bottom:1px solid var(--rule);padding:7px 10px 9px;font-size:14px;font-style:italic}
+.weatherline .wl-k{font-family:var(--display);font-style:normal;font-weight:800;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-right:6px;color:var(--ink-mid)}
+
+/* ——— Sections ——— */
+section{display:flex;flex-direction:column;gap:16px}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:14px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+
+article h3{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.12;margin:0 0 7px;text-wrap:balance}
+article .meta{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 7px}
+article p{margin:0 0 10px}
+article p:last-child{margin-bottom:0}
+article + article{border-top:1px solid var(--rule-soft);padding-top:16px}
+.lede .subdeck + p::first-letter{font-family:var(--display);font-weight:800;font-size:3.1em;float:left;line-height:.82;padding:3px 7px 0 0}
+.src{font-size:13px;color:var(--ink-mid);font-style:italic}
+.subdeck{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;line-height:1.5;margin:0 0 8px;border-block:1px solid var(--rule-soft);padding:4px 0}
+
+.factrow{columns:2;column-gap:28px;column-rule:1px solid var(--rule-soft)}
+.factrow article{break-inside:avoid;border-top:none;padding-top:0;margin-bottom:16px}
+@media (max-width:560px){.factrow{columns:1}}
+
+/* ——— Amusements ad boxes ——— */
+.ads{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:620px){.ads{grid-template-columns:1fr}}
+.adbox{border:3px double var(--ink);padding:12px 14px 14px;min-width:0}
+.adbox .venue{font-family:var(--display);font-weight:900;font-size:26px;text-align:center;margin:0;line-height:1.05}
+.adbox .addr{text-align:center;font-family:var(--display);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid);margin:3px 0 10px;border-bottom:1px solid var(--ink);padding-bottom:8px}
+.adbox .day{font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:10px 0 2px}
+.adbox .bill{margin:0 0 4px;font-size:15px}
+.adbox .bill b{font-family:var(--display);font-weight:800;font-size:16.5px;letter-spacing:.02em;text-transform:uppercase}
+.adbox .bill .times{font-variant-numeric:tabular-nums;white-space:nowrap}
+.adbox .bill .note{display:block;font-size:13px;color:var(--ink-mid)}
+.adbox .fine{margin:10px 0 0;font-size:12px;color:var(--ink-mid);text-align:center;font-style:italic;border-top:1px solid var(--rule-soft);padding-top:7px}
+.smallads{border:1px solid var(--ink);padding:10px 14px}
+.smallads p{margin:0 0 7px;font-size:14.5px}
+.smallads p:last-child{margin:0}
+.smallads b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:13.5px;letter-spacing:.04em}
+
+/* ——— The Dais ——— */
+ul.dais{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.dais li{padding:11px 0;border-bottom:1px solid var(--rule-soft);min-width:0}
+ul.dais li:last-child{border-bottom:none}
+ul.dais .who{font-family:var(--display);font-weight:800;font-size:16px}
+ul.dais .role{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-left:8px}
+ul.dais .bio{display:block;font-size:14.5px;margin-top:2px}
+ul.dais .said{display:block;font-size:13.5px;color:var(--ink-mid);margin-top:4px;font-style:italic}
+ul.dais .said b{color:var(--ink);font-style:normal;font-family:var(--display);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+/* ——— Calendar ——— */
+ul.cal{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.cal li{display:flex;gap:16px;padding:9px 0;border-bottom:1px dotted var(--rule);min-width:0}
+ul.cal li:last-child{border-bottom:none}
+ul.cal .d{font-family:var(--display);font-weight:800;font-size:12.5px;letter-spacing:.04em;flex:0 0 96px;font-variant-numeric:tabular-nums;padding-top:3px;text-transform:uppercase}
+ul.cal .what{min-width:0}
+ul.cal .what b{font-weight:600}
+ul.cal .what .sub{display:block;font-size:13.5px;color:var(--ink-mid)}
+@media (max-width:440px){ul.cal li{flex-direction:column;gap:2px}ul.cal .d{flex:none}}
+
+.notebox{border:1px solid var(--ink);padding:12px 16px;font-size:14.5px;color:var(--ink-mid)}
+.notebox b{color:var(--ink);font-family:var(--display)}
+
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);display:flex;flex-direction:column;gap:9px;text-align:center;font-family:var(--display)}
+footer p{margin:0}
+footer .sources{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center}
+footer a{color:var(--ink-mid)}
+
+/* ——— Wire service (share any section) ——— */
+.wire-btn{font-family:var(--display);font-weight:800;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--ink-mid);background:none;color:var(--ink-mid);padding:3px 9px;cursor:pointer;white-space:nowrap}
+.wire-btn:hover{color:var(--red);border-color:var(--red)}
+.wire-menu{display:none;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;border:1px solid var(--rule);background:var(--panel);padding:7px 10px;margin:0}
+.wire-menu.open{display:flex}
+.wire-menu a,.wire-menu button{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--ink);background:none;color:var(--ink);padding:4px 10px;cursor:pointer;text-decoration:none}
+.wire-menu a:hover,.wire-menu button:hover{color:var(--red);border-color:var(--red)}
+.wire-k{font-family:var(--display);font-weight:800;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mid)}
+
+/* ——— Sponsor ad ——— */
+a.sponsor{display:block;border:1px solid var(--rule);line-height:0}
+a.sponsor img{width:100%;height:auto;display:block}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<p class="banner">Election Season Issue</p>
+
+<header class="masthead">
+  <div class="ear">The Nugget is delivered to your inbox every morning at half past six, free of charge.</div>
+  <div class="nameplate">
+    <svg class="np-art" viewBox="0 0 760 118" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g stroke="currentColor" fill="none" stroke-width="2">
+        <circle cx="380" cy="32" r="14"/>
+        <g stroke-width="1.5">
+          <line x1="380" y1="10" x2="380" y2="2"/><line x1="356" y1="32" x2="348" y2="32"/><line x1="404" y1="32" x2="412" y2="32"/>
+          <line x1="363" y1="15" x2="357" y2="9"/><line x1="397" y1="15" x2="403" y2="9"/>
+          <line x1="363" y1="49" x2="357" y2="55"/><line x1="397" y1="49" x2="403" y2="55"/>
+        </g>
+        <polyline points="40,106 140,66 225,90 310,52 380,82 455,48 540,84 625,62 720,96"/>
+        <polyline points="90,110 190,84 285,102 380,70 480,98 575,78 670,104" stroke-width="2.5"/>
+        <g stroke-width="1">
+          <line x1="160" y1="90" x2="170" y2="98"/><line x1="320" y1="76" x2="330" y2="84"/>
+          <line x1="430" y1="78" x2="440" y2="86"/><line x1="590" y1="86" x2="600" y2="94"/>
+        </g>
+      </g>
+      <g fill="currentColor">
+        <path d="M212 102 l8 -22 l8 22 z M217 85 l3 -10 l3 10 z"/>
+        <path d="M522 100 l9 -24 l9 24 z M527 81 l4 -11 l4 11 z"/>
+      </g>
+    </svg>
+    <h1>Nevada City Nugget</h1>
+    <p class="motto">❦&nbsp; Covering the Richest Gold Area in California &nbsp;❦</p>
+  </div>
+  <div class="ear">Complete coverage of all local happenings. If you want to read about your town, read The Nugget.</div>
+</header>
+
+<div class="folio">
+  <span><b>Vol. 1, No. 1</b></span>
+  <span>The County Seat Paper</span>
+  <span><b>Nevada City, California</b></span>
+  <span>The Gold Center</span>
+  <span>Elev. 2,477 Ft.</span>
+  <span><b>Thursday, October 22, 2026</b></span>
+</div>
+
+<div class="weatherline">
+  <span><span class="wl-k">The Weather</span>Partly cloudy, high near 69°, tonight 51 to 57°</span>
+  <span><span class="wl-k">Air</span>Good to fair</span>
+  <span><span class="wl-k">Alerts</span>No PSPS or red flag warnings in effect</span>
+</div>
+
+<div class="notebox" style="border:2px solid var(--ink)">
+  <p style="margin:0"><b>Corrections.</b> This morning's emailed Edition No. 1 identified Adam Kline as mayor and the vice mayor's seat as unconfirmed. Per the city's <a href="https://www.nevadacityca.gov/DocumentCenter/View/2931">October 14 agenda</a> and the meeting recording: Daniela Fernández is mayor and Gary Petersen vice mayor. Kline served as mayor from July 2025 until the council's 2026 reorganization and sits as a council member. Corrected on this page the same day.</p>
+</div>
+
+<section>
+  <h2 class="kicker"><span class="label">City Hall &amp; Politics</span></h2>
+
+  <article class="lede">
+    <p class="meta">City Council · October 14 Meeting</p>
+    <h3>Council Adopts 25% Yearly Water Rate Hikes Over Packed-Room Protest</h3>
+    <p class="subdeck">375 protests filed, short of the 638 needed to block · Rates take effect January 1 · The vote was 5 to 0</p>
+    <p>The City Council adopted Resolution 2026-33 on October 14, raising water rates 25 percent a year for five years and wastewater rates 12 percent, after a Proposition 218 protest hearing that filled the room at City Hall. Deputy City Clerk Amber Wright tabulated 375 protest letters against the 638 water parcels (of 1,225) and 757 sewer parcels (of 1,512) required for a majority protest. The increases begin January 1, with the first bills going out in March.</p>
+    <p>More than a dozen residents spoke against the increases, nearly all to applause: retirees on fixed incomes, a realtor with five low-income tenants on Zion Street, a gallery owner warning of shuttered storefronts, and neighbors urging bonds, longer amortization, grants, or delay. Speakers repeatedly cited the town's age profile, with more than 40 percent of residents over 60. Former council member Reinette Senum blamed budget choices, naming new stipends and an assistant city manager position. One longtime business owner, Harry Bennett, thanked the council and noted the issue had been aired at public meetings for the past year.</p>
+    <p>From the council's side of the table: Vice Mayor Gary Petersen said the city's emergency reserve for a broken line is $20,000, "That is no reserve fund at all," atop 100-year-old water and sewer lines. City Manager Carrie Wright said the adopted schedule is a ceiling, the council can pull rates back in any year's budget but cannot raise them above it, a full review is due the first quarter of 2029, and she proposed a ratepayer hardship fund to be weighed at the mid-year budget review. Council Member Doug Fleming called it "the hardest, ugliest vote I've ever had to make in six years" and asked staff to analyze whether a dedicated sales tax for water is possible. Staff noted the general fund has been subsidizing both systems, which ran a combined deficit this year.</p>
+    <p class="src">Built from the full official meeting recording (<a href="https://www.youtube.com/watch?v=vb0RCslTDdU">Nevada City Public Meetings, YouTube</a>) and the <a href="https://www.nevadacityca.gov/DocumentCenter/View/2931">posted agenda</a> (City of Nevada City). Quotes are from the recording's auto-generated captions.</p>
+  </article>
+
+  <article>
+    <p class="meta">Also From The October 14 Meeting</p>
+    <h3>Landscape Ordinance 33 Years Late; $1M Cannabis Grant; Parents' Night Out</h3>
+    <p><b>Water-efficient landscaping.</b> The council introduced an ordinance adopting the state's Model Water Efficient Landscape Ordinance, which City Planner Jessica Hankins said the city was supposed to adopt back in 1993; an August state letter warned of corrective action and loss of state funding. It applies mainly to new construction with over 500 square feet of landscaping. Introduced 5 to 0; second reading and adoption October 28.</p>
+    <p><b>$1M cannabis enforcement grant.</b> The council accepted a $1,000,000 Proposition 64 grant (Resolution 2026-34, 5 to 0) funding an existing NCPD detective, to be stationed part-time at the new Family Justice Center on Searls Avenue, with $250,000 passed through to the Nevada County Cannabis Alliance for education campaigns including Keep It 21+ and DUI awareness.</p>
+    <p><b>Cannabis business tax cleanup.</b> Ordinance 2026-06 was introduced (5 to 0), adding doctor's-note language for the medical rate and a permit path for non-storefront retail; Sanctuary Farms has already applied. Second reading October 28.</p>
+    <p><b>Parents' Night Out.</b> The council directed staff to develop and run a one-night December pilot for children ages 6 to 12, likely at the Miners Foundry with Parks and Recreation, proposed by Mayor Fernández so caregivers can rest or spend an evening downtown.</p>
+    <p><b>Also heard:</b> a resident's audit of city credit-card spending in public comment; no reportable action from the closed session on Christakes v. Nevada City; and a reminder that Code Red is retired, sign up instead at Nevada County Alerts.</p>
+    <p class="src">Source: the <a href="https://www.youtube.com/watch?v=vb0RCslTDdU">official meeting recording</a> and <a href="https://www.nevadacityca.gov/DocumentCenter/View/2931">agenda</a>, City of Nevada City.</p>
+  </article>
+
+  <article>
+    <h3>City To Thin 174 Acres In Deer Creek Canyon; Town Hall Called For Monday Night</h3>
+    <p class="subdeck">Mechanical work on the canyon's south side to run through February · Funded through County OES and the U.S. Forest Service</p>
+    <p>The City of Nevada City hosts a town hall <b>Monday, October 26 at 6:00 PM at the Miners Foundry</b> (325 Spring St.) on the Deer Creek Hazardous Fuels Reduction Project, now moving from planning into on-the-ground work. The current phase covers roughly 174 acres of mechanical treatment, mostly mastication, on the south side of Deer Creek Canyon, the area the 2025 Community Wildfire Protection Plans flagged as among the most hazardous in the county.</p>
+    <p>Funding comes through a partnership with Nevada County OES and the U.S. Forest Service, Tahoe National Forest, building on a $111,665 Sierra Nevada Conservancy planning grant. The remainder of the roughly 350-acre project falls to the city fuels crew funded by Measure C (2024). Work is expected to run October 2026 through February 2027. Staff will cover treatment areas, methods, timelines, and what nearby residents and businesses should expect.</p>
+    <p class="src">Source: <a href="https://yubanet.com/regional/nevada-city-invites-community-to-town-hall-on-deer-creek-canyon-fuels-reduction-project/">City of Nevada City via YubaNet, Oct 21</a></p>
+  </article>
+
+  <article>
+    <p class="meta">City Council · Wednesday</p>
+    <h3>Council Meets Wednesday; Agenda Yet To Post</h3>
+    <p>The City Council meets <b>Wednesday, October 28 at 6:30 PM at City Hall</b>, 317 Broad St. The agenda packet had not posted as of this evening; it typically goes up at nevadacityca.gov in the days before the meeting. Already known for the night: second readings and adoption of the water-efficient landscape ordinance and the cannabis business tax ordinance, both introduced October 14. The full agenda will be digested in The Docket once it posts, and Thursday morning's edition will carry a complete meeting summary.</p>
+    <p class="src">Standing schedule: Council 2nd and 4th Wednesdays, 6:30 PM. Planning Commission 3rd Thursday, 1:30 PM.</p>
+  </article>
+
+  <article>
+    <p class="meta">Election · Saturday</p>
+    <h3>Voting Opens Saturday At The Rood Center</h3>
+    <p>Early in-person voting for the November 3 election begins <b>Saturday, October 24</b> at the Nevada County Government Center on Maidu Avenue. Vote-by-mail ballots are already out; the Elections Office has drop box locations and ballot tracking at nevadacountyca.gov.</p>
+    <p class="src">Source: <a href="https://yubanet.com/regional/voting-begins-saturday-oct-24-at-nevada-county-government-center/">Nevada County via YubaNet</a></p>
+  </article>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">The Docket</span></h2>
+  <p style="margin:0;font-size:14px;color:var(--ink-mid);text-align:center;font-style:italic">Every published City Council and Planning Commission agenda, digested item by item the morning after it posts, and held here until the meeting. Items touching downtown or the commercial district are marked ❖.</p>
+  <div class="notebox">
+    <p style="margin:0">The <b>October 28 City Council agenda</b> had not posted as of this evening; it will be digested here in full once it publishes, and is known to carry second readings of the landscape and cannabis-tax ordinances introduced October 14. Newly posted: the <b>Fire Safety Advisory Committee</b> met October 22; its <a href="https://www.nevadacityca.gov/DocumentCenter/View/2946">agenda</a> is up at nevadacityca.gov.</p>
+  </div>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">Amusements</span></h2>
+  <div>
+    <a class="sponsor" href="https://the-hat-store.com">
+      <picture>
+        <source media="(max-width:560px)" srcset="ads/hatstore-square.png">
+        <img src="ads/hatstore-banner.png" alt="The Hat Store, 314 Broad Street, Nevada City. World-class hats. Small-town soul. Stetson, Borsalino, Bailey 1922, Kangol. Open daily 11 AM to 5 PM. (530) 265-4070. The-Hat-Store.com">
+      </picture>
+    </a>
+    <p class="cutline" style="margin-top:5px">Advertisement · The Hat Store, 314 Broad St. · The Publisher's Own Haberdashery</p>
+  </div>
+  <div class="ads">
+    <div class="adbox">
+      <p class="venue">The Onyx</p>
+      <p class="addr">107 Argall Way · Two Screens, The Magic &amp; The Dream</p>
+      <p class="day">Thursday</p>
+      <p class="bill"><b>Digger:</b> <span class="times">3:45 &amp; 7:00</span><span class="note">Comedy-drama, third week.</span></p>
+      <p class="bill"><b>Musk:</b> <span class="times">5:30</span><span class="note">Documentary, first week.</span></p>
+      <p class="day">Friday</p>
+      <p class="bill"><b>Wicker:</b> <span class="times">11:30, 3:35 &amp; 7:30</span><span class="note">Fantasy drama, opens today.</span></p>
+      <p class="bill"><b>You Can See Everything:</b> <span class="times">11:00</span><span class="note">Documentary.</span></p>
+      <p class="day">Sunday</p>
+      <p class="bill"><b>Jennifer's Body (2009):</b> <span class="times">7:00</span><span class="note">Horror-comedy, a Halloween-week revival.</span></p>
+      <p class="fine">Showtimes may change without notice. (530) 265-8262. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets</a>. Listings via CinemaClock, Oct 22.</p>
+    </div>
+    <div class="adbox">
+      <p class="venue">Nevada Theatre</p>
+      <p class="addr">401 Broad Street · California's Oldest Theatre Building</p>
+      <p class="day">Thursday</p>
+      <p class="bill"><b>The Cauldron Crone:</b> <span class="times">7:30</span><span class="note">By Dalrymple MacAlpin. Paul Emery presents.</span></p>
+      <p class="day">Friday</p>
+      <p class="bill"><b>Rita Hosking &amp; Sean Feder / Velvy Appleton &amp; Rebecca Chourré:</b> <span class="times">7:30</span></p>
+      <p class="day">Saturday</p>
+      <p class="bill"><b>Hardly Strictly Celtic:</b> <span class="times">7:30</span></p>
+      <p class="day">Oct 29 – Nov 8</p>
+      <p class="bill"><b>Shakespeare's Hamlet:</b> <span class="times">Thu &amp; Fri 7:30</span><span class="note">Matinees Sat Oct 31 and Sun Nov 1 at 2:00. The Dane, in time for Halloween.</span></p>
+      <p class="fine"><a href="https://nevadatheatre.com/events/">Tickets &amp; full listings at nevadatheatre.com</a>, Oct 22.</p>
+    </div>
+  </div>
+  <div class="smallads">
+    <p><b>Miners Foundry</b> (325 Spring St.) — Deer Creek fuels project town hall, Monday Oct 26 at 6:00 PM. Further event listings begin with tomorrow's edition. <a href="https://minersfoundry.org">minersfoundry.org</a></p>
+    <p><b>Crazy Horse Saloon &amp; Grill</b> (230 Commercial St.) — Live music most weekends; tonight's bill could not be confirmed by press time. Listings begin with tomorrow's edition.</p>
+    <p><b>The Fern</b> (235 Commercial St.) — Cocktail bar and live music room. Pub Quiz every Monday night; DJs and live bands on weekends. Dated listings begin with tomorrow's edition. <a href="https://thefernnevadacity.com/">thefernnevadacity.com</a></p>
+  </div>
+
+  <div class="adbox" style="margin-top:0">
+    <p class="venue">Radio Log</p>
+    <p class="addr">KVMR 89.5 FM · Nevada City · Today's Programs</p>
+    <a class="listenlive" href="https://www.radiorethink.com/tuner/index.cfm?stationCode=KVMR&amp;stream=hi&amp;launchedFrom=secureStreamRedirect">▸ Listen Live · KVMR 89.5 FM</a>
+    <p style="margin:0 0 10px;text-align:center;font-size:13.5px">This paper's publisher on the air: <a href="https://widgets.spinitron.com/KVMR/show/257224/Under-The-Influence"><b>Under the Influence</b></a>, playlists and air dates on Spinitron · Local news: <a href="https://www.kvmr.org/show/kvmr-news/">KVMR News</a></p>
+    <ul class="cal" style="font-size:15px">
+      <li><span class="d">10:00 AM</span><span class="what"><b>Resilience Radio</b><span class="sub">with Miss Jiff</span></span></li>
+      <li><span class="d">12:00 PM</span><span class="what"><b>Nostos Algos</b><span class="sub">with Arellanes</span></span></li>
+      <li><span class="d">2:00 PM</span><span class="what"><b>Sierra Soul Train</b><span class="sub">with Husky LePew</span></span></li>
+      <li><span class="d">4:00 PM</span><span class="what"><b>Thursday Music Magazine</b><span class="sub">with Jeffrey Philpott</span></span></li>
+      <li><span class="d">6:00 PM</span><span class="what"><b>Flea Market</b><span class="sub">with Glenn Far</span></span></li>
+      <li><span class="d">7:00 PM</span><span class="what"><b>Democracy Now!</b></span></li>
+      <li><span class="d">8:00 PM</span><span class="what"><b>Jazz Workshop</b><span class="sub">with various hosts</span></span></li>
+      <li><span class="d">10:00 PM</span><span class="what"><b>Road Dog Radio</b><span class="sub">with Edy</span></span></li>
+    </ul>
+    <p class="fine">Log as published by <a href="https://spinitron.com/KVMR">Spinitron</a>, Oct 22; morning programs in tomorrow's edition carry the full day. Listen at 89.5 FM or kvmr.org.</p>
+  </div>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">Elected Officials</span></h2>
+  <p style="margin:0;font-size:14px;color:var(--ink-mid);text-align:center;font-style:italic">Who holds office in Nevada City, and what they've said publicly. Roster confirmed October 22, 2026 from the city's October 14 agenda and meeting recording.</p>
+  <ul class="dais">
+    <li>
+      <span class="who">Daniela Fernández</span><span class="role">Mayor</span>
+      <span class="bio">On the council since 2020; serving her second turn as mayor, having held the office previously in 2023. Her stated theme for the year is "healthy ecosystems," connecting housing, business, and infrastructure. (Oct 14 agenda; meeting recording)</span>
+      <span class="said"><b>Recently said</b> · On adopting the water rate increases: "Sometimes leadership means making hard decisions and making unpopular decisions. I don't feel good about it." Noted the city has grown by only 174 people in 20 years, spreading rising costs across the same ratepayers. (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Gary Petersen</span><span class="role">Vice Mayor</span>
+      <span class="bio">Elected in 2020 filling a vacant seat; mayor July 2024 to July 2025; term through 2028. Chairs the budget and finance committee of Pioneer Energy, the region's community choice power provider. (Meeting recording; The Union)</span>
+      <span class="said"><b>Recently said</b> · The city's emergency reserve for a broken water line is $20,000: "That is no reserve fund at all." Argued rate increases must come incrementally over long periods, and moved to close the water-rate hearing. (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Adam Kline</span><span class="role">Council Member</span>
+      <span class="bio">Nevada County native and musician; mayor from July 2025 until the council's 2026 reorganization. Priorities on taking that office: Nevada City's identity as a music town and stewardship of the Miners Foundry. (The Union, July 2025)</span>
+      <span class="said"><b>Recently said</b> · Voting for the rate increases: "You elected us to be stewards of this city," saying the state of things 10 or 20 years from now depends on it. Moved to approve the consent agenda. (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Doug Fleming</span><span class="role">Council Member</span>
+      <span class="bio">City representative on the Nevada County Transportation Commission and the Transit Services Commission; focused on grant-seeking for city infrastructure. (Meeting recording)</span>
+      <span class="said"><b>Recently said</b> · Called the water vote "the hardest, ugliest vote I've ever had to make in six years," and asked staff to analyze whether a dedicated sales-tax measure for water is possible, due back at mid-year. (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Micayla Sortland</span><span class="role">Council Member</span>
+      <span class="bio">Won a seat in the June 2, 2026 election and was sworn in at the reorganization; disability rights advocate; Resilience Project board member and repair café organizer; hosted the Nevada City Zero Waste Summit. (The Union, KNCO, YubaNet; meeting recording)</span>
+      <span class="said"><b>Recently said</b> · Pressing for a zero-waste ad hoc committee, she read a support letter from county Supervisor Bullock. On the rates: "Our system is not financially stable and sound," calling the vote about regaining the system's health. (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Carrie J. Wright</span><span class="role">City Manager · appointed Jan 2026</span>
+      <span class="bio">Employment agreement approved at the January 14, 2026 council meeting. (City of Nevada City agenda)</span>
+      <span class="said"><b>Recently said</b> · Proposed a ratepayer hardship fund for cases like job loss or a death in the family, to be weighed at the mid-year budget review, along with extending the 45-day late-fee window. (City Council, Oct 14, meeting recording)</span>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="kicker"><span class="label">Here &amp; There</span></h2>
+  <div class="factrow">
+    <article>
+      <p class="meta">Downtown · Announced Oct 20</p>
+      <h3 style="font-size:19px">Onyx Theatre Joins Film Festival Nonprofit; The Popcorn Stays</h3>
+      <p>The Onyx will become part of The Magic Lantern, the 501(c)(3) that runs the Nevada City Film Festival, before the end of the year. Programming, staff, and both screening rooms stay as they are; the move opens the theater to grants, tax-deductible donations, and memberships. Owner Jeffrey Clark, managing director Celine Negrete, and NCFF executive director Jesse Locks all framed it as formalizing a 25-year relationship.</p>
+      <p class="src">Source: <a href="https://yubanet.com/regional/nevada-citys-beloved-onyx-theatre-joins-forces-with-the-nevada-city-film-festival-and-the-future-of-local-cinema-has-never-looked-brighter/">The Onyx / The Magic Lantern via YubaNet</a></p>
+    </article>
+    <article>
+      <p class="meta">County Notes</p>
+      <h3 style="font-size:19px">Land Trust Awards, Storm Prep, And 343 Pets</h3>
+      <p>Bear Yuba Land Trust announced its 2026 conservation award recipients. Nevada County OES is urging residents to prepare for a forecast El Niño winter. The county reports spay-and-neuter assistance reached 343 pets this year. In Grass Valley, the city is partnering with the Senior Firewood Program ahead of the cold season.</p>
+      <p class="src">Source: <a href="https://yubanet.com">YubaNet regional desk</a></p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2 class="kicker"><span class="label">Civic Calendar</span></h2>
+  <ul class="cal">
+    <li><span class="d">Sat, Oct 24</span><span class="what"><b>Early voting opens</b><span class="sub">Nevada County Government Center (Rood Center), Nevada City</span></span></li>
+    <li><span class="d">Sat, Oct 24</span><span class="what"><b>Repair Café, 2:00 to 5:00 PM</b><span class="sub">Banner Grange, Grass Valley; announced at the Oct 14 council meeting</span></span></li>
+    <li><span class="d">Mon, Oct 26</span><span class="what"><b>Deer Creek Fuels Project town hall, 6:00 PM</b><span class="sub">Miners Foundry Cultural Center, 325 Spring St.</span></span></li>
+    <li><span class="d">Wed, Oct 28</span><span class="what"><b>City Council regular meeting, 6:30 PM</b><span class="sub">City Hall, 317 Broad St. Agenda summary here once posted.</span></span></li>
+    <li><span class="d">Tue, Nov 3</span><span class="what"><b>Election Day</b><span class="sub">Polls and vote centers countywide</span></span></li>
+    <li><span class="d">Thu, Nov 19</span><span class="what"><b>Planning Commission regular meeting, 1:30 PM</b><span class="sub">Third Thursday standing schedule</span></span></li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="kicker"><span class="label">Meeting Watch</span></h2>
+  <div class="notebox">
+    <p style="margin:0"><b>How this works:</b> the morning after each City Council and Planning Commission meeting, this paper carries a dedicated summary built from the meeting recording and agenda packet, covering votes, public comment themes, and anything affecting downtown. The October 14 summary above was built from the full 3-hour-26-minute official recording. Next: <b>Thursday, October 29</b>, following the October 28 council meeting, which carries second readings of the landscape and cannabis-tax ordinances.</p>
+  </div>
+</section>
+
+<footer>
+  <p class="stars" style="padding:0">✱ ✱ ✱ ✱ ✱</p>
+  <p><b>The Nevada City Nugget</b> is compiled each morning around 6:30 AM from local sources. Coverage: city government, elected officials' public statements, public meetings, activism and community organizing, amusements, the radio log, events, and conditions. An independent summary, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p class="sources">
+    <a href="https://yubanet.com">YubaNet</a>
+    <a href="https://www.theunion.com">The Union</a>
+    <a href="https://www.kvmr.org/show/kvmr-news/">KVMR News 89.5 FM</a>
+    <a href="https://www.nevadacityca.gov">City of Nevada City</a>
+    <a href="https://www.nevadacountyca.gov">Nevada County</a>
+    <a href="sources.html"><b>Sources &amp; Methods</b></a>
+  </p>
+</footer>
+
+</div>
+
+<script>
+/* WIRE SERVICE: injects a share control into every section. Carry this block into each edition unchanged. */
+(function(){
+  function trunc(t, n){ return t.length > n ? t.slice(0, n - 1).replace(/\s+\S*$/, "") + "…" : t; }
+  var dateLine = "";
+  var folio = document.querySelector(".folio");
+  if (folio){
+    var bs = folio.querySelectorAll("b");
+    if (bs.length) dateLine = bs[bs.length - 1].textContent.trim();
+  }
+  var tagline = "Nevada City Nugget" + (dateLine ? " · " + dateLine : "");
+
+  document.querySelectorAll("section").forEach(function(sec){
+    var kicker = sec.querySelector(".kicker");
+    var label = sec.querySelector(".kicker .label");
+    if (!kicker || !label) return;
+    var name = label.textContent.trim();
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "wire-btn";
+    btn.textContent = "☞ Wire";
+    btn.setAttribute("aria-label", "Send the " + name + " section to someone");
+    kicker.appendChild(btn);
+
+    var menu = document.createElement("div");
+    menu.className = "wire-menu";
+    kicker.insertAdjacentElement("afterend", menu);
+
+    function sectionText(){
+      var clone = sec.cloneNode(true);
+      clone.querySelectorAll(".wire-btn,.wire-menu").forEach(function(n){ n.remove(); });
+      var holder = document.createElement("div");
+      holder.style.position = "absolute";
+      holder.style.left = "-9999px";
+      holder.appendChild(clone);
+      document.body.appendChild(holder);
+      var t = clone.innerText || clone.textContent || "";
+      holder.remove();
+      return t.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+    }
+
+    function fallbackCopy(t){
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = t;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand("copy");
+        ta.remove();
+        return ok;
+      } catch(e){ return false; }
+    }
+
+    function build(){
+      menu.innerHTML = "";
+      var k = document.createElement("span");
+      k.className = "wire-k";
+      k.textContent = "Send “" + name + "”:";
+      menu.appendChild(k);
+
+      var text = sectionText();
+      var sig = "\n\n— " + tagline + "\n" + location.href;
+
+      if (navigator.share){
+        var sh = document.createElement("button");
+        sh.type = "button";
+        sh.textContent = "Share…";
+        sh.addEventListener("click", function(){
+          navigator.share({ title: tagline + " · " + name, text: trunc(text, 4000) + sig }).catch(function(){});
+        });
+        menu.appendChild(sh);
+      }
+
+      var sms = document.createElement("a");
+      sms.textContent = "Text";
+      sms.href = "sms:?&body=" + encodeURIComponent(trunc(text, 700) + sig);
+      menu.appendChild(sms);
+
+      var em = document.createElement("a");
+      em.textContent = "Email";
+      em.href = "mailto:?subject=" + encodeURIComponent(tagline + " · " + name) +
+                "&body=" + encodeURIComponent(trunc(text, 1500) + sig);
+      menu.appendChild(em);
+
+      var cp = document.createElement("button");
+      cp.type = "button";
+      cp.textContent = "Copy";
+      cp.addEventListener("click", function(){
+        var full = text + sig;
+        function done(ok){
+          cp.textContent = ok ? "Copied ✓" : "Copy failed";
+          setTimeout(function(){ cp.textContent = "Copy"; }, 2000);
+        }
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(full).then(function(){ done(true); }, function(){ done(fallbackCopy(full)); });
+          } else {
+            done(fallbackCopy(full));
+          }
+        } catch(e){ done(fallbackCopy(full)); }
+      });
+      menu.appendChild(cp);
+    }
+
+    btn.addEventListener("click", function(){
+      var open = menu.classList.toggle("open");
+      if (open) build();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
