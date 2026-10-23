@@ -55,6 +55,17 @@
     life or home details. People already in public roles (officials, performers, business
     owners as such) can be featured from the public record alone. Always flattering, always
     accurate, never a surprise to the subject.
+12. **Local History Unearthed.** A grown-up sibling to From the Nugget's Morgue: a daily or
+    weekly dig into Nevada City history from the Searls Historical Library archive, CDNC,
+    historical society publications, and city records: the building that burned twice, the
+    origin of a street name, mining-era records, old photographs when rights allow. Each item
+    dated and sourced to the actual document; paraphrase, never reproduce whole historical
+    articles still under rights.
+13. **Coming Attractions (event countdowns).** A standing box counting down to the big ones:
+    Victorian Christmas, Mardi Gras, 4th of July and Constitution Day parades, Nevada City Film
+    Festival, hot summer nights season, KVMR Celtic Festival and company. "Victorian Christmas:
+    38 days." Dates only from the organizers' own announcements; the countdown drops off once
+    the event passes and the next one rotates in.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
