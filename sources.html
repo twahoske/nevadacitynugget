@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sources &amp; Methods · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+ul.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.srclist li{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--rule-soft)}
+ul.srclist li:first-child{border-top:1px solid var(--rule)}
+ul.srclist .s-name{font-family:var(--display);font-weight:700;min-width:210px}
+ul.srclist .s-what{font-size:14px;color:var(--ink-mid);flex:1;min-width:200px}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p + p{margin-top:8px}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner">Sources &amp; Methods</div>
+<div>
+  <h1>Nevada City Nugget</h1>
+  <p class="motto">How the Paper Is Put Together</p>
+</div>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<section>
+  <h2 class="kicker"><span class="label">The Standing Sources</span></h2>
+  <ul class="srclist">
+    <li><span class="s-name"><a href="https://yubanet.com">YubaNet</a></span><span class="s-what">Daily local news, fire coverage (<a href="https://yubanet.com/fires/">yubanet.com/fires</a>), and meeting reporting</span></li>
+    <li><span class="s-name"><a href="https://www.theunion.com">The Union</a></span><span class="s-what">Local reporting and the Nevada County police blotter</span></li>
+    <li><span class="s-name"><a href="https://www.kvmr.org/show/kvmr-news/">KVMR News 89.5 FM</a></span><span class="s-what">Local radio news; the Radio Log comes from <a href="https://spinitron.com/KVMR">Spinitron</a></span></li>
+    <li><span class="s-name"><a href="https://www.nevadacityca.gov">City of Nevada City</a></span><span class="s-what">Agendas, packets, minutes, press releases, public notices</span></li>
+    <li><span class="s-name"><a href="https://www.nevadacountyca.gov">Nevada County</a></span><span class="s-what">Board of Supervisors, county Planning Commission, OES, elections</span></li>
+    <li><span class="s-name"><a href="https://www.youtube.com/@nevadacitypublicmeetings1540">Nevada City Public Meetings</a></span><span class="s-what">Official recordings of City Council and Planning Commission meetings</span></li>
+    <li><span class="s-name"><a href="https://www.fire.ca.gov/incidents">CAL FIRE</a></span><span class="s-what">Incident reports and containment figures</span></li>
+    <li><span class="s-name"><a href="https://www.weather.gov/sto/">NWS Sacramento</a></span><span class="s-what">Forecasts, watches, and warnings for the weather strip and weather stories</span></li>
+    <li><span class="s-name"><a href="https://archive.nevadacountyhistory.org">Searls Historical Library archive</a></span><span class="s-what">Historical Nevada City papers for From the Nugget's Morgue</span></li>
+    <li><span class="s-name">Venue listings</span><span class="s-what"><a href="https://www.cinemaclock.com/movie-theaters/the-onyx-theatre">The Onyx via CinemaClock</a>, <a href="https://nevadatheatre.com/events/">Nevada Theatre</a>, <a href="https://minersfoundry.org">Miners Foundry</a>, <a href="https://thefernnevadacity.com/">The Fern</a>, and venues' own announcements</span></li>
+  </ul>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">Methods</span></h2>
+  <div class="notebox">
+    <p><b>Every story carries its own source line.</b> Each item ends with an italic line naming, and where possible linking, the article or document it was built from. A story with no retrievable source does not run.</p>
+    <p><b>Meetings.</b> Meeting summaries are built from the official recording when retrievable, otherwise from the agenda packet, staff reports, and minutes, plus local press coverage. Each summary states its sources. Votes and outcomes are reported exactly as recorded; when an outcome cannot be confirmed, the paper says so rather than guessing.</p>
+    <p><b>The Docket.</b> Agenda digests are drawn only from the published agenda document itself, item by item, never inferred.</p>
+    <p><b>The blotter.</b> Entries are retold in the Nugget's own words from police logs as reported by The Union, YubaNet, and official releases. Nobody is named unless charged or named in an official release.</p>
+    <p><b>The horoscope.</b> The Stars Over Deer Creek is the paper's sole invented content, written fresh each morning, and labeled entertainment.</p>
+    <p><b>Corrections.</b> Errors are corrected plainly in a Corrections box in the next edition. Archived editions stay as published.</p>
+  </div>
+</section>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+</footer>
+
+</div>
+</body>
+</html>
