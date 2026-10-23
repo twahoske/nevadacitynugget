@@ -44,6 +44,10 @@
    channel, credited by name with the submitter's permission ("Niel's famous..."). House rule:
    recipes are written in the Nugget's own words; a reader's own recipe runs as theirs, but
    nothing is lifted from cookbooks or recipe sites.
+10. **The Menagerie (pets).** Reader pet photos through the approved-sender channel (credited,
+    with permission), LOST & FOUND pet notices as a public service, and adoptables from
+    Sammie's Friends / Nevada County Animal Shelter when published. Lost-pet notices run with
+    the owner's contact only as they ask, get verified like a tip, and come down once resolved.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
