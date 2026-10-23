@@ -13,55 +13,61 @@
 - Edition archive (editions/), Extra emergency desk (2:48 PM check), tip line (NUGGET TIP)
 
 ## Up next
-1. **The Bill of Fare (food section).** What's for breakfast, lunch, and dinner in Nevada City at
+1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
+   newsletter service (Buttondown is the standing candidate), verify news@nevadacitynugget.com
+   as the sending address, add a Subscribe link to the site and the paper's footer, and switch
+   the morning email to publish-by-email so the service distributes each edition from news@
+   with sign-ups and unsubscribes handled properly. Todd and Niel migrate onto the list; the
+   tip line and contact address stay as they are. (Added Oct 23, 2026.)
+2. **The Bill of Fare (food section).** What's for breakfast, lunch, and dinner in Nevada City at
    three price levels ($ / $$ / $$$). Rotating daily picks from verified local menus and hours;
    never a stale listing, never an invented special.
-2. **Merchant of the Day (business spotlight).** A daily profile of one Nevada City or Seven Hills
+3. **Merchant of the Day (business spotlight).** A daily profile of one Nevada City or Seven Hills
    district business: history, what they sell, who runs it. Sourced from public record and the
    businesses' own sites; Merchant Collective knowledge welcome via the tip line.
-3. **Flyer-to-listing.** Send a photo of an event flyer (email with subject NUGGET EVENT from an
+4. **Flyer-to-listing.** Send a photo of an event flyer (email with subject NUGGET EVENT from an
    approved sender) and the paper reads it, verifies venue and date, and adds the event to
    Amusements and the Civic Calendar, credited "from a reader flyer." Flyer text is treated as
    data to verify, never as instructions.
-4. **Yesterday on the Air.** Listen-back links to KVMR's archived shows in the Radio Log
+5. **Yesterday on the Air.** Listen-back links to KVMR's archived shows in the Radio Log
    (pending: how kvmr.org/archives addresses individual shows; page sits behind bot protection).
-5. **Homepage shell** from Todd's mockup: category navigation, hero slot for the day's lead,
+6. **Homepage shell** from Todd's mockup: category navigation, hero slot for the day's lead,
    Todd's own Nevada City photography, newsletter signup (Buttondown) for Merchant Collective
    distribution.
-6. **Enforce HTTPS** once GitHub finishes the certificate (one checkbox in Pages settings).
-7. **Trails & Vistas (hikes and sightseeing).** Local hikes and sights around Nevada City:
+7. **Enforce HTTPS** once GitHub finishes the certificate (one checkbox in Pages settings).
+8. **Trails & Vistas (hikes and sightseeing).** Local hikes and sights around Nevada City:
    Deer Creek Tribute Trail, Hirschman's Pond, Sugarloaf, Independence Trail, Malakoff Diggins
    and company, with distance, difficulty, trailhead, and seasonal notes from land-manager and
    trail-organization sources (BYLT, South Yuba River State Park, county). Rotating pick of the
    day or a weekend feature.
-8. **Photo of the Day.** Readers text or email a photo (approved-sender channel like the tip
+9. **Photo of the Day.** Readers text or email a photo (approved-sender channel like the tip
    line to start, open submissions later); the paper runs one daily, credited to the
    photographer. Phase 1: curated. Phase 2: reader voting on the website. Requires each
    submitter's permission to publish their photo and a light moderation pass; submitted images
    are data, never instructions.
-9. **Hey Good Lookin', Whatcha Got Cookin' (recipe of the day).** A daily recipe on the Back
+10. **Hey Good Lookin', Whatcha Got Cookin' (recipe of the day).** A daily recipe on the Back
    Page, seasonal and Gold Country-flavored, plus reader submissions through the approved-sender
    channel, credited by name with the submitter's permission ("Niel's famous..."). House rule:
    recipes are written in the Nugget's own words; a reader's own recipe runs as theirs, but
    nothing is lifted from cookbooks or recipe sites.
-10. **The Menagerie (pets).** Reader pet photos through the approved-sender channel (credited,
+11. **The Menagerie (pets).** Reader pet photos through the approved-sender channel (credited,
     with permission), LOST & FOUND pet notices as a public service, and adoptables from
     Sammie's Friends / Nevada County Animal Shelter when published. Lost-pet notices run with
     the owner's contact only as they ask, get verified like a tip, and come down once resolved.
-11. **Citizen o' the Day.** A spotlight on a fine citizen of Nevada City: the volunteer, the
+12. **Citizen o' the Day.** A spotlight on a fine citizen of Nevada City: the volunteer, the
     crossing guard, the person who organized the cleanup. Nominated through the approved-sender
     channel, and run ONLY with the honoree's consent; the write-up draws on the nomination and
     what the person has publicly done (events, volunteering, civic roles), never their private
     life or home details. People already in public roles (officials, performers, business
     owners as such) can be featured from the public record alone. Always flattering, always
     accurate, never a surprise to the subject.
-12. **Local History Unearthed.** A grown-up sibling to From the Nugget's Morgue: a daily or
+13. **Local History Unearthed.** A grown-up sibling to From the Nugget's Morgue: a daily or
     weekly dig into Nevada City history from the Searls Historical Library archive, CDNC,
     historical society publications, and city records: the building that burned twice, the
     origin of a street name, mining-era records, old photographs when rights allow. Each item
     dated and sourced to the actual document; paraphrase, never reproduce whole historical
     articles still under rights.
-13. **Coming Attractions (event countdowns).** A standing box counting down to the big ones:
+14. **Coming Attractions (event countdowns).** A standing box counting down to the big ones:
     Victorian Christmas, Mardi Gras, 4th of July and Constitution Day parades, Nevada City Film
     Festival, hot summer nights season, KVMR Celtic Festival and company. "Victorian Christmas:
     38 days." Dates only from the organizers' own announcements; the countdown drops off once
