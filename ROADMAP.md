@@ -2,6 +2,8 @@
 
 ## Shipped (launch night, October 22-23, 2026)
 - Daily automated edition at 6:09 AM: artifact, email to Todd & Niel, and nevadacitynugget.com
+  (since moved: morning edition at 5:09 AM with a short pointer email to three readers, site copy hourly
+  at :55 from 5:55 AM to 8:55 PM)
 - 1941 broadsheet design; Grenze Gotisch blackletter nameplate with ridge engraving
 - City Hall & Politics lead, The Docket (agenda digests), Legal Notices, Police Blotter
 - Meeting summaries from official recordings (Oct 14 council meeting: full 3h26m transcript)
@@ -10,7 +12,21 @@
 - KVMR Radio Log via Spinitron, Listen Live stream, Under the Influence link
 - The Back Page: Nugget's Morgue, This Day in History, Niel's Knick Knacks, The Stars Over Deer Creek
 - Hat Store house ads; Wire service (share any section); Sources & Methods page; corrections policy
-- Edition archive (editions/), Extra emergency desk (2:48 PM check), tip line (NUGGET TIP)
+- Edition archive (editions/), Extra emergency desk (2:48 PM check, since made hourly at :48 from 8:48 AM to 8:48 PM),
+  tip line (NUGGET TIP)
+- Evening Edition at 4:58 PM: surgical updates under an "Evening Edition" banner, condensed email
+
+## Fixes & housekeeping (added Oct 26, 2026)
+- **Mobile overflow.** On phones the page scrolls sideways about 20px, and the "Wire" share button
+  in section headers overflows. Fix without disturbing the 1941 design.
+- **Radio roster.** The Playground (Susie Rex) may have moved to a new Monday afternoon slot;
+  verify against KVMR and update assets/kvmr-schedule.json.
+- **Task prompts.** The Evening Edition and Extra prompts still mention the old 6:09 AM morning time
+  and 6:55 AM to 9:55 PM copy hours; tidy to the current schedule.
+
+## Dated runs
+- **Merchant of the Day launches Monday, November 2, 2026** (Up next #3).
+- **The Morgue, November 16-26, 2026:** items from the November 19, 1945 Nugget.
 
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
@@ -22,7 +38,7 @@
 2. **The Bill of Fare (food section).** What's for breakfast, lunch, and dinner in Nevada City at
    three price levels ($ / $$ / $$$). Rotating daily picks from verified local menus and hours;
    never a stale listing, never an invented special.
-3. **Merchant of the Day (business spotlight).** A daily profile of one Nevada City or Seven Hills
+3. **Merchant of the Day (business spotlight). Launches Mon, Nov 2, 2026.** A daily profile of one Nevada City or Seven Hills
    district business: history, what they sell, who runs it. Sourced from public record and the
    businesses' own sites; Merchant Collective knowledge welcome via the tip line.
 4. **Flyer-to-listing.** Send a photo of an event flyer (email with subject NUGGET EVENT from an
