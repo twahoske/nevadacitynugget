@@ -27,6 +27,25 @@
 ## Dated runs
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3).
 - **The Morgue, November 16-26, 2026:** items from the November 19, 1945 Nugget.
+- **Arts & Culture, October 27 to November 9, 2026:** "Sparky Parker Goes Big On Broad Street,"
+  Todd's interview with David "Sparky" Parker on his Big Works show at Szabo Vineyards Tasting Room,
+  316 Broad St., with six photos used with the artist's permission. First scoop through the pipeline below.
+
+## The scoop pipeline (added Oct 26, 2026)
+How the publisher's own reporting gets into the paper on a schedule, and stays there.
+- **Write it interactively.** Todd sends his interview notes, photos, and links in a project thread.
+  Claude writes the finished section in the paper's design (byline, quotes lightly trimmed and never
+  altered in meaning, only the links Todd supplied, house rules), with photos downscaled, stripped of
+  metadata, and embedded as data URIs in a .photoset so they work on the artifact, the website, and
+  in the archive with no extra files.
+- **Schedule it.** The section is stored on the artifact as assets/features/<id>.html and listed in
+  assets/features.json with start and end dates (inclusive, Pacific), a placement, and whether the
+  first-day email mentions it.
+- **Run it.** Each morning edition splices every active entry in verbatim with the shell (never
+  retyped); the Evening Edition leaves it untouched and re-splices it if the morning missed it; the
+  site copy needs no change. A feature drops off after its end date and stays in the archived editions.
+- **Next:** a short "Now showing" index of active features in Coming Attractions or the footer, and
+  a reader-facing note on Sources & Methods that publisher-reported stories carry a byline.
 
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
