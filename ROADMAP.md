@@ -21,8 +21,8 @@
   in section headers overflows. Fix without disturbing the 1941 design.
 - **Radio roster.** The Playground (Susie Rex) may have moved to a new Monday afternoon slot;
   verify against KVMR and update assets/kvmr-schedule.json.
-- **Task prompts.** The Evening Edition and Extra prompts still mention the old 6:09 AM morning time
-  and 6:55 AM to 9:55 PM copy hours; tidy to the current schedule.
+- ~~**Task prompts.**~~ Done Oct 26, 2026: the Evening Edition and Extra prompts now cite the 5:09 AM
+  morning edition and the 5:55 AM to 8:55 PM site copy hours.
 
 ## Dated runs
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3).
