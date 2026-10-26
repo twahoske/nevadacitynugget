@@ -111,6 +111,15 @@ section{display:flex;flex-direction:column;gap:16px}
 .kicker{display:flex;align-items:center;gap:14px;margin:0}
 .kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
 .kicker .label{font-family:var(--display);font-weight:800;font-size:14px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+/* Phones: let long section labels wrap and keep the Wire button inside the column */
+.wrap{overflow-wrap:break-word}
+.kicker .label{min-width:0;text-align:center}
+.kicker .wire-btn{flex:none}
+@media (max-width:560px){
+  .kicker{gap:10px}
+  .kicker::before,.kicker::after{flex:1 1 14px;min-width:14px}
+  .kicker .label{white-space:normal;font-size:13px;letter-spacing:.18em;text-wrap:balance}
+}
 .stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
 
 article h3{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.12;margin:0 0 7px;text-wrap:balance}
@@ -378,7 +387,8 @@ a.sponsor img{width:100%;height:auto;display:block}
       <li><span class="d">5:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/296763/Rumspringa">Rumspringa</a></b><span class="sub">with DJD · every other week; on cycle today per its recent playlists</span></span></li>
       <li><span class="d">7:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58349/Monday-Morning-Show">Monday Morning Show</a></b><span class="sub">with Big John</span></span></li>
       <li><span class="d">10:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/147992/South-Of-The-Border">South Of The Border</a></b><span class="sub">rotating hosts · weekly</span></span></li>
-      <li><span class="d">12:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/260709/The-Playground">The Playground</a></b><span class="sub">with Susie Rex · every other week; today's airing not confirmed (latest posted playlist Sep 28)</span></span></li>
+      <li><span class="d">12:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/260709/The-Playground">The Playground</a></b><span class="sub">with Susie Rex · every other week; on today's station schedule</span></span></li>
+      <li><span class="d">2:00 PM</span><span class="what"><b><a href="https://widgets.spinitron.com/KVMR/show/183091/The-Music-Grotto">The Music Grotto</a></b><span class="sub">with Walter Windex · 2nd and 4th Mondays; today is the 4th</span></span></li>
       <li><span class="d">4:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/79086/Monday-Music-Magazine">Monday Music Magazine</a></b><span class="sub">with Greg Jewett and Prickly Pear</span></span></li>
       <li><span class="d">6:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/257219/Between-Gears">Between Gears</a></b><span class="sub">with Hap Hazard and Michael Keene · 4th and 5th Mondays; today is the 4th</span></span></li>
       <li><span class="d">7:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58751/Democracy-Now">Democracy Now!</a></b><span class="sub">syndicated · weeknights</span></span></li>
@@ -693,8 +703,4 @@ a.sponsor img{width:100%;height:auto;display:block}
     });
   });
 })();
-</script>
-
-
-
-</body></html>
+</script></body></html>
