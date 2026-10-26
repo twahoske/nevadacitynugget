@@ -15,10 +15,10 @@
 - Edition archive (editions/), Extra emergency desk (2:48 PM check, since made hourly at :48 from 8:48 AM to 8:48 PM),
   tip line (NUGGET TIP)
 - Evening Edition at 4:58 PM: surgical updates under an "Evening Edition" banner, condensed email
+- Mobile overflow fixed (Oct 26, 2026): long section labels now wrap and the "Wire" button stays
+  inside the column on phones; no sideways scroll from 320px to 414px wide
 
 ## Fixes & housekeeping (added Oct 26, 2026)
-- **Mobile overflow.** On phones the page scrolls sideways about 20px, and the "Wire" share button
-  in section headers overflows. Fix without disturbing the 1941 design.
 - **Radio roster.** The Playground (Susie Rex) may have moved to a new Monday afternoon slot;
   verify against KVMR and update assets/kvmr-schedule.json.
 - **Task prompts.** The Evening Edition and Extra prompts still mention the old 6:09 AM morning time
