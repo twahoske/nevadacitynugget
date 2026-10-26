@@ -19,8 +19,10 @@
 ## Fixes & housekeeping (added Oct 26, 2026)
 - **Mobile overflow.** On phones the page scrolls sideways about 20px, and the "Wire" share button
   in section headers overflows. Fix without disturbing the 1941 design.
-- **Radio roster.** The Playground (Susie Rex) may have moved to a new Monday afternoon slot;
-  verify against KVMR and update assets/kvmr-schedule.json.
+- **Radio roster.** Done Oct 26, 2026. Verified on Spinitron: The Playground (Susie Rex) is now
+  scheduled every other Monday, 12:00 to 2:00 PM, and is on the station's Oct 26 listing; added to
+  assets/kvmr-schedule.json, which clears the Monday noon gap. Also added The Music Grotto (Walter
+  Windex), Mondays 2:00 to 4:00 PM, flagged ambiguous (page says 4th Mondays, description says 2nd & 4th).
 - **Task prompts.** The Evening Edition and Extra prompts still mention the old 6:09 AM morning time
   and 6:55 AM to 9:55 PM copy hours; tidy to the current schedule.
 
