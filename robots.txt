@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://nevadacitynugget.com/sitemap.xml

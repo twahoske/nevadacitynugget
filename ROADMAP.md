@@ -24,6 +24,34 @@
 - **Task prompts.** The Evening Edition and Extra prompts still mention the old 6:09 AM morning time
   and 6:55 AM to 9:55 PM copy hours; tidy to the current schedule.
 
+## Getting found on Google (added Oct 26, 2026)
+Googling "Nevada City Nugget" doesn't show the site yet. Main cause: the site launched Oct 22-23 and
+Google hasn't indexed it; the results are crowded with the Nevada Nugget casino, Carson City Nugget,
+and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so it competes less than feared.)
+- **Done in the repo (Oct 26):** sitemap.xml, a Sitemap line in robots.txt, NewsMediaOrganization +
+  WebSite structured data on the homepage, a robots meta tag, a canonical and description on
+  sources.html, and a "Site upkeep" GitHub Action (scripts/site_upkeep.py) that runs after every
+  publish: it points each archived edition's canonical/og:url at its own address (archives used to
+  claim to be the homepage), gives archives dated titles, and refreshes the sitemap. The Site
+  Publisher keeps the homepage head verbatim, so these tags carry forward daily with no prompt change.
+- **Todd's steps (only he can do these):**
+  1. Google Search Console (search.google.com/search-console): add a Domain property for
+     nevadacitynugget.com and verify with the DNS TXT record at the domain registrar.
+  2. In Search Console: Sitemaps, submit `sitemap.xml`; then URL Inspection on
+     https://nevadacitynugget.com/ and "Request indexing."
+  3. GitHub repo Settings, Pages: tick "Enforce HTTPS" (item 7).
+  4. Google Business Profile: optional, and only if the paper has a listing-eligible presence;
+     skip if it would have to borrow The Hat Store's address.
+  5. Links from local sites: The Hat Store's site, the Under the Influence / KVMR show page,
+     Instagram and Facebook bios, the Chamber member listing, and an email signature. A handful
+     of real local links does more than anything else here.
+  6. Bing Webmaster Tools: import from Search Console in one click (also feeds DuckDuckGo).
+- **Expect:** a brand search usually turns up within a few days to two weeks after the sitemap is
+  submitted. Ranking for broader searches ("Nevada City news") builds over months with daily
+  publishing and links.
+- **Later:** per-story pages (each article at its own URL) would give Google far more to rank than
+  one long daily page. Fits with the Homepage shell (item 6).
+
 ## Dated runs
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3).
 - **The Morgue, November 16-26, 2026:** items from the November 19, 1945 Nugget.
@@ -51,6 +79,7 @@
    Todd's own Nevada City photography, newsletter signup (Buttondown) for Merchant Collective
    distribution.
 7. **Enforce HTTPS** once GitHub finishes the certificate (one checkbox in Pages settings).
+   Also part of the search push below: Google prefers the https address.
 8. **Trails & Vistas (hikes and sightseeing).** Local hikes and sights around Nevada City:
    Deer Creek Tribute Trail, Hirschman's Pond, Sugarloaf, Independence Trail, Malakoff Diggins
    and company, with distance, difficulty, trailhead, and seasonal notes from land-manager and
