@@ -54,8 +54,8 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
 
 ## Site policies (added Oct 27, 2026)
 - **Standards & Disclosures, Privacy, and Terms of Use pages** (standards.html, privacy.html, terms.html), in the
-  Sources & Methods design. Standards covers ownership (The Hat Store), no paid placement, how the paper is made with
-  an AI assistant, accuracy, corrections, tips, and accessibility. Privacy reflects what the site actually does: no
+  Sources & Methods design. Standards covers ownership (The Hat Store), no paid placement, how the paper is made ("set by machine,
+  checked by hand"), accuracy, corrections, tips, and accessibility. Privacy reflects what the site actually does: no
   cookies, analytics, or trackers; GitHub Pages logs visitor IPs; Google Fonts serves the type; reader email handled
   via Gmail and Claude. Terms covers sharing and quoting, reader submissions, the not-an-alert-system notice, and
   California law. Linked from sources.html, the sitemap, and the homepage structured data.
@@ -64,7 +64,8 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   sources.html; add them to the Site Publisher's do-not-touch list.
 - **Before the newsletter launches (Up next #1):** update privacy.html to name the service and what it records.
 - **Worth a lawyer's look (not legal advice):** the liability and governing-law clauses, a DMCA designated agent
-  before reader photos open (Photo of the Day), and the AI-compilation disclosure wording. The CCPA's business
+  before reader photos open (Photo of the Day), the machine-compilation disclosure wording, and whether to form an LLC (or a nonprofit) and carry media
+  liability insurance; the pages say "the publisher" until then. The CCPA's business
   thresholds ($26.625M revenue, 100,000+ consumers, or selling data) almost certainly don't reach the Nugget today;
   CalOPPA's posted-privacy-policy rule does, and privacy.html is written to meet it.
 
