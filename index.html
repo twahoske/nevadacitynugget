@@ -91,8 +91,21 @@ a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 .nameplate .np-art{width:min(540px,94%);height:auto;display:block;margin:0 auto -30px;color:var(--ink-soft)}
 @media (min-width:700px){.nameplate h1{white-space:nowrap}}
 .nameplate .motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0}
-.folio{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 18px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:5px 2px;font-family:var(--display);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
-.folio b{font-weight:800}
+/* Folio: three stacked ears (Vol./No., date, elevation), each with an italic second line; the date stays the last <b> for the wire script and site publisher */
+.folio{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:18px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;font-family:var(--display);font-size:11.5px;line-height:1.35;letter-spacing:.08em;text-transform:uppercase}
+.folio > span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.folio .f-l{text-align:left}
+.folio .f-c{text-align:center;padding:0 22px;border-inline:1px solid var(--rule)}
+.folio .f-r{text-align:right}
+.folio b,.folio .f-hi{font-weight:800}
+.folio .f-c b{font-size:13.5px;letter-spacing:.1em}
+.folio i{font-size:12.5px;letter-spacing:.03em;text-transform:none;color:var(--ink-mid)}
+@media (max-width:560px){
+  .folio{grid-template-columns:1fr 1fr;grid-template-areas:"c c" "l r";row-gap:6px;column-gap:10px}
+  .folio .f-c{grid-area:c;border-inline:none;border-bottom:1px solid var(--rule);padding:0 0 6px}
+  .folio .f-l{grid-area:l}
+  .folio .f-r{grid-area:r}
+}
 @media (max-width:620px){
   .masthead{grid-template-columns:1fr}
   .ear{display:none}
@@ -201,11 +214,13 @@ footer a{color:var(--ink-mid)}
 a.sponsor{display:block;border:1px solid var(--rule);line-height:0}
 a.sponsor img{width:100%;height:auto;display:block}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
-</style></head><body>
+</style>
+</head>
+<body>
 
 <div class="wrap">
 
-<p class="banner">Election Season Issue</p>
+<p class="banner">Evening Edition</p>
 
 <header class="masthead">
   <div class="ear">The Nugget is delivered to your inbox every morning at half past six, free of charge.</div>
@@ -237,12 +252,9 @@ a.sponsor img{width:100%;height:auto;display:block}
 </header>
 
 <div class="folio">
-  <span><b>Vol. 1, No. 5</b></span>
-  <span>The County Seat Paper</span>
-  <span><b>Nevada City, California</b></span>
-  <span>The Gold Center</span>
-  <span>Elev. 2,477 Ft.</span>
-  <span><b>Monday, October 26, 2026</b></span>
+  <span class="f-l"><b>Vol. 1, No. 5</b><i>The County Seat Paper</i></span>
+  <span class="f-c"><b>Monday, October 26, 2026</b><i>Nevada City, California</i></span>
+  <span class="f-r"><span class="f-hi">Elev. 2,477 Ft.</span><i>The Gold Center</i></span>
 </div>
 
 <div class="weatherline">
@@ -250,6 +262,7 @@ a.sponsor img{width:100%;height:auto;display:block}
   <span><span class="wl-k">Almanac</span>Sunrise 7:25 AM · Sunset 6:09 PM · Waning gibbous moon, a night past full</span>
   <span><span class="wl-k">Alerts</span>No PSPS, red flag warning, or active local wildfire in this morning's sources; the fall burn ban remains in effect</span>
 </div>
+<p style="margin:-18px 0 0;text-align:center;font-size:14.5px;font-style:italic;color:var(--ink-mid)">Evening update, 5:00 PM — Caltrans posted this week's night lane work on Highway 49 and daytime one-way control on Highway 20, with no full closures; no new city agenda, weather alert, or county reply to the Justice Department since this morning's edition. Added later: a look back at the Planning Commission's October 15 agenda and the Public Arts Commission's October 7 agenda.</p>
 
 <section>
   <h2 class="kicker"><span class="label">City Hall &amp; Politics</span></h2>
@@ -287,6 +300,30 @@ a.sponsor img{width:100%;height:auto;display:block}
     <p>It is also California's Flood Preparedness Week. The state Department of Water Resources asks residents to check their flood risk at myhazards.caloes.ca.gov, keep an evacuation kit ready, sign up for local alerts, and never drive through a flooded road. Nevada County's own checklist stands: register for Nevada County Alerts at ReadyNevadaCounty.org/EmergencyAlerts, clear gutters and culverts, and use the county's free self-serve sand sites listed at ReadyNevadaCounty.org/Sand. PG&amp;E reports no shutoff event since October 17.</p>
     <p class="src">Sources: <a href="https://yubanet.com/featured/now/">NWS Sacramento via YubaNet's Happening Now log, Oct 25</a>; <a href="https://yubanet.com/california/as-flood-preparedness-week-begins-dwr-calls-on-all-californians-to-prepare-for-an-el-nino-driven-winter/">DWR via YubaNet</a>; <a href="https://www.theunion.com/news/nevada-county-residents-encouraged-to-prepare-for-el-ni-o-storms/article_48532bcb-6dd6-4ef4-be00-eed3991cef45.html">Nevada County via The Union, Oct 22</a>; <a href="https://www.pge.com/en/newsroom/currents/safety/pge-may-need-to-turn-off-power-for-safety.html">PG&amp;E newsroom</a>; temperatures via <a href="https://opensnow.com/location/nevada-city-ca-us/weather">OpenSnow</a>.</p>
   </article>
+
+  <article>
+    <p class="meta">Evening Update · Roads</p>
+    <h3>Night Lane Work On Highway 49 All Week; No Full Closures</h3>
+    <p>Caltrans District 3 says the Highway 49 Corridor Improvement Project between McKnight Way and La Barr Meadows/Allison Ranch Road brings one-way traffic control and ramp closures nightly from 9 PM to 6 AM, Monday night through Thursday night, with lane closures ending for the week at 6 AM Friday. On Highway 20, pavement work between Lowell Hill Road and the I-80 junction runs one-way traffic control from 7 AM to 6 PM Monday through Thursday and 7 AM to noon Friday, and the Highway 20 on-ramp to westbound I-80 stays closed until further notice for bridge construction. No full closure of either highway is scheduled; Caltrans says the schedule may change with weather. Separately, YubaNet's Happening Now log reported one-way traffic on Highway 174 from the Placer County line to Durango Lane late this morning, with delays expected until 3:30 PM.</p>
+    <p class="src">Sources: <a href="https://yubanet.com/regional/construction-update-for-gold-country-corridor-oct-26-30/">Caltrans via YubaNet, Oct 26</a>; <a href="https://yubanet.com/featured/now/">YubaNet's Happening Now log, Oct 26</a></p>
+  </article>
+
+  <article>
+    <p class="meta">Evening Update · Planning Commission</p>
+    <h3>Three Downtown Sign Permits Went Before The Planning Commission Oct 15</h3>
+    <p>The city Planning Commission's October 15 regular meeting, held a week before this paper began publishing, carried six design applications. Three were historical district sign permits downtown: "Septembers" at 221 Broad Street, "Good Bones" at 300 Spring Street, and "Nevada Taqueria" at 214 Broad Street. The others were a demolition and architectural review application for 218 Drummond, continued from an earlier meeting; architectural review for 219 South Pine Street; and an amendment to the architectural review for 103-107 Argall Way, the Onyx Theatre's address. On consent, the commission was asked to accept its September 17 minutes and receive the September liaison and building activity reports.</p>
+    <p>Staff also listed what is coming: a 30-day public review period for the city's Housing Element beginning in late October, a new lighting ordinance, sign rule updates covering window decals and A-frame signs, and later work on downtown design guidelines through the Preservation of Downtown ad hoc committee, a planning workshop, and rules for tiny homes on wheels.</p>
+    <p>Outcomes not yet confirmed: the commission's minutes have not posted, and the recording could not be transcribed tonight. The Nugget will report the votes when the minutes post or the recording is reviewed. The commission next meets Thursday, November 19, at 1:30 PM.</p>
+    <p class="src">Sources: <a href="https://www.nevadacityca.gov/DocumentCenter/View/2933">October 15 agenda, City of Nevada City</a>; <a href="https://www.nevadacityca.gov/AgendaCenter/ViewFile/Agenda/_10152026-676?html=true">Agenda Center meeting materials</a>; <a href="https://www.youtube.com/live/zJvOT5pTiGY?si=TxzL4wTZ0N2VKrDk">meeting recording, Nevada City Public Meetings on YouTube</a></p>
+  </article>
+
+  <article>
+    <p class="meta">Evening Update · Public Arts Commission</p>
+    <h3>Arts Commission Weighed A Seven Hills Arts District Oct 7</h3>
+    <p>The city's Public Arts Commission met October 7 at City Hall with a short, busy agenda. Under business, the Nevada City Chamber of Commerce asked the commission to discuss designating the Seven Hills district as an Arts District. Staff recommended approving an installation of the Keep It Dark Photo Contest awardees in the CHAMP Gallery for up to 12 weeks, in partnership with Nevada County Arts and Culture and the Town of Truckee, and Commissioners Clark and Arbex were to update the commission on the gallery's call for partners, which the city opened October 23. Commissioners Wilcox-Barnes and Arellanes were to report on an inventory of future public art locations, and Commissioners Negrete and Maskal on community outreach plans. On consent: the August 5 action minutes.</p>
+    <p>Outcomes not yet confirmed: the commission's minutes have not posted, and the recording could not be transcribed tonight. The Nugget will report what the commission decided when the minutes post or the recording is reviewed. The commission has met on first Wednesdays this year; no November agenda had posted as of tonight.</p>
+    <p class="src">Sources: <a href="https://www.nevadacityca.gov/DocumentCenter/View/2922">October 7 agenda, City of Nevada City</a>; <a href="https://www.nevadacityca.gov/AgendaCenter/ViewFile/Agenda/_10072026-674?html=true">Agenda Center meeting materials</a>; <a href="https://www.youtube.com/live/SAHn24PQ_oQ?si=fxuZDP461SmQ17dM">meeting recording, Nevada City Public Meetings on YouTube</a></p>
+  </article>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
@@ -304,7 +341,7 @@ a.sponsor img{width:100%;height:auto;display:block}
     <p style="font-size:14.5px"><b>Business.</b> 6. Approve a Regional Public Safety Dispatch Services Agreement among Nevada County, Grass Valley, Truckee, and Nevada City. 7. Resolution 2026-35 supporting Nevada Irrigation District's Proposition 4 dam safety and climate resilience grant application. 8. Presentation from the county's Transit Services Division on the Reenvisioning Transit comprehensive operations analysis. 9. ❖ Discussion and direction on changing the council's regular meeting start time and City Hall's public operating hours.</p>
     <p style="font-size:14.5px"><b>To attend or comment:</b> in person at the meeting, three minutes per speaker, item by item; in writing to <a href="mailto:publiccomment@nevadacityca.gov">publiccomment@nevadacityca.gov</a> until 3:00 PM on meeting day; watch live on the city's <a href="https://www.youtube.com/@nevadacitypublicmeetings1540/streams">YouTube channel</a> or cable channel 17 or 18. Zoom comment is no longer offered. Adjournment is set for 9:30 PM unless extended.</p>
   </article>
-  <p class="src" style="text-align:center">No other city or county agenda carrying Nevada City items has posted since Friday, per this morning's check of both Agenda Centers (Monday, Oct 26). The city Planning Commission's next regular date is Thursday, November 19.</p>
+  <p class="src" style="text-align:center">No other city or county agenda carrying Nevada City items has posted since Friday, per this morning's check of both Agenda Centers (Monday, Oct 26). The city Planning Commission's next regular date is Thursday, November 19. A 5 PM check of the city's Agenda Center found no new agenda.</p>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
@@ -704,4 +741,5 @@ a.sponsor img{width:100%;height:auto;display:block}
     });
   });
 })();
-</script></body></html>
+</script>
+</body></html>
