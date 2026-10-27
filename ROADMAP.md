@@ -19,14 +19,84 @@
 ## Fixes & housekeeping (added Oct 26, 2026)
 - **Mobile overflow.** On phones the page scrolls sideways about 20px, and the "Wire" share button
   in section headers overflows. Fix without disturbing the 1941 design.
-- **Radio roster.** The Playground (Susie Rex) may have moved to a new Monday afternoon slot;
-  verify against KVMR and update assets/kvmr-schedule.json.
-- ~~**Task prompts.**~~ Done Oct 26, 2026: the Evening Edition and Extra prompts now cite the 5:09 AM
-  morning edition and the 5:55 AM to 8:55 PM site copy hours.
+- **Radio roster.** Done Oct 26, 2026. Verified on Spinitron: The Playground (Susie Rex) is now
+  scheduled every other Monday, 12:00 to 2:00 PM, and is on the station's Oct 26 listing; added to
+  assets/kvmr-schedule.json, which clears the Monday noon gap. Also added The Music Grotto (Walter
+  Windex), Mondays 2:00 to 4:00 PM, flagged ambiguous (page says 4th Mondays, description says 2nd & 4th).
+- **Task prompts.** The Evening Edition and Extra prompts still mention the old 6:09 AM morning time
+  and 6:55 AM to 9:55 PM copy hours; tidy to the current schedule.
+
+## Getting found on Google (added Oct 26, 2026)
+Googling "Nevada City Nugget" doesn't show the site yet. Main cause: the site launched Oct 22-23 and
+Google hasn't indexed it; the results are crowded with the Nevada Nugget casino, Carson City Nugget,
+and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so it competes less than feared.)
+- **Done in the repo (Oct 26):** sitemap.xml, a Sitemap line in robots.txt, NewsMediaOrganization +
+  WebSite structured data on the homepage, a robots meta tag, a canonical and description on
+  sources.html, and a "Site upkeep" GitHub Action (scripts/site_upkeep.py) that runs after every
+  publish: it points each archived edition's canonical/og:url at its own address (archives used to
+  claim to be the homepage), gives archives dated titles, and refreshes the sitemap. The Site
+  Publisher keeps the homepage head verbatim, so these tags carry forward daily with no prompt change.
+- **Todd's steps (only he can do these):**
+  1. Google Search Console (search.google.com/search-console): add a Domain property for
+     nevadacitynugget.com and verify with the DNS TXT record at the domain registrar.
+  2. In Search Console: Sitemaps, submit `sitemap.xml`; then URL Inspection on
+     https://nevadacitynugget.com/ and "Request indexing."
+  3. GitHub repo Settings, Pages: tick "Enforce HTTPS" (item 7).
+  4. Google Business Profile: optional, and only if the paper has a listing-eligible presence;
+     skip if it would have to borrow The Hat Store's address.
+  5. Links from local sites: The Hat Store's site, the Under the Influence / KVMR show page,
+     Instagram and Facebook bios, the Chamber member listing, and an email signature. A handful
+     of real local links does more than anything else here.
+  6. Bing Webmaster Tools: import from Search Console in one click (also feeds DuckDuckGo).
+- **Expect:** a brand search usually turns up within a few days to two weeks after the sitemap is
+  submitted. Ranking for broader searches ("Nevada City news") builds over months with daily
+  publishing and links.
+- **Later:** per-story pages (each article at its own URL) would give Google far more to rank than
+  one long daily page. Fits with the Homepage shell (item 6).
+
+## Site policies (added Oct 27, 2026)
+- **Standards & Disclosures, Privacy, and Terms of Use pages** (standards.html, privacy.html, terms.html), in the
+  Sources & Methods design. Standards covers ownership (The Hat Store), no paid placement, how the paper is made ("set by machine,
+  checked by hand"), accuracy, corrections, tips, and accessibility. Privacy reflects what the site actually does: no
+  cookies, analytics, or trackers; GitHub Pages logs visitor IPs; Google Fonts serves the type; reader email handled
+  via Gmail and Claude. Terms covers sharing and quoting, reader submissions, the not-an-alert-system notice, and
+  California law. Linked from sources.html, the sitemap, and the homepage structured data.
+- **To go live after merge:** add a standing footer disclaimer ("Compiled by our digital overlords, checked by hand,
+  and meant to inform and amuse. Mistakes happen; corrections run at the bottom of the next edition.") and a link line
+  (Standards & Disclosures · Privacy · Terms of Use) to the
+  morning task prompt and today's artifact; publish the three pages to the artifact as supporting files like
+  sources.html; add them to the Site Publisher's do-not-touch list.
+- **Before the newsletter launches (Up next #1):** update privacy.html to name the service and what it records.
+- **Worth a lawyer's look (not legal advice):** the liability and governing-law clauses, a DMCA designated agent
+  before reader photos open (Photo of the Day), the machine-compilation disclosure wording, and whether to form an LLC (or a nonprofit) and carry media
+  liability insurance; the pages say "the publisher" until then. The CCPA's business
+  thresholds ($26.625M revenue, 100,000+ consumers, or selling data) almost certainly don't reach the Nugget today;
+  CalOPPA's posted-privacy-policy rule does, and privacy.html is written to meet it.
 
 ## Dated runs
-- **Merchant of the Day launches Monday, November 2, 2026** (Up next #3).
+- **Merchant of the Day launches Monday, November 2, 2026** (Up next #3). Week one (Nov 2-8) is written and
+  scheduled through the scoop pipeline (assets/features.json on the artifact): National Exchange Hotel, SPD Market,
+  Harmony Books, Lika's Quarter Café, Three Forks, Bonanza Gift Shop, Nevada City Winery. Week two is due by Nov 9.
 - **The Morgue, November 16-26, 2026:** items from the November 19, 1945 Nugget.
+- **Arts & Culture, October 27 to November 9, 2026:** "Sparky Parker Goes Big On Broad Street,"
+  Todd's interview with David "Sparky" Parker on his Big Works show at Szabo Vineyards Tasting Room,
+  316 Broad St., with six photos used with the artist's permission. First scoop through the pipeline below.
+
+## The scoop pipeline (added Oct 26, 2026)
+How the publisher's own reporting gets into the paper on a schedule, and stays there.
+- **Write it interactively.** Todd sends his interview notes, photos, and links in a project thread.
+  Claude writes the finished section in the paper's design (byline, quotes lightly trimmed and never
+  altered in meaning, only the links Todd supplied, house rules), with photos downscaled, stripped of
+  metadata, and embedded as data URIs in a .photoset so they work on the artifact, the website, and
+  in the archive with no extra files.
+- **Schedule it.** The section is stored on the artifact as assets/features/<id>.html and listed in
+  assets/features.json with start and end dates (inclusive, Pacific), a placement, and whether the
+  first-day email mentions it.
+- **Run it.** Each morning edition splices every active entry in verbatim with the shell (never
+  retyped); the Evening Edition leaves it untouched and re-splices it if the morning missed it; the
+  site copy needs no change. A feature drops off after its end date and stays in the archived editions.
+- **Next:** a short "Now showing" index of active features in Coming Attractions or the footer, and
+  a reader-facing note on Sources & Methods that publisher-reported stories carry a byline.
 
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
@@ -41,6 +111,9 @@
 3. **Merchant of the Day (business spotlight). Launches Mon, Nov 2, 2026.** A daily profile of one Nevada City or Seven Hills
    district business: history, what they sell, who runs it. Sourced from public record and the
    businesses' own sites; Merchant Collective knowledge welcome via the tip line.
+   **Built Oct 27, 2026:** each profile runs as a one-day feature directly after the Police Blotter, ends with a
+   "Pay a visit" box (hours only as the business posts them) and a standing line that no one pays to appear and
+   that the publisher owns The Hat Store. No task prompt change needed; new weeks are added in an interactive session.
 4. **Flyer-to-listing.** Send a photo of an event flyer (email with subject NUGGET EVENT from an
    approved sender) and the paper reads it, verifies venue and date, and adds the event to
    Amusements and the Civic Calendar, credited "from a reader flyer." Flyer text is treated as
@@ -51,6 +124,7 @@
    Todd's own Nevada City photography, newsletter signup (Buttondown) for Merchant Collective
    distribution.
 7. **Enforce HTTPS** once GitHub finishes the certificate (one checkbox in Pages settings).
+   Also part of the search push below: Google prefers the https address.
 8. **Trails & Vistas (hikes and sightseeing).** Local hikes and sights around Nevada City:
    Deer Creek Tribute Trail, Hirschman's Pond, Sugarloaf, Independence Trail, Malakoff Diggins
    and company, with distance, difficulty, trailhead, and seasonal notes from land-manager and
