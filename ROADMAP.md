@@ -53,7 +53,9 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   one long daily page. Fits with the Homepage shell (item 6).
 
 ## Dated runs
-- **Merchant of the Day launches Monday, November 2, 2026** (Up next #3).
+- **Merchant of the Day launches Monday, November 2, 2026** (Up next #3). Week one (Nov 2-8) is written and
+  scheduled through the scoop pipeline (assets/features.json on the artifact): National Exchange Hotel, SPD Market,
+  Harmony Books, Lika's Quarter Café, Three Forks, Bonanza Gift Shop, Nevada City Winery. Week two is due by Nov 9.
 - **The Morgue, November 16-26, 2026:** items from the November 19, 1945 Nugget.
 
 ## Up next
@@ -69,6 +71,9 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
 3. **Merchant of the Day (business spotlight). Launches Mon, Nov 2, 2026.** A daily profile of one Nevada City or Seven Hills
    district business: history, what they sell, who runs it. Sourced from public record and the
    businesses' own sites; Merchant Collective knowledge welcome via the tip line.
+   **Built Oct 27, 2026:** each profile runs as a one-day feature directly after the Police Blotter, ends with a
+   "Pay a visit" box (hours only as the business posts them) and a standing line that no one pays to appear and
+   that the publisher owns The Hat Store. No task prompt change needed; new weeks are added in an interactive session.
 4. **Flyer-to-listing.** Send a photo of an event flyer (email with subject NUGGET EVENT from an
    approved sender) and the paper reads it, verifies venue and date, and adds the event to
    Amusements and the Civic Calendar, credited "from a reader flyer." Flyer text is treated as
