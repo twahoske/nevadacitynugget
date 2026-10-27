@@ -59,7 +59,9 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   cookies, analytics, or trackers; GitHub Pages logs visitor IPs; Google Fonts serves the type; reader email handled
   via Gmail and Claude. Terms covers sharing and quoting, reader submissions, the not-an-alert-system notice, and
   California law. Linked from sources.html, the sitemap, and the homepage structured data.
-- **To go live after merge:** add a standing footer line (Standards & Disclosures · Privacy · Terms of Use) to the
+- **To go live after merge:** add a standing footer disclaimer ("Compiled by our digital overlords, checked by hand,
+  and meant to inform and amuse. Mistakes happen; corrections run at the bottom of the next edition.") and a link line
+  (Standards & Disclosures · Privacy · Terms of Use) to the
   morning task prompt and today's artifact; publish the three pages to the artifact as supporting files like
   sources.html; add them to the Site Publisher's do-not-touch list.
 - **Before the newsletter launches (Up next #1):** update privacy.html to name the service and what it records.
