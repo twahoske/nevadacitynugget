@@ -83,6 +83,8 @@ def main():
     today = folio_date((ROOT / "index.html").read_text(encoding="utf-8"))
     urls = [(SITE, iso(today) if today else None, "daily", "1.0"),
             (f"{SITE}sources.html", None, "monthly", "0.5")]
+    urls += [(f"{SITE}{page}", None, "yearly", "0.3")
+             for page in ("standards.html", "privacy.html", "terms.html") if (ROOT / page).exists()]
     urls += [(f"{SITE}editions/{d}.html", d, "never", "0.6") for d in sorted(set(dated), reverse=True)]
 
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
