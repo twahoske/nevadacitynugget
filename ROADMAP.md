@@ -79,6 +79,7 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3). Week one (Nov 2-8) is written and
   scheduled through the scoop pipeline (assets/features.json on the artifact): National Exchange Hotel, SPD Market,
   Harmony Books, Lika's Quarter Café, Three Forks, Bonanza Gift Shop, Nevada City Winery. Week two is due by Nov 9.
+- **The Bill of Fare, October 29 to November 11, 2026** (Up next #2): first two weeks scheduled; extend by Nov 11.
 - **The Morgue, November 16-26, 2026:** items from the November 19, 1945 Nugget.
 - **Arts & Culture, October 27 to November 9, 2026:** "Sparky Parker Goes Big On Broad Street,"
   Todd's interview with David "Sparky" Parker on his Big Works show at Szabo Vineyards Tasting Room,
@@ -110,6 +111,12 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
 2. **The Bill of Fare (food section).** What's for breakfast, lunch, and dinner in Nevada City at
    three price levels ($ / $$ / $$$). Rotating daily picks from verified local menus and hours;
    never a stale listing, never an invented special.
+   **Launches Thu, Oct 29, 2026.** A daily grid (breakfast, lunch, dinner at $ / $$ / $$$) runs directly after
+   Amusements through the scoop pipeline, one snippet per day, rotating evenly among about two dozen places open
+   that day. Hours and prices come from each restaurant's own site or menu, or its Google listing via the publisher;
+   an empty cell says so rather than guessing. Tiers: $ = most plates under $15, $$ = $15 to $30, $$$ = mains over $30.
+   Disclosures: no one pays to appear; the publisher owns The Hat Store; Java John's was co-founded by the publisher's
+   husband (sold 2002, no stake). Scheduled Oct 29 to Nov 11; the next run needs hours re-checked (winter hours shift).
 3. **Merchant of the Day (business spotlight). Launches Mon, Nov 2, 2026.** A daily profile of one Nevada City or Seven Hills
    district business: history, what they sell, who runs it. Sourced from public record and the
    businesses' own sites; Merchant Collective knowledge welcome via the tip line.
