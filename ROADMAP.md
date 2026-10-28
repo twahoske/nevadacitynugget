@@ -235,7 +235,9 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     - **Photos:** Erin Thiem.
     - **Custom logo icons** for sections.
     - **Flourishes** for the site by Jerianne.
-    - **Masthead illustration** by Crabb.
+    - **New masthead logo** by Crabb, replacing the blackletter nameplate at the top (Todd, Oct 28, 2026;
+      Crabb not contacted yet). The swap touches the morning task prompt, the archive template, and likely
+      the favicon and share image.
     - **Osborn Woods** art and design style as a reference look.
     - **Curated art pages** per section: Live Music by Olaf, Outdoors by Jerianne, Crabb (section to
       pick), and Sparky for Culture & Politics (to confirm).
@@ -244,8 +246,8 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     writing, credited by name wherever it appears. Nobody has been asked yet; artists may be paid. If an
     artist is paid, or is close to the paper (Jerianne is on the morning email list), say so where the work
     runs. When the first piece runs, update standards.html ("Invented content") and terms.html ("Who owns
-    what") to name artists' work. The 1941 design (nameplate, folio, rules) stays; new art decorates around it unless
-    Todd decides otherwise. Pairs with the Painted into a Corner artist spotlight proposal.
+    what") to name artists' work. The rest of the 1941 design (folio, rules, columns) stays; other new art decorates
+    around it. Pairs with the Painted into a Corner artist spotlight proposal.
 23. **Effects and themes for special events.** Seasonal or event looks for the paper (Victorian Christmas,
     Mardi Gras, the 4th, Halloween), switched on for the event and off after, layered on the 1941 design
     rather than replacing it. Pairs with Coming Attractions (item 14).
