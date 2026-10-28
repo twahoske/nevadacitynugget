@@ -190,6 +190,14 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
 ## Idea file (added Oct 28, 2026; nothing built yet)
 Todd's new batch, grouped. Each item waits on his answers to the open questions in its notes before any build.
 
+**First up (Todd, Oct 28, 2026):**
+- **The original-story label** (item 24): Nug Speshy or something like it; name not settled.
+- **"Mmm nuggets" in the folio:** replaces "The Gold Center" under "Elev. 2,477 Ft." in the right-hand
+  folio slot. Needs the morning task prompt (which fixes the folio markup) and today's artifact updated.
+- **Deeper SEO:** past the basics under "Getting found on Google" (per-story pages, richer structured data,
+  local links, Search Console follow-up).
+- **A security pass** on the site, the repo, and the publishing pipeline.
+
 16. **Saloon history on the drinks page.** Grow `drinks.html` (item 15) past the bar list with stories from
     Nevada City's saloon past: Todd's line that the town once had "over 800 bars and saloons," and the local
     groups, clubs, and causes that took shape over a drink in those saloons through the years. Every story
