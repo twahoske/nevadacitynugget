@@ -235,9 +235,12 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     - **Osborn Woods** art and design style as a reference look.
     - **Curated art pages** per section: Live Music by Olaf, Outdoors by Jerianne, Crabb (section to
       pick), and Sparky for Culture & Politics (to confirm).
-    New rule needed before any of this runs: today the paper's imagery is original SVG, Todd's photos,
-    and the Hat Store ad only. Commissioned work would be allowed with each artist's written OK,
-    credited by name. The 1941 design (nameplate, folio, rules) stays; new art decorates around it unless
+    New imagery rule (Todd approved Oct 28, 2026): besides original SVG, Todd's photos, and the Hat Store ad,
+    the paper may run commissioned or contributed art from a named artist, only with that artist's OK in
+    writing, credited by name wherever it appears. Nobody has been asked yet; artists may be paid. If an
+    artist is paid, or is close to the paper (Jerianne is on the morning email list), say so where the work
+    runs. When the first piece runs, update standards.html ("Invented content") and terms.html ("Who owns
+    what") to name artists' work. The 1941 design (nameplate, folio, rules) stays; new art decorates around it unless
     Todd decides otherwise. Pairs with the Painted into a Corner artist spotlight proposal.
 23. **Effects and themes for special events.** Seasonal or event looks for the paper (Victorian Christmas,
     Mardi Gras, the 4th, Halloween), switched on for the event and off after, layered on the 1941 design
