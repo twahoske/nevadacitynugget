@@ -272,6 +272,39 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 25. **Trademark "Nevada City Nugget."** Look into registering the name (a USPTO search first, then likely
     a trademark attorney; not legal advice). Ties into the "worth a lawyer's look" list under Site policies
     and the LLC question there.
+26. **The Nugget family: two papers, seven day-trip doors.** (Todd, Oct 28, 2026.) The Nevada City Nugget
+    stays the master. The **Grass Valley Nugget** joins it as the one sister paper. The other Nugget
+    domains promote a trip up the hill to Nevada City and Grass Valley, not papers of their own. Domains
+    in Todd's cart Oct 28 (purchase to confirm): grassvalleynugget, colfaxnugget, auburnnugget,
+    truckeenugget, roughandreadynugget, placervillenugget, chiconugget, sacramentonugget (all .com).
+    - **The Grass Valley Nugget (paper):** built from the Nugget as a shared template, with Grass Valley
+      as its own config: nameplate, beats, radio and events sources, morgue, domain, email list. Its own
+      repo and GitHub Pages site (own CNAME, sitemap, Search Console property), its own artifact as
+      source of truth, and its own scheduled tasks staggered a few minutes off the Nugget's. Same 1941
+      bones, with "Grass Valley" big on the nameplate and its own accent color. Beats: City Council and
+      Planning Commission, Mill Street merchants, Empire Mine, the fairgrounds, Sierra College. The Union
+      is named and linked as Grass Valley's paper of record where it reports first. A "Nuggets nearby"
+      box in each paper, county stories run once and linked from the other, a shared Coming Attractions
+      box (item 14).
+    - **Name history:** a *Grass Valley Nugget* ran in 1944 and 1947, so it carries the same line as ours:
+      no relation to the historical paper beyond admiration. Grass Valley's own papers were the Telegraph
+      (1853), Nevada National (1858), Republican (1871-72), Tidings, Herald, and The Union (still
+      publishing). Sources: cagenweb.org/nevada/ncnewspapers.html, loc.gov sn86058101 and sn93050997.
+    - **Day-trip doors (the other seven domains):** one "Day trip from Sacramento / Auburn / Chico / ..."
+      guide per town, living on nevadacitynugget.com (e.g. `/daytrip/sacramento.html`), with its domain
+      pointing there by redirect. Each page is genuinely its own: drive time and route from that town,
+      where to park, a one-day plan, seasonal notes, and what's on this week, built from the bar, trail,
+      and lodging guides and the day's edition. Sacramento first (many Hat Store customers drive up from
+      there). The Hat Store ad runs on each page as a labeled ad, with the ownership disclosure.
+    - **SEO trap to avoid:** Google treats a ring of near-identical sites built only to funnel visitors
+      to one place as "doorway" spam, which can sink the main site. So: no copy-paste pages, no separate
+      thin sites on each domain, and the pages sit on nevadacitynugget.com where their search credit
+      builds up the Nugget. They are labeled as visitor guides from the Nugget, never dressed up as a
+      local paper for Chico or Sacramento.
+    - **Trademark:** item 25's search should cover "Nugget" for the family, not just "Nevada City Nugget."
+    - **Open questions for Todd:** which registrar holds the domains (redirects are set there or in
+      GitHub Pages); Grass Valley daily from the start or lighter at first; same email list or a Grass
+      Valley list; Grass Valley contributors or tipsters.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
