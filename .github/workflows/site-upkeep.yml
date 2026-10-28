@@ -4,7 +4,7 @@ name: Site upkeep
 on:
   push:
     branches: [main]
-    paths: ["index.html", "editions/**", "scripts/site_upkeep.py"]
+    paths: ["index.html", "editions/**", "drinks.html", "standards.html", "scripts/site_upkeep.py"]
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A editions sitemap.xml
+            git add -A editions sitemap.xml drinks.html
             git commit -m "Site upkeep: archive canonicals and sitemap"
             git pull --rebase origin main
             git push origin HEAD:main

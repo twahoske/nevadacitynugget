@@ -38,11 +38,19 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   publish: it points each archived edition's canonical/og:url at its own address (archives used to
   claim to be the homepage), gives archives dated titles, and refreshes the sitemap. The Site
   Publisher keeps the homepage head verbatim, so these tags carry forward daily with no prompt change.
+- **Done in the repo (Oct 28):** the upkeep Action now gives every archived edition its own
+  title and description from that day's headlines (e.g. "Mail Your Ballot Today; Measure Q Is The
+  City's Question · Nevada City Nugget, October 27, 2026") plus NewsArticle structured data, fixes
+  the archives' links (they pointed at editions/editions/... and broke), writes an archive page at
+  /editions/ listing every edition with its lead story, and gives the bar guide structured data for
+  each bar (name, street address, phone, own website), read from the page so it never drifts.
+- **Still open:** a link to /editions/ from the homepage (needs the morning task to add an "All
+  editions" line under Previously); per-story pages, below.
 - **Todd's steps (only he can do these):**
   1. Google Search Console (search.google.com/search-console): add a Domain property for
      nevadacitynugget.com and verify with the DNS TXT record at the domain registrar.
   2. In Search Console: Sitemaps, submit `sitemap.xml`; then URL Inspection on
-     https://nevadacitynugget.com/ and "Request indexing."
+     https://nevadacitynugget.com/ and "Request indexing." (Sitemap submitted Oct 26.)
   3. GitHub repo Settings, Pages: tick "Enforce HTTPS" (item 7).
   4. Google Business Profile: optional, and only if the paper has a listing-eligible presence;
      skip if it would have to borrow The Hat Store's address.
