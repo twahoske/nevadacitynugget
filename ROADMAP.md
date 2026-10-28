@@ -242,8 +242,8 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 23. **Effects and themes for special events.** Seasonal or event looks for the paper (Victorian Christmas,
     Mardi Gras, the 4th, Halloween), switched on for the event and off after, layered on the 1941 design
     rather than replacing it. Pairs with Coming Attractions (item 14).
-24. **Nug Speshy.** The name for the Nugget's own original scoops (NCN originals). Likely a kicker or badge
-    on scoop-pipeline stories; scope to confirm.
+24. **Nug Speshy.** A label for original news stories found only in the Nugget (NCN originals). A kicker or
+    badge on those stories, not its own section; first candidates are scoop-pipeline stories with Todd's byline.
 25. **Trademark "Nevada City Nugget."** Look into registering the name (a USPTO search first, then likely
     a trademark attorney; not legal advice). Ties into the "worth a lawyer's look" list under Site policies
     and the LLC question there.
