@@ -187,6 +187,65 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
     Upkeep: add Trailhead Tavern's hours once it opens; re-check all hours at each season change (next:
     late December) and whenever a reader or owner writes in.
 
+## Idea file (added Oct 28, 2026; nothing built yet)
+Todd's new batch, grouped. Each item waits on his answers to the open questions in its notes before any build.
+
+16. **Saloon history on the drinks page.** Grow `drinks.html` (item 15) past the bar list with stories from
+    Nevada City's saloon past: Todd's line that the town once had "over 800 bars and saloons," and the local
+    groups, clubs, and causes that took shape over a drink in those saloons through the years. Every story
+    sourced to a real document (CDNC, Searls Historical Library, historical society, city records); the 800
+    figure prints only with a source, or as the publisher's own lore, labeled so. Pairs with Local History
+    Unearthed (item 13). Also: a **western-themed Hat Store ad** for this page, from art Todd supplies or
+    approves (the existing Hat Store ads are never replaced without his say).
+17. **The Golden Era longform.** A long feature on the building at 309 Broad St. (now the Golden Era):
+    Todd interviews Erik from the Golden Era about the bars that came before at that address, then Cindy,
+    then the paper digs through publicly available history of the building and the people who lived and
+    worked there. Runs with photos (Todd's, or used with permission) through the scoop pipeline, bylined.
+    Open: who Erik and Cindy are, and their OK to be quoted.
+18. **Live meetings on the air.** Broadcast City Council, Planning Commission, and other City Hall meetings
+    live, with Hat Store ads in the breaks. To scope: whether to carry the city's own video feed or record
+    in person, the city's rules on rebroadcast, where it lives (site page, stream platform), and labeling the
+    ads as ads (the Hat Store ownership disclosure applies). Fits The Docket and meeting summaries.
+19. **Readers write in on every story.** A way for readers to send a comment to the publisher about any
+    story or item, with the best posted to "therumoronbroadstreet." Comments go to the publisher first,
+    never straight onto the page; posted ones are moderated and credited as the reader asks. Needs a terms
+    and privacy update (what's collected, who sees it) and a spam-proof inbox. Open: what therumoronbroadstreet
+    is (site, Instagram, a new page here?).
+20. **Where to Stay guide.** A standing visitor page like `drinks.html`: hotels, inns, B&Bs, and campgrounds
+    in and around town, with details only as each place posts them, and no paid listings. Runs with an
+    **article on vacation rentals and Measure Q**: how many short-term rentals operate in Nevada City
+    (from city permit records or other public data), what Measure Q does and where it stands, sourced
+    to the measure text and city documents, with the article linked from the guide.
+21. **Business pages, merch, and The Hat Store online.** Three linked ideas:
+    - **A page for each business**, by subscription ($100 a month or $1,000 a year), tying in the
+      business's store and merch, and feeding the holiday guide and shop-local initiatives.
+    - **A Nugget merch page.**
+    - **Tie the site into The Hat Store's online shop.**
+    Policy work first: the paper's standards say no one pays to appear, and Merchant of the Day, the Bill
+    of Fare, and the bar guide all print that line. Paid business pages would need their own clearly
+    labeled section (for example "Advertiser pages"), kept apart from editorial picks, with standards.html
+    and terms.html updated, and the Hat Store tie-in disclosed wherever it appears.
+22. **Art and design by local artists.** Commissioned and curated art across the site:
+    - **Photos:** Erin Thiem.
+    - **Custom logo icons** for sections.
+    - **Flourishes** for the site by Jerianne.
+    - **Masthead illustration** by Crabb.
+    - **Osborn Woods** art and design style as a reference look.
+    - **Curated art pages** per section: Live Music by Olaf, Outdoors by Jerianne, Crabb (section to
+      pick), and Sparky for Culture & Politics (to confirm).
+    New rule needed before any of this runs: today the paper's imagery is original SVG, Todd's photos,
+    and the Hat Store ad only. Commissioned work would be allowed with each artist's written OK,
+    credited by name. The 1941 design (nameplate, folio, rules) stays; new art decorates around it unless
+    Todd decides otherwise. Pairs with the Painted into a Corner artist spotlight proposal.
+23. **Effects and themes for special events.** Seasonal or event looks for the paper (Victorian Christmas,
+    Mardi Gras, the 4th, Halloween), switched on for the event and off after, layered on the 1941 design
+    rather than replacing it. Pairs with Coming Attractions (item 14).
+24. **Nug Speshy.** The name for the Nugget's own original scoops (NCN originals). Likely a kicker or badge
+    on scoop-pipeline stories; scope to confirm.
+25. **Trademark "Nevada City Nugget."** Look into registering the name (a USPTO search first, then likely
+    a trademark attorney; not legal advice). Ties into the "worth a lawyer's look" list under Site policies
+    and the LLC question there.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
