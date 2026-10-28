@@ -272,34 +272,36 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 25. **Trademark "Nevada City Nugget."** Look into registering the name (a USPTO search first, then likely
     a trademark attorney; not legal advice). Ties into the "worth a lawyer's look" list under Site policies
     and the LLC question there.
-26. **The Grass Valley Miner (companion paper).** A sister daily for Grass Valley, four miles down
-    the road, at grassvalleyminer.com (Todd, Oct 28, 2026). Nothing bought or built yet.
-    - **Domain:** registry lookups were blocked from the build machine, so availability of .com, .net,
-      .org, and .news is unconfirmed; check at a registrar before buying, and buy only with Todd's go.
-      No live site or business turned up under the name in a web search.
-    - **Name history:** no Grass Valley paper called the Miner turned up. Nearby titles in the county
-      library's holdings list: the *Nevada County Morning Miner* (1903-1904) and *Daily Miner Transcript*
-      (1904-1907), town not stated; Grass Valley's own were the Telegraph (1853), Nevada National (1858),
-      Republican (1871-72), Tidings, Herald, and The Union (still publishing). A *Grass Valley Nugget* ran in
-      1944 and 1947. Sources: cagenweb.org/nevada/ncnewspapers.html, loc.gov sn86058101 and sn93050997.
-      No trademark turned up in a quick search; a USPTO search goes with item 25.
-    - **Build, reusing the Nugget's pipeline:** its own repo and GitHub Pages site (custom domain, its own
-      CNAME, sitemap, and Search Console property); its own artifact as source of truth (editions,
-      sources, radio, morgue); its own scheduled tasks (morning, site publisher, evening, extra),
-      staggered a few minutes off the Nugget's so the two don't collide.
-    - **Shared design family:** the same 1941 broadsheet bones with its own nameplate, folio, and accent
-      color, so the two read as siblings and not copies.
-    - **Its own beats:** Grass Valley City Council and Planning Commission, Mill Street and the
-      downtown merchants, the Empire Mine, the fairgrounds, Sierra College, and local radio, with The
-      Union named as the established paper of record and linked where it reports first.
-    - **Cross-links:** an "Over in Grass Valley" / "Up in Nevada City" box in each paper, shared
-      county stories run once and linked from the other, and a joint Coming Attractions box (item 14).
-    - **Same rules, same disclosures:** standards, privacy, and terms pages adapted for the Miner; the
-      Hat Store ownership disclosure carries over, and Hat Store ads run only as labeled ads.
-    - **Open questions for Todd:** whether he has bought the domain yet or wants it checked; daily or
-      lighter (weekly or a few days a week) at first; same email list or a separate one; who, if
-      anyone, he'd want as a Grass Valley contributor or tipster; and whether the name should nod to
-      the old *Morning Miner*.
+26. **The Nugget family: the Grass Valley Nugget first.** Sister dailies for nearby towns under one
+    Nugget brand, starting with Grass Valley, four miles down the road (Todd, Oct 28, 2026: chose a
+    Nugget chain over a standalone "Grass Valley Miner"). Later candidates: Colfax, Auburn, Truckee.
+    Nothing bought or built yet.
+    - **Domains:** pick and buy only with Todd's go (grassvalleynugget.com first; grassvalleyminer.com was
+      also floated). Registry lookups were blocked from the build machine, so availability is unconfirmed;
+      check at a registrar.
+    - **Name history:** a *Grass Valley Nugget* ran in 1944 and 1947, so the Grass Valley paper carries the
+      same line as ours: no relation to the historical paper beyond admiration. Grass Valley's own papers
+      were the Telegraph (1853), Nevada National (1858), Republican (1871-72), Tidings, Herald, and The Union
+      (still publishing). Sources: cagenweb.org/nevada/ncnewspapers.html, loc.gov sn86058101 and sn93050997.
+    - **One template, many towns:** build the paper once as a shared template, with each town as a
+      config: town name, nameplate, beats, radio and events sources, morgue, domain, and email list. Each
+      town gets its own repo and GitHub Pages site (own CNAME, sitemap, Search Console property), its own
+      artifact as source of truth, and its own scheduled tasks staggered a few minutes off the others'.
+      A new Nugget is then mostly setup work.
+    - **Shared look, clear town:** the same 1941 broadsheet bones, with the town name big on every
+      nameplate and its own accent color, so readers never wonder which Nugget they're holding.
+    - **Each town's beats and paper of record:** Grass Valley City Council and Planning Commission, Mill
+      Street merchants, Empire Mine, the fairgrounds, Sierra College. Each Nugget names and links the
+      established local paper where it reports first (The Union in Grass Valley, the Auburn Journal,
+      Truckee's local paper).
+    - **Cross-links:** a "Nuggets nearby" box in each paper, county stories run once and linked from the
+      others, and a shared Coming Attractions box (item 14).
+    - **Same rules, same disclosures:** standards, privacy, and terms pages per town; the Hat Store ownership
+      disclosure carries over everywhere, and Hat Store ads run only as labeled ads.
+    - **Trademark:** item 25's search should cover "Nugget" as a family of town papers, not just "Nevada
+      City Nugget."
+    - **Open questions for Todd:** which domain(s) to buy; daily or lighter at first in Grass Valley;
+      same email list or one per town; Grass Valley contributors or tipsters.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
