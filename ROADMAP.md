@@ -138,7 +138,10 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
    Deer Creek Tribute Trail, Hirschman's Pond, Sugarloaf, Independence Trail, Malakoff Diggins
    and company, with distance, difficulty, trailhead, and seasonal notes from land-manager and
    trail-organization sources (BYLT, South Yuba River State Park, county). Rotating pick of the
-   day or a weekend feature.
+   day or a weekend feature. Also: trail conditions (closures, fire-season and storm notices,
+   only as posted by the land manager, with the source linked) and short seasonal nature notes
+   (what's blooming, turning, or running on the river this week), written from what we can
+   actually see or source, never invented.
 9. **Photo of the Day.** Readers text or email a photo (approved-sender channel like the tip
    line to start, open submissions later); the paper runs one daily, credited to the
    photographer. Phase 1: curated. Phase 2: reader voting on the website. Requires each
