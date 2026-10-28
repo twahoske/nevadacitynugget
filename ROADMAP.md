@@ -210,8 +210,9 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 19. **Readers write in on every story.** A way for readers to send a comment to the publisher about any
     story or item, with the best posted to "therumoronbroadstreet." Comments go to the publisher first,
     never straight onto the page; posted ones are moderated and credited as the reader asks. Needs a terms
-    and privacy update (what's collected, who sees it) and a spam-proof inbox. Open: what therumoronbroadstreet
-    is (site, Instagram, a new page here?).
+    and privacy update (what's collected, who sees it) and a spam-proof inbox. therumoronbroadstreet is a
+    new domain Todd bought for its own website; to decide: what it looks like, how it links to the Nugget, and
+    hosting (likely GitHub Pages like nevadacitynugget.com).
 20. **Where to Stay guide.** A standing visitor page like `drinks.html`: hotels, inns, B&Bs, and campgrounds
     in and around town, with details only as each place posts them, and no paid listings. Runs with an
     **article on vacation rentals and Measure Q**: how many short-term rentals operate in Nevada City
