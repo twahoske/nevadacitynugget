@@ -275,8 +275,11 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 26. **The Nugget family: two papers, seven day-trip doors.** (Todd, Oct 28, 2026.) The Nevada City Nugget
     stays the master. The **Grass Valley Nugget** joins it as the one sister paper. The other Nugget
     domains promote a trip up the hill to Nevada City and Grass Valley, not papers of their own. Domains
-    in Todd's cart Oct 28 (purchase to confirm): grassvalleynugget, colfaxnugget, auburnnugget,
-    truckeenugget, roughandreadynugget, placervillenugget, chiconugget, sacramentonugget (all .com).
+    Todd owns (bought Oct 28, 2026 at DreamHost, DreamHost nameservers): grassvalleynugget, colfaxnugget,
+    auburnnugget, truckeenugget, roughandreadynugget, placervillenugget, chiconugget, sacramentonugget
+    (all .com). As of Oct 28 all eight redirect (301, permanent) to nevadacitynugget.com until each gets
+    its own page; grassvalleynugget.com later moves to GitHub Pages DNS when the Grass Valley Nugget
+    launches. Renewals run about $22 a year each, due Oct 2027.
     - **The Grass Valley Nugget (paper):** built from the Nugget as a shared template, with Grass Valley
       as its own config: nameplate, beats, radio and events sources, morgue, domain, email list. Its own
       repo and GitHub Pages site (own CNAME, sitemap, Search Console property), its own artifact as
