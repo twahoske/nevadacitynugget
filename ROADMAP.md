@@ -223,10 +223,12 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
       business's store and merch, and feeding the holiday guide and shop-local initiatives.
     - **A Nugget merch page.**
     - **Tie the site into The Hat Store's online shop.**
-    Policy work first: the paper's standards say no one pays to appear, and Merchant of the Day, the Bill
-    of Fare, and the bar guide all print that line. Paid business pages would need their own clearly
-    labeled section (for example "Advertiser pages"), kept apart from editorial picks, with standards.html
-    and terms.html updated, and the Hat Store tie-in disclosed wherever it appears.
+    **Long-term (Todd, Oct 28, 2026): thinking ahead, not anytime soon.** The paid pages would be custom
+    sections with more depth than a Merchant of the Day profile. Agreed approach: they run in their own
+    section clearly labeled as advertising, kept apart from the free editorial picks (Merchant of the Day,
+    the Bill of Fare, the bar guide), which stay unpaid. Before launch: rewrite the no-paid-placement and
+    "earns no money" lines in standards.html and terms.html, settle the LLC and tax questions under Site
+    policies, and disclose the Hat Store tie-in wherever it appears.
 22. **Art and design by local artists.** Commissioned and curated art across the site:
     - **Photos:** Erin Thiem.
     - **Custom logo icons** for sections.
