@@ -176,6 +176,16 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
     Festival, hot summer nights season, KVMR Celtic Festival and company. "Victorian Christmas:
     38 days." Dates only from the organizers' own announcements; the countdown drops off once
     the event passes and the next one rotates in.
+15. **Where Can I Get a Damn Drink Around Here? (visitor bar guide). Live Oct 28, 2026.** A standing,
+    evergreen guide for tourists at `drinks.html`: saloons and late bars, cocktail lounges and hotel bars,
+    brewpubs and taprooms, wine tasting rooms, and the roadhouse out on Highway 49. Its own page so it can
+    rank for "Nevada City bars"; every edition carries a standing link to it. Hand-maintained like
+    `sources.html` (Site Publisher leaves it alone; the upkeep Action lists it in the sitemap). Hours only
+    as each place posts them (own site, or its Google listing via the publisher); where sources conflict, no
+    closing time prints. The publisher's local word overrides a stale website. No paid listings; Szabo
+    carries the Hat Store neighbor note. Source roster and generator: `build.py` in the project files.
+    Upkeep: add Trailhead Tavern's hours once it opens; re-check all hours at each season change (next:
+    late December) and whenever a reader or owner writes in.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
