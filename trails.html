@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Hikes and sights around Nevada City, California: Deer Creek Tribute Trail, Sugarloaf, Hirschman's Pond, the Independence Trail, the South Yuba River, and Malakoff Diggins, with distances, trailheads, and current conditions.">
+<link rel="canonical" href="https://nevadacitynugget.com/trails.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Trails &amp; Vistas: Hikes Around Nevada City · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+ul.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.srclist li{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--rule-soft)}
+ul.srclist li:first-child{border-top:1px solid var(--rule)}
+ul.srclist .s-name{font-family:var(--display);font-weight:700;min-width:210px}
+ul.srclist .s-what{font-size:14px;color:var(--ink-mid);flex:1;min-width:200px}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p + p{margin-top:8px}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+.eff{text-align:center;font-style:italic;font-size:14px;color:var(--ink-mid);margin:0}
+.notebox ul{margin:6px 0 0;padding-left:20px}
+.notebox li + li{margin-top:4px}
+.notebox h3{font-size:15.5px;margin:0 0 2px}
+.notebox h3 + p{margin-top:0}
+.notebox p + h3,.notebox ul + h3{margin-top:12px}
+.policynav{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;margin:8px 0 0}
+
+ul.drinks{list-style:none;margin:0;padding:0}
+ul.drinks li{padding:11px 2px;border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:3px}
+ul.drinks li:first-child{border-top:1px solid var(--rule)}
+.d-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;align-items:baseline}
+.d-name{font-family:var(--display);font-weight:800;font-size:17px}
+.d-addr{font-size:13.5px;font-style:italic;color:var(--ink-mid)}
+.d-hours{font-family:var(--display);font-weight:600;font-size:13.5px;letter-spacing:.02em}
+.d-note{font-size:15px}
+.d-src{font-size:13px;color:var(--ink-mid)}
+.lede{font-size:16px;text-align:center;font-style:italic;margin:0}
+.chk{font-size:13px;color:var(--red);border-left:3px solid var(--red);padding-left:8px}
+.draft{border:2px dashed var(--red);color:var(--red);text-align:center;font-family:var(--display);font-weight:700;font-size:13px;padding:6px}
+.kicker .label{white-space:normal;text-align:center}
+.grp-dek{font-style:italic;color:var(--ink-mid);font-size:14.5px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner">The Walker's Guide</div>
+<div>
+  <h1>Trails &amp; Vistas</h1>
+  <p class="motto">Nevada City Nugget · Hikes, Ditches, Bridges &amp; Views</p>
+</div>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<p class="lede">Gold Rush miners dug ditches and flumes all over these hills; a good many are footpaths now. Distances and rules are as each land manager posts them. The difficulty labels are ours.</p>
+<p class="eff">Last checked October 28, 2026</p>
+
+<div class="notebox">
+  <h3>Trail Conditions</h3>
+  <p>Only as posted by the land manager. Call before you go.</p>
+  <ul>
+    <li><b>Sugarloaf Mountain:</b> Bottom section at N. Bloomfield Rd. and Highway 49 under construction; start from Coyote St.</li>
+    <li><b>Independence Trail West &amp; Jones Bar Trail:</b> Independence West closed from the Jones Bar Trail junction to Rush Creek (State Parks order; Jones Fire damage). Jones Bar Trail open.</li>
+    <li><b>Malakoff Diggins:</b> no restrictions posted by State Parks as of Oct. 23; museum goes to weekend hours Nov. 1.</li>
+    <li><b>Farther out:</b> Yuba Rim Trail (Rice&#x27;s Crossing, past Bullards Bar Dam): open to the Great View lookout; the last half mile is closed, as are the Trabucco and Yuba Drop trails, after fire cleanup. (<a href="https://bylt.org/trail/yuba-rim-trail/">Bear Yuba Land Trust, Sept. 9, 2026</a>)</li>
+  </ul>
+</div>
+
+
+<section>
+  <h2 class="kicker" id="walk"><span class="label">Walk From Broad Street</span></h2>
+  <p class="grp-dek">Leave the car parked. These start in town or a short walk from it.</p>
+<ul class="drinks">
+  <li id="dctt-downtown">
+    <div class="d-head"><span class="d-name">Deer Creek Tribute Trail: Historic Downtown</span><span class="d-addr">Pioneer Park trailhead, Nimrod St.</span></div>
+    <p class="d-hours">2 miles · nearly flat · pavement and dirt · Easy</p>
+    <p class="d-note">Follows Little Deer Creek from Pioneer Park to the foot of Broad Street, then climbs the Commercial Street sidewalk past York Street through the old Chinese Quarter to the Chinese Memorial. The Chamber at Robinson Plaza hands out a Chinese Quarter walking guide. Restrooms only at Robinson Plaza and the city lot by the memorial. <span class="d-src">Managed by City of Nevada City Parks &amp; Recreation, (530) 265-2496. Source: <a href="https://bylt.org/trail/deer-creek-tribute-trail-historic-downtown/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+  <li id="dctt-nisenan">
+    <div class="d-head"><span class="d-name">Deer Creek Tribute Trail: Nisenan Bridge</span><span class="d-addr">Jordan St. trailhead (walk from Broad &amp; Pine via the Pine St. bridge)</span></div>
+    <p class="d-hours">1.5-mile loop · lower trail drops 185 ft · dirt · Easy to moderate</p>
+    <p class="d-note">A loop along the 1850 Rough &amp; Ready Ditch and down to the Angkula Seo suspension bridge over Deer Creek, past remnants of the Providence Mine and four signs on Nisenan history. A connector opened in December 2024 links it to the canal section downstream. Dogs on leash. No parking anywhere on Providence Mine Road, so walk in. <span class="d-src">Managed by Bear Yuba Land Trust, (530) 272-5994. Source: <a href="https://bylt.org/trail/deer-creek-nisenan-bridge/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+  <li id="sugarloaf">
+    <div class="d-head"><span class="d-name">Sugarloaf Mountain</span><span class="d-addr">Coyote St. lot, about a quarter mile up on the left</span></div>
+    <p class="d-hours">0.7 mile to the top · 220 ft on a gentle grade · dirt · Easy</p>
+    <p class="d-note">The city&#x27;s own 30-acre mountain, bought as open space in 2011. The trail curls around to a flat summit meadow at about 3,060 feet with views over town to Wolf Mountain, Oregon Peak, and Mount Fillmore 32 miles off. Spring wildflowers on the south side, shade on the north. Day use only, dogs on leash, no alcohol. <span class="d-src">Managed by Bear Yuba Land Trust (trail manager), (530) 272-5994. Source: <a href="https://bylt.org/trail/sugarloaf-mountain-trail/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+  <li id="govt-center">
+    <div class="d-head"><span class="d-name">Government Center Trails &amp; Tobiassen Park</span><span class="d-addr">Rood Center, Hwy 49 at N. Bloomfield Rd.</span></div>
+    <p class="d-hours">0.6 mile plus 0.2 in the park · 20 to 60 ft · paved and dirt · Easy</p>
+    <p class="d-note">A short stroll with a history lesson: a display of hydraulic mining monitors (the water cannons that tore up these hills) and a plaque on American Hill, then Tobiassen Park, also called Coyote Park, around Charles Marsh Pond, an 1861 reservoir with piers and picnic tables. Park in the Rood Center lot; the park itself has only two disabled spaces. <span class="d-src">Managed by Nevada County Public Works, (530) 265-1411. Source: <a href="https://bylt.org/trail/nevada-county-government-center-trails/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="edge"><span class="label">Edge of Town</span></h2>
+  <p class="grp-dek">A five-minute drive, then the woods.</p>
+<ul class="drinks">
+  <li id="hirschman">
+    <div class="d-head"><span class="d-name">Hirschman Trail &amp; Hirschman&#x27;s Pond</span><span class="d-addr">115 Cement Hill Rd. (small lot on the left); also Indian Flat Rd.</span></div>
+    <p class="d-hours">2.4 miles one way · 150 ft · dirt · Easy to moderate</p>
+    <p class="d-note">Ends at Hirschman&#x27;s Pond, about five acres of water from natural sources, at the foot of cliffs cut by 1800s hydraulic mining, a county historical landmark since 2021. Ducks, geese, and herons; shore fishing; a bench on the south side. A 40-foot trestle built the old flume way. The eastern 0.4 mile is built to ADA standards. Hikers and mountain bikers share it; dogs on leash; no horses. <span class="d-src">Managed by Bear Yuba Land Trust for the City of Nevada City, (530) 272-5994. Source: <a href="https://bylt.org/trail/hirschman-trail/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+  <li id="chinese-bridge">
+    <div class="d-head"><span class="d-name">Deer Creek Tribute Trail: Chinese Bridge &amp; Newtown Canal</span><span class="d-addr">Champion Rd. pullout, 300 ft from Old Downieville Hwy.</span></div>
+    <p class="d-hours">1.8 miles one way, plus a 0.6-mile loop · 150 ft · dirt · Moderate</p>
+    <p class="d-note">Along the Newtown Canal, a hydraulic-mining ditch that now carries Nevada Irrigation District water, to Stocking Flat: picnic tables, a Chinese wooden arch, a plaque honoring the Chinese pioneers, and the Chinese Bridge over Deer Creek with a waterfall and pool below. Old Mountaineer Mine foundations along the way. <span class="d-src">Managed by Bureau of Land Management, (916) 941-3101, and NID. Source: <a href="https://bylt.org/trail/deer-creek-tribute-trail-chinese-bridge/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+  <li id="cascade">
+    <div class="d-head"><span class="d-name">Cascade Canal Trail</span><span class="d-addr">Gracie Rd., 700 ft below Banner-Lava Cap Rd.; or Red Dog Rd.</span></div>
+    <p class="d-hours">4.5 miles one way · 90 ft · dirt · Easy grade, long</p>
+    <p class="d-note">An almost level walk or ride along a canal under Douglas fir and dogwood on Banner Mountain. Near the red sluice gate, a bench looks down on town: you can pick out St. Canice&#x27;s white spire and the courthouse. Side trip: the Orene Wetherall Trail, 1.2 miles round trip and 280 feet down into the Woodpecker Wildlife Preserve. Foot and bike only, dogs on leash. <span class="d-src">Managed by Bear Yuba Land Trust, (530) 272-5994. Source: <a href="https://bylt.org/trail/cascade-canal-trail/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="river"><span class="label">Down to the River</span></h2>
+  <p class="grp-dek">Highway 49 north to the South Yuba, and Bridgeport. All State Parks, day use, sunrise to sunset.</p>
+<ul class="drinks">
+  <li id="independence-east">
+    <div class="d-head"><span class="d-name">Independence Trail East</span><span class="d-addr">Hwy 49, 6.25 miles north of the north end of town</span></div>
+    <p class="d-hours">2.2 miles each way · 60 ft · dirt · Easy</p>
+    <p class="d-note">A level path along an old water ditch above the river; the first mile is wheelchair accessible. Benches, two picnic tables, wooden bridges where the historic flumes stood, and glimpses of the South Yuba canyon. The last 0.2 mile is unmaintained. Dogs on leash; no bikes. From the overflow lot take the wooden steps up and turn left on the ditch trail. <span class="d-src">Managed by South Yuba River State Park, (530) 273-3884. Source: <a href="https://bylt.org/trail/independence-trail-east/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+  <li id="independence-west">
+    <div class="d-head"><span class="d-name">Independence Trail West &amp; Jones Bar Trail</span><span class="d-addr">Same trailhead; walk through the underpass beneath Hwy 49</span></div>
+    <p class="d-hours">West: partly closed · Jones Bar: open to the river · Moderate</p>
+    <p class="d-note">Independence West is closed from the Jones Bar junction to Rush Creek under a State Parks order, after the 2020 Jones Fire burned its wooden flumes, including Flume 28 over the Rush Creek waterfall. The Jones Bar Trail is open, starts at the same trailhead through a 60-foot pedestrian underpass (58 inches high at its lowest), and runs down to the South Yuba River. Dogs on leash. <span class="d-src">Managed by South Yuba River State Park, (530) 273-3884. Source: <a href="https://www.parks.ca.gov/?page_id=496">California State Parks, South Yuba River SP</a>.</span></p>
+  </li>
+  <li id="hoyt">
+    <div class="d-head"><span class="d-name">Hoyt Trail to Hoyt Crossing</span><span class="d-addr">Hwy 49, 6.9 miles north; paved lot just before the highway bridge</span></div>
+    <p class="d-hours">0.75 mile to the river · 200 ft · dirt · Easy to moderate</p>
+    <p class="d-note">Walk across the old bridge to the trailhead and on to Hoyt Crossing, a gravel and boulder bar with swimming holes, picnic tables, and the Miner&#x27;s Tunnel inlet across the river. Fair warning: the main beach is clothing-optional. No alcohol or glass. For a workout, the old Hoyt Crossing Road climbs 1,000 feet in 1.6 miles to views of Devil&#x27;s Slide and the San Juan Ridge. <span class="d-src">Managed by South Yuba River State Park, (530) 273-3884. Source: <a href="https://bylt.org/trail/hoyt-trail/">Bear Yuba Land Trust</a>.</span></p>
+  </li>
+  <li id="buttermilk">
+    <div class="d-head"><span class="d-name">Buttermilk Bend &amp; the Bridgeport Covered Bridge</span><span class="d-addr">17660 Pleasant Valley Rd., Penn Valley (north parking lot)</span></div>
+    <p class="d-hours">1.2 miles one way · level · Easy · $10 vehicle day use</p>
+    <p class="d-note">A gentle path upstream along the north side of the South Yuba, famous for its spring wildflowers (rangers lead weekend walks mid-March to mid-May). Start or finish on the Bridgeport Covered Bridge: built in 1862, 225 feet, and reopened to walkers in November 2021 after ten years and $6.9 million of repairs. Visitor Center open Saturday and Sunday, 11 AM to 3 PM. Dogs allowed on trails, but not on the bridge or 200 feet downstream of it. <span class="d-src">Managed by South Yuba River State Park, (530) 432-2546. Source: <a href="https://www.parks.ca.gov/?page_id=496">California State Parks, South Yuba River SP</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="drive"><span class="label">Worth the Drive</span></h2>
+  <p class="grp-dek">Pack a lunch.</p>
+<ul class="drinks">
+  <li id="malakoff">
+    <div class="d-head"><span class="d-name">Malakoff Diggins State Historic Park</span><span class="d-addr">North Bloomfield, 26 miles (about 50 minutes) from town</span></div>
+    <p class="d-hours">Diggins Loop 2.78 miles · Hiller Tunnel · Moderate · $10 vehicle day use</p>
+    <p class="d-note">The great pit left by the hydraulic miners, now a state park. The Diggins Loop is the best way through it; the Tunnel Trail drops in through Hiller Tunnel (bring a flashlight and water shoes); a short paved Overlook Trail is wheelchair accessible. No dogs or bikes on those trails. Museum in North Bloomfield: daily 10 to 4 through October, then weekends only, November through May. Take the paved route State Parks gives (Hwy 49 north 11 miles, right on Tyler Foote Rd.), not your GPS, which may route you onto miles of dirt. <span class="d-src">Managed by Malakoff Diggins SHP, (530) 265-2740. Source: <a href="https://www.parks.ca.gov/?page_id=494">California State Parks</a>; <a href="https://malakoffdigginsstatepark.org/camping/trails/">Friends of North Bloomfield &amp; Malakoff Diggins</a>.</span></p>
+  </li>
+</ul>
+</section>
+
+<div class="notebox">
+  <p><b>Before you go.</b> Most of these trails have no water, restrooms, or trash cans: carry in, carry out. Dogs on leash everywhere they are allowed. Stay on the trail; poison oak is common. In fire season, check for closures the morning you go, and never smoke on a trail.</p>
+  <p><b>Land managers and trail stewards:</b> a closure, a reroute, or a fix? Write <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a>. Thanks to the Bear Yuba Land Trust, which builds and keeps up many of these trails.</p>
+</div>
+
+<p class="stars">★ ★ ★</p>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p>Write the Nugget: <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a></p>
+  <p class="policynav">
+    <a href="standards.html">Standards &amp; Disclosures</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="sources.html">Sources &amp; Methods</a>
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

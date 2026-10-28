@@ -144,6 +144,14 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
    only as posted by the land manager, with the source linked) and short seasonal nature notes
    (what's blooming, turning, or running on the river this week), written from what we can
    actually see or source, never invented.
+   **Drafted Oct 28, 2026:** a standing guide at `trails.html` (same design and upkeep as `drinks.html`):
+   eleven trails in four groups (Walk From Broad Street, Edge of Town, Down to the River, Worth the Drive)
+   with distance, climb, trailhead, rules, manager's phone, and a Trail Conditions box quoting only what
+   the land manager posts (BYLT, California State Parks). Difficulty labels are the Nugget's own. Plus a
+   daily "Trail of the Day" box after The Bar Guide through the scoop pipeline, linking to the guide;
+   first run 14 days. Generator: `build.py` in the project files (`trails/`). Upkeep: re-check conditions
+   weekly while the daily pick runs, and at each season change; a seasonal nature note waits on what the
+   publisher sees on the trail.
 9. **Photo of the Day.** Readers text or email a photo (approved-sender channel like the tip
    line to start, open submissions later); the paper runs one daily, credited to the
    photographer. Phase 1: curated. Phase 2: reader voting on the website. Requires each
