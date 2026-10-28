@@ -214,6 +214,8 @@ footer a{color:var(--ink-mid)}
 a.sponsor{display:block;border:1px solid var(--rule);line-height:0}
 a.sponsor img{width:100%;height:auto;display:block}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+.orig-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:800;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);border:3px double var(--red);padding:3px 8px 2px;margin:0 0 9px;line-height:1.2;transform:rotate(-1.2deg)}
+.orig-badge::before,.orig-badge::after{content:"✱";font-size:9px;letter-spacing:0}
 </style></head><body>
 
 <div class="wrap">
@@ -252,7 +254,7 @@ a.sponsor img{width:100%;height:auto;display:block}
 <div class="folio">
   <span class="f-l"><b>Vol. 1, No. 7</b><i>The County Seat Paper</i></span>
   <span class="f-c"><b>Wednesday, October 28, 2026</b><i>Nevada City, California</i></span>
-  <span class="f-r"><span class="f-hi">Elev. 2,477 Ft.</span><i>The Gold Center</i></span>
+  <span class="f-r"><span class="f-hi">Elev. 2,477 Ft.</span><i>Mmm nuggets</i></span>
 </div>
 
 <div class="weatherline">
@@ -375,6 +377,7 @@ a.sponsor img{width:100%;height:auto;display:block}
   <h2 class="kicker"><span class="label">Arts &amp; Culture</span></h2>
 
   <article class="lede">
+    <span class="orig-badge">Only in the Nugget</span>
     <p class="meta">By Todd Wahoske · The Publisher's Interview</p>
     <h3>Sparky Parker Goes Big On Broad Street</h3>
     <p class="subdeck">The Big Works show fills the brick wall at 316 Broad St. · Five decades of painting, now at full scale · Open Friday through Sunday, wine at hand</p>
@@ -789,6 +792,4 @@ a.sponsor img{width:100%;height:auto;display:block}
     });
   });
 })();
-</script>
-
-</body></html>
+</script></body></html>
