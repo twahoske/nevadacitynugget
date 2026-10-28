@@ -198,10 +198,11 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     Unearthed (item 13). Also: a **western-themed Hat Store ad** for this page, from art Todd supplies or
     approves (the existing Hat Store ads are never replaced without his say).
 17. **The Golden Era longform.** A long feature on the building at 309 Broad St. (now the Golden Era):
-    Todd interviews Erik from the Golden Era about the bars that came before at that address, then Cindy,
-    then the paper digs through publicly available history of the building and the people who lived and
-    worked there. Runs with photos (Todd's, or used with permission) through the scoop pipeline, bylined.
-    Open: who Erik and Cindy are, and their OK to be quoted.
+    Todd interviews Eric, co-owner of the Golden Era, about the bars that came before at that address,
+    then co-owner Cindy, then the paper digs through publicly available history of the building and the
+    people who lived and worked there. Runs with photos (Todd's, or used with permission) through the
+    scoop pipeline, bylined. Todd knows them well and will ask; nothing runs until both agree. Disclose
+    that the Golden Era sits across Broad Street from The Hat Store and that the publisher knows the owners.
 18. **Live meetings on the air.** Broadcast City Council, Planning Commission, and other City Hall meetings
     live, with Hat Store ads in the breaks. To scope: whether to carry the city's own video feed or record
     in person, the city's rules on rebroadcast, where it lives (site page, stream platform), and labeling the
