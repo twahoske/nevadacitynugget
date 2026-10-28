@@ -78,7 +78,9 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
 ## Dated runs
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3). Week one (Nov 2-8) is written and
   scheduled through the scoop pipeline (assets/features.json on the artifact): National Exchange Hotel, SPD Market,
-  Harmony Books, Lika's Quarter Café, Three Forks, Bonanza Gift Shop, Nevada City Winery. Week two is due by Nov 9.
+  Harmony Books, Lika's Quarter Café, Three Forks, Bonanza Gift Shop, Nevada City Winery. Week two (Nov 9-15) is
+  scheduled too: Tour of Nevada City Bicycle Shop, Novak's Menswear, Utopian Stone, Kitkitdizzi, The Earth Store,
+  Wonder Docent, Quench Fine Food & Provisions. Week three is due by Nov 16.
 - **The Bill of Fare, October 29 to November 11, 2026** (Up next #2): first two weeks scheduled; extend by Nov 11.
 - **The Morgue, November 16-26, 2026:** items from the November 19, 1945 Nugget.
 - **Arts & Culture, October 27 to November 9, 2026:** "Sparky Parker Goes Big On Broad Street,"
