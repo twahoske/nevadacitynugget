@@ -194,7 +194,7 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     Nevada City's saloon past: Todd's line that the town once had "over 800 bars and saloons," and the local
     groups, clubs, and causes that took shape over a drink in those saloons through the years. Every story
     sourced to a real document (CDNC, Searls Historical Library, historical society, city records); the 800
-    figure prints only with a source, or as the publisher's own lore, labeled so. Pairs with Local History
+    figure prints only with a source (Todd is chasing one), or as the publisher's own lore, labeled so. Pairs with Local History
     Unearthed (item 13). Also: a **western-themed Hat Store ad** for this page, from art Todd supplies or
     approves (the existing Hat Store ads are never replaced without his say).
 17. **The Golden Era longform.** A long feature on the building at 309 Broad St. (now the Golden Era):
@@ -204,9 +204,11 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     scoop pipeline, bylined. Todd knows them well and will ask; nothing runs until both agree. Disclose
     that the Golden Era sits across Broad Street from The Hat Store and that the publisher knows the owners.
 18. **Live meetings on the air.** Broadcast City Council, Planning Commission, and other City Hall meetings
-    live, with Hat Store ads in the breaks. To scope: whether to carry the city's own video feed or record
-    in person, the city's rules on rebroadcast, where it lives (site page, stream platform), and labeling the
-    ads as ads (the Hat Store ownership disclosure applies). Fits The Docket and meeting summaries.
+    live, with Hat Store ads in the breaks. Source decided (Todd, Oct 28, 2026): carry the city's live
+    YouTube feed, embedded on a Nugget page. An embedded stream can't have ads spliced into it, so the Hat
+    Store ads sit around the player and show during breaks, labeled as ads (the Hat Store ownership
+    disclosure applies). To scope: the feed's channel and whether embedding is allowed, and a
+    "next meeting" schedule from the posted agendas. Fits The Docket and meeting summaries.
 19. **Readers write in on every story.** A way for readers to send a comment to the publisher about any
     story or item, with the best posted to "therumoronbroadstreet." Comments go to the publisher first,
     never straight onto the page; posted ones are moderated and credited as the reader asks. Needs a terms
