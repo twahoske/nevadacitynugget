@@ -274,7 +274,10 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     and the LLC question there.
 26. **The Nugget family: the Grass Valley Nugget first.** Sister dailies for nearby towns under one
     Nugget brand, starting with Grass Valley, four miles down the road (Todd, Oct 28, 2026: chose a
-    Nugget chain over a standalone "Grass Valley Miner"). Later candidates: Colfax, Auburn, Truckee.
+    Nugget chain over a standalone "Grass Valley Miner"). Later candidates: Colfax, Auburn, Truckee,
+    Rough and Ready, Placerville, Chico. Sacramento is a stretch; for now, serve Sacramento readers (many
+    of The Hat Store's customers) with a "day trip to Nevada City" page built from the bar, trail, and
+    lodging guides.
     Nothing bought or built yet.
     - **Domains:** pick and buy only with Todd's go (grassvalleynugget.com first; grassvalleyminer.com was
       also floated). Registry lookups were blocked from the build machine, so availability is unconfirmed;
