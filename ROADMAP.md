@@ -134,8 +134,7 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
    distribution.
 7. **Enforce HTTPS** once GitHub finishes the certificate (one checkbox in Pages settings).
    Also part of the search push below: Google prefers the https address.
-8. **Nature & Hikes (Trails & Vistas).** Todd asked for a nature and hikes section (Oct 27, 2026);
-   it grows the earlier Trails & Vistas idea. Local hikes and sights around Nevada City:
+8. **Trails & Vistas (hikes and sightseeing).** Local hikes and sights around Nevada City:
    Deer Creek Tribute Trail, Hirschman's Pond, Sugarloaf, Independence Trail, Malakoff Diggins
    and company, with distance, difficulty, trailhead, and seasonal notes from land-manager and
    trail-organization sources (BYLT, South Yuba River State Park, county). Rotating pick of the
