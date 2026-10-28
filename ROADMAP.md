@@ -75,6 +75,24 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   thresholds ($26.625M revenue, 100,000+ consumers, or selling data) almost certainly don't reach the Nugget today;
   CalOPPA's posted-privacy-policy rule does, and privacy.html is written to meet it.
 
+## Security (added Oct 28, 2026)
+- **In this repo:** the homepage head carries a Content-Security-Policy, so the only script a
+  reader's browser will run is the Wire share script (approved by its hash); anything injected
+  into an edition from a fetched page is blocked. The Site Publisher keeps the head verbatim, and
+  the Site upkeep Action copies the policy into archived editions. A content guard
+  (scripts/content_guard.py) runs after every publish and fails, which emails Todd, if a page
+  picks up an unapproved script, event handler, javascript: link, frame, form or meta refresh.
+  Adding a new script on purpose (the reader tally, a newsletter form) means adding its hash or
+  host to the policy first; the guard prints the hash.
+- **Todd's steps (only he can do these):**
+  1. GitHub Settings, Rules: add a ruleset for main that blocks force pushes and deletion.
+     Leave "require a pull request" off, since the Site Publisher pushes straight to main.
+  2. GitHub Settings, Pages: tick "Enforce HTTPS" (item 7), and verify nevadacitynugget.com
+     under your account's Settings, Pages, so nobody else can claim the domain.
+  3. Confirm two-factor sign-in on GitHub, Gmail and the domain registrar, and turn on the
+     registrar's transfer lock.
+  4. Scheduled tasks: remove connectors each task does not use (approval needed per task).
+
 ## Dated runs
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3). Week one (Nov 2-8) is written and
   scheduled through the scoop pipeline (assets/features.json on the artifact): National Exchange Hotel, SPD Market,
