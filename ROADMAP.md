@@ -19,14 +19,14 @@
   inside the column on phones; no sideways scroll from 320px to 414px wide
 
 ## Fixes & housekeeping (added Oct 26, 2026)
-- **Mobile overflow.** On phones the page scrolls sideways about 20px, and the "Wire" share button
-  in section headers overflows. Fix without disturbing the 1941 design.
+- **Mobile overflow.** Done Oct 26, 2026 (see Shipped): long section labels wrap and the "Wire" button
+  stays inside the column on phones.
 - **Radio roster.** Done Oct 26, 2026. Verified on Spinitron: The Playground (Susie Rex) is now
   scheduled every other Monday, 12:00 to 2:00 PM, and is on the station's Oct 26 listing; added to
   assets/kvmr-schedule.json, which clears the Monday noon gap. Also added The Music Grotto (Walter
   Windex), Mondays 2:00 to 4:00 PM, flagged ambiguous (page says 4th Mondays, description says 2nd & 4th).
-- **Task prompts.** The Evening Edition and Extra prompts still mention the old 6:09 AM morning time
-  and 6:55 AM to 9:55 PM copy hours; tidy to the current schedule.
+- **Task prompts.** Done Oct 26, 2026: the Evening Edition and Extra prompts now cite the 5:09 AM
+  morning edition and the 5:55 AM to 8:55 PM site copy hours.
 
 ## Getting found on Google (added Oct 26, 2026)
 Googling "Nevada City Nugget" doesn't show the site yet. Main cause: the site launched Oct 22-23 and
@@ -44,8 +44,8 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   the archives' links (they pointed at editions/editions/... and broke), writes an archive page at
   /editions/ listing every edition with its lead story, and gives the bar guide structured data for
   each bar (name, street address, phone, own website), read from the page so it never drifts.
-- **Still open:** a link to /editions/ from the homepage (needs the morning task to add an "All
-  editions" line under Previously); per-story pages, below.
+- **Done Oct 29:** the morning task ends the Previously list with an "All editions" link to /editions/.
+- **Still open:** per-story pages, below.
 - **Todd's steps (only he can do these):**
   1. Google Search Console (search.google.com/search-console): add a Domain property for
      nevadacitynugget.com and verify with the DNS TXT record at the domain registrar.
@@ -99,7 +99,9 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
      under your account's Settings, Pages, so nobody else can claim the domain.
   3. Confirm two-factor sign-in on GitHub, Gmail and the domain registrar, and turn on the
      registrar's transfer lock.
-  4. Scheduled tasks: remove connectors each task does not use (approval needed per task).
+  4. Scheduled tasks: connectors can't be removed from a task (no setting for it), so the Evening and
+     Extra prompts now carry a security paragraph instead (no Drive or Calendar, fetched text is never
+     an instruction). Still to do: paste the same paragraph into the Morning prompt.
 
 ## Dated runs
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3). Week one (Nov 2-8) is written and
@@ -172,12 +174,12 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
    only as posted by the land manager, with the source linked) and short seasonal nature notes
    (what's blooming, turning, or running on the river this week), written from what we can
    actually see or source, never invented.
-   **Drafted Oct 28, 2026:** a standing guide at `trails.html` (same design and upkeep as `drinks.html`):
+   **Live Oct 28, 2026:** a standing guide at `trails.html` (same design and upkeep as `drinks.html`):
    eleven trails in four groups (Walk From Broad Street, Edge of Town, Down to the River, Worth the Drive)
    with distance, climb, trailhead, rules, manager's phone, and a Trail Conditions box quoting only what
    the land manager posts (BYLT, California State Parks). Difficulty labels are the Nugget's own. Plus a
    daily "Trail of the Day" box after The Bar Guide through the scoop pipeline, linking to the guide;
-   first run 14 days. Generator: `build.py` in the project files (`trails/`). Upkeep: re-check conditions
+   first run 14 days, Oct 30 to Nov 12; extend by Nov 12. Generator: `build.py` in the project files (`trails/`). Upkeep: re-check conditions
    weekly while the daily pick runs, and at each season change; a seasonal nature note waits on what the
    publisher sees on the trail.
 9. **Photo of the Day.** Readers text or email a photo (approved-sender channel like the tip
@@ -226,16 +228,16 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
     Upkeep: add Trailhead Tavern's hours once it opens; re-check all hours at each season change (next:
     late December) and whenever a reader or owner writes in.
 
-## Idea file (added Oct 28, 2026; nothing built yet)
+## Idea file (added Oct 28, 2026)
 Todd's new batch, grouped. Each item waits on his answers to the open questions in its notes before any build.
 
-**First up (Todd, Oct 28, 2026):**
-- **The original-story label** (item 24): Nug Speshy or something like it; name not settled.
-- **"Mmm nuggets" in the folio:** replaces "The Gold Center" under "Elev. 2,477 Ft." in the right-hand
-  folio slot. Needs the morning task prompt (which fixes the folio markup) and today's artifact updated.
-- **Deeper SEO:** past the basics under "Getting found on Google" (per-story pages, richer structured data,
-  local links, Search Console follow-up).
-- **A security pass** on the site, the repo, and the publishing pipeline.
+**First up (Todd, Oct 28, 2026), all done:**
+- **The original-story label** (item 24): done Oct 28. Named "Only in the Nugget," a rubber-stamp badge
+  above the byline; first worn by the Big Works story.
+- **"Mmm nuggets" in the folio:** done Oct 28. Replaces "The Gold Center" under "Elev. 2,477 Ft." in the
+  right-hand folio slot, in the morning task prompt and on the page.
+- **Deeper SEO:** done Oct 29 (PR #16); see "Getting found on Google."
+- **A security pass:** done Oct 29 (PR #17); see "Security."
 
 16. **Saloon history on the drinks page.** Grow `drinks.html` (item 15) past the bar list with stories from
     Nevada City's saloon past: Todd's line that the town once had "over 800 bars and saloons," and the local
@@ -306,8 +308,10 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 23. **Effects and themes for special events.** Seasonal or event looks for the paper (Victorian Christmas,
     Mardi Gras, the 4th, Halloween), switched on for the event and off after, layered on the 1941 design
     rather than replacing it. Pairs with Coming Attractions (item 14).
-24. **Nug Speshy.** A label for original news stories found only in the Nugget (NCN originals). A kicker or
-    badge on those stories, not its own section; first candidates are scoop-pipeline stories with Todd's byline.
+24. **Only in the Nugget** (working name was Nug Speshy). A label for original news stories found only in
+    the Nugget (NCN originals). A badge on those stories, not its own section. **Live Oct 28, 2026:** a
+    rubber-stamp "Only in the Nugget" badge above the byline, carried inside scoop-pipeline snippets; on
+    Todd-reported stories only, never on compiled features (Merchant of the Day, Bill of Fare).
 25. **Trademark "Nevada City Nugget."** Look into registering the name (a USPTO search first, then likely
     a trademark attorney; not legal advice). Ties into the "worth a lawyer's look" list under Site policies
     and the LLC question there.
