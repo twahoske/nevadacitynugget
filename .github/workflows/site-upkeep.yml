@@ -1,10 +1,11 @@
 name: Site upkeep
 
-# After each publish, give archived editions their own canonical address and refresh sitemap.xml.
+# After each publish, give archived editions their own canonical address and refresh sitemap.xml,
+# then fail loudly if any page picked up code it should not carry.
 on:
   push:
     branches: [main]
-    paths: ["index.html", "editions/**", "scripts/site_upkeep.py"]
+    paths: ["*.html", "editions/**", "scripts/**"]
   workflow_dispatch:
 
 permissions:
@@ -35,3 +36,5 @@ jobs:
             done
             exit 1
           fi
+      - name: Content guard
+        run: python3 scripts/content_guard.py

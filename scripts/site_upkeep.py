@@ -6,6 +6,7 @@ It never touches index.html, which the Site Publisher owns. It:
   - points each archived edition's canonical link and og:url at its own address
     (archives are moved out of index.html, so they arrive claiming to be the homepage),
   - gives each archived edition a dated <title>,
+  - copies the homepage's Content-Security-Policy and referrer tags into each archived edition,
   - points a stray duplicate (editions/YYYY-MM-DD-N.html) at the edition it duplicates,
   - rewrites sitemap.xml.
 Safe to run repeatedly; it only writes files whose content changes.
@@ -43,7 +44,17 @@ def set_head_tag(html, pattern, tag, after):
     return head + rest
 
 
-def fix_edition(path, editions):
+SECURITY_TAGS = [r'<meta name="referrer"[^>]*>', r'<meta http-equiv="Content-Security-Policy"[^>]*>']
+
+
+def homepage_tags():
+    """(pattern, tag) for each security <meta> tag in index.html's head; archives carry them too."""
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    head = html[: html.find("</head>")]
+    return [(p, m.group(0)) for p, m in ((p, re.search(p, head)) for p in SECURITY_TAGS) if m]
+
+
+def fix_edition(path, editions, tags=()):
     html = path.read_text(encoding="utf-8")
     date, dup = FILE_RE.match(path.name).groups()
     own = f"{SITE}editions/{path.name}"
@@ -61,6 +72,8 @@ def fix_edition(path, editions):
     new = set_head_tag(html, r'<link rel="canonical"[^>]*>',
                        f'<link rel="canonical" href="{canonical}">', r'<meta name="viewport"[^>]*>')
     new = re.sub(r'(<meta property="og:url" content=")[^"]*(")', rf"\g<1>{canonical}\g<2>", new, count=1)
+    for pattern, tag in tags:
+        new = set_head_tag(new, pattern, tag, r'<meta name="viewport"[^>]*>')
     new = new.replace('<link rel="icon" href="favicon.svg"', '<link rel="icon" href="/favicon.svg"', 1)
     day = folio_date(new)
     if day:
@@ -78,7 +91,8 @@ def iso(day):
 
 def main():
     editions = sorted(p for p in (ROOT / "editions").glob("*.html") if FILE_RE.match(p.name))
-    dated = [d for d in (fix_edition(p, editions) for p in editions) if d]
+    tags = homepage_tags()
+    dated = [d for d in (fix_edition(p, editions, tags) for p in editions) if d]
 
     today = folio_date((ROOT / "index.html").read_text(encoding="utf-8"))
     urls = [(SITE, iso(today) if today else None, "daily", "1.0"),
