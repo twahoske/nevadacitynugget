@@ -126,8 +126,9 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
 - **Run it.** Each morning edition splices every active entry in verbatim with the shell (never
   retyped); the Evening Edition leaves it untouched and re-splices it if the morning missed it; the
   site copy needs no change. A feature drops off after its end date and stays in the archived editions.
-- **Next:** a short "Now showing" index of active features in Coming Attractions or the footer, and
-  a reader-facing note on Sources & Methods that publisher-reported stories carry a byline.
+- **Done Oct 29, 2026:** a reader-facing note on Sources & Methods ("Bylines and badges") that
+  publisher-reported stories carry a byline, and the "Only in the Nugget" stamp when found nowhere else.
+- **Next:** a short "Now showing" index of active features in Coming Attractions or the footer.
 
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
