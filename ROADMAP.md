@@ -83,6 +83,24 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   thresholds ($26.625M revenue, 100,000+ consumers, or selling data) almost certainly don't reach the Nugget today;
   CalOPPA's posted-privacy-policy rule does, and privacy.html is written to meet it.
 
+## Security (added Oct 28, 2026)
+- **In this repo:** the homepage head carries a Content-Security-Policy, so the only script a
+  reader's browser will run is the Wire share script (approved by its hash); anything injected
+  into an edition from a fetched page is blocked. The Site Publisher keeps the head verbatim, and
+  the Site upkeep Action copies the policy into archived editions. A content guard
+  (scripts/content_guard.py) runs after every publish and fails, which emails Todd, if a page
+  picks up an unapproved script, event handler, javascript: link, frame, form or meta refresh.
+  Adding a new script on purpose (the reader tally, a newsletter form) means adding its hash or
+  host to the policy first; the guard prints the hash.
+- **Todd's steps (only he can do these):**
+  1. GitHub Settings, Rules: add a ruleset for main that blocks force pushes and deletion.
+     Leave "require a pull request" off, since the Site Publisher pushes straight to main.
+  2. GitHub Settings, Pages: tick "Enforce HTTPS" (item 7), and verify nevadacitynugget.com
+     under your account's Settings, Pages, so nobody else can claim the domain.
+  3. Confirm two-factor sign-in on GitHub, Gmail and the domain registrar, and turn on the
+     registrar's transfer lock.
+  4. Scheduled tasks: remove connectors each task does not use (approval needed per task).
+
 ## Dated runs
 - **Merchant of the Day launches Monday, November 2, 2026** (Up next #3). Week one (Nov 2-8) is written and
   scheduled through the scoop pipeline (assets/features.json on the artifact): National Exchange Hotel, SPD Market,
@@ -152,6 +170,14 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
    only as posted by the land manager, with the source linked) and short seasonal nature notes
    (what's blooming, turning, or running on the river this week), written from what we can
    actually see or source, never invented.
+   **Drafted Oct 28, 2026:** a standing guide at `trails.html` (same design and upkeep as `drinks.html`):
+   eleven trails in four groups (Walk From Broad Street, Edge of Town, Down to the River, Worth the Drive)
+   with distance, climb, trailhead, rules, manager's phone, and a Trail Conditions box quoting only what
+   the land manager posts (BYLT, California State Parks). Difficulty labels are the Nugget's own. Plus a
+   daily "Trail of the Day" box after The Bar Guide through the scoop pipeline, linking to the guide;
+   first run 14 days. Generator: `build.py` in the project files (`trails/`). Upkeep: re-check conditions
+   weekly while the daily pick runs, and at each season change; a seasonal nature note waits on what the
+   publisher sees on the trail.
 9. **Photo of the Day.** Readers text or email a photo (approved-sender channel like the tip
    line to start, open submissions later); the paper runs one daily, credited to the
    photographer. Phase 1: curated. Phase 2: reader voting on the website. Requires each
@@ -272,6 +298,42 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 25. **Trademark "Nevada City Nugget."** Look into registering the name (a USPTO search first, then likely
     a trademark attorney; not legal advice). Ties into the "worth a lawyer's look" list under Site policies
     and the LLC question there.
+26. **The Nugget family: two papers, seven day-trip doors.** (Todd, Oct 28, 2026.) The Nevada City Nugget
+    stays the master. The **Grass Valley Nugget** joins it as the one sister paper. The other Nugget
+    domains promote a trip up the hill to Nevada City and Grass Valley, not papers of their own. Domains
+    Todd owns (bought Oct 28, 2026 at DreamHost, DreamHost nameservers): grassvalleynugget, colfaxnugget,
+    auburnnugget, truckeenugget, roughandreadynugget, placervillenugget, chiconugget, sacramentonugget
+    (all .com). As of Oct 28 all eight redirect (301, permanent) to nevadacitynugget.com until each gets
+    its own page; grassvalleynugget.com later moves to GitHub Pages DNS when the Grass Valley Nugget
+    launches. Renewals run about $22 a year each, due Oct 2027.
+    - **The Grass Valley Nugget (paper):** built from the Nugget as a shared template, with Grass Valley
+      as its own config: nameplate, beats, radio and events sources, morgue, domain, email list. Its own
+      repo and GitHub Pages site (own CNAME, sitemap, Search Console property), its own artifact as
+      source of truth, and its own scheduled tasks staggered a few minutes off the Nugget's. Same 1941
+      bones, with "Grass Valley" big on the nameplate and its own accent color. Beats: City Council and
+      Planning Commission, Mill Street merchants, Empire Mine, the fairgrounds, Sierra College. The Union
+      is named and linked as Grass Valley's paper of record where it reports first. A "Nuggets nearby"
+      box in each paper, county stories run once and linked from the other, a shared Coming Attractions
+      box (item 14).
+    - **Name history:** a *Grass Valley Nugget* ran in 1944 and 1947, so it carries the same line as ours:
+      no relation to the historical paper beyond admiration. Grass Valley's own papers were the Telegraph
+      (1853), Nevada National (1858), Republican (1871-72), Tidings, Herald, and The Union (still
+      publishing). Sources: cagenweb.org/nevada/ncnewspapers.html, loc.gov sn86058101 and sn93050997.
+    - **Day-trip doors (the other seven domains):** one "Day trip from Sacramento / Auburn / Chico / ..."
+      guide per town, living on nevadacitynugget.com (e.g. `/daytrip/sacramento.html`), with its domain
+      pointing there by redirect. Each page is genuinely its own: drive time and route from that town,
+      where to park, a one-day plan, seasonal notes, and what's on this week, built from the bar, trail,
+      and lodging guides and the day's edition. Sacramento first (many Hat Store customers drive up from
+      there). The Hat Store ad runs on each page as a labeled ad, with the ownership disclosure.
+    - **SEO trap to avoid:** Google treats a ring of near-identical sites built only to funnel visitors
+      to one place as "doorway" spam, which can sink the main site. So: no copy-paste pages, no separate
+      thin sites on each domain, and the pages sit on nevadacitynugget.com where their search credit
+      builds up the Nugget. They are labeled as visitor guides from the Nugget, never dressed up as a
+      local paper for Chico or Sacramento.
+    - **Trademark:** item 25's search should cover "Nugget" for the family, not just "Nevada City Nugget."
+    - **Open questions for Todd:** which registrar holds the domains (redirects are set there or in
+      GitHub Pages); Grass Valley daily from the start or lighter at first; same email list or a Grass
+      Valley list; Grass Valley contributors or tipsters.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.

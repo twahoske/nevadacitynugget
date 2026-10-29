@@ -8,6 +8,7 @@ It never touches index.html, which the Site Publisher owns. It:
   - gives each archived edition a title and description built from its own headlines,
     plus NewsArticle structured data,
   - makes the archives' relative links work from inside editions/,
+  - copies the homepage's Content-Security-Policy and referrer tags into each archived edition,
   - points a stray duplicate (editions/YYYY-MM-DD-N.html) at the edition it duplicates,
   - writes editions/index.html, a list of every edition,
   - gives the bar guide (drinks.html) structured data for each bar it lists,
@@ -102,7 +103,17 @@ def set_head_tag(html, pattern, tag, after):
     return head + rest
 
 
-def fix_edition(path, editions):
+SECURITY_TAGS = [r'<meta name="referrer"[^>]*>', r'<meta http-equiv="Content-Security-Policy"[^>]*>']
+
+
+def homepage_tags():
+    """(pattern, tag) for each security <meta> tag in index.html's head; archives carry them too."""
+    html = (ROOT / "index.html").read_text(encoding="utf-8")
+    head = html[: html.find("</head>")]
+    return [(p, m.group(0)) for p, m in ((p, re.search(p, head)) for p in SECURITY_TAGS) if m]
+
+
+def fix_edition(path, editions, tags=()):
     html = path.read_text(encoding="utf-8")
     date, dup = FILE_RE.match(path.name).groups()
     own = f"{SITE}editions/{path.name}"
@@ -120,6 +131,8 @@ def fix_edition(path, editions):
     new = set_head_tag(html, r'<link rel="canonical"[^>]*>',
                        f'<link rel="canonical" href="{canonical}">', r'<meta name="viewport"[^>]*>')
     new = re.sub(r'(<meta property="og:url" content=")[^"]*(")', rf"\g<1>{canonical}\g<2>", new, count=1)
+    for pattern, tag in tags:
+        new = set_head_tag(new, pattern, tag, r'<meta name="viewport"[^>]*>')
     new = new.replace('<link rel="icon" href="favicon.svg"', '<link rel="icon" href="/favicon.svg"', 1)
     new = root_links(new)
 
@@ -256,7 +269,8 @@ def iso(day):
 
 def main():
     editions = sorted(p for p in (ROOT / "editions").glob("*.html") if FILE_RE.match(p.name))
-    entries = sorted((e for e in (fix_edition(p, editions) for p in editions) if e), reverse=True)
+    tags = homepage_tags()
+    entries = sorted((e for e in (fix_edition(p, editions, tags) for p in editions) if e), reverse=True)
     dated = [date for date, _, _ in entries]
     archive_page(entries)
     bar_guide()
@@ -266,6 +280,8 @@ def main():
             (f"{SITE}sources.html", None, "monthly", "0.5")]
     if (ROOT / "drinks.html").exists():
         urls.append((f"{SITE}drinks.html", None, "monthly", "0.7"))
+    if (ROOT / "trails.html").exists():
+        urls.append((f"{SITE}trails.html", None, "monthly", "0.7"))
     urls += [(f"{SITE}{page}", None, "yearly", "0.3")
              for page in ("standards.html", "privacy.html", "terms.html") if (ROOT / page).exists()]
     urls.append((f"{SITE}editions/", dated[0] if dated else None, "daily", "0.6"))

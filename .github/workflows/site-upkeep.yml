@@ -1,10 +1,11 @@
 name: Site upkeep
 
-# After each publish, give archived editions their own canonical address and refresh sitemap.xml.
+# After each publish, give archived editions their own canonical address and refresh sitemap.xml,
+# then fail loudly if any page picked up code it should not carry.
 on:
   push:
     branches: [main]
-    paths: ["index.html", "editions/**", "drinks.html", "standards.html", "scripts/site_upkeep.py"]
+    paths: ["*.html", "editions/**", "scripts/**"]
   workflow_dispatch:
 
 permissions:
@@ -18,7 +19,7 @@ jobs:
   upkeep:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: python3 scripts/site_upkeep.py
       - name: Commit if anything changed
         run: |
@@ -27,6 +28,13 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A editions sitemap.xml drinks.html
             git commit -m "Site upkeep: archive canonicals and sitemap"
-            git pull --rebase origin main
-            git push origin HEAD:main
+            # The publisher can push in the same second; retry instead of failing.
+            for attempt in 1 2 3 4 5; do
+              git pull --rebase origin main
+              if git push origin HEAD:main; then exit 0; fi
+              sleep $((attempt * 3))
+            done
+            exit 1
           fi
+      - name: Content guard
+        run: python3 scripts/content_guard.py
