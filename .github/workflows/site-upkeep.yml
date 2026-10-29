@@ -26,7 +26,7 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A editions sitemap.xml
+            git add -A editions sitemap.xml drinks.html
             git commit -m "Site upkeep: archive canonicals and sitemap"
             # The publisher can push in the same second; retry instead of failing.
             for attempt in 1 2 3 4 5; do
