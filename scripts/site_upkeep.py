@@ -284,6 +284,8 @@ def main():
         urls.append((f"{SITE}trails.html", None, "monthly", "0.7"))
     if (ROOT / "stay.html").exists():
         urls.append((f"{SITE}stay.html", None, "monthly", "0.7"))
+    urls += [(f"{SITE}daytrip/{p.name}", None, "monthly", "0.6")
+             for p in sorted((ROOT / "daytrip").glob("*.html"))]
     if (ROOT / "meetings" / "index.html").exists():
         urls.append((f"{SITE}meetings/", None, "weekly", "0.6"))
         urls += [(f"{SITE}meetings/{p.name}", None, "yearly", "0.4")
