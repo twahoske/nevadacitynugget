@@ -40,7 +40,7 @@ def main():
     allowed = set(re.findall(r"'(sha256-[A-Za-z0-9+/=]+)'", m.group(1)))
 
     problems = []
-    pages = sorted(ROOT.glob("*.html")) + sorted((ROOT / "editions").glob("*.html"))
+    pages = sorted(ROOT.glob("*.html")) + sorted((ROOT / "editions").glob("*.html")) + sorted((ROOT / "meetings").glob("*.html"))
     for page in pages:
         html = page.read_text(encoding="utf-8")
         name = page.relative_to(ROOT)
