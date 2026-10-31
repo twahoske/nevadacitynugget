@@ -5,7 +5,7 @@ name: Site upkeep
 on:
   push:
     branches: [main]
-    paths: ["*.html", "editions/**", "scripts/**"]
+    paths: ["*.html", "editions/**", "meetings/**", "scripts/**"]
   workflow_dispatch:
 
 permissions:
