@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="A Modern-Vintage daily paper for Nevada City, California: City Hall and county coverage, fire and weather, public notices, the police blotter, amusements and showtimes, the KVMR radio log, and the stars over Deer Creek.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -27,6 +27,18 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"NewsMediaOrganization","@id":"https://nevadacitynugget.com/#organization","name":"Nevada City Nugget","slogan":"A Modern-Vintage Daily Paper","url":"https://nevadacitynugget.com/","description":"A Modern-Vintage daily paper for Nevada City, California: City Hall and county coverage, fire and weather, public notices, the police blotter, amusements and showtimes, the KVMR radio log, and the stars over Deer Creek.","foundingDate":"2026-10-22","email":"news@nevadacitynugget.com","logo":{"@type":"ImageObject","url":"https://nevadacitynugget.com/apple-touch-icon.png","width":180,"height":180},"image":"https://nevadacitynugget.com/og-image.png","publishingPrinciples":"https://nevadacitynugget.com/standards.html","correctionsPolicy":"https://nevadacitynugget.com/standards.html#corrections","ethicsPolicy":"https://nevadacitynugget.com/standards.html","ownershipFundingInfo":"https://nevadacitynugget.com/standards.html#ownership","verificationFactCheckingPolicy":"https://nevadacitynugget.com/sources.html","areaServed":{"@type":"City","name":"Nevada City","containedInPlace":{"@type":"AdministrativeArea","name":"Nevada County, California"}}},{"@type":"WebSite","@id":"https://nevadacitynugget.com/#website","name":"Nevada City Nugget","url":"https://nevadacitynugget.com/","inLanguage":"en-US","publisher":{"@id":"https://nevadacitynugget.com/#organization"}},{"@type":"Newspaper","@id":"https://nevadacitynugget.com/#newspaper","name":"Nevada City Nugget","url":"https://nevadacitynugget.com/","inLanguage":"en-US","publisher":{"@id":"https://nevadacitynugget.com/#organization"}}]}
 </script>
+<style>
+/* Beta Mode stamp: lives here because the Site Publisher keeps everything above <title> verbatim */
+.beta-bar{margin:22px 0 -14px;text-align:center;font-family:var(--display)}
+.beta-bar a{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;text-decoration:none;color:var(--ink-mid)}
+.beta-stamp{display:inline-block;color:var(--red);border:3px double var(--red);padding:2px 10px 1px;font-weight:900;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transform:rotate(-2deg)}
+.beta-stamp::before,.beta-stamp::after{content:"✱";font-size:9px;letter-spacing:0;margin:0 6px;vertical-align:1px}
+.beta-v{font-weight:800;font-size:11.5px;letter-spacing:.12em;color:var(--ink)}
+.beta-note{font-style:italic;font-size:13px;letter-spacing:.01em}
+.beta-note u{text-decoration-color:var(--rule);text-underline-offset:3px}
+.beta-bar a:hover .beta-note,.beta-bar a:hover .beta-v{color:var(--red)}
+.beta-bar + .banner{margin-top:0}
+</style>
 <title>Nevada City Nugget</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Grenze+Gotisch:wght@800;900&display=swap">
@@ -222,7 +234,7 @@ a.sponsor img{width:100%;height:auto;display:block}
 
 <div class="wrap">
 
-<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.7</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
+<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.8</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
 
 <p class="banner">Evening Edition</p>
 <header class="masthead">
@@ -844,6 +856,177 @@ a.sponsor img{width:100%;height:auto;display:block}
     btn.addEventListener("click", function(){
       var open = menu.classList.toggle("open");
       if (open) build();
+    });
+  });
+})();
+/* CIRCULATION & WIRE THE NUGGET: a daily reader tally under the folio and a button that sends the whole paper. Part of the wire service block; carry unchanged. */
+(function(){
+  var HOME = "https://nevadacitynugget.com/";
+  var TALLY = "https://nugget-tally.todd-c0b.workers.dev";
+  var live = location.hostname === "nevadacitynugget.com" || location.hostname === "www.nevadacitynugget.com";
+  var today = live && /^\/(index\.html)?$/.test(location.pathname);
+  var url = live ? location.origin + location.pathname.replace(/index\.html$/, "") : HOME;
+  var folio = document.querySelector(".folio");
+  var footer = document.querySelector("footer");
+  if (!folio) return;
+
+  var css = document.createElement("style");
+  css.textContent =
+    ".circ{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;align-items:center;margin:-22px 0 0;padding:0 0 7px;border-bottom:1px solid var(--rule);font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid)}" +
+    ".circ .c-n{font-weight:900;font-size:13.5px;letter-spacing:.06em;color:var(--ink);font-variant-numeric:oldstyle-nums}" +
+    ".circ .c-count{text-align:center;text-wrap:balance}" +
+    ".circ .c-sub{text-transform:none;font-style:italic;letter-spacing:.02em;font-size:12.5px}" +
+    ".circ [hidden]{display:none}" +
+    ".wire-paper{font-size:10.5px;padding:4px 11px;border-color:var(--ink);color:var(--ink)}" +
+    ".passiton{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}" +
+    ".passiton p{font-style:italic;font-size:14.5px;color:var(--ink-mid);margin:0}" +
+    ".passiton .wire-btn{font-size:12px;padding:6px 16px;border-width:2px;white-space:normal;max-width:100%}" +
+    ".passiton .wire-menu,.circ .wire-menu{flex-basis:100%}" +
+    "@media (max-width:420px){.circ{letter-spacing:.07em}.passiton .wire-btn{font-size:11px;letter-spacing:.1em;padding:6px 10px}}";
+  document.head.appendChild(css);
+
+  function el(tag, cls, txt){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (txt) n.textContent = txt;
+    return n;
+  }
+  function paperButton(){
+    var b = el("button", "wire-btn", "☞ Wire The Nugget to a Friend");
+    b.type = "button";
+    b.setAttribute("aria-label", "Send today's Nugget to a friend");
+    return b;
+  }
+
+  var circ = el("div", "circ");
+  var count = el("span", "c-count");
+  count.hidden = true;
+  count.appendChild(document.createTextNode("Today's Circulation "));
+  var num = el("span", "c-n", "0");
+  count.appendChild(num);
+  count.appendChild(document.createTextNode(" townsfolk & flatlanders"));
+  var sub = el("span", "c-sub");
+  sub.hidden = true;
+  var topBtn = paperButton();
+  topBtn.className += " wire-paper";
+  circ.appendChild(count);
+  circ.appendChild(sub);
+  circ.appendChild(topBtn);
+  folio.insertAdjacentElement("afterend", circ);
+
+  var buttons = [topBtn];
+  if (footer){
+    var pass = el("div", "passiton");
+    pass.appendChild(el("p", "", "Read it all? A paper lives on being passed along."));
+    var endBtn = paperButton();
+    pass.appendChild(endBtn);
+    footer.insertAdjacentElement("beforebegin", pass);
+    buttons.push(endBtn);
+  }
+
+  var dateLine = "";
+  var bs = folio.querySelectorAll("b");
+  if (bs.length) dateLine = bs[bs.length - 1].textContent.trim();
+  var lede = document.querySelector("article.lede h3");
+  var title = "The Nevada City Nugget" + (dateLine ? " · " + dateLine : "");
+  var note = "Thought you'd like today's Nevada City Nugget." + (lede ? "\nOn the front: " + lede.textContent.trim() : "");
+
+  function tally(kind){
+    if (!today || !window.fetch) return Promise.resolve(null);
+    return fetch(TALLY + "/" + kind, { method: kind === "today" ? "GET" : "POST", mode: "cors", credentials: "omit" })
+      .then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
+  }
+
+  /* Each device counts once per Pacific day; the date note stays in this browser and is never sent. */
+  var pacificDay = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles" }).format(new Date());
+  function counted(){
+    try { return localStorage.getItem("nugget-read") === pacificDay; } catch(e){ return true; }
+  }
+  function markCounted(){
+    try { localStorage.setItem("nugget-read", pacificDay); } catch(e){}
+  }
+  function fmt(n){ return n.toLocaleString("en-US"); }
+  function show(d){
+    if (!d || typeof d.readers !== "number") return;
+    num.textContent = fmt(d.readers);
+    count.hidden = false;
+    var bits = [];
+    if (d.yesterday) bits.push("Yesterday " + fmt(d.yesterday));
+    if (d.record && d.record.n > d.readers) bits.push("Best day " + fmt(d.record.n));
+    else if (d.record && d.readers > 1) bits.push("A new record!");
+    if (d.wires) bits.push("Wired " + fmt(d.wires) + (d.wires === 1 ? " time" : " times"));
+    if (bits.length){ sub.textContent = bits.join(" · "); sub.hidden = false; }
+  }
+  if (counted()) tally("today").then(show);
+  else tally("read").then(function(d){ if (d) markCounted(); show(d); });
+
+  function copyText(t){
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = t;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      ta.remove();
+      return ok;
+    } catch(e){ return false; }
+  }
+
+  var wired = false;
+  function sent(){ if (!wired){ wired = true; tally("wire"); } }
+
+  buttons.forEach(function(btn){
+    var menu = el("div", "wire-menu");
+    btn.insertAdjacentElement("afterend", menu);
+
+    function build(){
+      menu.innerHTML = "";
+      menu.appendChild(el("span", "wire-k", "Send the whole paper:"));
+      var body = note + "\n\n" + url;
+
+      if (navigator.share){
+        var sh = el("button", "", "Share…");
+        sh.type = "button";
+        sh.addEventListener("click", function(){
+          navigator.share({ title: title, text: note, url: url }).then(sent).catch(function(){});
+        });
+        menu.appendChild(sh);
+      }
+
+      var sms = el("a", "", "Text");
+      sms.href = "sms:?&body=" + encodeURIComponent(body);
+      sms.addEventListener("click", sent);
+      menu.appendChild(sms);
+
+      var em = el("a", "", "Email");
+      em.href = "mailto:?subject=" + encodeURIComponent(title) +
+                "&body=" + encodeURIComponent(body + "\n\nA free daily paper for Nevada City. New every morning.");
+      em.addEventListener("click", sent);
+      menu.appendChild(em);
+
+      var cp = el("button", "", "Copy Link");
+      cp.type = "button";
+      cp.addEventListener("click", function(){
+        function done(ok){
+          cp.textContent = ok ? "Copied ✓" : "Copy failed";
+          if (ok) sent();
+          setTimeout(function(){ cp.textContent = "Copy Link"; }, 2000);
+        }
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(url).then(function(){ done(true); }, function(){ done(copyText(url)); });
+          } else {
+            done(copyText(url));
+          }
+        } catch(e){ done(copyText(url)); }
+      });
+      menu.appendChild(cp);
+    }
+
+    btn.addEventListener("click", function(){
+      if (menu.classList.toggle("open")) build();
     });
   });
 })();

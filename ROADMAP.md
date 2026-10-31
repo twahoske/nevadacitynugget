@@ -91,7 +91,9 @@ and Nugget St listings. (The historical paper was the *Nevada County* Nugget, so
   (scripts/content_guard.py) runs after every publish and fails, which emails Todd, if a page
   picks up an unapproved script, event handler, javascript: link, frame, form or meta refresh.
   Adding a new script on purpose (the reader tally, a newsletter form) means adding its hash or
-  host to the policy first; the guard prints the hash.
+  host to the policy first; the guard prints the hash. Since Oct 31 the approved script is the
+  Wire block with the circulation code appended (new hash); the original Wire hash stays in the
+  policy so archived editions that carry the older script keep working.
 - **Todd's steps (only he can do these):**
   1. GitHub Settings, Rules: add a ruleset for main that blocks force pushes and deletion.
      Leave "require a pull request" off, since the Site Publisher pushes straight to main.
@@ -136,10 +138,29 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
   "Fresh ink, still drying. Read the release notes"), linking to release-notes.html. It lives in the
   artifact's index.html; the morning task carries it forward unchanged and never changes the number.
 - **Release notes** at release-notes.html, built from merged pull requests and this roadmap.
-  v0.1 launch (Oct 22), v0.2 Oct 26, v0.3 Oct 27, v0.4 Oct 28, v0.5 Oct 29, v0.6 Beta Mode (Oct 30).
+  v0.1 launch (Oct 22), v0.2 Oct 26, v0.3 Oct 27, v0.4 Oct 28, v0.5 Oct 29, v0.6 Beta Mode (Oct 30),
+  v0.7 Meetings on the Record (Oct 30), v0.8 Pass It On (Oct 31).
 - **Bumping the version:** the number goes up by a tenth when a batch of features ships; daily editions
   don't change it. Add the new release to release-notes.html and change the number in the stamp on the
   artifact in the same sitting.
+
+## Word of mouth (added Oct 31, 2026)
+Todd's goal: grow by readers passing the paper along, not social media.
+- **Wire The Nugget to a Friend.** A whole-paper share button under the date bar and at the end of the
+  paper ("Read it all? A paper lives on being passed along."); sends the link with the day's lead headline
+  by Share, Text, Email, or Copy Link. Homepage link from today's paper, dated link from an archive.
+- **Today's Circulation.** "Today's Circulation 214 townsfolk & flatlanders," with yesterday, best day,
+  and times wired. Kept by the Nugget's own counter, a Cloudflare Worker with a D1 database
+  (nugget-tally.todd-c0b.workers.dev, set up by Todd Oct 30), which stores only the date and two numbers.
+  Each device counts once per Pacific day via a date note in its own browser. Only today's page on
+  nevadacitynugget.com counts; archives and the claude.ai copy don't. privacy.html updated the same day.
+- **How it's built.** The code is appended inside the WIRE SERVICE script block, which the morning task
+  already carries unchanged, so no task prompt changed; it builds the circulation line and the end
+  button itself and injects its own CSS. The Worker's code is in the project folder (word-of-mouth/tally-worker.js).
+- **Todd's steps:** in the Worker's settings, turn off Observability / Workers Logs so Cloudflare keeps
+  no per-request logs for it (the privacy page promises the counter records no IPs).
+- **Later ideas:** a rate limit if anyone games the count; a monthly "Circulation Report" in the paper;
+  a milestone banner when a day passes 100, 500, 1,000 readers.
 
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
