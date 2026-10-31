@@ -220,6 +220,13 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
     origin of a street name, mining-era records, old photographs when rights allow. Each item
     dated and sourced to the actual document; paraphrase, never reproduce whole historical
     articles still under rights.
+    **Scheduled Oct 31, 2026:** a Sunday feature, its own section directly before The Back Page, through
+    the scoop pipeline. Each installment digs into one building or episode in the Nugget's own words,
+    sourced to the document it comes from (so far the National Register nominations on NPGallery, which
+    go building by building). First four: Nov 8 the saloons in the 1985 downtown district survey (a start
+    on item 16), Nov 15 Firehouse No. 2 and the 1859 ball that paid for it, Nov 22 Ott's Assay Office and
+    the Washoe rush, Nov 29 the Carnegie library. Snippets in the project files (`history-unearthed/`).
+    Extend by Nov 29. The "800 bars" line runs only as the publisher's lore until a document turns up.
 14. **Coming Attractions (event countdowns).** A standing box counting down to the big ones:
     Victorian Christmas, Mardi Gras, 4th of July and Constitution Day parades, Nevada City Film
     Festival, hot summer nights season, KVMR Celtic Festival and company. "Victorian Christmas:
