@@ -359,6 +359,13 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
       where to park, a one-day plan, seasonal notes, and what's on this week, built from the bar, trail,
       and lodging guides and the day's edition. Sacramento first (many Hat Store customers drive up from
       there). The Hat Store ad runs on each page as a labeled ad, with the ownership disclosure.
+    - **Sacramento is live (Oct 31, 2026):** `daytrip/sacramento.html`: the drive (I-80 to Auburn, Highway 49
+      north), free parking lots, a one-day plan from coffee on Broad to dinner (linking the bar, trail and lodging
+      guides), the seasons (Victorian Christmas dates and shuttles, Empire Mine on the way), and a pointer to
+      today's edition, with the labeled Hat Store ad. In the sitemap and the content guard's scan. Generator:
+      `build.py` in the project files (`daytrip-sacramento/`). Todd's step: at DreamHost, point the
+      sacramentonugget.com redirect (301) at https://nevadacitynugget.com/daytrip/sacramento.html.
+      Upkeep: re-check hours and Victorian Christmas details at each season change.
     - **SEO trap to avoid:** Google treats a ring of near-identical sites built only to funnel visitors
       to one place as "doorway" spam, which can sink the main site. So: no copy-paste pages, no separate
       thin sites on each domain, and the pages sit on nevadacitynugget.com where their search credit
