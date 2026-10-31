@@ -131,6 +131,16 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
 - **Next:** a short "Now showing" index of active features in Coming Attractions or the footer, and
   a reader-facing note on Sources & Methods that publisher-reported stories carry a byline.
 
+## Beta Mode & release notes (added Oct 30, 2026)
+- **Beta Mode stamp.** A red rubber-stamp line above the edition banner ("Beta Mode", the version number,
+  "Fresh ink, still drying. Read the release notes"), linking to release-notes.html. It lives in the
+  artifact's index.html; the morning task carries it forward unchanged and never changes the number.
+- **Release notes** at release-notes.html, built from merged pull requests and this roadmap.
+  v0.1 launch (Oct 22), v0.2 Oct 26, v0.3 Oct 27, v0.4 Oct 28, v0.5 Oct 29, v0.6 Beta Mode (Oct 30).
+- **Bumping the version:** the number goes up by a tenth when a batch of features ships; daily editions
+  don't change it. Add the new release to release-notes.html and change the number in the stamp on the
+  artifact in the same sitting.
+
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
    newsletter service (Buttondown is the standing candidate), verify news@nevadacitynugget.com
