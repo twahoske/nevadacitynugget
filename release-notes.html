@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Release notes for the Nevada City Nugget: what changed on the paper, version by version, while it is in beta.">
+<link rel="canonical" href="https://nevadacitynugget.com/release-notes.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Release Notes · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+ul.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.srclist li{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--rule-soft)}
+ul.srclist li:first-child{border-top:1px solid var(--rule)}
+ul.srclist .s-name{font-family:var(--display);font-weight:700;min-width:210px}
+ul.srclist .s-what{font-size:14px;color:var(--ink-mid);flex:1;min-width:200px}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p + p{margin-top:8px}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+ul.rel{margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+ul.rel li::marker{color:var(--red)}
+.rel-h{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+.rel-h small{display:block;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);margin-top:2px}
+.beta-stamp{display:inline-block;color:var(--red);border:3px double var(--red);padding:2px 10px 1px;font-weight:900;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transform:rotate(-2deg)}
+.beta-stamp::before,.beta-stamp::after{content:"✱";font-size:9px;letter-spacing:0;margin:0 6px;vertical-align:1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner">Release Notes</div>
+<div>
+  <h1>Nevada City Nugget</h1>
+  <p class="motto">News from the Composing Room</p>
+</div>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<div class="notebox">
+  <p><span class="beta-stamp">Beta Mode</span> &nbsp;<b>The Nugget is new, and still being built.</b> The paper first went to press on October 22, 2026, and new features are added most days. Expect the odd smudge while the ink dries; mistakes are corrected at the bottom of the next edition.</p>
+  <p><b>The version number</b> (v0.6 today) goes up by a tenth each time a batch of new features lands. The daily editions themselves don't change it.</p>
+  <p><b>Found something broken, or have an idea?</b> Write <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a>.</p>
+</div>
+
+<section id="v0.6">
+  <h2 class="kicker"><span class="label">Version 0.6</span></h2>
+  <p class="rel-h">Beta Mode<small>Friday, October 30, 2026</small></p>
+  <ul class="rel">
+    <li>A <b>Beta Mode</b> stamp now sits atop every edition with the version number, linking here.</li>
+    <li>This page: release notes, so readers can see what changed and when.</li>
+  </ul>
+</section>
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+<section id="v0.5">
+  <h2 class="kicker"><span class="label">Version 0.5</span></h2>
+  <p class="rel-h">Finding Old Editions<small>Thursday, October 29, 2026</small></p>
+  <ul class="rel">
+    <li>Every archived edition now carries its own title and description, drawn from that day's headlines, so search results and shared links say what was in it.</li>
+    <li>A new <a href="/editions/">archive page</a> lists every edition with its lead story, and the Previously list now ends with an "All editions" link.</li>
+    <li><b>The Bill of Fare</b> debuted: breakfast, lunch, and dinner picks around town at $, $$, and $$$.</li>
+  </ul>
+</section>
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+<section id="v0.4">
+  <h2 class="kicker"><span class="label">Version 0.4</span></h2>
+  <p class="rel-h">Trails, Beds, and a Stamp of Our Own<small>Wednesday, October 28, 2026</small></p>
+  <ul class="rel">
+    <li><b>Trails &amp; Vistas</b>, a standing guide to local hikes and sights (<a href="trails.html">trails.html</a>), with a Trail of the Day starting October 30.</li>
+    <li><b>Where to Stay</b>, a visitor lodging guide (<a href="stay.html">stay.html</a>).</li>
+    <li>An <b>Only in the Nugget</b> stamp now marks the publisher's own original reporting.</li>
+    <li>The right-hand corner of the dateline now reads "Mmm nuggets."</li>
+    <li>The page's code was locked down: only the approved Wire share button may run, and an automatic check refuses to publish anything else.</li>
+  </ul>
+</section>
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+<section id="v0.3">
+  <h2 class="kicker"><span class="label">Version 0.3</span></h2>
+  <p class="rel-h">Where to Get a Drink<small>Tuesday, October 27, 2026</small></p>
+  <ul class="rel">
+    <li><b>Where Can I Get a Damn Drink Around Here?</b>, a visitor bar guide (<a href="drinks.html">drinks.html</a>), with Unit J listed under "Members Only."</li>
+    <li>The publisher's own stories now run on a schedule, starting with Big Works in Arts &amp; Culture.</li>
+    <li>Every edition's footer now links Standards &amp; Disclosures, Privacy, and Terms of Use.</li>
+  </ul>
+</section>
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+<section id="v0.2">
+  <h2 class="kicker"><span class="label">Version 0.2</span></h2>
+  <p class="rel-h">The First Round of Fixes<small>Monday, October 26, 2026</small></p>
+  <ul class="rel">
+    <li>New <a href="standards.html">Standards &amp; Disclosures</a>, <a href="privacy.html">Privacy</a>, and <a href="terms.html">Terms of Use</a> pages.</li>
+    <li>On phones, the page no longer scrolls sideways, and the Wire button stays inside the column.</li>
+    <li>A redesigned dateline bar: issue number, date, and elevation in three columns.</li>
+    <li>Radio Log: The Playground and The Music Grotto added to Mondays, from KVMR's Spinitron listings.</li>
+    <li>Groundwork to help Google find the paper: a sitemap, search listing data, and archived editions that point to their own addresses.</li>
+    <li>Search and share previews now describe the Nugget as "A Modern-Vintage daily paper for Nevada City, California."</li>
+  </ul>
+</section>
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+<section id="v0.1">
+  <h2 class="kicker"><span class="label">Version 0.1</span></h2>
+  <p class="rel-h">First Edition<small>Thursday, October 22, 2026</small></p>
+  <ul class="rel">
+    <li>Edition No. 1: a daily paper in a 1941 broadsheet design, with the blackletter nameplate and ridge engraving.</li>
+    <li>City Hall &amp; Politics leading, The Docket of agenda digests, Legal Notices, and the Police Blotter.</li>
+    <li>Meeting summaries from official recordings, and Elected Officials with sourced quotes from the public record.</li>
+    <li>Amusements with ticket links, the KVMR Radio Log with Listen Live, and The Back Page.</li>
+    <li>The Wire share button on every section, the <a href="sources.html">Sources &amp; Methods</a> page, an edition archive, the tip line, an Evening Edition, and an emergency Extra desk.</li>
+  </ul>
+</section>
+
+<section>
+  <h2 class="kicker"><span class="label">Coming Up</span></h2>
+  <ul class="rel">
+    <li><b>Merchant of the Day</b> begins Monday, November 2: a daily profile of one Nevada City business.</li>
+    <li>From the Nugget's Morgue will run items from the November 19, 1945 Nugget, November 16 to 26.</li>
+  </ul>
+</section>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p style="display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;margin-top:8px">
+    <a href="standards.html">Standards &amp; Disclosures</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms of Use</a>
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

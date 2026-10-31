@@ -284,6 +284,8 @@ def main():
         urls.append((f"{SITE}trails.html", None, "monthly", "0.7"))
     if (ROOT / "stay.html").exists():
         urls.append((f"{SITE}stay.html", None, "monthly", "0.7"))
+    if (ROOT / "release-notes.html").exists():
+        urls.append((f"{SITE}release-notes.html", None, "weekly", "0.3"))
     urls += [(f"{SITE}{page}", None, "yearly", "0.3")
              for page in ("standards.html", "privacy.html", "terms.html") if (ROOT / page).exists()]
     urls.append((f"{SITE}editions/", dated[0] if dated else None, "daily", "0.6"))
