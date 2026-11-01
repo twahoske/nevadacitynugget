@@ -196,6 +196,7 @@ Todd's goal: grow by readers passing the paper along, not social media.
    Todd's own Nevada City photography, newsletter signup (Buttondown) for Merchant Collective
    distribution.
 7. **Enforce HTTPS** once GitHub finishes the certificate (one checkbox in Pages settings).
+   **Done Nov 1, 2026:** Todd ticked "Enforce HTTPS" in the Pages settings.
    Also part of the search push below: Google prefers the https address.
 8. **Trails & Vistas (hikes and sightseeing).** Local hikes and sights around Nevada City:
    Deer Creek Tribute Trail, Hirschman's Pond, Sugarloaf, Independence Trail, Malakoff Diggins
@@ -387,6 +388,12 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
       `build.py` in the project files (`daytrip-sacramento/`). Todd's step: at DreamHost, point the
       sacramentonugget.com redirect (301) at https://nevadacitynugget.com/daytrip/sacramento.html.
       Upkeep: re-check hours and Victorian Christmas details at each season change.
+    - **Truckee is next (Nov 1, 2026):** `daytrip/truckee.html`, "A Day Trip Down From Truckee": I-80 west over
+      Donner Summit to Highway 20 and the Coyote Street exit, the 3,400-foot drop and a Caltrans QuickMap check both
+      ways, parking, a day that starts on Sugarloaf (its lot is on Coyote Street), the seasons, and the labeled Hat
+      Store ad. Shares facts with the Sacramento page but not its copy. Generator: `build.py` in the project files
+      (`daytrip-truckee/`). Todd's step: point the truckeenugget.com redirect (301) at
+      https://nevadacitynugget.com/daytrip/truckee.html.
     - **SEO trap to avoid:** Google treats a ring of near-identical sites built only to funnel visitors
       to one place as "doorway" spam, which can sink the main site. So: no copy-paste pages, no separate
       thin sites on each domain, and the pages sit on nevadacitynugget.com where their search credit
