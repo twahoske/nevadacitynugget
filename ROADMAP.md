@@ -169,6 +169,15 @@ Todd's goal: grow by readers passing the paper along, not social media.
    the morning email to publish-by-email so the service distributes each edition from news@
    with sign-ups and unsubscribes handled properly. Todd and Niel migrate onto the list; the
    tip line and contact address stay as they are. (Added Oct 23, 2026.)
+   **Built Nov 1, 2026 (waiting on Todd's Buttondown account):** a Subscribe page at `subscribe.html`
+   ("The Subscriber Rolls") with a "Sign Me Up" button that links out to Buttondown's own hosted sign-up
+   page (https://buttondown.com/nevadacitynugget), so the site still has no forms and the CSP and content
+   guard stay as they are. privacy.html names Buttondown and what it keeps (address, sign-up date,
+   confirmation, status; open and click tracking off, which is Buttondown's default). Subscribe link added to
+   the policy page footers; subscribe.html is in the sitemap. Todd's steps: create the Buttondown account with
+   username `nevadacitynugget` (free to 100 subscribers), verify nevadacitynugget.com as the sending domain
+   for news@ (DNS records at DreamHost), leave open and click tracking off. Then: a Subscribe line in the
+   edition footer (morning task prompt), and switching the morning email over to Buttondown.
 2. **The Bill of Fare (food section).** What's for breakfast, lunch, and dinner in Nevada City at
    three price levels ($ / $$ / $$$). Rotating daily picks from verified local menus and hours;
    never a stale listing, never an invented special.
