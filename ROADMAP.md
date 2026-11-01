@@ -284,6 +284,12 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     figure prints only with a source (Todd is chasing one), or as the publisher's own lore, labeled so. Pairs with Local History
     Unearthed (item 13). Also: a **western-themed Hat Store ad** for this page, from art Todd supplies or
     approves (the existing Hat Store ads are never replaced without his say).
+    **Started Nov 1, 2026:** a "Saloon History" section at the foot of `drinks.html` (`#history`): the Nugget's own
+    count of about thirty saloons, three breweries, and the wine and liquor dealers in Brown & Dallison's directory
+    dated Dec. 31, 1855 (CAGenWeb transcription), the 1856/1858/1863 fires, the 1985 National Register survey's
+    saloons that still pour, the 800 line labeled as the publisher's lore, and a call for the clubs and causes born
+    over a drink. Still to come: those clubs and causes (each needs a document), and the western Hat Store ad,
+    waiting on art from Todd. Generator: `build.py` in the project files (`damn-drink/`).
 17. **The Golden Era longform.** A long feature on the building at 309 Broad St. (now the Golden Era):
     Todd interviews Eric, co-owner of the Golden Era, about the bars that came before at that address,
     then co-owner Cindy, then the paper digs through publicly available history of the building and the
