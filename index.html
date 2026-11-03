@@ -240,16 +240,19 @@ a.sponsor img{width:100%;height:auto;display:block}
 .beta-bar a:hover .beta-note,.beta-bar a:hover .beta-v{color:var(--red)}
 .beta-bar + .banner{margin-top:0}
 
-</style></head>
+.inside2{display:grid;grid-template-columns:1fr 1fr;border-top:3px double var(--ink);border-bottom:3px double var(--ink);margin:14px 0 4px;font-size:14px} .inside2>div{padding:7px 10px 9px} .inside2>div+div{border-left:1px solid var(--rule)} .inside2 b{font:800 11px var(--display);letter-spacing:.14em;text-transform:uppercase} .inside2 a{color:var(--ink)} .inside2 a b{text-decoration:none} .secb{margin:34px 0 10px;text-align:center;border-top:6px double var(--ink);padding-top:12px} .secb .tag{font:800 11px var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-mid)} .secb .np{font-family:"Grenze Gotisch",var(--display);font-size:46px;line-height:1;margin:4px 0 2px} .secb .mot{font-style:italic;font-size:14px;color:var(--ink-mid);border-bottom:1px solid var(--ink);padding-bottom:8px} .secb .mot a{color:var(--ink-mid)} .alm{border:3px double var(--ink);padding:12px 14px} .alm .row{display:flex;gap:10px;border-bottom:1px dotted var(--rule);padding:5px 0;font-size:14.5px} .alm .row:last-of-type{border-bottom:0} .alm .k{flex:0 0 112px;font:800 10.5px/1.9 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid)} .ptr{text-align:center;font-size:14.5px} @media (max-width:640px){.inside2 .l{display:none}.inside2>div{text-align:center;padding:6px 4px}.inside2 b{font-size:10px;letter-spacing:.1em}.secb .np{font-size:34px}.alm .k{flex-basis:84px}}
+</style>
+</head>
 <body>
+
 
 <div class="wrap">
 
 <p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.8</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
 
-<p class="banner">Evening Edition</p>
+<p class="banner">Election Day Issue</p>
 <header class="masthead">
-  <div class="ear">The Nugget is delivered to your inbox every morning at half past six, free of charge.</div>
+  <div class="ear"><a href="https://nevadacitynugget.com/subscribe.html" style="color:inherit">The Nugget is delivered to your inbox every morning at half past six, free of charge.</a></div>
   <div class="nameplate">
     <svg class="np-art" viewBox="0 0 760 118" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <g stroke="currentColor" fill="none" stroke-width="2">
@@ -278,98 +281,83 @@ a.sponsor img{width:100%;height:auto;display:block}
 </header>
 
 <div class="folio">
-  <span class="f-l"><b>Vol. 1, No. 12</b><i>The County Seat Paper</i></span>
-  <span class="f-c"><b>Monday, November 2, 2026</b><i>Nevada City, California</i></span>
+  <span class="f-l"><b>Vol. 1, No. 13</b><i>The County Seat Paper</i></span>
+  <span class="f-c"><b>Tuesday, November 3, 2026</b><i>Nevada City, California</i></span>
   <span class="f-r"><span class="f-hi">Elev. 2,477 Ft.</span><i>Mmm nuggets</i></span>
 </div>
 
 <div class="weatherline">
-  <span><span class="wl-k">The Weather</span>Dry and mild today, high near 60°, low 43°, with lighter north-northeast breezes. Cooler on Election Day, 53°, then 61° Wednesday; a midweek system may bring rain, though forecasters have low confidence in amounts and track</span>
-  <span><span class="wl-k">Almanac</span>Sunrise 6:33 AM · Sunset 5:01 PM · Last quarter moon</span>
-  <span><span class="wl-k">Alerts</span>None in effect. The high-Sierra Winter Weather Advisory expired 7 AM Sunday. No PSPS, red flag warning, or active local wildfire in this morning's sources</span>
+  <span><span class="wl-k">The Weather</span>Showers today, high 53°, low 46°; clearing tonight, then drier and warmer Wednesday</span>
+  <span><span class="wl-k">Almanac</span>Sunrise 6:34 AM · Sunset 5:00 PM · Waning crescent moon</span>
+  <span><span class="wl-k">Alerts</span>None in effect</span>
 </div>
-<p style="margin:-22px 0 0;text-align:center;font-style:italic;font-size:14px;color:var(--ink-mid)">Evening update, 5:00 PM — CAL FIRE lifts the burn permit suspension at 8 AM Tuesday, and the Weather Service now calls for Election Day showers that end Tuesday evening.</p>
 
-<section>
+<nav class="inside2" aria-label="Inside today"><div><a href="#section-a"><b>The Paper</b></a><span class="l"><br>City Hall · Here &amp; There · Blotter · Merchant of the Day · Arts · Amusements · Back Page · Docket · Civic Calendar</span></div><div><a href="visitor.html"><b>Visitor's Nugget ▸</b></a><span class="l"><br>Bill of Fare · Trail of the Day · Bar Guide · Where to Stay · Day Trips</span></div></nav>
+
+<section id="section-a">
   <h2 class="kicker"><span class="label">City Hall &amp; Politics</span></h2>
 
   <article class="lede">
-    <p class="meta">Election · One Day Out</p>
-    <h3>Last Day Of Early Voting; Polls Open 7 AM Tuesday</h3>
-    <p class="subdeck">Vote centers open 9 AM to 5 PM today · Nine vote centers 7 AM to 8 PM on Election Day · Mailed ballots must be postmarked by Nov. 3 · Measure Q on Nevada City ballots</p>
-    <p>Today is the last day of early in-person voting in Nevada County. The county's elections office says eight vote centers are open 9 AM to 5 PM through today, including the Providence Mine Room at the Nevada County Government Center, 950 Maidu Ave. On Election Day, Tuesday, nine vote centers will be open from 7 AM to 8 PM; the county lists every location and its hours at NevadaCountyCa.gov/votehere. Ballots may also go in an official drop box, including the 24-hour box at City Hall, 317 Broad St., by 8 PM Tuesday. Mailed ballots count only if postmarked by November 3, and the county notes postmarks are applied in Sacramento and Reno, so a drop box is the surer route this late.</p>
-    <p>Nevada City's own question is Measure Q, the Residential Short-Term Rental Measure; the measure's text, its impartial analysis, and the arguments for and against are posted by the Registrar of Voters. Fifteen high school students will work Tuesday as paid poll workers at vote centers around the county, including a Nevada City student, the county said Saturday. "Getting young people involved in elections is one of the best ways to build a stronger democracy," said Registrar Armando Salud-Ambriz.</p>
-    <p>Ballot processing can be watched live on the Nevada County Elections YouTube channel. The Nugget will report Nevada City's returns, Measure Q first, in Wednesday morning's edition.</p>
-    <p class="src">Sources: <a href="https://nevadacountyca.gov/m/newsflash/Home/Detail/8989">Nevada County Elections, Oct 31</a> (vote center counts and hours); <a href="https://nevadacountyca.gov/m/newsflash/Home/Detail/8966">Nevada County Elections, Oct 21</a> (Government Center vote center, postmark rule); <a href="https://www.nevadacountyca.gov/DocumentCenter/View/70238/NOTICE-OF-MEASURE-Measure-Q">Notice of Measure Q</a>; <a href="https://www.nevadacountyca.gov/DocumentCenter/View/70397/Final-Impartial-Analysis">Final Impartial Analysis</a>.</p>
+    <p class="meta">Election · Today</p>
+    <h3>Election Day: Polls Open 7 AM To 8 PM, And Measure Q Is The City's Question</h3>
+    <p class="subdeck">Nine vote centers countywide, 7 AM to 8 PM · Drop box at City Hall until 8 PM · First returns shortly after 8 PM · Certified results no sooner than Nov. 25</p>
+    <p>Nevada County votes today. The county elections office says nine vote centers are open from 7 AM to 8 PM, with every location and its hours listed at NevadaCountyCa.gov/votehere. Ballots can also go in an official drop box, including the 24-hour box at City Hall, 317 Broad St., until 8 PM. A ballot sent by mail counts if it is postmarked today and arrives by November 10, but the county has warned that postmarks are applied in Sacramento and Reno, so a drop box is the surer route on the last day. Nevada City ballots carry Measure Q, the Residential Short-Term Rental Measure. The Weather Service expects rain showers through the day, tapering off this evening, so voters may want an umbrella in line.</p>
+    <p><b>When the numbers come.</b> The county said Monday that the first results will post shortly after polls close at 8 PM, covering in-person votes and the mail ballots received and processed before today, with updates about every two hours until the in-person votes are counted. Mail ballots returned yesterday or today will not be in the first count. After election night, updates post every Friday and Tuesday at 4:30 PM at NevadaCountyCA.gov/November3Election. As of Monday morning, about 36 percent of the county's roughly 76,700 registered voters had cast ballots, the county said.</p>
+    <p><b>The slow part.</b> Signatures on mail ballots must be checked, voters with missing or mismatched signatures given a chance to fix them, and provisional and same-day registration ballots reviewed. A public hand count of at least 1 percent of precincts is set for Thursday, November 12, at 9 AM at the Ballot Processing Center, 12740 Loma Rica Drive, Grass Valley. Certified results will come no earlier than 5 PM on November 25; state law sets a December 3 deadline. The county also noted a new state law that could hold back statewide election-night results if voting hours are extended anywhere because of a disruption; local results stay on schedule unless that happens at a Nevada County polling place. Election processing can be watched live on the Nevada County Elections YouTube channel. The Nugget will report Nevada City's returns, Measure Q first, in Wednesday's edition.</p>
+    <p class="src">Sources: <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/8990">Nevada County Elections, Nov 2</a> (also <a href="https://yubanet.com/regional/why-nevada-county-final-election-results-will-take-time/">via YubaNet</a>); <a href="https://nevadacountyca.gov/m/newsflash/Home/Detail/8989">Nevada County Elections, Oct 31</a>; <a href="https://nevadacountyca.gov/m/newsflash/Home/Detail/8966">Nevada County Elections, Oct 21</a> (postmark warning); <a href="https://www.nevadacountyca.gov/DocumentCenter/View/70238/NOTICE-OF-MEASURE-Measure-Q">Notice of Measure Q</a>; <a href="https://yubanet.com/featured/now/">NWS Sacramento via YubaNet's Happening Now log, Nov 2, 6:22 AM</a>.</p>
   </article>
 
   <article>
-    <p class="meta">City Council · Awaiting The Record (updated 5 PM)</p>
+    <p class="meta">Fire · Burn Permits</p>
+    <h3>Burn Permits Back In Force As Of 8 AM Today</h3>
+    <p>CAL FIRE's Nevada-Yuba-Placer Unit lifts its burn permit suspension for Nevada, Yuba, Placer, and Sierra counties at 8 AM today. Holders of current agriculture and residential permits may burn again on permissible burn days; agriculture burns still need a CAL FIRE inspection until peak fire season ends. Check for a burn day with the Northern Sierra Air Quality Management District, (530) 274-7928, before lighting. The rules: dry natural vegetation only, piles no larger than four feet across and four feet high, a 10-foot circle cleared to bare soil, water and a shovel at hand, an adult present throughout, and no burning on windy days. YubaNet's fires page lists no active incident in Nevada County or the nearby foothills this morning, and PG&amp;E has announced no new power shutoff since its October 17 final update.</p>
+    <p class="src">Sources: <a href="https://yubanet.com/regional/nevada-yuba-placer-and-sierra-counties-burn-permit-suspension-lifted-starting-nov-3-2026/">CAL FIRE Nevada-Yuba-Placer Unit via YubaNet, Nov 2</a>; <a href="https://yubanet.com/fires/">YubaNet fires page</a>; <a href="https://www.pge.com/en/newsroom/currents/safety/pge-may-need-to-turn-off-power-for-safety.html">PG&amp;E newsroom</a>, checked Nov 3.</p>
+  </article>
+
+  <article>
+    <p class="meta">City Council · Awaiting The Record</p>
     <h3>October 28 Minutes Still Not Posted</h3>
-    <p>The city's Agenda Center showed no minutes for the October 28 council meeting as of this morning, and no new agenda. The minutes will settle whether the council formally voted on new City Hall public hours (Fridays closed, open through the lunch hour, effective December 1), which The Union reported as adopted and which the Nugget's transcript of the recording does not show as a roll-call vote. The Nugget will report the minutes when they post. A 5 PM check of the Agenda Center found them still not posted.</p>
-    <p class="src">Sources: City of Nevada City <a href="https://www.nevadacityca.gov/AgendaCenter">Agenda Center</a>, checked Nov 2; <a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>; <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">the Nugget's caption transcript</a> of the <a href="https://www.youtube.com/watch?v=uNzsYEjpjuc">official recording</a>.</p>
-  </article>
-
-  <article>
-    <p class="meta">Conditions · Fire · Power (updated 5 PM)</p>
-    <h3>A Dry Day Before A Damp Maybe</h3>
-    <p>The weekend storm has cleared. NWS Sacramento's Sunday guidance, relayed by YubaNet, called for drier, breezy north-to-east winds into Sunday evening and a possible midweek system, with low confidence in its amounts, thunderstorm chances, and track. OpenSnow has Nevada City at 60° today, 53° on Election Day, and 61° Wednesday. A light dusting of snow fell at Soda Springs Sunday morning.</p>
-    <p><b>Evening update:</b> NWS Sacramento's Monday morning package, posted by YubaNet at 6:22 AM after this paper went to press, says a quick-moving system still brings rain showers on Election Day, Tuesday, with light snow showers above 6,500 feet. Forecast amounts were trimmed slightly, thunderstorm chances stay at 10 percent or less, and the precipitation is now expected to taper off Tuesday evening rather than Wednesday. Warmer, drier weather with periods of breezy north-to-east winds follows Wednesday into the weekend; another unsettled stretch is possible next week, with low confidence.</p>
-    <p>YubaNet's fires page lists no incident in Nevada County or the nearby foothills. Its log noted a debris-burn check on Lime Kiln Road Sunday morning with a burn ban still in effect; that suspension ends at 8 AM Tuesday (see below). YubaNet's log also noted a prescribed burn Monday on eight acres of Champion Mine, next to the Tribute Trail in Nevada City, so smoke there was planned. PG&amp;E's shutoff page still carries its October 17 final update, with no new shutoff announced.</p>
-    <p class="src">Sources: <a href="https://yubanet.com/featured/now/">NWS Sacramento via YubaNet's Happening Now log, Nov 1, 6:08 AM</a> and <a href="https://yubanet.com/featured/now/">Nov 2, 6:22 AM and 8:55 AM entries</a>; <a href="https://opensnow.com/location/nevada-city-ca-us/weather">OpenSnow</a>, Nov 2; <a href="https://yubanet.com/fires/">YubaNet fires page</a>, Nov 1; <a href="https://www.pge.com/en/newsroom/currents/safety/pge-may-need-to-turn-off-power-for-safety.html">PG&amp;E newsroom</a>.</p>
-  </article>
-  <article>
-    <p class="meta">Evening Update · Fire · Burn Permits</p>
-    <h3>Burn Permit Suspension Ends 8 AM Tuesday</h3>
-    <p>CAL FIRE Nevada-Yuba-Placer Unit Chief Jim Hudson is cancelling the burn permit suspension for Nevada, Yuba, Placer, and Sierra counties, effective 8 AM Tuesday, November 3. Holders of current, valid agriculture and residential burn permits may resume burning on permissible burn days. CAL FIRE burn permits are still required, and agriculture burns must be inspected by CAL FIRE before burning until the end of peak fire season.</p>
-    <p>Before lighting, confirm a permissible burn day with the Northern Sierra Air Quality Management District, (530) 274-7928. The rules: dry natural vegetation only, no trash or milled lumber; no burning on windy days; piles no larger than four feet across and four feet high; a 10-foot circle cleared to bare soil around each pile; a shovel and water at hand; and an adult in attendance the whole time.</p>
-    <p class="src">Sources: <a href="https://yubanet.com/regional/nevada-yuba-placer-and-sierra-counties-burn-permit-suspension-lifted-starting-nov-3-2026/">CAL FIRE Nevada-Yuba-Placer Unit via YubaNet, Nov 2</a>; <a href="https://yubanet.com/featured/now/">YubaNet's Happening Now log, Nov 2, 4:35 PM</a>.</p>
+    <p>The city's Agenda Center showed no minutes for the October 28 council meeting this morning, and no new council or Planning Commission agenda. The minutes will settle whether the council formally voted on new City Hall public hours (Fridays closed, open through the lunch hour, effective December 1), which The Union reported as adopted and which the Nugget's transcript of the recording does not show as a roll-call vote.</p>
+    <p class="src">Sources: City of Nevada City <a href="https://www.nevadacityca.gov/AgendaCenter">Agenda Center</a>, checked Nov 3; <a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>; <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">the Nugget's caption transcript</a> of the <a href="https://www.youtube.com/watch?v=uNzsYEjpjuc">official recording</a>.</p>
   </article>
 
   <article>
     <p class="meta">Activism · Statements</p>
-    <h3>No New Rallies Or Statements Before The Vote</h3>
-    <p>This morning's searches found no rallies, marches, petition drives, or public-comment campaigns newly announced in Nevada City or western Nevada County beyond election canvassing, and no new public statements from Nevada City council members since The Union's Saturday account of the October 28 meeting. KVMR News has posted no new episode since October 28. A quiet Monday, and the paper says so.</p>
-    <p class="src">Sources: searches of The Union's <a href="https://www.theunion.com/news/local/">Local News page</a>, <a href="https://yubanet.com">YubaNet</a>, <a href="https://kvmrnews.transistor.fm/episodes">KVMR News</a>, and regional outlets, Nov 2.</p>
+    <h3>A Quiet Morning Before The Count</h3>
+    <p>This morning's searches found no rallies, marches, petition drives, or public-comment campaigns announced in Nevada City or western Nevada County for Election Day, and no new public statements from Nevada City council members. KVMR News has posted no new episode since October 28.</p>
+    <p class="src">Sources: searches of The Union's <a href="https://www.theunion.com/news/local/">Local News page</a>, <a href="https://yubanet.com">YubaNet</a>, <a href="https://kvmrnews.transistor.fm/episodes">KVMR News</a>, and regional outlets, Nov 3.</p>
   </article>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
 <section>
-  <h2 class="kicker"><span class="label">Meetings on the Record</span></h2>
-  <p class="meta" style="text-align:center"><a href="https://nevadacitynugget.com/meetings/"><b>What They Said at City Hall</b></a></p>
-  <p style="text-align:center">Searchable transcripts of every City Council and Planning Commission meeting the city has posted since July, newest first. Each timestamp opens the city's own video at that moment.</p>
-  <p class="src" style="text-align:center">Unofficial: made by machine from YouTube's automatic captions, so expect misheard words and misspelled names. The city's minutes are the official record.</p>
-</section>
-
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
-  <h2 class="kicker"><span class="label">From the Dais</span></h2>
-  <p style="text-align:center;font-family:var(--display,Georgia,serif);font-size:20px;font-weight:600;font-style:italic;line-height:1.35;margin:4px 6% 0">&ldquo;When I got elected in 2020 filling a vacant seat, my goal was to secure the future of this community.&rdquo;</p>
-  <p class="meta" style="text-align:center"><b>Vice Mayor Gary Petersen</b>, explaining his vote for the water and sewer rate increase</p>
-  <p class="src" style="text-align:center">City Council, Oct. 14, 2026 · <a href="https://www.youtube.com/watch?v=vb0RCslTDdU&t=8327s">watch at 2:18:47</a> · <a href="https://nevadacitynugget.com/meetings/council-2026-10-14.html">full transcript</a>. Words as heard in the city's video via automatic captions; the video is the record.</p>
-</section>
-
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
-  <h2 class="kicker"><span class="label">The Docket</span></h2>
-  <p style="margin:0;font-size:14px;color:var(--ink-mid);text-align:center;font-style:italic">Every published City Council and Planning Commission agenda, digested item by item the morning after it posts, and held here until the meeting. Items touching downtown or the commercial district are marked ❖.</p>
-  <p class="src" style="text-align:center">No agenda is pending this morning. The city's <a href="https://www.nevadacityca.gov/AgendaCenter">Agenda Center</a> shows nothing newer than the October 28 council agenda, and the county's <a href="https://www.nevadacountyca.gov/AgendaCenter">Agenda Center</a> shows only a Mental Health Board agenda for November 6, with no Board of Supervisors or Planning Commission agenda carrying Nevada City items. Next expected: the council's November meeting. Its regular second-Wednesday date falls on Veterans Day, November 11, so watch for the posted date; the October 28 agenda posted five days ahead. The city Planning Commission's next regular date is Thursday, November 19. An evening check at 5 PM found no new City Council or Planning Commission agenda posted.</p>
-</section>
-
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
-  <h2 class="kicker"><span class="label">Legal Notices &amp; Permits</span></h2>
-  <div class="smallads">
-    <p>No new city public notices, planning applications, business license filings, or ABC postings turned up in this morning's check of the city's site, its news page, and both Agenda Centers. Standing deadlines:</p>
-    <p><b>Election notice.</b> Measure Q, the Nevada City Residential Short-Term Rental Measure, on Tuesday's ballot. <a href="https://www.nevadacountyca.gov/DocumentCenter/View/70238/NOTICE-OF-MEASURE-Measure-Q">Notice of Measure, Nevada County Registrar of Voters</a>.</p>
-    <p><b>Public survey.</b> Nevada City Active Transportation and Trails Plan: online survey open through November 24; community workshop Thursday, Nov 12, 4:30 to 6:15 PM, Miners Foundry. <a href="https://www.nevadacityca.gov/activetransportation">City of Nevada City</a>.</p>
-    <p><b>Request for proposals.</b> CHAMP Gallery exhibition partners: proposals due November 19 at 3 PM to the Deputy City Clerk. <a href="https://www.theunion.com/news/nevada-city-seeks-community-arts-partners-for-champ-gallery-exhibitions/article_dbaf3e83-5250-4cd3-95b4-1462123e52a8.html">The Union, Oct 23</a>.</p>
-    <p><b>Roadside signs.</b> Nevada County Public Works is removing private signs, political ones included, from county road rights-of-way; held 60 days for pickup at (530) 265-1411. <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/8980">Nevada County, Oct 27</a>.</p>
+  <h2 class="kicker"><span class="label">Here &amp; There</span></h2>
+  <div class="factrow">
+    <article>
+      <p class="meta">California · Elections</p>
+      <h3 style="font-size:19px">Supreme Court Turns Down Justice Department On Eve Of Vote</h3>
+      <p>The U.S. Supreme Court on Monday denied the federal government's request for an injunction in its fight with California over today's election, with no noted dissent, according to the Secretary of State's office, which said the Ninth Circuit had turned down the same request October 30. Secretary of State Shirley N. Weber's message to voters: "The time to vote is now!" The state's release did not mention Nevada County, which last week answered a separate Justice Department demand about 10 flagged names.</p>
+      <p class="src">Sources: <a href="https://yubanet.com/california/the-office-of-the-california-secretary-of-state-applauds-scotus-decision-denying-usdojs-attempt-to-disenfranchise-eligible-voters/">California Secretary of State via YubaNet, Nov 2</a>; <a href="https://www.theunion.com/news/no-evidence-of-non-citizens-voting-in-nevada-county-in-nov-3-2026-general-election/article_6eaa9967-df0b-4caf-bd7e-92b22c32b5d2.html">The Union</a>.</p>
+    </article>
+    <article>
+      <p class="meta">Grass Valley · Arts</p>
+      <h3 style="font-size:19px">Center For The Arts Gala Grosses $246,798</h3>
+      <p>The Center for the Arts says its October 17 gala, An Evening in Paris, brought in $246,798 in gross revenue, its first gala since 2024. The Center reports $610,000 raised toward an $870,000 annual goal and is asking for the remaining $250,000 by December 31.</p>
+      <p class="src">Source: <a href="https://yubanet.com/regional/an-evening-in-paris-raises-246798-for-the-center-for-the-arts/">The Center for the Arts via YubaNet, Nov 2</a></p>
+    </article>
+    <article>
+      <p class="meta">Nevada City · Water</p>
+      <h3 style="font-size:19px">NID's General Manager At Coffee Talk Wednesday</h3>
+      <p>Nevada Irrigation District General Manager Jennifer Hanson talks "All Things Water" at Coffee Talk tomorrow, Wednesday, Nov. 4, 9 to 11 AM, at Nevada City Community Church, 300 Main St.</p>
+      <p class="src">Source: <a href="https://www.theunion.com/news/coffee-talk-will-host-nid-general-manager-jennifer-hanson-to-talk-all-things-water/article_0dd7fd80-61b4-4ce7-8375-5dd34b7e35e8.html">The Union, Oct 29</a></p>
+    </article>
+    <article>
+      <p class="meta">Outside Press</p>
+      <h3 style="font-size:19px">Nothing From The Big Papers</h3>
+      <p>This morning's search found no fresh Nevada City coverage in the Sacramento Bee, SFGate, CapRadio, the Los Angeles Times, or the AP.</p>
+      <p class="src">Source: searches of regional outlets, Nov 3.</p>
+    </article>
   </div>
 </section>
 
@@ -378,39 +366,39 @@ a.sponsor img{width:100%;height:auto;display:block}
 <section>
   <h2 class="kicker"><span class="label">Police Blotter</span></h2>
   <div class="smallads">
-    <p>At a children's event in a community room off Old Tunnel Road, a 911 caller told Grass Valley police a resident had put a knife into a child's Halloween bucket; the man was said to be wearing a cardboard box on his head.</p>
-    <p>A Pepperwood Drive caller told deputies her ex-wife had hacked into her Ring camera.</p>
-    <p>On Idaho Maryland Road, a 911 caller reported a driver who brake-checked and then blocked the caller's car.</p>
-    <p>A Table Meadow Road resident asked deputies to stand by while she retrieved her mother's dog.</p>
-    <p>On Conaway Avenue in Grass Valley, a water leak at a meter was reported by way of 911.</p>
-    <p class="cutline" style="text-align:left;margin-top:8px">Drawn from police logs via The Union (<a href="https://www.theunion.com/news/nevada-county-police-blotter-suspect-putting-knife-in-kids-halloween-bucket-reported/article_f65737d0-891f-4907-8538-4c4f9195b1c8.html">Oct 31</a>, Thursday's entries not run yesterday; no newer column had posted by this morning) and <a href="https://yubanet.com/featured/now/">YubaNet's Happening Now log</a>, which showed no Nevada City incidents over the weekend.</p>
+    <p>On Henson Road in Alta Sierra, a golf cart carrying trick-or-treaters accelerated into a tree on Halloween night; the driver left on foot, witnesses pointed CHP and deputies to her home, and she was arrested on suspicion of DUI, while the children were treated at the scene and released.</p>
+    <p>A fire alarm and smoke in a hallway emptied a building on Presley Way in Grass Valley Sunday night; the incident commander's finding was burnt food.</p>
+    <p>On Grizzly Hill Road on the San Juan Ridge, an RV burned all the way through Sunday night, and firefighters kept it from taking the brush with it.</p>
+    <p>A German Shepherd was reported running in the northbound lanes of Highway 49 at Oakhurst Drive.</p>
+    <p>A signpost on Highway 174 at Dalmatian Drive gave up Monday afternoon and lay down in the lanes.</p>
+    <p class="cutline" style="text-align:left;margin-top:8px">Drawn from <a href="https://yubanet.com/regional/chp-grass-valley-investigates-dui-golf-cart-crash/">a CHP Grass Valley release via YubaNet</a> and <a href="https://yubanet.com/featured/now/">YubaNet's Happening Now log</a>, Nov 1 and 2. No new dated Police Blotter column from The Union could be confirmed this morning; its <a href="https://www.theunion.com/news/local/">Local News page</a> still leads with the October 31 column used earlier.</p>
   </div>
 </section>
 
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+<p class="ptr" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 4px;margin:18px 0;font-size:15.5px">✉ <b>Get the Nugget by email,</b> free each morning. No trackers, one click to leave. <a href="https://nevadacitynugget.com/subscribe.html"><b>Sign the rolls ▸</b></a></p>
 
 <section>
   <h2 class="kicker"><span class="label">Merchant of the Day</span></h2>
 
   <article class="lede">
-    <p class="meta">No. 1 · Lodging, Dining &amp; Drink · 211 Broad Street</p>
-    <h3>The National Exchange Hotel: Taking Guests On Broad Street Since 1856</h3>
-    <p class="subdeck">A brick hotel from the Gold Rush · Once the town's telegraph office and post office · Restored after 2018 and still taking guests</p>
-    <p>The Nugget opens its new daily business column with one of Broad Street's oldest addresses. According to the hotel's own history, hotelmen Pearson and Haley opened the National Exchange on August 26, 1856, in a building leased from Dr. Bicknell, part of the brick Bicknell Block put up in stages from 1854 to 1857. The hotel's history counts seven major fires in town between 1851 and 1856, which is why so much of downtown went up in brick.</p>
-    <p><b>A building with a long resume.</b> The hotel's history says it held the town's first telegraph office in the late 1800s, served as a major stagecoach stop, and housed the U.S. Post Office until 1942. Its Wikipedia entry adds that a citywide fire in 1863 closed the hotel until April 1864, that John and Bayliss Rector owned it from 1882 until their deaths in 1914 and 1915, and that Fred C. Worth took over in 1925 and brought in electricity and central heating. Later owners included George Murphy, from 1946, and Tom Coleman, from 1979. The building went on the National Register of Historic Places in 1973 and became California Historical Landmark No. 899 in 1976.</p>
-    <p><b>The restoration.</b> Jordan Fife bought the hotel in 2018, and The Union reported at the time that he planned a renovation of about $5 million, starting with a new roof and code repairs, while keeping two back rooms open so the hotel could hold on to its claim as a continuously operating hotel. The hotel says local architects, designers, and craftspeople worked on it for about three years, and that a forgotten Room 209 turned up behind the walls along the way.</p>
-    <p><b>Inside today.</b> The hotel's website lists Lola, its restaurant, for dinner nightly and brunch daily, and the National Bar from noon on weekdays and 9 AM on weekends. In 2024 the National Exchange and its sister hotel, the Holbrooke in Grass Valley, went on the market. The Union reported in August 2025 that both had been bought by Horizon Hotel Group, led by James Gould, for an undisclosed price, with Acme Hospitality staying on to run the hotels day to day. "Our intent is long-term stewardship," Gould told the paper.</p>
+    <p class="meta">No. 2 · Groceries · 735 Zion Street, Seven Hills District</p>
+    <h3>SPD Market: Three Partners, One Family, Sixty-Seven Years On Zion Street</h3>
+    <p class="subdeck">The letters stand for See, Painter, and Dilley · The Painters have run it alone since 1969 · A third generation now works the floor</p>
+    <p>What does SPD stand for? The Union has the answer: See, Painter, and Dilley, the three men who opened the market in October 1959. Bert See ran an auto parts store and Joe Dilley was a butcher. Lawrence Painter had already been in the grocery trade on Broad Street since 1951, and the partners left downtown for a new 12,000-square-foot store at Zion Street and Argall Way, in what is now the Seven Hills Business District. The store doubled in size within three years.</p>
+    <p><b>How it became a family store.</b> In 1964 Painter and See bought out Dilley, and in 1969 Painter bought out See, The Union reported in 2009; the Painter family has owned the business ever since. A second store opened off McKnight Way in Grass Valley in the early 1980s. Lawrence and Carol Painter's four sons, David, Dennis, Doug, and Dean, took over the company in the early 1990s, and by 2014 Dennis's son Ben was managing the Nevada City store and its more than 30,000 products. The Union traced the family's Nevada County roots back to the 1880s.</p>
+    <p><b>What's on the shelves.</b> SPD's website lists locally grown and organic produce, meat and seafood including products from local farmers, a wine and liquor selection that includes local growers, gluten-free and natural foods, and full-service catering. The Nevada City store also keeps the sort of counter a neighborhood relies on: a postal center, bill pay, money orders, and fishing licenses. Shoppers who sign up for SPD's Community Card send 3 percent of qualifying purchases to a school or nonprofit of their choosing. "We try to carry as much local product as we can," Ben Painter told The Union in 2014.</p>
   </article>
 
   <div class="notebox">
-    <p style="margin:0"><b>Pay a visit:</b> 211 Broad Street, Nevada City. 530-362-7605. <a href="https://thenationalexchangehotel.com/Story/">thenationalexchangehotel.com</a>. Hours are as the hotel posts them; check before you go.</p>
+    <p style="margin:0"><b>Pay a visit:</b> 735 Zion Street, Nevada City, in the Seven Hills Business District. Store office 530-265-4596. <a href="https://www.spdmarket.com">spdmarket.com</a>. SPD's second store is at 129 W. McKnight Way, Grass Valley.</p>
   </div>
 
   <p class="src">Merchant of the Day profiles one Nevada City business each morning, chosen by the Nugget from the public record and the merchant's own published words. No one pays to appear. The Nugget's publisher owns The Hat Store on Broad Street. Corrections and suggestions: news@nevadacitynugget.com.</p>
-  <p class="src">Sources: The National Exchange Hotel, <a href="https://thenationalexchangehotel.com/Story/">"Story"</a>; <a href="https://en.wikipedia.org/wiki/National_Exchange_Hotel">Wikipedia, "National Exchange Hotel"</a>; The Union, <a href="https://www.theunion.com/news/nevada-citys-iconic-national-hotel-sold/">"Nevada City's iconic National Hotel sold"</a> (Liz Kellar), <a href="https://www.theunion.com/news/holbrooke-and-national-exchange-hotels-are-for-sale/article_f6431f94-2849-11ef-8c34-db03e3f9106d.html">"Holbrooke and National Exchange hotels are for sale"</a> (Jennifer Nobles, June 13, 2024), and <a href="https://www.theunion.com/news/new-property-owners-for-the-national-and-holbrooke-hotels-offer-stewardship-and-preservation/article_406927cc-7dc4-4520-89d3-38470aa36c04.html">"New property owners for The National and Holbrooke Hotels..."</a> (Marianne Boll-See, Aug. 31, 2025).</p>
+  <p class="src">Sources: <a href="https://www.spdmarket.com">SPD Markets</a>; The Union, <a href="https://www.theunion.com/news/local-news/meet-your-merchant-spd-market-celebrates-50-years/article_e42e5267-2fe3-5cf5-9070-325a868fb759.html">"Meet your merchant: SPD Market celebrates 50 years"</a> (Oct. 11, 2009) and <a href="https://www.theunion.com/news/local-news/spd-market-it-s-all-about-the-customer/article_c9508600-8bc5-5843-aba5-1bdc564a913b.html">"SPD Market: It's all about the customer"</a> (Dec. 5, 2014); <a href="https://nevadacounty-ca.aauw.net/philanthrophy/sponsors/spd-markets/">AAUW Nevada County sponsor listing</a>.</p>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
 
 <section>
   <h2 class="kicker"><span class="label">Arts &amp; Culture</span></h2>
@@ -439,7 +427,8 @@ a.sponsor img{width:100%;height:auto;display:block}
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
-<section>
+
+<section id="amusements">
   <h2 class="kicker"><span class="label">Amusements</span></h2>
   <div>
     <a class="sponsor" href="https://the-hat-store.com">
@@ -454,16 +443,17 @@ a.sponsor img{width:100%;height:auto;display:block}
     <div class="adbox">
       <p class="venue">The Onyx</p>
       <p class="addr">107 Argall Way · Two Screens, The Magic &amp; The Dream</p>
+      <p class="bill" style="text-align:center"><b>Today Is $8 Tuesday</b><span class="note">Every film, every showtime, $8.</span></p>
       <p class="day">Wicker</p>
-      <p class="bill"><b>Mon through Thu, Nov 5:</b> <span class="times">11:30, 3:35 &amp; 7:30</span><span class="note">Comedic fable, 1 hr 45 min. A shunned fisherwoman (Olivia Colman) orders a husband woven by the village basketmaker, and the wicker man turns the village upside down. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets</a>.</span></p>
+      <p class="bill"><b>Tue, Wed &amp; Thu:</b> <span class="times">11:30, 3:35 &amp; 7:30</span><span class="note">Comedic fable, rated R, 1 hr 45 min. A shunned fisherwoman (Olivia Colman) orders a husband woven by the village basketmaker, and the wicker man turns the village upside down. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets</a>.</span></p>
       <p class="day">You Can See Everything</p>
-      <p class="bill"><b>Mon through Thu, Nov 5:</b> <span class="times">11:00, 3:00 &amp; 7:00</span><span class="note">Documentary, 2 hr 54 min. Elizabeth Holmes lets a film crew follow her in the weeks before she reports to prison, and the project stretches into three years. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets</a>.</span></p>
+      <p class="bill"><b>Tue, Wed &amp; Thu:</b> <span class="times">11:00, 3:00 &amp; 7:00</span><span class="note">Documentary, 2 hr 54 min. Elizabeth Holmes lets a film crew follow her in the weeks before she reports to prison, and the project stretches into three years. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets</a>.</span></p>
       <p class="day">Wild Horse Nine</p>
-      <p class="bill"><b>Daily, Fri Nov 6 through Thu Nov 12:</b> <span class="times">11:30, 3:30 &amp; 7:30</span><span class="note">Martin McDonagh dark comedy, 1 hr 58 min. Malkovich and Rockwell as CIA agents on the road to Chile's 1973 coup. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets</a>.</span></p>
+      <p class="bill"><b>Daily, Fri Nov 6 through Thu Nov 12:</b> <span class="times">11:30, 3:30 &amp; 7:30</span><span class="note">Martin McDonagh dark comedy, rated R, 1 hr 58 min. Malkovich and Rockwell as CIA agents on the road to Chile's 1973 coup. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets</a>.</span></p>
       <p class="day">Coming Up · Onyx Downtown &amp; Specials</p>
       <p class="bill"><b>Sun, Nov 8:</b> <span class="times">7:00</span> <a href="https://www.theonyxtheatre.com/movies/1000043101-catvideofest-2026/">CatVideoFest 2026</a><span class="note">Onyx Downtown, 1 hr 10 min; a share of every ticket goes to Sammie's Friends, which pays for care at the Nevada County Animal Shelter.</span></p>
-      <p class="bill"><span class="note">Tomorrow is $8 Tuesday: every film, every showtime, $8. Later on the Downtown slate: Blue Heron (Sun Nov 22), The Daytrippers (Sun Dec 6), Gremlins (Sun Dec 13), Playtime (Sun Dec 20), and Wallace &amp; Gromit: The Classic Shorts (Sun Dec 27). Times at <a href="https://www.theonyxtheatre.com/onyx-downtown/">theonyxtheatre.com</a>.</span></p>
-      <p class="fine">Showtimes may change without notice. (530) 265-8262. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets at Atom Tickets</a>. Times per the Onyx's own published schedule (Oct 27), covering through Nov 12, and matched by <a href="https://www.cinemaclock.com/movie-theaters/the-onyx-theatre">CinemaClock</a> this morning; Atom Tickets could not be read (Nov 2). No showing is labeled sold out.</p>
+      <p class="bill"><span class="note">Later on the Downtown slate: Blue Heron (Sun Nov 22), The Daytrippers (Sun Dec 6), Gremlins (Sun Dec 13), Playtime (Sun Dec 20), and Wallace &amp; Gromit: The Classic Shorts (Sun Dec 27). Times at <a href="https://www.theonyxtheatre.com/onyx-downtown/">theonyxtheatre.com</a>.</span></p>
+      <p class="fine">Showtimes may change without notice. (530) 265-8262. <a href="https://www.atomtickets.com/theaters/the-onyx-theatre/7989">Tickets at Atom Tickets</a>. Times per the Onyx's own published schedule (Oct 27), covering through Nov 12, and matched by <a href="https://www.cinemaclock.com/movie-theaters/the-onyx-theatre">CinemaClock</a> this morning; Atom Tickets could not be read (Nov 3). No showing is labeled sold out.</p>
     </div>
     <div class="adbox">
       <p class="venue">Nevada Theatre</p>
@@ -473,155 +463,45 @@ a.sponsor img{width:100%;height:auto;display:block}
       <p class="day">Wednesday, Nov 11</p>
       <p class="bill"><b>Arms and the Man:</b> <span class="times">7:00</span><span class="note">Sierra Theatre Company presents. <a href="https://nevadatheatre.com/events/sierra-theatre-company-presents-arms-and-the-man/">Tickets</a>.</span></p>
       <p class="day">Saturday, Nov 28</p>
-      <p class="bill"><b>Divas of Rock and Pop:</b> <span class="times">7:30</span><span class="note">LeGacy presents Lindsay Grimes, Molly Roth, and Erica Lewis with the band Pop Culture. <a href="https://nevadatheatre.com/events/legacy-presents-divas-of-rock-and-pop/">Tickets</a>.</span></p>
+      <p class="bill"><b>Divas of Rock and Pop:</b> <span class="times">7:30</span><span class="note">LeGacy presents. <a href="https://nevadatheatre.com/events/legacy-presents-divas-of-rock-and-pop/">Tickets</a>.</span></p>
       <p class="day">From Friday, Dec 4</p>
       <p class="bill"><b>Little Women:</b> <span class="times">7:30 · Sun 2:00</span><span class="note">LeGacy presents; directed by Sands Hall. <a href="https://nevadatheatre.com/events/legacy-presents-little-women/">Tickets</a>.</span></p>
-      <p class="fine"><a href="https://nevadatheatre.com/events/">Full listings at nevadatheatre.com</a>, Nov 2. Nothing on the stage tonight or tomorrow.</p>
+      <p class="fine"><a href="https://nevadatheatre.com/events/">Full listings at nevadatheatre.com</a>, Nov 3. Nothing on the stage tonight or Wednesday.</p>
     </div>
   </div>
   <div class="smallads">
-    <p><b>Crazy Horse Saloon &amp; Grill</b> (230 Commercial St.). No shows listed today or Tuesday. Wed Nov 4: <a href="https://crazyhorsenc.com/show/trivia-night-34/">Trivia Night</a>, 7:00 PM, free. Fri Nov 6: <a href="https://crazyhorsenc.com/show/pushloop-roommate-lb-konfusion/">Pushloop, Roommate, LB &amp; Konfusion</a>, 9:30 PM, $10 to $15. Sat Nov 7: <a href="https://crazyhorsenc.com/show/ronkat-spearmans-katdelic/">RonKat Spearman's Katdelic</a>, 9:30 PM, $20. Listings via <a href="https://crazyhorsenc.com/shows/">crazyhorsenc.com</a>, Nov 2.</p>
-    <p><b>Miners Foundry</b> (325 Spring St.). <a href="https://minersfoundry.org/event/the-foundry-sings-roots-to-rock/">The Foundry Sings: From Roots to Rock</a> Wed Nov 4, 5:30 PM; <a href="https://minersfoundry.org/event/sierra-nevada-alliance-conservation-conference/">Sierra Nevada Alliance Conservation Conference</a> Thu Nov 5, 9:00 AM; <a href="https://minersfoundry.org/event/an-evening-with-jonny-houlihan-coming-home/">An Evening with Jonny Houlihan: Coming Home</a> Wed Nov 11, 7:00 PM; <a href="https://minersfoundry.org/event/kvmr-presents-a-scottish-ceilidh-dance/">KVMR Presents: A Scottish Ceilidh Dance</a> Fri Nov 13, 7:00 PM. Prices on each event page or (530) 265-5040. Listings via <a href="https://minersfoundry.org/all-events/">minersfoundry.org</a>, Nov 2.</p>
-    <p><b>The Fern</b> (235 Commercial St.). Pub Quiz tonight and every Monday; Open Mic Comedy every other Tuesday, dates not stated. The posted calendar is still October's, as an image, so no November dates could be read this morning; check <a href="https://thefernnevadacity.com/">thefernnevadacity.com</a>.</p>
+    <p><b>Crazy Horse Saloon &amp; Grill</b> (230 Commercial St.). Nothing listed tonight. Wed Nov 4: <a href="https://crazyhorsenc.com/show/trivia-night-34/">Trivia Night</a>, 7:00 PM, free. Fri Nov 6: <a href="https://crazyhorsenc.com/show/pushloop-roommate-lb-konfusion/">Pushloop, Roommate, LB &amp; Konfusion</a>, 9:30 PM, $10 to $15. Sat Nov 7: <a href="https://crazyhorsenc.com/show/ronkat-spearmans-katdelic/">RonKat Spearman's Katdelic</a>, 9:30 PM, $20. Listings via <a href="https://crazyhorsenc.com/shows/">crazyhorsenc.com</a>, Nov 3.</p>
+    <p><b>Miners Foundry</b> (325 Spring St.). <a href="https://minersfoundry.org/event/the-foundry-sings-roots-to-rock/">The Foundry Sings: From Roots to Rock</a> Wed Nov 4, 5:30 PM; <a href="https://minersfoundry.org/event/sierra-nevada-alliance-conservation-conference/">Sierra Nevada Alliance Conservation Conference</a> Thu Nov 5, 9:00 AM; <a href="https://minersfoundry.org/event/an-evening-with-jonny-houlihan-coming-home/">An Evening with Jonny Houlihan: Coming Home</a> Wed Nov 11, 7:00 PM; <a href="https://minersfoundry.org/event/kvmr-presents-a-scottish-ceilidh-dance/">KVMR Presents: A Scottish Ceilidh Dance</a> Fri Nov 13, 7:00 PM. Prices on each event page or (530) 265-5040. Listings via <a href="https://minersfoundry.org/all-events/">minersfoundry.org</a>, Nov 3.</p>
+    <p><b>The Fern</b> (235 Commercial St.). Open Mic Comedy runs every other Tuesday, but the site does not say which, so whether tonight is one could not be confirmed; Pub Quiz is Mondays. The posted calendar is still October's, as an image; check <a href="https://thefernnevadacity.com/">thefernnevadacity.com</a>.</p>
     <p><b>Hadestown: Teen Edition</b> (Grass Valley Elks Lodge, 109 S. School St.). Lyric Rose Theatre Company with a live orchestra: Fri Nov 6 and Sat Nov 7 at 7:30, Sun Nov 8 at 2:00. <a href="https://lyricrosetheatre.thundertix.com/events/270219">Tickets</a>, per <a href="https://yubanet.com/regional/hadestown-teen-edition-a-family-friendly-musical-opens-friday-with-a-live-orchestra/">YubaNet, Oct 23</a>.</p>
     <p><b>More listings.</b> KVMR keeps a community <a href="https://www.kvmr.org/arts-calendar/">arts calendar</a> of area events.</p>
   </div>
 
   <div class="adbox" style="margin-top:0">
     <p class="venue">Radio Log</p>
-    <p class="addr">KVMR 89.5 FM · Nevada City · Monday's Programs</p>
+    <p class="addr">KVMR 89.5 FM · Nevada City · Tuesday's Programs</p>
     <a class="listenlive" href="https://www.radiorethink.com/tuner/index.cfm?stationCode=KVMR&amp;stream=hi&amp;launchedFrom=secureStreamRedirect">▸ Listen Live · KVMR 89.5 FM</a>
     <p style="margin:0 0 10px;text-align:center;font-size:13.5px">This paper's publisher on the air: <a href="https://widgets.spinitron.com/KVMR/show/257224/Under-The-Influence"><b>Under the Influence</b></a>, playlists and air dates on Spinitron · Local news: <a href="https://www.kvmr.org/show/kvmr-news/">KVMR News</a> (latest: <a href="https://kvmrnews.transistor.fm/episodes/tnf-lifts-fire-restrictions-nevada-city-may-see-smoke-from-multiple-prescribed-fires">TNF Lifts Fire Restrictions, Nevada City May See Smoke From Multiple Prescribed Fires, Oct 28</a>)</p>
     <ul class="cal" style="font-size:15px">
-      <li><span class="d">12:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/310437/The-Boomer-Room">The Boomer Room</a></b><span class="sub">with Billy the Kid · every other week; aired overnight per its playlist</span></span></li>
-      <li><span class="d">2:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/273327/Dog-Bar-Dreams">Dog Bar Dreams</a></b><span class="sub">various hosts · weekly</span></span></li>
-      <li><span class="d">5:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/pl/23275549/The-Human-Voice-Show">The Human Voice Show</a></b><span class="sub">with biobilly · a cappella harmony and folk vocal traditions; on air this morning per Spinitron</span></span></li>
-      <li><span class="d">7:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58349/Monday-Morning-Show">Monday Morning Show</a></b><span class="sub">with Big John</span></span></li>
-      <li><span class="d">10:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/147992/South-Of-The-Border">South Of The Border</a></b><span class="sub">rotating hosts · weekly</span></span></li>
-      <li><span class="d">12:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/264868/The-Next-Right-Thing">The Next Right Thing</a></b><span class="sub">with Eric Flaherty · per today's Spinitron listing</span></span></li>
-      <li><span class="d">2:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58331/Pet-Sounds">Pet Sounds</a></b><span class="sub">with Mark Leviton · 1st, 3rd and 5th Mondays; today is the 1st</span></span></li>
-      <li><span class="d">4:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/79086/Monday-Music-Magazine">Monday Music Magazine</a></b><span class="sub">with Greg Jewett and Prickly Pear</span></span></li>
-      <li><span class="d">6:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58778/Garden-Forum">Garden Forum</a></b><span class="sub">1st, 2nd and 3rd Mondays; the 1st Monday host is Kathi Keville</span></span></li>
+      <li><span class="d">12:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/262572/Green-Door-Roots-Reggae">Green Door Roots Reggae</a></b><span class="sub">with DJ Ites Tea · every other week; aired overnight per its playlist</span></span></li>
+      <li><span class="d">2:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/273327/Dog-Bar-Dreams">Dog Bar Dreams</a></b><span class="sub">various hosts · overnights</span></span></li>
+      <li><span class="d">5:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/293133/Heavy-Early">Heavy Early</a></b><span class="sub">with DJ Kev · weekly</span></span></li>
+      <li><span class="d">7:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58373/Tuesday-Morning-Show">Tuesday Morning Show</a></b><span class="sub">with Paul Emery</span></span></li>
+      <li><span class="d">10:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/257078/Bear-Flag-Radio">Bear Flag Radio</a></b><span class="sub">with Chris Towne · every other week; on this week per its Oct 20 playlist</span></span></li>
+      <li><span class="d">12:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/257106/The-Groove-Cafe">The Groove Cafe</a></b><span class="sub">with David James · every other week; on this week per its Oct 20 playlist</span></span></li>
+      <li><span class="d">4:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58340/Tuesday-Music-Magazine">Tuesday Music Magazine</a></b><span class="sub">with Johnny Gallagher</span></span></li>
+      <li><span class="d">6:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58688/Soundings">Soundings</a></b><span class="sub">with Al Stahler · 1st and 3rd Tuesdays; today is the 1st</span></span></li>
+      <li><span class="d">6:30 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/294054/People-Planet-Progress">People Planet Progress</a></b><span class="sub">with Martin Webb · 1st and 3rd Tuesdays per its page, though no playlist has posted since July</span></span></li>
       <li><span class="d">7:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58751/Democracy-Now">Democracy Now!</a></b><span class="sub">syndicated · weeknights</span></span></li>
-      <li><span class="d">8:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58391/The-Women-s-Show">The Women's Show</a></b><span class="sub">rotating hosts · weekly</span></span></li>
-      <li><span class="d">10:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/309605/Queer-Now">Queer &amp; Now</a></b><span class="sub">rotating hosts · weekly</span></span></li>
+      <li><span class="d">8:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/236172/From-the-Sublime-to-the-Ridiculous">From the Sublime to the Ridiculous</a></b><span class="sub">with Don Haislet · alternates with Undertow, which aired Oct 27</span></span></li>
     </ul>
-    <p class="fine">Today's lineup per each program's own <a href="https://spinitron.com/KVMR">Spinitron</a> page; slots that rotate by week are marked. Full schedule at <a href="https://www.kvmr.org/kvmr-schedule/">kvmr.org</a>; listen at 89.5 FM.</p>
+    <p class="fine">Today's lineup per each program's own <a href="https://spinitron.com/KVMR">Spinitron</a> page; slots that rotate by week are marked. KVMR's live page had not yet turned over to Tuesday at press time, so election-night programming changes, if any, are not reflected. Full schedule at <a href="https://www.kvmr.org/kvmr-schedule/">kvmr.org</a>; listen at 89.5 FM.</p>
   </div>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
-<section>
-  <h2 class="kicker"><span class="label">The Bill of Fare</span></h2>
-  <p class="meta" style="text-align:center">Where to eat in Nevada City this Monday, at three prices</p>
-  <ul class="cal" style="font-size:15px">
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $</span><span class="what"><b>Outer Heaven Espresso</b><span class="sub">121 Argall Way · local roaster, espresso and fresh pastries (the publisher calls it the best espresso in town); about $1 to $10 a person per its Google listing · today 7:30 AM to 2 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $$</span><span class="what"><b>Lika's Quarter Café</b><span class="sub">401 Commercial St. · California-French café; about $10 to $30 a person per its Google listing · today 10 AM to 2:30 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $$$</span><span class="what"><b>No pick today</b><span class="sub">Nevada City does not do a $$$ breakfast, and we think more of it for that.</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $</span><span class="what"><b>Nevada City Classic Cafe</b><span class="sub">216 Broad St. · breakfast all day, crepes, sandwiches; about $10 to $20 a person per its Google listing · today 9 AM to 2:30 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $$</span><span class="what"><b><a href="https://www.sopahouseofthai.com/contact">Sopa House of Thai</a></b><span class="sub">312 Commercial St. · Thai mains $17 to $24 · today lunch 11 AM to 3 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $$$</span><span class="what"><b>No pick today</b><span class="sub">Nothing on offer at this price at midday. Save it for supper.</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $</span><span class="what"><b><a href="https://www.taqueria-eltacoloco.com">Taqueria El Taco Loco</a></b><span class="sub">104 Union St. · tacos, burritos, fajitas, free salsa bar; about $10 to $20 a person per its Google listing · today 10 AM to 9 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $$</span><span class="what"><b><a href="https://www.threeforksnc.com">Three Forks Bakery &amp; Brewing</a></b><span class="sub">211 Commercial St. · brewery, bakery, and farm-to-table kitchen; wood-fired pizzas $19 to $25 · today 8 AM to 9 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $$$</span><span class="what"><b><a href="https://friartucks.com/pages/visit">Friar Tuck's</a></b><span class="sub">111 N. Pine St. · entrées $34 to $60 · today dinner 5 to 8 PM</span></span></li>
-  </ul>
-  <p class="fine">Picks rotate daily among places open today, with hours and prices as each restaurant posts them; kitchens close early and holidays change things, so call ahead. $ = most plates under $15; $$ = $15 to $30; $$$ = mains over $30. An empty cell means we found no posted price, not that nobody serves it.</p>
-  <p class="src">Chosen by the Nugget; no one pays to appear. The Nugget's publisher owns The Hat Store on Broad Street. Closed, moved, or repriced? news@nevadacitynugget.com.</p>
-  <p class="src">Sources (hours and menus checked Oct. 27, 2026): Outer Heaven Espresso (its Google listing); Lika's Quarter Café (its Google listing); Nevada City Classic Cafe (its Google listing); <a href="https://www.sopahouseofthai.com/contact">Sopa House of Thai</a>; <a href="https://www.taqueria-eltacoloco.com">Taqueria El Taco Loco</a>; <a href="https://www.threeforksnc.com">Three Forks</a>; <a href="https://friartucks.com/pages/visit">Friar Tuck's</a>.</p>
-</section>
-
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
-  <h2 class="kicker"><span class="label">The Bar Guide</span></h2>
-  <p class="meta" style="text-align:center"><a href="https://nevadacitynugget.com/drinks.html"><b>Where Can I Get a Damn Drink Around Here?</b></a></p>
-  <p style="text-align:center">The Nugget's standing guide for visitors: saloons and late bars, cocktail lounges, brewpubs, wine tasting rooms, and the roadhouse out on Highway 49, with hours as each place posts them. Most of it is a short walk from Broad Street.</p>
-  <p style="text-align:center">Need a bed after? <a href="https://nevadacitynugget.com/stay.html"><b>Where to Stay</b></a>: historic hotels, inns, cottages and campgrounds, plus how vacation rentals and Measure Q work.</p>
-  <p class="src" style="text-align:center">Chosen by the Nugget; no one pays to appear. Closed, moved, or new in town? news@nevadacitynugget.com.</p>
-</section>
-
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
-  <h2 class="kicker"><span class="label">Trails &amp; Vistas</span></h2>
-  <p class="meta" style="text-align:center">Trail of the Day · <a href="https://nevadacitynugget.com/trails.html#sugarloaf"><b>Sugarloaf Mountain</b></a></p>
-  <p class="meta" style="text-align:center">Coyote St. lot, about a quarter mile up on the left · 0.7 mile to the top · 220 ft on a gentle grade · dirt · Easy</p>
-  <p>The city&#x27;s own mountain: seven tenths of a mile from the Coyote Street lot, on a gentle grade, to a summit meadow at about 3,060 feet with the whole town below you. Bottom section at North Bloomfield and Highway 49 is under construction, so start from Coyote Street.</p>
-  <p class="src">More hikes, trailheads, and current closures: <a href="https://nevadacitynugget.com/trails.html">Trails &amp; Vistas, the Nugget's walker's guide</a>. Conditions change; call Bear Yuba Land Trust (trail manager), (530) 272-5994 before you go. Source: <a href="https://bylt.org/trail/sugarloaf-mountain-trail/">Bear Yuba Land Trust</a>.</p>
-</section>
-
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
-  <h2 class="kicker"><span class="label">Elected Officials</span></h2>
-  <p style="margin:0;font-size:14px;color:var(--ink-mid);text-align:center;font-style:italic">Who holds office in Nevada City, and what they've said publicly. Roster confirmed October 22, 2026 from the city's October 14 agenda and meeting recording, and matched by the October 28 agenda's roster block.</p>
-  <ul class="dais">
-    <li>
-      <span class="who">Daniela Fernández</span><span class="role">Mayor</span>
-      <span class="bio">On the council since 2020; serving her second turn as mayor, having held the office previously in 2023. Her stated theme for the year is "healthy ecosystems," connecting housing, business, and infrastructure. (Oct 14 agenda; meeting recording)</span>
-      <span class="said"><b>Recently said</b> · On the county's transit study, Oct 28: "Rural transit is hard because we don't have some of the conditions of more densely populated areas." (<a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>) Chairing the October 28 meeting, she said during council comments that "it is not council's job to police businesses that come into town," and that the council enters dangerous territory deciding what business belongs where; voted yes on every roll call. (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) Co-signed the official ballot rebuttal for Measure Q, which says it "is not a ban on short-term rentals." (<a href="https://www.nevadacountyca.gov/DocumentCenter/View/70523/Rebuttal-to-Argument-Against-Measure-Q-Online">Rebuttal to Argument Against Measure Q</a>)</span>
-    </li>
-    <li>
-      <span class="who">Gary Petersen</span><span class="role">Vice Mayor</span>
-      <span class="bio">Elected in 2020 filling a vacant seat; mayor July 2024 to July 2025; term through 2028. Chairs the budget and finance committee of Pioneer Energy, the region's community choice power provider; sits on the city's Fire Safety Advisory Committee and the Resilience Project governing board. (Meeting recording; The Union; FSAC agenda and Resilience Project notice, Oct 2026)</span>
-      <span class="said"><b>Recently said</b> · On the City Hall hours item, Oct 28: "I hear this issue more than any other thing." (<a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>) Moved to approve the regional dispatch agreement and seconded Resolution 2026-35 backing NID's Scotts Flat spillway grant; on the spillway he asked, "Will the pedestrian access be reopened after the spillway is constructed?" Read the meeting's land acknowledgment. (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) On October 14 he called the city's $20,000 water-line emergency reserve "no reserve fund at all." (City Council, Oct 14, meeting recording)</span>
-    </li>
-    <li>
-      <span class="who">Adam Kline</span><span class="role">Council Member</span>
-      <span class="bio">Nevada County native and musician; mayor from July 2025 until the council's 2026 reorganization. Priorities on taking that office: Nevada City's identity as a music town and stewardship of the Miners Foundry. (The Union, July 2025)</span>
-      <span class="said"><b>Recently said</b> · On the Scotts Flat spillway, Oct 28: "This is very much for the whole community and wildly important." (<a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>) Moved adoption of the agenda and consent calendar, including the MWELO and cannabis tax ordinances and SYRCL's festival request, and seconded the dispatch agreement. (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) Co-signed the Measure Q ballot rebuttal with Mayor Fernández. (<a href="https://www.nevadacountyca.gov/DocumentCenter/View/70523/Rebuttal-to-Argument-Against-Measure-Q-Online">Rebuttal to Argument Against Measure Q</a>)</span>
-    </li>
-    <li>
-      <span class="who">Doug Fleming</span><span class="role">Council Member</span>
-      <span class="bio">City representative on the Nevada County Transportation Commission and the Transit Services Commission; focused on grant-seeking for city infrastructure. (Meeting recording)</span>
-      <span class="said"><b>Recently said</b> · Moved adoption of Resolution 2026-35 supporting NID's dam safety grant and seconded the consent calendar; given the floor first on the county's transit analysis, he remarked, "we have all these great ideas for three to five years, maybe later." (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) On October 14 he called the water vote "the hardest, ugliest vote I've ever had to make in six years." (City Council, Oct 14, meeting recording)</span>
-    </li>
-    <li>
-      <span class="who">Micayla Sortland</span><span class="role">Council Member</span>
-      <span class="bio">Won a seat in the June 2, 2026 election and was sworn in at the reorganization; disability rights advocate; Resilience Project governing board alternate for the city; repair café and zero-waste organizer; sits on the Fire Safety Advisory Committee; represented the city on The Resilience Project panel at the Resilient California Summit in Sacramento, Oct 20 to 22. (The Union, KNCO, YubaNet; county agenda, Oct 2026; FSAC agenda, Oct 2026; <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/8978">Nevada County, Oct 26</a>)</span>
-      <span class="said"><b>Recently said</b> · Absent from the October 28 meeting; the mayor said she would be back next time. (City Council, Oct 28, transcript) On the October 14 rate vote: "Our system is not financially stable and sound." (City Council, Oct 14, meeting recording)</span>
-    </li>
-    <li>
-      <span class="who">Carrie J. Wright</span><span class="role">City Manager · appointed Jan 2026</span>
-      <span class="bio">Employment agreement approved at the January 14, 2026 council meeting; sits on the Resilience Project of Western Nevada County governing board for the city. (City of Nevada City agenda; county agenda, Oct 2026)</span>
-      <span class="said"><b>Recently said</b> · Presenting the meeting-times item, asked whether the council would want to move meetings "forward to 6:00," particularly in winter, and referred to a December 1 start for the new public hours; in her report said the Spooktacular was "happening on the 30th, not the 31st." (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) At Sierra College's city managers' forum: "growth has to be part of the answer." (<a href="https://www.theunion.com/news/city-managers-discuss-homelessness-parking-carrie-wright-and-alex-gammelgard-address-key-issues/article_dc22b889-a1a4-455c-b6e5-e27f63630741.html">The Union, Oct 27</a>)</span>
-    </li>
-  </ul>
-  <p class="src" style="text-align:center">October 28 entries are from the Nugget's transcript of the city's <a href="https://www.youtube.com/watch?v=uNzsYEjpjuc">official recording</a>, made from YouTube's automatic captions; the captions do not label speakers, so attributions rely on the chair's introductions and may contain misheard words. The city's minutes, when posted, are the official record.</p>
-</section>
-
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
-  <h2 class="kicker"><span class="label">Here &amp; There</span></h2>
-  <div class="factrow">
-    <article>
-      <p class="meta">Grass Valley · Courts</p>
-      <h3 style="font-size:19px">Four Arrested In Last November's Condon Park Killing</h3>
-      <p>Grass Valley police announced Wednesday the arrests of four people, all juveniles at the time, in the November 7, 2025 killing of Jason Frost, 51, of Sacramento County, at Condon Park. Police say the group confronted Frost at the skate facilities while trying to take a car, and he died of a chest wound from an edged weapon. All four were booked into Placer County Juvenile Hall; police said formal charges and petitions to move the case to adult court would follow.</p>
-      <p class="src">Source: <a href="https://yubanet.com/regional/arrests-made-by-grass-valley-police-in-november-condon-park-homicide/">Grass Valley Police Department via YubaNet, Oct 28</a>; <a href="https://www.theunion.com/news/arrests-made-in-november-condon-park-homicide/article_1557cd07-eb41-4a65-a3c1-cf00234da673.html">The Union</a>.</p>
-    </article>
-    <article>
-      <p class="meta">Nevada City · Water</p>
-      <h3 style="font-size:19px">NID's General Manager At Coffee Talk Wednesday</h3>
-      <p>Nevada Irrigation District General Manager Jennifer Hanson will talk "All Things Water," including the district's plans, at Coffee Talk on Wednesday, Nov. 4, 9 to 11 AM, at Nevada City Community Church, 300 Main St., across from the courthouse. Last month's session heard attorney Frank Pray on NID's finances and infrastructure.</p>
-      <p class="src">Source: <a href="https://www.theunion.com/news/coffee-talk-will-host-nid-general-manager-jennifer-hanson-to-talk-all-things-water/article_0dd7fd80-61b4-4ce7-8375-5dd34b7e35e8.html">The Union, Oct 29</a></p>
-    </article>
-    <article>
-      <p class="meta">Merchants · Starting Today</p>
-      <h3 style="font-size:19px">Merchant Of The Day Opens On Broad Street</h3>
-      <p>The Nugget's new daily business column begins today with the National Exchange Hotel, above. One Nevada City business each morning, drawn from the public record and the merchant's own published words; no one pays to appear.</p>
-      <p class="src">The Nugget</p>
-    </article>
-    <article>
-      <p class="meta">Outside Press</p>
-      <h3 style="font-size:19px">Nothing From The Big Papers</h3>
-      <p>This morning's search found no fresh Nevada City coverage in the Sacramento Bee, SFGate, CapRadio, the Los Angeles Times, or the AP.</p>
-      <p class="src">Source: searches of regional outlets, Nov 2.</p>
-    </article>
-  </div>
-</section>
+<section><h2 class="kicker"><span class="label">Visiting?</span></h2><p class="ptr" style="font-size:16px">Where to eat at three prices today, the Trail of the Day, the bars, the beds, and day trips from Sacramento and Truckee: <a href="visitor.html"><b>The Visitor's Nugget ▸</b></a></p></section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
@@ -630,25 +510,25 @@ a.sponsor img{width:100%;height:auto;display:block}
 
   <div class="adbox">
     <p class="venue" style="font-size:20px">From the Nugget's Morgue</p>
-    <p style="margin:6px 0 0;font-size:14.5px;text-align:center;font-style:italic">The Morgue is dark this morning. The publisher's Morgue file holds nothing for today's date, and no legible Nevada City paper from a past November 2 turned up in this morning's search of the archives. The Morgue reopens November 16 with the Nugget of November 19, 1945.</p>
+    <p style="margin:6px 0 0;font-size:14.5px;text-align:center;font-style:italic">The Morgue is dark this morning. The publisher's Morgue file holds nothing for today's date, and no legible Nevada City paper from a past November 3 turned up in this morning's search of the archives. The Morgue reopens November 16 with the Nugget of November 19, 1945.</p>
   </div>
 
   <article>
     <p class="meta">This Day In History</p>
-    <p><b>1947.</b> Howard Hughes flew his giant wooden flying boat, the H-4 Hercules, better known as the Spruce Goose, over the harbor at Long Beach, California; it was the plane's first and only flight.</p>
-    <p><b>2000.</b> The first long-duration crew, Expedition 1, arrived at the International Space Station, beginning a continuous human presence in orbit.</p>
-    <p class="src">Source: <a href="https://en.wikipedia.org/wiki/November_2">Wikipedia, November 2</a></p>
+    <p><b>1868.</b> John Willis Menard won election to Congress from Louisiana, becoming the first Black man elected to the U.S. House, though the House never seated him.</p>
+    <p><b>1957.</b> The Soviet Union launched Sputnik 2, carrying the dog Laika, the first animal sent into orbit.</p>
+    <p class="src">Source: <a href="https://en.wikipedia.org/wiki/November_3">Wikipedia, November 3</a></p>
   </article>
 
   <article>
     <p class="meta">Niel's Knick Knacks</p>
-    <p><b><a href="https://www.checkiday.com/6a5a3b8c7f898d6480b17e7dd0cb5443/national-deviled-egg-day">National Deviled Egg Day</a>.</b> The potluck's most reliable empty platter gets its own day; see the recipe below. · <b><a href="https://www.checkiday.com/a8ba8a19b5bf6d7451713aba82879ba2/cookie-monster-day">Cookie Monster Day</a>.</b> A day for the blue fellow who has never once saved one for later. · <b><a href="https://www.checkiday.com/a4de41c8f132d00dbc28cd7c29508efd/look-for-circles-day">Look for Circles Day</a>.</b> Start with the "I Voted" stickers. · <b><a href="https://www.checkiday.com/2cec51920a0dc3dd417bf0522315d2f6/international-sherry-week">International Sherry Week</a>.</b> Begins today, which gives the deviled eggs something to stand next to.</p>
-    <p class="src">Source: <a href="https://www.checkiday.com">Checkiday</a>, Nov 2</p>
+    <p><b><a href="https://www.checkiday.com/4bd84cec4454f7216b593cd5ae49a717/election-day">Election Day</a>.</b> The one observance with its own drop box. · <b><a href="https://www.checkiday.com/cbe0b522ddd4cf6c3b4646dc67115efa/national-sandwich-day">National Sandwich Day</a>.</b> Pack one for the line; see the recipe below. · <b><a href="https://www.checkiday.com/cbe744176b33d3a049e8d29a931a7471/world-jellyfish-day">World Jellyfish Day</a>.</b> Ninety-five percent water, no brain, and still gets through the day; take heart. · <b><a href="https://www.checkiday.com/c4a5a2e6e3457ca25be9340f4403ab8e/skeptics-day-international">Skeptics Day International</a>.</b> Wait for the certified count.</p>
+    <p class="src">Source: <a href="https://www.checkiday.com">Checkiday</a>, Nov 3</p>
   </article>
 
   <article>
     <p class="meta">Hey Good Lookin', Whatcha Got Cookin'</p>
-    <p><b>Smoked Trout Deviled Eggs With Pickled Shallot</b> (a Nugget original). Lay a dozen eggs in a pot, cover with cold water, bring to a boil, then cover, pull off the heat, and let them sit 11 minutes before an ice bath. While they sit, slice one shallot paper-thin and steep it in three tablespoons of cider vinegar with a pinch each of sugar and salt. Peel and halve the eggs, pop the yolks into a bowl, and mash them with a third of a cup of mayonnaise, a teaspoon of Dijon, a spoonful of the shallot vinegar, and two ounces of flaked smoked trout, plus black pepper to taste. Pipe or spoon the filling back into the whites, top each with a few pickled shallot rings and a pinch of chopped dill or chives, and chill until the meeting starts. They will not last until the meeting starts.</p>
+    <p><b>Polling Place Grilled Cheese With Pear, Sharp Cheddar, And Rosemary Honey</b> (a Nugget original). Warm two tablespoons of honey in a small pan with a sprig of rosemary and a pinch of chili flakes, then pull it off the heat to steep while you build. Butter the outsides of two slices of country sourdough, and on the unbuttered side of one lay thin slices of a ripe Bosc pear, a generous handful of grated sharp white cheddar, and a few leaves of baby arugula, finishing with more cheddar so the whole thing glues itself shut. Lay the second slice on top, butter side out, and cook in a heavy skillet over medium-low heat, lid on for the first three minutes, until both sides are deep gold and the cheese gives way, about four minutes a side. Open it a crack, drizzle in the rosemary honey, close it, press it once, and cut on the diagonal. Wrap it in waxed paper if you are taking it to the polls; eat it after you vote, not in the booth.</p>
     <p class="src">Readers' own recipes are welcome through the house channel and run with credit and permission.</p>
   </article>
 
@@ -656,18 +536,18 @@ a.sponsor img{width:100%;height:auto;display:block}
     <p class="venue" style="font-size:20px">The Stars Over Deer Creek</p>
     <p class="addr" style="border-bottom:none;margin-bottom:0">A Horoscope Composed Fresh Each Morning In Nevada City</p>
     <div class="factrow" style="margin-top:8px">
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aries.</b> The last quarter moon asks you to finish things. Start with the ballot on the kitchen counter, then the dishes under it.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Taurus.</b> Deviled Egg Day. The stars see a platter, a potluck, and you standing near it longer than strictly necessary.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Gemini.</b> Pub Quiz at the Fern tonight. You know the answer. Your teammate knows a different answer, louder.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Cancer.</b> The National Exchange has taken guests since 1856. You may stay home tonight with equal dignity.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Leo.</b> Tomorrow is $8 Tuesday at the Onyx. Tonight is full-price Monday at your own couch. Choose wisely.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Virgo.</b> The minutes still have not posted. You have refreshed the Agenda Center more often than anyone at City Hall.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Libra.</b> Election Eve. You have weighed both sides so carefully the scale has filed for overtime.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Scorpio.</b> Sugarloaf is seven tenths of a mile to the top. Your excuses run longer. Lace up.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Sagittarius.</b> A dry day between storms. Clean the gutters before the gutters remind you.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Capricorn.</b> Pet Sounds airs at 2. Somewhere a harmony is waiting for you to finally hum it right.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aquarius.</b> Cookie Monster Day. The stars decline to comment on the number of cookies, only the crumbs.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Pisces.</b> Deer Creek is running high and happy after the rain. Go stand beside it and let it do the talking.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aries.</b> Showers by noon. You will vote anyway, and the umbrella will stay in the car out of principle.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Taurus.</b> National Sandwich Day falls on Election Day. The stars see you weighing rye against sourdough with real gravity.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Gemini.</b> Both of you have opinions on Measure Q. Only one of you gets the ballot.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Cancer.</b> A waning crescent moon favors staying in tonight and refreshing the results page every two hours, as scheduled.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Leo.</b> It is $8 Tuesday at the Onyx. A three-hour documentary for eight dollars is the bargain of the season.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Virgo.</b> The October 28 minutes still have not posted. You have begun drafting them yourself, for practice.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Libra.</b> The scales close at 8 PM. Weigh faster.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Scorpio.</b> Burn permits are back. The stars see a neat four-by-four pile, a shovel, a hose, and a calm, windless afternoon. Probably not today.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Sagittarius.</b> World Jellyfish Day. Drift where the current takes you, as long as it passes the City Hall drop box.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Capricorn.</b> You will find parking on Broad Street on the first try. Skeptics Day suggests you not count on it.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aquarius.</b> The sticker goes on the jacket, the jacket goes on the hook, the sticker comes off in the wash. Some things are eternal.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Pisces.</b> Deer Creek gets a fresh drink today. So should you, once the polls close.</p></article>
     </div>
     <p class="fine">For entertainment purposes. The stars are not registered lobbyists.</p>
   </div>
@@ -676,39 +556,93 @@ a.sponsor img{width:100%;height:auto;display:block}
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
 <section>
-  <h2 class="kicker"><span class="label">Civic Calendar</span></h2>
-  <ul class="cal">
-    <li><span class="d">Today, Nov 2</span><span class="what"><b>Last day of early voting, 9 AM to 5 PM</b><span class="sub">Eight vote centers countywide, including the Providence Mine Room, Nevada County Government Center (Rood Center), 950 Maidu Ave.</span></span></li>
-    <li><span class="d">Tue, Nov 3</span><span class="what"><b>Election Day, 7 AM to 8 PM</b><span class="sub">Nine vote centers countywide; Measure Q on Nevada City ballots; drop box at City Hall, 317 Broad St.</span></span></li>
-    <li><span class="d">Wed, Nov 4</span><span class="what"><b>Coffee Talk with NID General Manager Jennifer Hanson, 9 to 11 AM</b><span class="sub">Nevada City Community Church, 300 Main St.</span></span></li>
-    <li><span class="d">Fri, Nov 6</span><span class="what"><b>Bell-ringing ceremony for former Grass Valley Fire Chief Tony Clarabut, 2:00 PM</b><span class="sub">Race Street Fire Station, Grass Valley; public welcome</span></span></li>
-    <li><span class="d">Sat, Nov 7</span><span class="what"><b>"Harvest, Heritage and Community" with Shelly Covert, 10:30 AM</b><span class="sub">Nevada County Media Center, Grass Valley; $15</span></span></li>
-    <li><span class="d">Mon, Nov 9</span><span class="what"><b>Sheriff's children's holiday card contest entries due, 3:00 PM</b><span class="sub">Ages 4 to 12; 950 Maidu Ave. #280 or SheriffPIO@nevadacountyca.gov</span></span></li>
-    <li><span class="d">Wed, Nov 11</span><span class="what"><b>Veterans Day</b><span class="sub">The council's regular second-Wednesday date; watch for the November meeting's posted date</span></span></li>
-    <li><span class="d">Thu, Nov 12</span><span class="what"><b>County Planning Commission, 1:30 PM · Active Transportation and Trails workshop, 4:30 PM</b><span class="sub">Board chambers, Rood Center; the city's trails workshop runs 4:30 to 6:15 PM at the Miners Foundry; Grass Valley Library accessibility listening session; The Pearl ribbon cutting, 4:30 PM, per the Chamber</span></span></li>
-    <li><span class="d">Sat, Nov 14</span><span class="what"><b>Local Author Showcase, 11 AM to 3 PM</b><span class="sub">County library, 950 Maidu Ave.; 50 local authors</span></span></li>
-    <li><span class="d">Tue, Nov 17</span><span class="what"><b>Chamber monthly business meet-up, 9:00 AM</b><span class="sub">Per the Chamber's member-events listing</span></span></li>
-    <li><span class="d">Thu, Nov 19</span><span class="what"><b>City Planning Commission, 1:30 PM · CHAMP Gallery proposals due 3 PM</b><span class="sub">Third Thursday standing schedule; RFP responses to the Deputy City Clerk</span></span></li>
-    <li><span class="d">Sat, Nov 21</span><span class="what"><b>Bear Yuba Land Trust awards breakfast, 9:30 AM</b><span class="sub">Miners Foundry</span></span></li>
-    <li><span class="d">Tue, Nov 24</span><span class="what"><b>Active Transportation and Trails survey closes</b><span class="sub"><a href="https://www.nevadacityca.gov/activetransportation">nevadacityca.gov/activetransportation</a></span></span></li>
-    <li><span class="d">Wed, Dec 2</span><span class="what"><b>Hometown Christmas for locals, 4:30 to 8:30 PM</b><span class="sub">Announced by the mayor at the Oct 28 council meeting; details to come</span></span></li>
-  </ul>
+  <h2 class="kicker"><span class="label">Meetings on the Record</span></h2>
+  <p class="meta" style="text-align:center"><a href="https://nevadacitynugget.com/meetings/"><b>What They Said at City Hall</b></a></p>
+  <p style="text-align:center">Searchable transcripts of every City Council and Planning Commission meeting the city has posted since July, newest first. Each timestamp opens the city's own video at that moment.</p>
+  <p class="src" style="text-align:center">Unofficial: made by machine from YouTube's automatic captions, so expect misheard words and misspelled names. The city's minutes are the official record.</p>
 </section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+
+<section>
+  <h2 class="kicker"><span class="label">From the Dais</span></h2>
+  <p style="text-align:center;font-family:var(--display,Georgia,serif);font-size:20px;font-weight:600;font-style:italic;line-height:1.35;margin:4px 6% 0">&ldquo;And that&#x27;s heavy. And it&#x27;s what you put us here for.&rdquo;</p>
+  <p class="meta" style="text-align:center"><b>Council Member Adam Kline</b>, before the water and sewer rate vote</p>
+  <p class="src" style="text-align:center">City Council, Oct. 14, 2026 · <a href="https://www.youtube.com/watch?v=vb0RCslTDdU&t=9441s">watch at 2:37:21</a> · <a href="https://nevadacitynugget.com/meetings/council-2026-10-14.html">full transcript</a>. Words as heard in the city's video via automatic captions; the video is the record.</p>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+
+<section>
+  <h2 class="kicker"><span class="label">The Docket</span></h2>
+  <p style="margin:0;font-size:14px;color:var(--ink-mid);text-align:center;font-style:italic">Every published City Council and Planning Commission agenda, digested item by item the morning after it posts, and held here until the meeting. Items touching downtown or the commercial district are marked ❖.</p>
+  <p class="src" style="text-align:center">No City Council or city Planning Commission agenda is pending this morning; the city's <a href="https://www.nevadacityca.gov/AgendaCenter">Agenda Center</a> shows nothing newer than the October 28 council agenda. The county Planning Commission posted its <a href="https://www.nevadacountyca.gov/AgendaCenter/ViewFile/Agenda/_11122026-2078">November 12 agenda</a> Monday: one public hearing, on a general plan amendment, rezone, variance, and use permit for a veterinary clinic at 11665 Spenceville Road, Penn Valley, with no Nevada City items. Next expected: the council's November meeting, whose regular second-Wednesday date falls on Veterans Day, November 11, so watch for the posted date; the city Planning Commission's next regular date is Thursday, November 19.</p>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
 <section>
   <h2 class="kicker"><span class="label">Coming Attractions</span></h2>
   <p style="margin:0;font-size:14px;color:var(--ink-mid);text-align:center;font-style:italic">The big ones, counted down. Dates from the organizers' own announcements.</p>
   <ul class="cal">
-    <li><span class="d">24 days</span><span class="what"><b>Thanksgiving Weekend</b><span class="sub">November 26 to 29, downtown</span></span></li>
-    <li><span class="d">34 days</span><span class="what"><b>Victorian Christmas</b><span class="sub">Sundays Dec 6, 13, 20 (1:30 to 6 PM) and Wednesdays Dec 9, 16 (5 to 9 PM)</span></span></li>
+    <li><span class="d">23 days</span><span class="what"><b>Thanksgiving Weekend</b><span class="sub">November 26 to 29, downtown</span></span></li>
+    <li><span class="d">33 days</span><span class="what"><b>Victorian Christmas</b><span class="sub">Sundays Dec 6, 13, 20 (1:30 to 6 PM) and Wednesdays Dec 9, 16 (5 to 9 PM)</span></span></li>
   </ul>
   <p class="src" style="text-align:center">Sources: <a href="https://www.nevadacitychamber.com/nevada-city-events/thanksgiving-weekend-events/">Nevada City Chamber, Thanksgiving Weekend</a>; <a href="https://www.nevadacitychamber.com/nevada-city-events/victorian-christmas/">Victorian Christmas</a>.</p>
 </section>
 
 <section>
+  <h2 class="kicker"><span class="label">Civic Calendar</span></h2>
+  <ul class="cal">
+    <li><span class="d">Today, Nov 3</span><span class="what"><b>Election Day, 7 AM to 8 PM</b><span class="sub">Nine vote centers countywide; Measure Q on Nevada City ballots; drop box at City Hall, 317 Broad St.; first results shortly after 8 PM</span></span></li>
+    <li><span class="d">Wed, Nov 4</span><span class="what"><b>Coffee Talk with NID General Manager Jennifer Hanson, 9 to 11 AM</b><span class="sub">Nevada City Community Church, 300 Main St.</span></span></li>
+    <li><span class="d">Fri, Nov 6</span><span class="what"><b>Election update, 4:30 PM · Bell-ringing for former Grass Valley Fire Chief Tony Clarabut, 2:00 PM</b><span class="sub">Results at NevadaCountyCA.gov/November3Election, then every Friday and Tuesday; bell-ringing at Race Street Fire Station, Grass Valley</span></span></li>
+    <li><span class="d">Sat, Nov 7</span><span class="what"><b>"Harvest, Heritage and Community" with Shelly Covert, 10:30 AM</b><span class="sub">Nevada County Media Center, Grass Valley; $15</span></span></li>
+    <li><span class="d">Mon, Nov 9</span><span class="what"><b>Sheriff's children's holiday card contest entries due, 3:00 PM</b><span class="sub">Ages 4 to 12; 950 Maidu Ave. #280 or SheriffPIO@nevadacountyca.gov</span></span></li>
+    <li><span class="d">Tue, Nov 10</span><span class="what"><b>Last day for mailed ballots to arrive</b><span class="sub">Must be postmarked by Nov 3</span></span></li>
+    <li><span class="d">Wed, Nov 11</span><span class="what"><b>Veterans Day</b><span class="sub">The council's regular second-Wednesday date; watch for the November meeting's posted date</span></span></li>
+    <li><span class="d">Thu, Nov 12</span><span class="what"><b>Public 1% hand count, 9 AM · County Planning Commission, 1:30 PM · Trails workshop, 4:30 PM</b><span class="sub">Hand count at the Ballot Processing Center, 12740 Loma Rica Dr., Grass Valley; Planning Commission in the board chambers, Rood Center; the city's Active Transportation and Trails workshop runs 4:30 to 6:15 PM at the Miners Foundry</span></span></li>
+    <li><span class="d">Sat, Nov 14</span><span class="what"><b>Local Author Showcase, 11 AM to 3 PM</b><span class="sub">County library, 950 Maidu Ave.; 50 local authors</span></span></li>
+    <li><span class="d">Tue, Nov 17</span><span class="what"><b>Chamber monthly business meet-up, 9:00 AM</b><span class="sub">Per the Chamber's member-events listing</span></span></li>
+    <li><span class="d">Thu, Nov 19</span><span class="what"><b>City Planning Commission, 1:30 PM · CHAMP Gallery proposals due 3 PM</b><span class="sub">Third Thursday standing schedule; RFP responses to the Deputy City Clerk</span></span></li>
+    <li><span class="d">Sat, Nov 21</span><span class="what"><b>Bear Yuba Land Trust awards breakfast, 9:30 AM</b><span class="sub">Miners Foundry</span></span></li>
+    <li><span class="d">Tue, Nov 24</span><span class="what"><b>Active Transportation and Trails survey closes</b><span class="sub"><a href="https://www.nevadacityca.gov/activetransportation">nevadacityca.gov/activetransportation</a></span></span></li>
+    <li><span class="d">Wed, Nov 25</span><span class="what"><b>Earliest certified election results, after 5 PM</b><span class="sub">State deadline to certify is Dec 3</span></span></li>
+    <li><span class="d">Wed, Dec 2</span><span class="what"><b>Hometown Christmas for locals, 4:30 to 8:30 PM</b><span class="sub">Announced by the mayor at the Oct 28 council meeting; details to come</span></span></li>
+  </ul>
+  <p class="src" style="text-align:center">Election dates per <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/8990">Nevada County Elections, Nov 2</a>; other items as reported in earlier editions.</p>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">Elected Officials</span></h2>
+  <p class="ptr">Mayor Daniela Fernández · Vice Mayor Gary Petersen · Council Members Adam Kline, Doug Fleming and Micayla Sortland · City Manager Carrie J. Wright (appointed)</p>
+  <p style="margin:0;text-align:center;font-style:italic;font-size:14.5px">Nothing new on the record from the council since yesterday's edition.</p>
+  <p class="src" style="text-align:center">Profiles and everything each has said on the record lately: <a href="https://nevadacitynugget.com/officials.html">The Officials' Page</a></p>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">Legal Notices &amp; Permits</span></h2>
+  <div class="smallads">
+    <p>No new city public notices, planning applications, business license filings, or ABC postings turned up in this morning's check of the city's site, its news page, and both Agenda Centers. Standing deadlines:</p>
+    <p><b>Election notice.</b> Measure Q, the Nevada City Residential Short-Term Rental Measure, on today's ballot. <a href="https://www.nevadacountyca.gov/DocumentCenter/View/70238/NOTICE-OF-MEASURE-Measure-Q">Notice of Measure, Nevada County Registrar of Voters</a>.</p>
+    <p><b>Public survey.</b> Nevada City Active Transportation and Trails Plan: online survey open through November 24; community workshop Thursday, Nov 12, 4:30 to 6:15 PM, Miners Foundry. <a href="https://www.nevadacityca.gov/activetransportation">City of Nevada City</a>.</p>
+    <p><b>Request for proposals.</b> CHAMP Gallery exhibition partners: proposals due November 19 at 3 PM to the Deputy City Clerk. <a href="https://www.theunion.com/news/nevada-city-seeks-community-arts-partners-for-champ-gallery-exhibitions/article_dbaf3e83-5250-4cd3-95b4-1462123e52a8.html">The Union, Oct 23</a>.</p>
+    <p><b>Roadside signs.</b> Nevada County Public Works is removing private signs, political ones included, from county road rights-of-way; held 60 days for pickup at (530) 265-1411. <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/8980">Nevada County, Oct 27</a>.</p>
+  </div>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
   <h2 class="kicker"><span class="label">Meeting Watch</span></h2>
   <div class="notebox">
-    <p style="margin:0"><b>How this works:</b> the morning after each City Council and Planning Commission meeting, this paper carries a dedicated summary built from the meeting recording and agenda packet, covering votes, public comment themes, and anything affecting downtown. The October 28 council summary ran in the October 31 edition from a caption transcript of the recording; the action minutes, not yet posted as of this morning, will be checked against it, including the City Hall hours question. Still awaiting minutes: the Fire Safety Advisory Committee's special session (the city's postings dated it Oct 22 or 23), the Planning Commission's October 15 meeting, and the Public Arts Commission's October 7 meeting. No new county Board of Supervisors agenda had posted as of this morning's check of the county's Agenda Center; the Board last met October 20.</p>
+    <p style="margin:0"><b>How this works:</b> the morning after each City Council and Planning Commission meeting, this paper carries a dedicated summary built from the meeting recording and agenda packet, covering votes, public comment themes, and anything affecting downtown. The October 28 council summary ran in the October 31 edition from a caption transcript of the recording; the action minutes, still not posted as of this morning, will be checked against it, including the City Hall hours question. Still awaiting minutes: the Fire Safety Advisory Committee's special session (the city's postings dated it Oct 22 or 23), the Planning Commission's October 15 meeting, and the Public Arts Commission's October 7 meeting. On the county side, the Planning Commission's November 12 agenda carries no Nevada City items, and no new Board of Supervisors agenda had posted as of this morning's check.</p>
   </div>
 </section>
 
@@ -720,24 +654,16 @@ a.sponsor img{width:100%;height:auto;display:block}
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
+
 <section>
   <h2 class="kicker"><span class="label">Previously</span></h2>
   <ul class="cal">
+    <li><span class="d">Mon, Nov 2</span><span class="what"><b><a href="editions/2026-11-02.html">No. 12 · Last Day Of Early Voting; Polls Open 7 AM Tuesday</a></b><span class="sub">Evening-updated: CAL FIRE lifts the burn permit suspension Tuesday; Election Day showers now ending Tuesday evening; Merchant of the Day debuted with the National Exchange Hotel</span></span></li>
     <li><span class="d">Sun, Nov 1</span><span class="what"><b><a href="editions/2026-11-01.html">No. 11 · Two Days Left To Vote; Measure Q Is The City's Question</a></b><span class="sub">Evening edition: no developments after the morning; also the storm clearing, the council minutes still pending, and the last Madrone Springs burn day</span></span></li>
-    <li><span class="d">Sat, Oct 31</span><span class="what"><b><a href="editions/2026-10-31.html">No. 10 · Council Approves Regional Dispatch Deal And Backs NID Dam Grant, 4-0</a></b><span class="sub">Evening-updated: The Union's meeting account and its City Hall hours vote the recording does not show; higher snow totals; a Highway 49 crash at Cornette Way; the All Hallows' Eve edition</span></span></li>
-    <li><span class="d">Fri, Oct 30</span><span class="what"><b><a href="editions/2026-10-30.html">No. 9 · Four Days To Election Day; Measure Q Is The City's Question</a></b><span class="sub">Evening-updated: free sand sites from Nov 1, higher snow totals for the high peaks; council votes still unconfirmed</span></span></li>
-    <li><span class="d">Thu, Oct 29</span><span class="what"><b><a href="editions/2026-10-29.html">No. 8 · Council Meets On Dispatch, Dam Grant, And A Four-Day City Hall; Votes Await The Record</a></b><span class="sub">Evening-updated: a Winter Weather Advisory for the high Sierra; From the Record on the August entheogen resolution; the Bill of Fare debuted</span></span></li>
-    <li><span class="d">Wed, Oct 28</span><span class="what"><b><a href="editions/2026-10-28.html">No. 7 · Council Weighs A Fixed-Price Dispatch Deal And A Four-Day City Hall</a></b><span class="sub">Evening-updated: the county found no evidence of non-citizen voting among the DOJ's 10 names; the Madrone Springs plume; the city's trails survey</span></span></li>
-    <li><span class="d">Tue, Oct 27</span><span class="what"><b><a href="editions/2026-10-27.html">No. 6 · Mail Your Ballot Today; Measure Q Is The City's Question</a></b><span class="sub">Evening-updated: the Madrone Springs underburn, the proposed four-day City Hall week; From the Record on the August entheogen resolution</span></span></li>
-    <li><span class="d">Mon, Oct 26</span><span class="what"><b><a href="editions/2026-10-26.html">No. 5 · Measure Q: Nevada City Votes On New Short-Term Rental Rules</a></b><span class="sub">Evening-updated: Caltrans night lane work on Highway 49; looks back at the Oct 15 Planning Commission and Oct 7 Arts Commission agendas</span></span></li>
-    <li><span class="d">Sun, Oct 25</span><span class="what"><b>No. 4 · A Fuels Town Hall Monday, A Full Council Wednesday</b><span class="sub">Evening-updated: the Weather Service added Monday winds; the DOJ's 48-hour clock ran out</span></span></li>
-    <li><span class="d">Sat, Oct 24</span><span class="what"><b>No. 3 · Fifty Years, One Korbel Bottle: Bernie And Grace Celebrate Their Golden Anniversary</b><span class="sub">Hand-updated late with Stop the Presses; also early voting opened, and the DOJ's 48-hour demand on county elections</span></span></li>
-    <li><span class="d">Fri, Oct 23</span><span class="what"><b>No. 2 · Early Voting Opens Saturday At The Rood Center</b><span class="sub">Evening-updated: the Oct 28 council agenda posted and was digested; the CHAMP Gallery arts call opened</span></span></li>
-    <li><span class="d">Thu, Oct 22</span><span class="what"><b>No. 1 · Council Adopts 25% Yearly Water Rate Hikes Over Packed-Room Protest</b><span class="sub">The inaugural edition: water rates, the $1M Prop 64 grant, and the Deer Creek town hall call</span></span></li>
+    <li><span class="d">Sat, Oct 31</span><span class="what"><b><a href="editions/2026-10-31.html">No. 10 · Council Approves Regional Dispatch Deal And Backs NID Dam Grant, 4-0</a></b><span class="sub">Evening-updated: The Union's meeting account and its City Hall hours vote the recording does not show; higher snow totals; the All Hallows' Eve edition</span></span></li>
     <li><span class="d">Archive</span><span class="what"><b><a href="https://nevadacitynugget.com/editions/">All editions ▸</a></b></span></li>
   </ul>
 </section>
-
 
 <footer>
   <p class="stars" style="padding:0">✱ ✱ ✱ ✱ ✱</p>
@@ -758,7 +684,6 @@ a.sponsor img{width:100%;height:auto;display:block}
     <a href="terms.html">Terms of Use</a>
   </p>
 </footer>
-
 
 
 </div>
@@ -1047,4 +972,5 @@ a.sponsor img{width:100%;height:auto;display:block}
     });
   });
 })();
-</script></body></html>
+</script>
+</body></html>
