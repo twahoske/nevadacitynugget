@@ -162,6 +162,21 @@ Todd's goal: grow by readers passing the paper along, not social media.
 - **Later ideas:** a rate limit if anyone games the count; a monthly "Circulation Report" in the paper;
   a milestone banner when a day passes 100, 500, 1,000 readers.
 
+## Two sections in one paper (added Nov 3, 2026)
+- **Why.** On a phone the edition ran about 41 screens, the first headline sat just below the first
+  screen, and county news (Here & There) and the Civic Calendar were buried near screen 30 behind the
+  visitor boxes. Todd preferred a newspaper-style layout to website navigation, and picked "two sections".
+- **Section A, The News:** City Hall & Politics, Here & There, Meetings on the Record, From the Dais,
+  The Docket, Legal Notices, Police Blotter, Civic Calendar, Coming Attractions, Meeting Watch, and a
+  compact Elected Officials box (roster line plus only new remarks).
+- **Section B, The Visitor's Nugget:** a small blackletter section front, then Merchant of the Day,
+  Arts & Culture features, Amusements (Hat Store ad first), Bill of Fare, Bar Guide, Trails & Vistas,
+  The Back Page, Subscriber Rolls. Corrections and Previously close the paper.
+- **Also:** a two-part "Inside" strip under the weather (A and B, linked in-page), a shorter
+  weather strip, and the officials' full profiles at officials.html (this PR).
+- **Upkeep:** officials.html is refreshed by an interactive session after each council meeting;
+  new remarks run first in the daily paper's Elected Officials box.
+
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
    newsletter service (Buttondown is the standing candidate), verify news@nevadacitynugget.com
