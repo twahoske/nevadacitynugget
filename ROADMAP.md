@@ -162,20 +162,19 @@ Todd's goal: grow by readers passing the paper along, not social media.
 - **Later ideas:** a rate limit if anyone games the count; a monthly "Circulation Report" in the paper;
   a milestone banner when a day passes 100, 500, 1,000 readers.
 
-## Two sections in one paper (added Nov 3, 2026)
+## The paper and The Visitor's Nugget (added Nov 3, 2026)
 - **Why.** On a phone the edition ran about 41 screens, the first headline sat just below the first
-  screen, and county news (Here & There) and the Civic Calendar were buried near screen 30 behind the
-  visitor boxes. Todd preferred a newspaper-style layout to website navigation, and picked "two sections".
-- **Section A, The News:** City Hall & Politics, Here & There, Meetings on the Record, From the Dais,
-  The Docket, Legal Notices, Police Blotter, Civic Calendar, Coming Attractions, Meeting Watch, and a
-  compact Elected Officials box (roster line plus only new remarks).
-- **Section B, The Visitor's Nugget:** a small blackletter section front, then Merchant of the Day,
-  Arts & Culture features, Amusements (Hat Store ad first), Bill of Fare, Bar Guide, Trails & Vistas,
-  The Back Page, Subscriber Rolls. Corrections and Previously close the paper.
-- **Also:** a two-part "Inside" strip under the weather (A and B, linked in-page), a shorter
-  weather strip, and the officials' full profiles at officials.html (this PR).
-- **Upkeep:** officials.html is refreshed by an interactive session after each council meeting;
-  new remarks run first in the daily paper's Elected Officials box.
+  screen, and county news was buried near screen 30 behind the visitor boxes. Todd preferred a newspaper
+  layout to website navigation; Niel suggested giving visitors their own page.
+- **The paper (index.html):** City Hall & Politics, Here & There, Police Blotter, a one-line subscribe
+  pitch, Merchant of the Day, Arts & Culture, Amusements, a "Visiting?" pointer, The Back Page, Meetings on
+  the Record, From the Dais, The Docket, Coming Attractions, Civic Calendar, a compact Elected Officials box,
+  Legal Notices & Permits, Meeting Watch, Subscriber Rolls, Previously (last 3 editions + archive).
+- **The Visitor's Nugget (visitor.html):** a daily supplement built by the morning task: Bill of Fare,
+  Bar Guide, Trail of the Day, and a Getting Here & Staying Over box linking stay.html and the day trips.
+  The Site Publisher copies it from the artifact.
+- **Also:** an "Inside" strip under a shorter weather strip, the left masthead ear links to sign-up, and the
+  officials' full profiles moved to officials.html (refreshed by an interactive session after council meetings).
 
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
