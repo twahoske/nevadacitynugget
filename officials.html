@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Who holds office in Nevada City, California, and what each council member and the city manager has said on the public record lately, with sources.">
+<link rel="canonical" href="https://nevadacitynugget.com/officials.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Your Elected Officials · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+ul.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.srclist li{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--rule-soft)}
+ul.srclist li:first-child{border-top:1px solid var(--rule)}
+ul.srclist .s-name{font-family:var(--display);font-weight:700;min-width:210px}
+ul.srclist .s-what{font-size:14px;color:var(--ink-mid);flex:1;min-width:200px}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p + p{margin-top:8px}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+.eff{text-align:center;font-style:italic;font-size:14px;color:var(--ink-mid);margin:0}
+.notebox ul{margin:6px 0 0;padding-left:20px}
+.notebox li + li{margin-top:4px}
+.notebox h3{font-size:15.5px;margin:0 0 2px}
+.notebox h3 + p{margin-top:0}
+.notebox p + h3,.notebox ul + h3{margin-top:12px}
+.policynav{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;margin:8px 0 0}
+
+ul.dais{list-style:none;margin:0;padding:0}
+ul.dais li{padding:14px 2px;border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:4px}
+ul.dais li:first-child{border-top:1px solid var(--rule)}
+ul.dais .who{font-family:var(--display);font-weight:800;font-size:19px}
+ul.dais .role{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+ul.dais .bio{font-size:15px}
+ul.dais .said{font-size:15px;border-left:3px solid var(--rule);padding-left:10px;margin-top:2px}
+ul.dais .said b{font-family:var(--display)}
+.lede{font-size:16px;text-align:center;font-style:italic;margin:0}
+.d-src{font-size:13px;color:var(--ink-mid);text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner">The Officials' Page</div>
+<div>
+  <h1>Your Elected Officials</h1>
+  <p class="motto">Nevada City Nugget · The Council, the Manager, and the Record</p>
+</div>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+<p class="lede">Who holds office in Nevada City, and what each has said on the public record lately. Roster confirmed October 22, 2026 from the city's October 14 agenda and meeting recording, and matched by the October 28 agenda's roster block. New remarks run first in the daily paper; this page gathers them after each council meeting.</p>
+<p class="eff">As of November 2, 2026</p>
+
+<section>
+  <h2 class="kicker" id="council"><span class="label">City Council &amp; Manager</span></h2>
+  <ul class="dais">
+    <li>
+      <span class="who">Daniela Fernández</span><span class="role">Mayor</span>
+      <span class="bio">On the council since 2020; serving her second turn as mayor, having held the office previously in 2023. Her stated theme for the year is "healthy ecosystems," connecting housing, business, and infrastructure. (Oct 14 agenda; meeting recording)</span>
+      <span class="said"><b>Recently said</b> · On the county's transit study, Oct 28: "Rural transit is hard because we don't have some of the conditions of more densely populated areas." (<a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>) Chairing the October 28 meeting, she said during council comments that "it is not council's job to police businesses that come into town," and that the council enters dangerous territory deciding what business belongs where; voted yes on every roll call. (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) Co-signed the official ballot rebuttal for Measure Q, which says it "is not a ban on short-term rentals." (<a href="https://www.nevadacountyca.gov/DocumentCenter/View/70523/Rebuttal-to-Argument-Against-Measure-Q-Online">Rebuttal to Argument Against Measure Q</a>)</span>
+    </li>
+    <li>
+      <span class="who">Gary Petersen</span><span class="role">Vice Mayor</span>
+      <span class="bio">Elected in 2020 filling a vacant seat; mayor July 2024 to July 2025; term through 2028. Chairs the budget and finance committee of Pioneer Energy, the region's community choice power provider; sits on the city's Fire Safety Advisory Committee and the Resilience Project governing board. (Meeting recording; The Union; FSAC agenda and Resilience Project notice, Oct 2026)</span>
+      <span class="said"><b>Recently said</b> · On the City Hall hours item, Oct 28: "I hear this issue more than any other thing." (<a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>) Moved to approve the regional dispatch agreement and seconded Resolution 2026-35 backing NID's Scotts Flat spillway grant; on the spillway he asked, "Will the pedestrian access be reopened after the spillway is constructed?" Read the meeting's land acknowledgment. (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) On October 14 he called the city's $20,000 water-line emergency reserve "no reserve fund at all." (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Adam Kline</span><span class="role">Council Member</span>
+      <span class="bio">Nevada County native and musician; mayor from July 2025 until the council's 2026 reorganization. Priorities on taking that office: Nevada City's identity as a music town and stewardship of the Miners Foundry. (The Union, July 2025)</span>
+      <span class="said"><b>Recently said</b> · On the Scotts Flat spillway, Oct 28: "This is very much for the whole community and wildly important." (<a href="https://www.theunion.com/news/nevada-city-council-weighs-transit-improvements-changes-to-city-hall-hours-at-latest-meeting/article_6860abbb-d968-4688-b86c-a6de6966d153.html">The Union, Oct 31</a>) Moved adoption of the agenda and consent calendar, including the MWELO and cannabis tax ordinances and SYRCL's festival request, and seconded the dispatch agreement. (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) Co-signed the Measure Q ballot rebuttal with Mayor Fernández. (<a href="https://www.nevadacountyca.gov/DocumentCenter/View/70523/Rebuttal-to-Argument-Against-Measure-Q-Online">Rebuttal to Argument Against Measure Q</a>)</span>
+    </li>
+    <li>
+      <span class="who">Doug Fleming</span><span class="role">Council Member</span>
+      <span class="bio">City representative on the Nevada County Transportation Commission and the Transit Services Commission; focused on grant-seeking for city infrastructure. (Meeting recording)</span>
+      <span class="said"><b>Recently said</b> · Moved adoption of Resolution 2026-35 supporting NID's dam safety grant and seconded the consent calendar; given the floor first on the county's transit analysis, he remarked, "we have all these great ideas for three to five years, maybe later." (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) On October 14 he called the water vote "the hardest, ugliest vote I've ever had to make in six years." (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Micayla Sortland</span><span class="role">Council Member</span>
+      <span class="bio">Won a seat in the June 2, 2026 election and was sworn in at the reorganization; disability rights advocate; Resilience Project governing board alternate for the city; repair café and zero-waste organizer; sits on the Fire Safety Advisory Committee; represented the city on The Resilience Project panel at the Resilient California Summit in Sacramento, Oct 20 to 22. (The Union, KNCO, YubaNet; county agenda, Oct 2026; FSAC agenda, Oct 2026; <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/8978">Nevada County, Oct 26</a>)</span>
+      <span class="said"><b>Recently said</b> · Absent from the October 28 meeting; the mayor said she would be back next time. (City Council, Oct 28, transcript) On the October 14 rate vote: "Our system is not financially stable and sound." (City Council, Oct 14, meeting recording)</span>
+    </li>
+    <li>
+      <span class="who">Carrie J. Wright</span><span class="role">City Manager · appointed Jan 2026</span>
+      <span class="bio">Employment agreement approved at the January 14, 2026 council meeting; sits on the Resilience Project of Western Nevada County governing board for the city. (City of Nevada City agenda; county agenda, Oct 2026)</span>
+      <span class="said"><b>Recently said</b> · Presenting the meeting-times item, asked whether the council would want to move meetings "forward to 6:00," particularly in winter, and referred to a December 1 start for the new public hours; in her report said the Spooktacular was "happening on the 30th, not the 31st." (City Council, Oct 28, <a href="https://nevadacitynugget.com/meetings/council-2026-10-28.html">transcript from automatic captions</a>) At Sierra College's city managers' forum: "growth has to be part of the answer." (<a href="https://www.theunion.com/news/city-managers-discuss-homelessness-parking-carrie-wright-and-alex-gammelgard-address-key-issues/article_dc22b889-a1a4-455c-b6e5-e27f63630741.html">The Union, Oct 27</a>)</span>
+    </li>
+  </ul>
+  <p class="d-src">October 28 entries are from the Nugget's transcript of the city's <a href="https://www.youtube.com/watch?v=uNzsYEjpjuc">official recording</a>, made from YouTube's automatic captions; the captions do not label speakers, so attributions rely on the chair's introductions and may contain misheard words. The city's minutes, when posted, are the official record.</p>
+</section>
+
+<div class="notebox">
+  <p><b>How we quote.</b> No quote or position runs without a named source document or article. Words from official recordings are transcribed from automatic captions and may contain misheard words; the city's posted minutes are the official record. Meeting transcripts: <a href="meetings/">Meetings on the Record</a>.</p>
+  <p><b>Something wrong or missing?</b> Write <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a>. Corrections run at the bottom of the next edition.</p>
+</div>
+
+<p class="stars">★ ★ ★</p>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p>Write the Nugget: <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a></p>
+  <p class="policynav">
+    <a href="standards.html">Standards &amp; Disclosures</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="sources.html">Sources &amp; Methods</a>
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
