@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="description" content="The Nevada City Nugget's circulation figures: total copies read since counting began, today, the best day, month by month, and how often the paper was wired to a friend.">
+<link rel="canonical" href="https://nevadacitynugget.com/stats.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Circulation Figures · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+ul.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.srclist li{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--rule-soft)}
+ul.srclist li:first-child{border-top:1px solid var(--rule)}
+ul.srclist .s-name{font-family:var(--display);font-weight:700;min-width:210px}
+ul.srclist .s-what{font-size:14px;color:var(--ink-mid);flex:1;min-width:200px}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p + p{margin-top:8px}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+.eff{text-align:center;font-style:italic;font-size:14px;color:var(--ink-mid);margin:0}
+.notebox ul{margin:6px 0 0;padding-left:20px}
+.notebox li + li{margin-top:4px}
+.notebox h3{font-size:15.5px;margin:0 0 2px}
+.notebox h3 + p{margin-top:0}
+.notebox p + h3,.notebox ul + h3{margin-top:12px}
+.policynav{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;margin:8px 0 0}
+
+.figure{text-align:center;display:flex;flex-direction:column;gap:2px}
+.figure .big{font-family:var(--display);font-weight:900;font-size:clamp(44px,12vw,72px);line-height:1;font-variant-numeric:oldstyle-nums}
+.figure .k{font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-mid)}
+.figure .s{font-style:italic;color:var(--ink-mid);font-size:15px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.tile{border:1px solid var(--rule);background:var(--panel);padding:10px 12px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.tile b{font-family:var(--display);font-weight:900;font-size:26px;font-variant-numeric:oldstyle-nums}
+.tile span{font-family:var(--display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid)}
+table.ledger{width:100%;border-collapse:collapse;font-size:15px}
+table.ledger th{font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mid);text-align:left;border-bottom:2px solid var(--ink);padding:4px 6px}
+table.ledger td{border-bottom:1px solid var(--rule-soft);padding:5px 6px}
+table.ledger .num,table.ledger th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.ledger tr.best td{font-weight:600}
+table.ledger tr.best td:first-child::after{content:" ★";color:var(--red)}
+.ledgerwrap{max-height:520px;overflow:auto;border-bottom:1px solid var(--rule)}
+#st-status{text-align:center;font-style:italic;color:var(--ink-mid)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner">Circulation Figures</div>
+<div>
+  <h1>Nevada City Nugget</h1>
+  <p class="motto">Townsfolk &amp; Flatlanders, Counted</p>
+</div>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<p id="st-status">Fetching the figures from the counting room…</p>
+
+<div id="st-figures" hidden>
+<section>
+  <div class="figure">
+    <span class="k">Total Circulation</span>
+    <span class="big" id="st-total">0</span>
+    <span class="s" id="st-since"></span>
+  </div>
+  <div class="tiles">
+    <div class="tile"><b id="st-today">0</b><span>Today</span></div>
+    <div class="tile"><b id="st-yesterday">0</b><span>Yesterday</span></div>
+    <div class="tile"><b id="st-month">0</b><span id="st-month-k">This month</span></div>
+    <div class="tile"><b id="st-best">0</b><span id="st-best-k">Best day</span></div>
+    <div class="tile"><b id="st-wires">0</b><span>Wired today</span></div>
+    <div class="tile"><b id="st-wires-all">0</b><span>Wired, all time</span></div>
+  </div>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">Day by Day</span></h2>
+  <div class="ledgerwrap">
+  <table class="ledger">
+    <thead><tr><th>Day</th><th class="num">Readers</th><th class="num">Wired</th></tr></thead>
+    <tbody id="st-days"></tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2 class="kicker"><span class="label">Month by Month</span></h2>
+  <table class="ledger">
+    <thead><tr><th>Month</th><th class="num">Readers</th><th class="num">Wired</th></tr></thead>
+    <tbody id="st-months"></tbody>
+  </table>
+</section>
+</div>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">How the Count Works</span></h2>
+  <div class="notebox">
+    <p><b>One copy per reader per day.</b> Each phone or computer that opens today's paper at nevadacitynugget.com counts once per day (Pacific time), however often it comes back. So the total is copies read, not separate people: a regular who reads every morning adds one a day, and someone reading on both phone and laptop counts twice.</p>
+    <p><b>What counts.</b> Only today's front page counts. Archived editions and the other pages don't.</p>
+    <p><b>Wired</b> is how many times readers sent the whole paper to a friend with "☞ Wire The Nugget to a Friend."</p>
+    <p><b>What's kept.</b> Only the date and those two numbers. The counter never records who read, their address, or their device; see <a href="privacy.html">Privacy</a>.</p>
+  </div>
+</section>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p>Write the Nugget: <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a></p>
+  <p class="policynav">
+    <a href="standards.html">Standards &amp; Disclosures</a>
+    <a href="subscribe.html">Subscribe</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="sources.html">Sources &amp; Methods</a>
+  </p>
+</footer>
+
+</div>
+<script>
+/* CIRCULATION FIGURES: reads the Nugget's tally (dates and counts only) and fills in this page. */
+(function(){
+  var TALLY = "https://nugget-tally.todd-c0b.workers.dev";
+  var MON = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+  var FULL = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var DOW = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."];
+  function fmt(n){ return (n || 0).toLocaleString("en-US"); }
+  function parts(day){ var p = /^(\d{4})-(\d{2})-(\d{2})$/.exec(day || ""); return p ? [+p[1], +p[2], +p[3]] : null; }
+  function longDay(day){ var p = parts(day); return p ? MON[p[1] - 1] + " " + p[2] + ", " + p[0] : ""; }
+  function shortDay(day){
+    var p = parts(day); if (!p) return day;
+    return DOW[new Date(Date.UTC(p[0], p[1] - 1, p[2])).getUTCDay()] + " " + MON[p[1] - 1] + " " + p[2];
+  }
+  function monthName(m){ var p = /^(\d{4})-(\d{2})$/.exec(m || ""); return p ? FULL[+p[2] - 1] + " " + p[1] : m; }
+  function set(id, text){ var n = document.getElementById(id); if (n) n.textContent = text; }
+  function cell(row, text, cls){ var td = document.createElement("td"); td.textContent = text; if (cls) td.className = cls; row.appendChild(td); }
+
+  var status = document.getElementById("st-status");
+  if (!window.fetch){ return; }
+  fetch(TALLY + "/stats", { mode: "cors", credentials: "omit" })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){
+      if (!d || typeof d.total !== "number") throw new Error("no figures");
+      set("st-total", fmt(d.total));
+      set("st-since", "copies read since " + longDay(d.since));
+      set("st-today", fmt(d.readers));
+      set("st-yesterday", fmt(d.yesterday));
+      set("st-month", fmt(d.month));
+      set("st-month-k", "So far in " + (FULL[(parts(d.day) || [0, 1])[1] - 1] || "this month"));
+      set("st-best", d.record ? fmt(d.record.n) : "0");
+      set("st-best-k", d.record ? "Best day, " + longDay(d.record.day) : "Best day");
+      set("st-wires", fmt(d.wires));
+      set("st-wires-all", fmt(d.wiresTotal));
+
+      var days = document.getElementById("st-days");
+      (d.days || []).forEach(function(r){
+        var tr = document.createElement("tr");
+        cell(tr, shortDay(r.day)); cell(tr, fmt(r.readers), "num"); cell(tr, fmt(r.wires), "num");
+        if (d.record && r.day === d.record.day) tr.className = "best";
+        days.appendChild(tr);
+      });
+      var months = document.getElementById("st-months");
+      (d.months || []).forEach(function(r){
+        var tr = document.createElement("tr");
+        cell(tr, monthName(r.month)); cell(tr, fmt(r.readers), "num"); cell(tr, fmt(r.wires), "num");
+        months.appendChild(tr);
+      });
+      status.hidden = true;
+      document.getElementById("st-figures").hidden = false;
+    })
+    .catch(function(){
+      status.textContent = "The figures couldn't be fetched just now. They appear at nevadacitynugget.com/stats.html; try again in a moment.";
+    });
+})();
+</script>
+</body>
+</html>

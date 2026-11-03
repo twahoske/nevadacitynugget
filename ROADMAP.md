@@ -139,7 +139,7 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
   artifact's index.html; the morning task carries it forward unchanged and never changes the number.
 - **Release notes** at release-notes.html, built from merged pull requests and this roadmap.
   v0.1 launch (Oct 22), v0.2 Oct 26, v0.3 Oct 27, v0.4 Oct 28, v0.5 Oct 29, v0.6 Beta Mode (Oct 30),
-  v0.7 Meetings on the Record (Oct 30), v0.8 Pass It On (Oct 31).
+  v0.7 Meetings on the Record (Oct 30), v0.8 Pass It On (Oct 31), v0.9 Total Circulation (Nov 3).
 - **Bumping the version:** the number goes up by a tenth when a batch of features ships; daily editions
   don't change it. Add the new release to release-notes.html and change the number in the stamp on the
   artifact in the same sitting.
@@ -149,7 +149,11 @@ Todd's goal: grow by readers passing the paper along, not social media.
 - **Wire The Nugget to a Friend.** A whole-paper share button under the date bar and at the end of the
   paper ("Read it all? A paper lives on being passed along."); sends the link with the day's lead headline
   by Share, Text, Email, or Copy Link. Homepage link from today's paper, dated link from an archive.
-- **Today's Circulation.** "Today's Circulation 214 townsfolk & flatlanders," with yesterday, best day,
+- **Total Circulation (changed Nov 3, 2026 at Todd's request).** The line under the date now shows only the
+  all-time total ("Total Circulation 1,234 townsfolk & flatlanders, since Oct. 31, 2026 · Daily figures ▸"),
+  linking stats.html (Circulation Figures: today, yesterday, best day, month so far, wired today/all time,
+  day-by-day for 90 days, month-by-month). Worker v2 adds total, month, since, wiresTotal and a GET /stats.
+- **Originally (Oct 31): Today's Circulation.** "Today's Circulation 214 townsfolk & flatlanders," with yesterday, best day,
   and times wired. Kept by the Nugget's own counter, a Cloudflare Worker with a D1 database
   (nugget-tally.todd-c0b.workers.dev, set up by Todd Oct 30), which stores only the date and two numbers.
   Each device counts once per Pacific day via a date note in its own browser. Only today's page on

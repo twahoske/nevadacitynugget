@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ=' 'sha256-fWTEMhz3O9XSo12O5OaMXtRptvWbWFkG75Erw+VstTc=' 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="A Modern-Vintage daily paper for Nevada City, California: City Hall and county coverage, fire and weather, public notices, the police blotter, amusements and showtimes, the KVMR radio log, and the stars over Deer Creek.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -245,7 +245,7 @@ a.sponsor img{width:100%;height:auto;display:block}
 
 <div class="wrap">
 
-<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.8</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
+<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.9</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
 
 <p class="banner">Election Day Issue</p>
 <header class="masthead">
@@ -798,13 +798,14 @@ a.sponsor img{width:100%;height:auto;display:block}
     });
   });
 })();
-/* CIRCULATION & WIRE THE NUGGET: a daily reader tally under the folio and a button that sends the whole paper. Part of the wire service block; carry unchanged. */
+/* CIRCULATION & WIRE THE NUGGET: the all-time reader tally under the folio, linking the circulation figures page, and a button that sends the whole paper. Part of the wire service block; carry unchanged. */
 (function(){
   var HOME = "https://nevadacitynugget.com/";
   var TALLY = "https://nugget-tally.todd-c0b.workers.dev";
   var live = location.hostname === "nevadacitynugget.com" || location.hostname === "www.nevadacitynugget.com";
   var today = live && /^\/(index\.html)?$/.test(location.pathname);
   var url = live ? location.origin + location.pathname.replace(/index\.html$/, "") : HOME;
+  var STATS = live ? "/stats.html" : HOME + "stats.html";
   var folio = document.querySelector(".folio");
   var footer = document.querySelector("footer");
   if (!folio) return;
@@ -815,6 +816,8 @@ a.sponsor img{width:100%;height:auto;display:block}
     ".circ .c-n{font-weight:900;font-size:13.5px;letter-spacing:.06em;color:var(--ink);font-variant-numeric:oldstyle-nums}" +
     ".circ .c-count{text-align:center;text-wrap:balance}" +
     ".circ .c-sub{text-transform:none;font-style:italic;letter-spacing:.02em;font-size:12.5px}" +
+    ".circ .c-sub a{color:inherit;text-underline-offset:3px}" +
+    ".circ .c-sub a:hover{color:var(--red)}" +
     ".circ [hidden]{display:none}" +
     ".wire-paper{font-size:10.5px;padding:4px 11px;border-color:var(--ink);color:var(--ink)}" +
     ".passiton{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}" +
@@ -840,7 +843,7 @@ a.sponsor img{width:100%;height:auto;display:block}
   var circ = el("div", "circ");
   var count = el("span", "c-count");
   count.hidden = true;
-  count.appendChild(document.createTextNode("Today's Circulation "));
+  count.appendChild(document.createTextNode("Total Circulation "));
   var num = el("span", "c-n", "0");
   count.appendChild(num);
   count.appendChild(document.createTextNode(" townsfolk & flatlanders"));
@@ -885,16 +888,18 @@ a.sponsor img{width:100%;height:auto;display:block}
     try { localStorage.setItem("nugget-read", pacificDay); } catch(e){}
   }
   function fmt(n){ return n.toLocaleString("en-US"); }
+  var MON = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
   function show(d){
-    if (!d || typeof d.readers !== "number") return;
-    num.textContent = fmt(d.readers);
+    if (!d || typeof d.total !== "number") return;
+    num.textContent = fmt(d.total);
     count.hidden = false;
-    var bits = [];
-    if (d.yesterday) bits.push("Yesterday " + fmt(d.yesterday));
-    if (d.record && d.record.n > d.readers) bits.push("Best day " + fmt(d.record.n));
-    else if (d.record && d.readers > 1) bits.push("A new record!");
-    if (d.wires) bits.push("Wired " + fmt(d.wires) + (d.wires === 1 ? " time" : " times"));
-    if (bits.length){ sub.textContent = bits.join(" · "); sub.hidden = false; }
+    sub.textContent = "";
+    var p = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d.since || "");
+    if (p) sub.appendChild(document.createTextNode("since " + MON[+p[2] - 1] + " " + (+p[3]) + ", " + p[1] + " · "));
+    var a = el("a", "", "Daily figures ▸");
+    a.href = STATS;
+    sub.appendChild(a);
+    sub.hidden = false;
   }
   if (counted()) tally("today").then(show);
   else tally("read").then(function(d){ if (d) markCounted(); show(d); });
