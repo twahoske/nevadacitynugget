@@ -95,14 +95,15 @@ footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:va
 .fine{font-size:13px;color:var(--ink-mid);text-align:center}
 .bm-f{display:flex;gap:8px;align-items:stretch;margin:0;min-width:0}
 .bm-f label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.bm-f input[type=email]{flex:1;min-width:0;font:16px var(--body);color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:0;padding:9px 10px;margin:0}
+.bm-f input[type=email]{flex:1;min-width:0;font:16px var(--body);color:var(--ink);background:transparent;border:1px solid var(--ink);border-radius:0;padding:7px 10px;margin:0}
 .bm-f input[type=email]::placeholder{color:var(--ink-mid);font-style:italic;opacity:1}
 .bm-f input[type=email]:focus{outline:2px solid var(--red);outline-offset:1px}
-.bm-f button{font:900 13px var(--display);letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:1.5px solid var(--ink);border-radius:0;padding:9px 14px;cursor:pointer;white-space:nowrap}
-.bm-f button:hover,.bm-f button:focus-visible{background:var(--red);border-color:var(--red);color:#f0ead9;outline:none}
+.bm-f button{font:800 12px var(--display);letter-spacing:.18em;text-transform:uppercase;background:none;color:var(--ink);border:2px solid var(--ink);border-radius:0;padding:6px 16px;cursor:pointer;white-space:nowrap}
+.bm-f button:hover,.bm-f button:focus-visible{color:var(--red);border-color:var(--red);outline:none}
 .bm-fine{grid-column:1/-1;margin:0;font-size:12.5px;font-style:italic;color:var(--ink-mid);text-align:center}
 .bm-fine a{color:inherit}
-.bmbig .bm-f input[type=email],.bmbig .bm-f button{font-size:17px;padding:12px}
+.bmbig .bm-f input[type=email]{font-size:17px;padding:10px 12px}
+.bmbig .bm-f button{font-size:14px;padding:10px 18px}
 @media (max-width:480px){.bmbig .bm-f{flex-direction:column}}
 </style>
 </head>
