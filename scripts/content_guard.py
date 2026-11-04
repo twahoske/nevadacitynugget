@@ -4,7 +4,8 @@
 The paper is written by scheduled tasks from fetched web pages and reader email, then
 copied here automatically. This check fails (and GitHub emails the publisher) if any
 published page picks up something that could run code or send readers elsewhere:
-an unapproved script, an inline event handler, a javascript: link, a frame or form,
+an unapproved script, an inline event handler, a javascript: link, a frame, a form
+that posts anywhere but the Nugget's Buttondown signup,
 or a meta refresh. It also fails if index.html loses its Content-Security-Policy.
 
 Approved inline scripts are the ones whose sha256 hashes appear in index.html's CSP.
@@ -17,12 +18,16 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+SIGNUP_ACTION = "https://buttondown.com/api/emails/embed-subscribe/nevadacitynugget"
 CSP_RE = re.compile(r'<meta http-equiv="Content-Security-Policy" content="([^"]*)"')
 CHECKS = [
     (re.compile(r"<script\b[^>]*\bsrc\s*=", re.I), "external script"),
     (re.compile(r"<[a-z][^>]*\son[a-z]+\s*=", re.I), "inline event handler"),
     (re.compile(r"""\b(?:href|src|action|formaction)\s*=\s*["']?\s*javascript:""", re.I), "javascript: link"),
-    (re.compile(r"<(?:iframe|frame|object|embed|form|base)\b", re.I), "frame, embed, form or base tag"),
+    (re.compile(r"<(?:iframe|frame|object|embed|base)\b", re.I), "frame, embed or base tag"),
+    # The only form allowed is the email signup, which posts straight to Buttondown.
+    (re.compile(r"<form\b(?![^>]*\baction=\"" + re.escape(SIGNUP_ACTION) + r"\")[^>]*>", re.I), "form not posting to the Buttondown signup"),
+    (re.compile(r"\bformaction\s*=", re.I), "formaction attribute"),
     (re.compile(r"<meta[^>]*http-equiv\s*=\s*[\"']?refresh", re.I), "meta refresh"),
 ]
 
