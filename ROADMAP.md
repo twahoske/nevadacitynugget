@@ -437,6 +437,15 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
       GitHub Pages); Grass Valley daily from the start or lighter at first; same email list or a Grass
       Valley list; Grass Valley contributors or tipsters.
 
+27. **The Nugget in the inbox, morning and evening, automatically.** (Todd, Nov 3, 2026.) Subscribers get
+    each morning edition and each Evening Edition by email with no hand-sending. Today the 5:09 AM morning task
+    emails a draft to Buttondown (drafts@mg.buttondown.email) and Todd sends it by hand; the 4:58 PM Evening
+    Edition is not in Buttondown at all. Decided Nov 4, 2026: stay on Buttondown and send through its API,
+    which is free on every plan; the free plan covers 100 subscribers, and past that Todd will pay $9 a month for
+    1,000. To do: keep the API key safe (a secret, never printed in the paper or the repo), switch the morning
+    task to send directly, add the evening send, and give subscribers a choice of morning, evening, or both.
+    Not started.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
