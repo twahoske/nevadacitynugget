@@ -180,6 +180,23 @@ Todd's goal: grow by readers passing the paper along, not social media.
 - **Also:** an "Inside" strip under a shorter weather strip, the left masthead ear links to sign-up, and the
   officials' full profiles moved to officials.html (refreshed by an interactive session after council meetings).
 
+## Election nights (added Nov 3, 2026)
+- **Standing rule (Todd, Nov 3, 2026):** every major election night gets an Election Returns box at the top
+  of the paper, with updates through the night and fresh numbers for the next morning's editions.
+- **First run: the Nov 3, 2026 midterm.** Live on election night at 7:54 PM, right under The Weather: The
+  Nation (House and Senate seat tallies, AP calls), California (governor), Our Districts (Congress 3,
+  State Senate 4, Assembly 1, NID), Nevada City (Measure Q, county precinct counter, turnout), and all 14
+  propositions. Updated about every two hours until 1 AM and again before the 5:09 AM edition; runs
+  through Thursday's edition.
+- **The look:** a 1941 tally board with Todd's election illustrations (ballot box, EXTRA!, Capitol,
+  bunting, polling place sign, ballot hand, tally board, winner's rosette), embedded as images; CSS-only
+  motion (stamp, bars, ballot drop) that stops for readers who turn motion off.
+- **Rules:** never invent a number; a source line on every desk (Secretary of State, Nevada County
+  Elections, AP); "unofficial" until certified.
+- **How to repeat it:** start a few days ahead (county Notice of Election, state measure list), reuse the
+  template and art, show Todd a preview. The Site Publisher stops at 9:55 PM, so later updates are pushed
+  to this repo's index.html directly.
+
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
    newsletter service (Buttondown is the standing candidate), verify news@nevadacitynugget.com
