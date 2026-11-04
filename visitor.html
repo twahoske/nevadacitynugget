@@ -1,7 +1,9 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Visitor's Nugget · Nevada City Nugget</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Grenze+Gotisch:wght@800;900&display=swap">
 <style>
 /* Layout: 1941 Nevada City Nugget vernacular — boxed masthead ears, folio line, dense columns, boxed Amusements ads */
@@ -202,41 +204,49 @@ a.sponsor img{width:100%;height:auto;display:block}
 .beta-bar + .banner{margin-top:0}
 
 .inside2{display:grid;grid-template-columns:1fr 1fr;border-top:3px double var(--ink);border-bottom:3px double var(--ink);margin:14px 0 4px;font-size:14px} .inside2>div{padding:7px 10px 9px} .inside2>div+div{border-left:1px solid var(--rule)} .inside2 b{font:800 11px var(--display);letter-spacing:.14em;text-transform:uppercase} .inside2 a{color:var(--ink)} .inside2 a b{text-decoration:none} .secb{margin:34px 0 10px;text-align:center;border-top:6px double var(--ink);padding-top:12px} .secb .tag{font:800 11px var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-mid)} .secb .np{font-family:"Grenze Gotisch",var(--display);font-size:46px;line-height:1;margin:4px 0 2px} .secb .mot{font-style:italic;font-size:14px;color:var(--ink-mid);border-bottom:1px solid var(--ink);padding-bottom:8px} .secb .mot a{color:var(--ink-mid)} .alm{border:3px double var(--ink);padding:12px 14px} .alm .row{display:flex;gap:10px;border-bottom:1px dotted var(--rule);padding:5px 0;font-size:14.5px} .alm .row:last-of-type{border-bottom:0} .alm .k{flex:0 0 112px;font:800 10.5px/1.9 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid)} .ptr{text-align:center;font-size:14.5px} @media (max-width:640px){.inside2 .l{display:none}.inside2>div{text-align:center;padding:6px 4px}.inside2 b{font-size:10px;letter-spacing:.1em}.secb .np{font-size:34px}.alm .k{flex-basis:84px}}
+/* EMAIL SIGNUP (Nov 4, 2026): coupon after the folio, box after the Blotter, Subscriber Rolls coupon. Carry unchanged. */
+.bymail{border-top:3px double var(--ink);border-bottom:3px double var(--ink);margin:0;padding:10px 4px 11px;display:grid;grid-template-columns:1fr minmax(280px,1.05fr);gap:8px 20px;align-items:center} .bymail .bm-k{margin:0;font:800 11px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--red)} .bymail .bm-l{margin:3px 0 0;font-size:14.5px;line-height:1.4;color:var(--ink-mid);font-style:italic} .bm-f{display:flex;gap:8px;align-items:stretch;margin:0;min-width:0} .bm-f label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap} .bm-f input[type=email]{flex:1;min-width:0;font:16px var(--body);color:var(--ink);background:transparent;border:1px solid var(--ink);border-radius:0;padding:7px 10px;margin:0} .bm-f input[type=email]::placeholder{color:var(--ink-mid);font-style:italic;opacity:1} .bm-f input[type=email]:focus{outline:2px solid var(--red);outline-offset:1px} .bm-f button{font:800 12px var(--display);letter-spacing:.18em;text-transform:uppercase;background:none;color:var(--ink);border:2px solid var(--ink);border-radius:0;padding:6px 16px;cursor:pointer;white-space:nowrap} .bm-f button:hover,.bm-f button:focus-visible{color:var(--red);border-color:var(--red);outline:none} .bm-fine{grid-column:1/-1;margin:0;font-size:12.5px;font-style:italic;color:var(--ink-mid);text-align:center} .bm-fine a{color:inherit} .bmline{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 4px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:15.5px} .bmline p{margin:0;flex:1 1 260px} .bmline .bm-f{flex:1 1 300px} .clip{border:1px dashed var(--ink);padding:18px 16px 16px;position:relative;text-align:center;display:flex;flex-direction:column;gap:10px} .clip::before{content:"\2702";position:absolute;top:-14px;left:18px;background:var(--paper);padding:0 6px;font-size:20px;line-height:1;color:var(--ink)} .clip .bm-k{margin:0;font:800 clamp(19px,4.4vw,24px)/1.1 var(--display);letter-spacing:.01em} .clip p{margin:0;font-size:14.5px;color:var(--ink-mid)} .clip p.bm-k{color:var(--ink)} .clip .bm-f{max-width:480px;width:100%;margin:2px auto 0} .ear .bm-cue{display:block;margin-top:4px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--red)} @media (max-width:620px){ .bymail{grid-template-columns:1fr;padding:10px 2px 11px;text-align:center} .bymail .bm-l{font-size:14.5px} .bm-f button{padding:6px 11px;letter-spacing:.12em} }
 </style>
-</head><body>
+</head>
+<body>
 <div class="wrap">
 
-<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.8</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
+<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.9</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
 
 <p class="banner">Daily Supplement</p>
 <div class="secb" style="margin-top:10px;border-top:0;padding-top:0"><div class="tag">Nevada City Nugget</div><div class="np" style="font-size:52px">The Visitor's Nugget</div><div class="mot">Where to eat, drink, walk and sleep in Nevada City today · <a href="./">◂ Back to today's paper</a></div></div>
 <div class="folio">
-  <span class="f-l"><b>Vol. 1, No. 13</b><i>The County Seat Paper</i></span>
-  <span class="f-c"><b>Tuesday, November 3, 2026</b><i>Nevada City, California</i></span>
+  <span class="f-l"><b>Vol. 1, No. 14</b><i>The County Seat Paper</i></span>
+  <span class="f-c"><b>Wednesday, November 4, 2026</b><i>Nevada City, California</i></span>
   <span class="f-r"><span class="f-hi">Elev. 2,477 Ft.</span><i>Mmm nuggets</i></span>
 </div>
 
+<aside class="bymail" aria-label="Get the Nugget by email">
+  <div><p class="bm-k">✉ Free Delivery, by Email</p><p class="bm-l">Today's Nugget in your inbox every morning. No trackers, one click to leave.</p></div>
+  <form class="bm-f" action="https://buttondown.com/api/emails/embed-subscribe/nevadacitynugget" method="post"><label for="bm-top">Your email address</label><input id="bm-top" type="email" name="email" required autocomplete="email" placeholder="your@email.address"><input type="hidden" name="embed" value="1"><button type="submit">Sign Me Up ▸</button></form>
+</aside>
+
 <section>
   <h2 class="kicker"><span class="label">The Bill of Fare</span></h2>
-  <p class="meta" style="text-align:center">Where to eat in Nevada City this Tuesday, at three prices</p>
+  <p class="meta" style="text-align:center">Where to eat in Nevada City this Wednesday, at three prices</p>
   <ul class="cal" style="font-size:15px">
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $</span><span class="what"><b>Outer Heaven Espresso</b><span class="sub">121 Argall Way · local roaster, espresso and fresh pastries (the publisher calls it the best espresso in town); about $1 to $10 a person per its Google listing · today 7:30 AM to 2 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $$</span><span class="what"><b><a href="https://www.communalcafenc.com/">Communal Cafe</a></b><span class="sub">233 Broad St. · espresso bar and kitchen, house-made bakery; breakfast plates $13 to $25 · today breakfast 7 AM to 2 PM</span></span></li>
+      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $</span><span class="what"><b><a href="https://www.everyonescoffeehouse.com/">Java John's</a></b><span class="sub">306 Broad St. · coffee, hand-rolled bagels, breakfast sandwiches; about $10 to $20 a person per its Google listing · today 7 AM to 2 PM</span></span></li>
+      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $$</span><span class="what"><b><a href="https://www.thenationalexchangehotel.com/dining/lola/">Lola at the National Exchange</a></b><span class="sub">211 Broad St. · brunch plates $14 to $23 · today brunch 9 AM to 2:30 PM</span></span></li>
       <li><span class="d" style="flex-basis:150px;white-space:nowrap">Breakfast · $$$</span><span class="what"><b>No pick today</b><span class="sub">Nevada City does not do a $$$ breakfast, and we think more of it for that.</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $</span><span class="what"><b><a href="http://thepizzajointnc.com/">The Pizza Joint</a></b><span class="sub">228 Commercial St. · slices $6.75 to $8 · today 11:30 AM to 9 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $$</span><span class="what"><b><a href="https://www.northridgenevadacity.com/">Northridge</a></b><span class="sub">773 Nevada St. · most mains $14 to $19.50 · today 11 AM to 8:30 PM</span></span></li>
+      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $</span><span class="what"><b>Crazy Horse Saloon &amp; Grill</b><span class="sub">230 Commercial St. · pub grub and live music (the publisher vouches for the wings and tater tots); about $10 to $20 a person per its Google listing · today takeout 1 to 11 PM</span></span></li>
+      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $$</span><span class="what"><b><a href="https://www.brewbiltbrewhaus.com/">BrewBilt Brewhaus</a></b><span class="sub">300 Spring St. · plates $15 to $19 · today 11 AM to 9 PM, kitchen until 8:30</span></span></li>
       <li><span class="d" style="flex-basis:150px;white-space:nowrap">Lunch · $$$</span><span class="what"><b>No pick today</b><span class="sub">Nothing on offer at this price at midday. Save it for supper.</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $</span><span class="what"><b>Miner Moe's Pizza</b><span class="sub">102 Argall Way · family-owned pizza with a salad bar and a fireplace; about $10 to $20 a person per its Google listing · today 11 AM to 8 PM</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $$</span><span class="what"><b><a href="https://www.brewbiltbrewhaus.com/">BrewBilt Brewhaus</a></b><span class="sub">300 Spring St. · plates $15 to $19 · today 11 AM to 9 PM, kitchen until 8:30</span></span></li>
-      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $$$</span><span class="what"><b><a href="https://sushiintheraw.net">Sushi in the Raw</a></b><span class="sub">135 Argall Way · upscale sushi and sashimi in its new, roomier home; prices not posted online · today dinner 4:30 to 9 PM</span></span></li>
+      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $</span><span class="what"><b><a href="http://thepizzajointnc.com/">The Pizza Joint</a></b><span class="sub">228 Commercial St. · slices $6.75 to $8 · today 11:30 AM to 9 PM</span></span></li>
+      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $$</span><span class="what"><b>Kathmandu Hippie</b><span class="sub">426 Broad St. · Nepali cooking, house-made yogurt, Nepal-grown coffee and tea; about $20 to $50 a person per its Google listing · today dinner until 9 PM</span></span></li>
+      <li><span class="d" style="flex-basis:150px;white-space:nowrap">Dinner · $$$</span><span class="what"><b>Sushi Q</b><span class="sub">238 Commercial St. · sushi and a long sake list; about $20 to $80 a person per its Google listing · today dinner 5 to 9 PM</span></span></li>
   </ul>
   <p class="fine">Picks rotate daily among places open today, with hours and prices as each restaurant posts them; kitchens close early and holidays change things, so call ahead. $ = most plates under $15; $$ = $15 to $30; $$$ = mains over $30. An empty cell means we found no posted price, not that nobody serves it.</p>
   <p class="src">Chosen by the Nugget; no one pays to appear. The Nugget's publisher owns The Hat Store on Broad Street. Closed, moved, or repriced? news@nevadacitynugget.com.</p>
-  <p class="src">Sources (hours and menus checked Oct. 27, 2026): Outer Heaven Espresso (its Google listing); <a href="https://www.communalcafenc.com/">Communal Cafe</a>; <a href="http://thepizzajointnc.com/">The Pizza Joint</a>; <a href="https://www.northridgenevadacity.com/">Northridge</a>; Miner Moe's Pizza (its Google listing); <a href="https://www.brewbiltbrewhaus.com/">BrewBilt Brewhaus</a>; <a href="https://sushiintheraw.net">Sushi in the Raw</a>.</p>
+  <p class="src">Java John's was co-founded by Niel Locke, the publisher's husband, and the late John Parent; they sold it in 2002, and Niel has no stake today.</p>
+  <p class="src">Sources (hours and menus checked Oct. 27, 2026): <a href="https://www.everyonescoffeehouse.com/">Java John's</a>; <a href="https://www.thenationalexchangehotel.com/dining/lola/">National Exchange Hotel, Lola</a>; Crazy Horse Saloon &amp; Grill (its Google listing); <a href="https://www.brewbiltbrewhaus.com/">BrewBilt Brewhaus</a>; <a href="http://thepizzajointnc.com/">The Pizza Joint</a>; Kathmandu Hippie (its Google listing); Sushi Q (its Google listing).</p>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
 
 <section>
   <h2 class="kicker"><span class="label">The Bar Guide</span></h2>
@@ -248,17 +258,40 @@ a.sponsor img{width:100%;height:auto;display:block}
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
-
 <section>
   <h2 class="kicker"><span class="label">Trails &amp; Vistas</span></h2>
-  <p class="meta" style="text-align:center">Trail of the Day · <a href="https://nevadacitynugget.com/trails.html#govt-center"><b>Government Center Trails &amp; Tobiassen Park</b></a></p>
-  <p class="meta" style="text-align:center">Rood Center, Hwy 49 at N. Bloomfield Rd. · 0.6 mile plus 0.2 in the park · 20 to 60 ft · paved and dirt · Easy</p>
-  <p>A quick history walk at the Rood Center: hydraulic mining monitors on display, a plaque on American Hill, and Charles Marsh Pond, an 1861 reservoir in Tobiassen Park with piers and picnic tables. Under a mile; good for a lunch break.</p>
-  <p class="src">More hikes, trailheads, and current closures: <a href="https://nevadacitynugget.com/trails.html">Trails &amp; Vistas, the Nugget's walker's guide</a>. Conditions change; call Nevada County Public Works, (530) 265-1411 before you go. Source: <a href="https://bylt.org/trail/nevada-county-government-center-trails/">Bear Yuba Land Trust</a>.</p>
+  <p class="meta" style="text-align:center">Trail of the Day · <a href="https://nevadacitynugget.com/trails.html#dctt-nisenan"><b>Deer Creek Tribute Trail: Nisenan Bridge</b></a></p>
+  <p class="meta" style="text-align:center">Jordan St. trailhead (walk from Broad &amp; Pine via the Pine St. bridge) · 1.5-mile loop · lower trail drops 185 ft · dirt · Easy to moderate</p>
+  <p>Walk from Broad and Pine across the Pine Street bridge to the Jordan Street trailhead, then loop down to the Angkula Seo suspension bridge over Deer Creek, past the 1850 Rough &amp; Ready Ditch and Nisenan history signs. About a mile and a half.</p>
+  <p class="src">More hikes, trailheads, and current closures: <a href="https://nevadacitynugget.com/trails.html">Trails &amp; Vistas, the Nugget's walker's guide</a>. Conditions change; call Bear Yuba Land Trust, (530) 272-5994 before you go. Source: <a href="https://bylt.org/trail/deer-creek-nisenan-bridge/">Bear Yuba Land Trust</a>.</p>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
+<section>
+  <h2 class="kicker"><span class="label">Spotlight on Seven Hills</span></h2>
+  <style>.sh-a{color:var(--ink-mid);font-size:12.5px;white-space:nowrap}.alm.sh .row span:last-child{line-height:1.55}</style>
+  <p class="meta" style="text-align:center">Nevada City's Other Business District</p>
+  <p>About a mile south of Broad Street, tucked off Zion Street behind SPD Market, the Seven Hills District is where Nevada City does its errands, and a good deal more. The Chamber of Commerce counts an arthouse movie theater, artisan food shops, casual places to eat, and more than 35 health practitioners along Zion Street, Argall Way, Searls Avenue and Providence Mine Road. Here is every business on the Chamber's district map and member list that the Nugget could place there.</p>
+  <div class="alm sh">
+<div class="row"><span class="k">Eat &amp; Drink</span><span><b>Outer Heaven Espresso</b> <span class="sh-a">121 Argall</span> · <b>Miner Moe&#x27;s Pizza</b> <span class="sh-a">102 Argall</span> · <b>Jernigan&#x27;s Tap House &amp; Grill</b> <span class="sh-a">123 Argall</span> · <b>Sushi in the Raw</b> <span class="sh-a">135 Argall</span> · <a href="https://www.holatortilla.com/"><b>Hola! Tortilla</b></a> <span class="sh-a">821 Zion</span> · <b>Fudenjüce</b> <span class="sh-a">815 Zion</span> · <b>The Ham Stand (sandwiches, catering)</b> <span class="sh-a">821 Zion</span> · <b>The Sugar Shack</b> <span class="sh-a">122 Argall</span> · <b>Unit J Social Club (members only)</b> <span class="sh-a">124 Argall</span></span></div>
+<div class="row"><span class="k">Markets</span><span><a href="https://www.spdmarket.com"><b>SPD Market</b></a> <span class="sh-a">735 Zion</span> · <a href="http://www.californiaorganics.com"><b>California Organics</b></a> <span class="sh-a">135 Argall</span> · <a href="https://levityresource.com/"><b>Levity Health Market</b></a> <span class="sh-a">530 Searls</span> · <b>Dokimos Pharmacy</b> <span class="sh-a">737 Zion</span></span></div>
+<div class="row"><span class="k">Shops &amp; Art</span><span><a href="http://www.kodo-arts.com"><b>Kodo Arts Japanese Antiques</b></a> <span class="sh-a">571 Searls</span> · <a href="http://www.nevadacitypictureframing.com"><b>Nevada City Picture Framing &amp; Gallery</b></a> <span class="sh-a">571 Searls</span> · <b>Enid &amp; Edgar Vintage</b> <span class="sh-a">108 Argall</span> · <b>HoneyLee&#x27;s Novelties</b> <span class="sh-a">530 Searls</span> · <b>Of Earth &amp; Salt (mostly online)</b> <span class="sh-a">576 Searls</span> · <b>Planet Refills</b> <span class="sh-a">106 Argall</span> · <b>All Season Awards</b> <span class="sh-a">104 Argall</span> · <b>Dark Water Collective Tattoo</b> <span class="sh-a">552 Searls</span> · <a href="https://www.elevation2477.com/"><b>Elevation 2477′ (cannabis, 21+)</b></a> <span class="sh-a">569 Searls</span></span></div>
+<div class="row"><span class="k">Movies &amp; History</span><span><a href="http://www.theonyxtheatre.com"><b>The Onyx Theatre</b></a> <span class="sh-a">107 Argall</span> · <b>Nevada County Historical Society</b> <span class="sh-a">161 Nevada City Hwy</span></span></div>
+<div class="row"><span class="k">Bikes &amp; Wheels</span><span><b>Tour of Nevada City Bicycle Shop</b> <span class="sh-a">457 Sacramento</span> · <b>You Bet! Bicycle Sales &amp; Service</b> <span class="sh-a">556 Searls</span> · <a href="https://www.goldcountryclassiccars.com"><b>Gold Country Classic Cars</b></a> <span class="sh-a">400 Providence Mine</span> · <b>Reibes NAPA Auto Parts</b> <span class="sh-a">535 Searls</span> · <b>Big Brand Tire</b> <span class="sh-a">531 Searls</span> · <b>Dave&#x27;s Auto Repair</b> <span class="sh-a">747 Zion</span> · <b>Muffler &amp; Brake Barn</b> <span class="sh-a">795 Zion</span> · <b>SPD Saw Shop</b> <span class="sh-a">120 Argall</span></span></div>
+<div class="row"><span class="k">Move &amp; Dance</span><span><b>Fusion Fitness Studio</b> <span class="sh-a">578 Searls</span> · <b>Heart &amp; Soul Pilates</b> <span class="sh-a">580 Searls</span> · <b>Lifted Pole Fitness</b> <span class="sh-a">574 Searls</span> · <b>Muhai Martial Arts</b> <span class="sh-a">548 Searls</span> · <b>Gold Country Kuk Sool Won</b> <span class="sh-a">127 Argall</span> · <b>Nevada City Ballet Academy</b> <span class="sh-a">540 Searls</span> · <b>Holt Ballet Conservatory</b> <span class="sh-a">380 Providence Mine</span> · <b>Salsa Sierra</b> <span class="sh-a">542 Searls</span> · <b>Fit Culture Studio</b> <span class="sh-a">75 Bost</span></span></div>
+<div class="row"><span class="k">Wellness</span><span><a href="http://www.ayurvedacollege.com"><b>California College of Ayurveda</b></a> <span class="sh-a">700 Zion</span> · <b>Mountain Stream Meditation Center</b> <span class="sh-a">710 Zion</span> · <b>Sierra Massage Therapy Center</b> <span class="sh-a">707 Zion</span> · <b>Gold Mountain Massage &amp; Wellness</b> <span class="sh-a">530 Searls</span> · <b>The Healing Hive</b> <span class="sh-a">530 Searls</span> · <b>Nevada City Craniosacral</b> <span class="sh-a">530 Searls</span> · <b>Bee Well Chiropractic</b> <span class="sh-a">530 Searls</span> · <a href="https://www.riverrunchiropractic.com/"><b>River Run Chiropractic</b></a> <span class="sh-a">824 Zion</span> · <b>Hunt &amp; Jacobson Chiropractic</b> <span class="sh-a">830 Zion</span> · <b>Sierra Spine &amp; Fitness</b> <span class="sh-a">582 Searls</span> · <b>Clear Stream Acupuncture</b> <span class="sh-a">572 Searls</span> · <b>The Acupuncture Spot</b> <span class="sh-a">206 Providence Mine</span> · <a href="https://rootandstemclinic.com/"><b>Root &amp; Stem Integrative Chinese Medicine</b></a> <span class="sh-a">206 Providence Mine</span> · <b>Radius Physical + Sports Rehab</b> <span class="sh-a">352 Providence Mine</span> · <b>The Wellness Way</b> <span class="sh-a">355 Providence Mine</span> · <b>Reyna Family Wellness</b> <span class="sh-a">121 Argall</span> · <a href="https://www.samanthacorsiglia.com/"><b>Samantha Corsiglia, Integrative Family Health</b></a> <span class="sh-a">by appointment</span> · <a href="https://starlingskinstudio.com/"><b>Starling Skin Studio</b></a> <span class="sh-a">513 Searls</span></span></div>
+<div class="row"><span class="k">Hair</span><span><b>Hairlines Salon</b> <span class="sh-a">748 Zion</span> · <b>Shear Bliss Salon</b> <span class="sh-a">110 Argall</span> · <b>Twist Salon</b> <span class="sh-a">100 Argall</span> · <b>The Mane Event</b> <span class="sh-a">538 Searls</span></span></div>
+<div class="row"><span class="k">Pets</span><span><b>Four Paws Animal Clinic</b> <span class="sh-a">521 Searls</span> · <b>Cloud Bear Healing Arts (for pets)</b> <span class="sh-a">550 Searls</span> · <b>Sara&#x27;s Gold Country Groomers</b> <span class="sh-a">75 Bost</span></span></div>
+<div class="row"><span class="k">Stay</span><span><a href="https://nevadacitynugget.com/stay.html"><b>Piety Hill Cottages</b></a> <span class="sh-a">523 Sacramento</span> · <b>Nevada City Inn</b> <span class="sh-a">760 Zion</span></span></div>
+<div class="row"><span class="k">Work &amp; Errands</span><span><b>49er Coin Laundry</b> <span class="sh-a">114 Argall</span> · <b>Sierra Services for the Blind</b> <span class="sh-a">546 Searls</span> · <b>Sierra Gold Insurance</b> <span class="sh-a">101 Providence Mine</span> · <b>Siteline Architecture</b> <span class="sh-a">644 Zion</span> · <b>NV5 (Holdrege &amp; Kull)</b> <span class="sh-a">792 Searls</span> · <b>Clientworks</b> <span class="sh-a">721 Zion</span> · <b>Great Vibes Cleaning</b> <span class="sh-a">202 Providence Mine</span> · <b>Beneficial Biologics</b> <span class="sh-a">118 Argall</span> · <b>The Sunroom</b> <span class="sh-a">530 Searls</span> · <b>Sierra Presbyterian Church</b> <span class="sh-a">175 Ridge Rd</span></span></div>
+  </div>
+  <p class="src">Street numbers are on Argall Way, Zion Street, Searls Avenue, Providence Mine Road, Sacramento Street and Bost Avenue. Hours change; check with each business before you go. Showtimes for the Onyx are in today's paper under <a href="./#amusements">Amusements</a>.</p>
+  <p class="src">Listed by the Nugget from public sources; no one pays to appear. The Nugget's publisher owns The Hat Store on Broad Street. Closed, moved, or missing? news@nevadacitynugget.com.</p>
+  <p class="src">Sources: Nevada City Chamber of Commerce, <a href="https://www.nevadacitychamber.com/sevenhills/">Seven Hills District</a>, its <a href="https://www.nevadacitychamber.com/wp-content/uploads/2024/04/Seven-HIlls-Map.pdf">district map</a> and its <a href="https://www.nevadacitychamber.com/m/seven-hills-businesses/">Seven Hills business listings</a>; each business's own site where linked; current status checked by the publisher, Nov. 2026.</p>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
 <section><h2 class="kicker"><span class="label">Getting Here &amp; Staying Over</span></h2><div class="alm"><div class="row"><span class="k">Where to Stay</span><span><a href="https://nevadacitynugget.com/stay.html"><b>Historic hotels, inns, cottages and campgrounds</b></a>, plus how vacation rentals and Measure Q work</span></div><div class="row"><span class="k">Day Trips</span><span>From <a href="https://nevadacitynugget.com/daytrip/sacramento.html"><b>Sacramento</b></a> (about 1.5 hours) and <a href="https://nevadacitynugget.com/daytrip/truckee.html"><b>Truckee</b></a> (about 45 minutes): the drive, the parking, a day's plan</span></div><div class="row"><span class="k">Tonight in Town</span><span>Films, stage shows, live music and the radio log are in today's paper: <a href="./#amusements"><b>Amusements</b></a></span></div></div></section>
 
@@ -397,13 +430,14 @@ a.sponsor img{width:100%;height:auto;display:block}
     });
   });
 })();
-/* CIRCULATION & WIRE THE NUGGET: a daily reader tally under the folio and a button that sends the whole paper. Part of the wire service block; carry unchanged. */
+/* CIRCULATION & WIRE THE NUGGET: the all-time reader tally under the folio, linking the circulation figures page, and a button that sends the whole paper. Part of the wire service block; carry unchanged. */
 (function(){
   var HOME = "https://nevadacitynugget.com/";
   var TALLY = "https://nugget-tally.todd-c0b.workers.dev";
   var live = location.hostname === "nevadacitynugget.com" || location.hostname === "www.nevadacitynugget.com";
   var today = live && /^\/(index\.html)?$/.test(location.pathname);
   var url = live ? location.origin + location.pathname.replace(/index\.html$/, "") : HOME;
+  var STATS = live ? "/stats.html" : HOME + "stats.html";
   var folio = document.querySelector(".folio");
   var footer = document.querySelector("footer");
   if (!folio) return;
@@ -414,6 +448,8 @@ a.sponsor img{width:100%;height:auto;display:block}
     ".circ .c-n{font-weight:900;font-size:13.5px;letter-spacing:.06em;color:var(--ink);font-variant-numeric:oldstyle-nums}" +
     ".circ .c-count{text-align:center;text-wrap:balance}" +
     ".circ .c-sub{text-transform:none;font-style:italic;letter-spacing:.02em;font-size:12.5px}" +
+    ".circ .c-sub a{color:inherit;text-underline-offset:3px}" +
+    ".circ .c-sub a:hover{color:var(--red)}" +
     ".circ [hidden]{display:none}" +
     ".wire-paper{font-size:10.5px;padding:4px 11px;border-color:var(--ink);color:var(--ink)}" +
     ".passiton{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}" +
@@ -439,7 +475,7 @@ a.sponsor img{width:100%;height:auto;display:block}
   var circ = el("div", "circ");
   var count = el("span", "c-count");
   count.hidden = true;
-  count.appendChild(document.createTextNode("Today's Circulation "));
+  count.appendChild(document.createTextNode("Total Circulation "));
   var num = el("span", "c-n", "0");
   count.appendChild(num);
   count.appendChild(document.createTextNode(" townsfolk & flatlanders"));
@@ -484,16 +520,18 @@ a.sponsor img{width:100%;height:auto;display:block}
     try { localStorage.setItem("nugget-read", pacificDay); } catch(e){}
   }
   function fmt(n){ return n.toLocaleString("en-US"); }
+  var MON = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
   function show(d){
-    if (!d || typeof d.readers !== "number") return;
-    num.textContent = fmt(d.readers);
+    if (!d || typeof d.total !== "number") return;
+    num.textContent = fmt(d.total);
     count.hidden = false;
-    var bits = [];
-    if (d.yesterday) bits.push("Yesterday " + fmt(d.yesterday));
-    if (d.record && d.record.n > d.readers) bits.push("Best day " + fmt(d.record.n));
-    else if (d.record && d.readers > 1) bits.push("A new record!");
-    if (d.wires) bits.push("Wired " + fmt(d.wires) + (d.wires === 1 ? " time" : " times"));
-    if (bits.length){ sub.textContent = bits.join(" · "); sub.hidden = false; }
+    sub.textContent = "";
+    var p = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d.since || "");
+    if (p) sub.appendChild(document.createTextNode("since " + MON[+p[2] - 1] + " " + (+p[3]) + ", " + p[1] + " · "));
+    var a = el("a", "", "Daily figures ▸");
+    a.href = STATS;
+    sub.appendChild(a);
+    sub.hidden = false;
   }
   if (counted()) tally("today").then(show);
   else tally("read").then(function(d){ if (d) markCounted(); show(d); });
@@ -569,4 +607,6 @@ a.sponsor img{width:100%;height:auto;display:block}
   });
 })();
 </script>
-</body></html>
+
+</body>
+</html>
