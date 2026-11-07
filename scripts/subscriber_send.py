@@ -6,13 +6,16 @@ drafts@mg.buttondown.email, which saves it as a Buttondown draft. This script
 (run by .github/workflows/subscriber-send.yml) sends that draft to every
 subscriber, once a day, only when all of these hold:
 
-  1. it is between 6:35 and 9:00 AM Pacific (a manual run skips this check),
+  1. it is between 5:45 and 9:00 AM Pacific (a manual run skips this check),
   2. no email with today's subject has been sent or queued yet,
   3. a draft whose subject is exactly "Nevada City Nugget · <Weekday, Month D, YYYY>" exists,
   4. the folio on https://nevadacitynugget.com/ shows today's date.
 
 Otherwise it changes nothing. Needs the repository secret BUTTONDOWN_API_KEY.
-DRY_RUN=yes reports what it would do and sends nothing. Standard library only.
+DRY_RUN=yes reports what it would do and sends nothing. WAIT=yes keeps checking
+every 2 minutes until it sends, finds it already sent, or the window closes
+(GitHub's own cron proved unreliable, so the morning edition's push starts a
+waiting run). Standard library only.
 """
 import json, os, re, sys, time, urllib.parse, urllib.request
 from datetime import datetime
@@ -20,7 +23,7 @@ from zoneinfo import ZoneInfo
 
 API = "https://api.buttondown.com/v1"
 SITE = "https://nevadacitynugget.com/"
-START, END = 6 * 60 + 35, 9 * 60  # Pacific minutes after midnight
+START, END = 5 * 60 + 45, 9 * 60  # Pacific minutes after midnight
 LIVE = {"about_to_send", "scheduled", "in_flight", "sent", "partially_sent",
         "resending", "throttled", "paused"}
 UA = {"User-Agent": "nevadacitynugget-subscriber-send"}
@@ -62,7 +65,7 @@ def run(key, now=None, ignore_window=False, dry_run=False, api=bd, folio=site_fo
     now, date = today(now)
     minutes = now.hour * 60 + now.minute
     if not ignore_window and not (START <= minutes <= END):
-        return f"outside the 6:35-9:00 AM window ({now:%H:%M} Pacific); nothing to do"
+        return f"outside the 5:45-9:00 AM window ({now:%H:%M} Pacific); nothing to do"
     if not key:
         return "no BUTTONDOWN_API_KEY secret; nothing sent"
     subject = "Nevada City Nugget · " + date
@@ -84,11 +87,29 @@ def run(key, now=None, ignore_window=False, dry_run=False, api=bd, folio=site_fo
     return f'SENT: queued draft {draft["id"]} "{subject}" to subscribers'
 
 
+def run_waiting(key, dry_run=False, pause=120, **kw):
+    while True:
+        try:
+            msg = run(key, dry_run=dry_run, **kw)
+        except Exception as err:  # a network blip should not end the wait
+            msg = f"error {type(err).__name__}: {err}; will look again"
+        print(msg, flush=True)
+        if "will look again" not in msg:
+            return msg
+        now, _ = today()
+        if now.hour * 60 + now.minute + pause / 60 > END:
+            return msg + " (window closed)"
+        time.sleep(pause)
+
+
 if __name__ == "__main__":
     try:
-        msg = run(os.environ.get("BUTTONDOWN_API_KEY", ""),
-                  ignore_window=os.environ.get("IGNORE_WINDOW") == "yes",
-                  dry_run=os.environ.get("DRY_RUN") == "yes")
+        key = os.environ.get("BUTTONDOWN_API_KEY", "")
+        dry = os.environ.get("DRY_RUN") == "yes"
+        if os.environ.get("WAIT") == "yes":
+            msg = run_waiting(key, dry_run=dry)
+        else:
+            msg = run(key, ignore_window=os.environ.get("IGNORE_WINDOW") == "yes", dry_run=dry)
     except Exception as err:  # report, never print the key
         print(f"ERROR: {type(err).__name__}: {err}")
         sys.exit(1)
