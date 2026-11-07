@@ -1,0 +1,33 @@
+name: Subscriber send
+
+# Sends this morning's Buttondown draft to subscribers once the website shows
+# today's paper. GitHub cron is UTC and can run late, so it tries every 15
+# minutes; scripts/subscriber_send.py acts only 6:35-9:00 AM Pacific and only once.
+on:
+  schedule:
+    - cron: "5,20,35,50 13-16 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (report only, send nothing)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: subscriber-send
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 scripts/subscriber_send.py
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          IGNORE_WINDOW: ${{ github.event_name == 'workflow_dispatch' && 'yes' || 'no' }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
