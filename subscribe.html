@@ -106,6 +106,15 @@ footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:va
 .bmbig .bm-f button{font-size:14px;padding:10px 18px}
 @media (max-width:480px){.bmbig .bm-f{flex-direction:column}}
 </style>
+<style>
+.friend{display:block;margin:0}
+.friend .bm-f{margin:0 0 8px}
+.friend .okbox{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.4;margin:0}
+.friend .okbox input{margin-top:3px;flex:none}
+.steps{margin:6px 0 0;padding-left:22px}
+.steps li + li{margin-top:5px}
+.big3{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 4px}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -126,6 +135,14 @@ footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:va
     <p><b>Get the Nugget in your email every morning.</b> The day's edition goes out shortly after it is set in type at 5:09 AM: City Hall and the county, fire and weather, the Docket and the blotter, what's playing and who's on the radio, and the stars over Deer Creek. It is free, there are no ads beyond the publisher's own Hat Store, and every issue has a one-click unsubscribe at the bottom.</p>
     <p>The sign-up sheet is kept by Buttondown, a small newsletter service. You will get one email asking you to confirm, and nothing else until you do.</p>
   </div>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section id="friend">
+  <h2 class="kicker"><span class="label">Sign Up a Friend</span></h2>
+  <div class="bmbig"><form class="friend" action="https://buttondown.com/api/emails/embed-subscribe/nevadacitynugget" method="post"><div class="bm-f"><label for="bm-friend">Your friend's email address</label><input id="bm-friend" type="email" name="email" required autocomplete="off" placeholder="friend@example.com"><input type="hidden" name="embed" value="1"><button type="submit">Invite ▸</button></div><label class="okbox"><input type="checkbox" required> <span>I know this person and I think they'd want it.</span></label></form></div>
+  <p class="fine">Buttondown sends your friend one email asking them to confirm. Nothing else arrives unless they click to say yes, and the Nugget never sees or keeps the address.</p>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
@@ -152,6 +169,7 @@ footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:va
   <p class="policynav">
     <a href="standards.html">Standards &amp; Disclosures</a>
     <a href="subscribe.html">Subscribe</a>
+    <a href="daily.html">Every Morning</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms of Use</a>
     <a href="sources.html">Sources &amp; Methods</a>
