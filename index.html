@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ=' 'sha256-fWTEMhz3O9XSo12O5OaMXtRptvWbWFkG75Erw+VstTc=' 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://buttondown.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ=' 'sha256-fWTEMhz3O9XSo12O5OaMXtRptvWbWFkG75Erw+VstTc=' 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I=' 'sha256-YstO3SPKuxkxhX0zp4BuAC6cj3s+g6xisSg+mIcXlV0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://buttondown.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="A Modern-Vintage daily paper for Nevada City, California: City Hall and county coverage, fire and weather, public notices, the police blotter, amusements and showtimes, the KVMR radio log, and the stars over Deer Creek.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -982,10 +982,14 @@ a.sponsor img{width:100%;height:auto;display:block}
       sms.href = "sms:?&body=" + encodeURIComponent(trunc(text, 700) + sig);
       menu.appendChild(sms);
 
-      var em = document.createElement("a");
+      var em = document.createElement("button");
+      em.type = "button";
       em.textContent = "Email";
-      em.href = "mailto:?subject=" + encodeURIComponent(tagline + " · " + name) +
-                "&body=" + encodeURIComponent(trunc(text, 1500) + sig);
+      em.addEventListener("click", function(){
+        var subj = tagline + " · " + name, body = trunc(text, 1500) + sig;
+        if (window.NuggetMail) window.NuggetMail.compose(subj, body);
+        else location.href = "mailto:?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+      });
       menu.appendChild(em);
 
       var cp = document.createElement("button");
@@ -1160,10 +1164,13 @@ a.sponsor img{width:100%;height:auto;display:block}
       sms.addEventListener("click", sent);
       menu.appendChild(sms);
 
-      var em = el("a", "", "Email");
-      em.href = "mailto:?subject=" + encodeURIComponent(title) +
-                "&body=" + encodeURIComponent(body + "\n\nA free daily paper for Nevada City. New every morning.");
-      em.addEventListener("click", sent);
+      var em = el("button", "", "Email");
+      em.type = "button";
+      em.addEventListener("click", function(){
+        var mbody = body + "\n\nA free daily paper for Nevada City. New every morning.";
+        if (window.NuggetMail) window.NuggetMail.compose(title, mbody, sent);
+        else { sent(); location.href = "mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(mbody); }
+      });
       menu.appendChild(em);
 
       var cp = el("button", "", "Copy Link");
@@ -1183,11 +1190,172 @@ a.sponsor img{width:100%;height:auto;display:block}
         } catch(e){ done(copyText(url)); }
       });
       menu.appendChild(cp);
+
+      if (window.NuggetMail){
+        var inv = el("button", "", "Sign Up a Friend");
+        inv.type = "button";
+        inv.addEventListener("click", function(){ window.NuggetMail.invite(); });
+        menu.appendChild(inv);
+      }
     }
 
     btn.addEventListener("click", function(){
       if (menu.classList.toggle("open")) build();
     });
   });
+})();
+/* MAIL ROOM: the Email choice in every Wire menu opens a small window offering Gmail, Outlook, Yahoo, the reader's own mail app, or a copy of the message, because a bare mailto link does nothing on a computer with no mail program set up. It also holds "Sign Up a Friend," which hands a friend's address to Buttondown so Buttondown can ask them to confirm. Part of the wire service block; carry unchanged. */
+(function(){
+  var SIGNUP = "https://buttondown.com/api/emails/embed-subscribe/nevadacitynugget";
+  var css = document.createElement("style");
+  css.textContent =
+    ".wire-menu a,.wire-menu button{line-height:1.5;display:inline-block}" +
+    ".mailroom{border:2px solid var(--ink);background:var(--paper);color:var(--ink);padding:0;max-width:min(420px,calc(100vw - 28px));width:100%;font-family:var(--body)}" +
+    ".mailroom::backdrop{background:rgba(20,16,8,.55)}" +
+    ".mailroom .mr-in{border:1px solid var(--rule);margin:5px;padding:16px 18px 18px}" +
+    ".mailroom h2{font-family:var(--display);font-weight:900;font-size:15px;letter-spacing:.2em;text-transform:uppercase;text-align:center;margin:0 0 4px;padding:0 0 8px;border-bottom:3px double var(--ink)}" +
+    ".mailroom p{font-size:14.5px;line-height:1.45;margin:10px 0}" +
+    ".mailroom .mr-fine{font-size:12.5px;font-style:italic;color:var(--ink-mid)}" +
+    ".mailroom .mr-list{display:flex;flex-direction:column;gap:8px;margin:12px 0 4px}" +
+    ".mailroom .mr-list a,.mailroom .mr-list button,.mailroom .mr-go{display:block;width:100%;box-sizing:border-box;text-align:center;font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;border:2px solid var(--ink);background:none;color:var(--ink);padding:9px 10px;cursor:pointer;text-decoration:none}" +
+    ".mailroom .mr-list a:hover,.mailroom .mr-list button:hover,.mailroom .mr-go:hover{color:var(--red);border-color:var(--red)}" +
+    ".mailroom .mr-go{background:var(--ink);color:var(--paper)}" +
+    ".mailroom .mr-go:hover{background:var(--red);color:var(--paper)}" +
+    ".mailroom input[type=email]{display:block;width:100%;box-sizing:border-box;font:inherit;font-size:16px;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:9px 10px;margin:0 0 10px}" +
+    ".mailroom label.mr-ok{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;line-height:1.4;margin:0 0 12px}" +
+    ".mailroom label.mr-ok input{margin-top:3px;flex:none}" +
+    ".mailroom .mr-x{display:block;margin:14px auto 0;background:none;border:none;color:var(--ink-mid);font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:3px}";
+  document.head.appendChild(css);
+
+  function el(tag, cls, txt){
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (txt) n.textContent = txt;
+    return n;
+  }
+  function q(s){ return encodeURIComponent(s); }
+  function copyText(t){
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = t;
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      ta.remove();
+      return ok;
+    } catch(e){ return false; }
+  }
+
+  var dlg = null, box = null, opener = null;
+  function sheet(title){
+    if (!dlg){
+      dlg = el("dialog", "mailroom");
+      dlg.setAttribute("aria-labelledby", "mr-title");
+      dlg.addEventListener("click", function(e){ if (e.target === dlg) shut(); });
+      dlg.addEventListener("close", function(){ if (opener && opener.focus) opener.focus(); });
+      document.body.appendChild(dlg);
+    }
+    opener = document.activeElement;
+    dlg.innerHTML = "";
+    box = el("div", "mr-in");
+    var h = el("h2", "", title);
+    h.id = "mr-title";
+    box.appendChild(h);
+    dlg.appendChild(box);
+    return box;
+  }
+  function closer(){
+    var x = el("button", "mr-x", "Close");
+    x.type = "button";
+    x.addEventListener("click", shut);
+    box.appendChild(x);
+  }
+  function show(){
+    if (typeof dlg.showModal === "function"){ if (!dlg.open) dlg.showModal(); }
+    else dlg.setAttribute("open", "");
+  }
+  function shut(){
+    if (typeof dlg.close === "function") dlg.close(); else dlg.removeAttribute("open");
+  }
+
+  function compose(subject, body, onSend){
+    var b = sheet("Send by Email");
+    b.appendChild(el("p", "mr-fine", "Pick where you write your email. Each one opens a new message with the paper already in it, ready for your friend's address."));
+    var list = el("div", "mr-list");
+    var phone = window.matchMedia && matchMedia("(pointer:coarse)").matches;
+    var opts = [
+      ["Gmail", "https://mail.google.com/mail/?view=cm&fs=1&su=" + q(subject) + "&body=" + q(body)],
+      ["Outlook", "https://outlook.live.com/mail/0/deeplink/compose?subject=" + q(subject) + "&body=" + q(body)],
+      ["Yahoo Mail", "https://compose.mail.yahoo.com/?subject=" + q(subject) + "&body=" + q(body)]
+    ];
+    var app = ["My Mail App", "mailto:?subject=" + q(subject) + "&body=" + q(body)];
+    if (phone) opts.unshift(app); else opts.push(app);
+    opts.forEach(function(o){
+      var a = el("a", "", o[0]);
+      a.href = o[1];
+      if (o[1].indexOf("https:") === 0){ a.target = "_blank"; a.rel = "noopener"; }
+      a.addEventListener("click", function(){ if (onSend) onSend(); setTimeout(shut, 300); });
+      list.appendChild(a);
+    });
+    var cp = el("button", "", "Copy the Message");
+    cp.type = "button";
+    cp.addEventListener("click", function(){
+      var full = subject + "\n\n" + body;
+      function done(ok){
+        cp.textContent = ok ? "Copied ✓ Paste it anywhere" : "Copy failed";
+        if (ok && onSend) onSend();
+        setTimeout(function(){ cp.textContent = "Copy the Message"; }, 2500);
+      }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(full).then(function(){ done(true); }, function(){ done(copyText(full)); });
+        } else done(copyText(full));
+      } catch(e){ done(copyText(full)); }
+    });
+    list.appendChild(cp);
+    b.appendChild(list);
+    closer();
+    show();
+  }
+
+  function invite(){
+    var b = sheet("Sign Up a Friend");
+    b.appendChild(el("p", "", "Know someone who would enjoy the Nugget in their inbox each morning? Type their email and Buttondown, the service that mails the paper, will send them one note asking them to confirm."));
+    b.appendChild(el("p", "mr-fine", "Nothing else arrives unless they click to say yes. The address goes straight to Buttondown; the Nugget never sees or keeps it."));
+    var f = el("form");
+    f.action = SIGNUP;
+    f.method = "post";
+    var em = el("input");
+    em.type = "email";
+    em.name = "email";
+    em.required = true;
+    em.autocomplete = "off";
+    em.placeholder = "friend@example.com";
+    em.setAttribute("aria-label", "Your friend's email address");
+    f.appendChild(em);
+    var hid = el("input");
+    hid.type = "hidden";
+    hid.name = "embed";
+    hid.value = "1";
+    f.appendChild(hid);
+    var ok = el("label", "mr-ok");
+    var cb = el("input");
+    cb.type = "checkbox";
+    cb.required = true;
+    ok.appendChild(cb);
+    ok.appendChild(el("span", "", "I know this person and I think they'd want it."));
+    f.appendChild(ok);
+    var go = el("button", "mr-go", "Send the Invitation");
+    go.type = "submit";
+    f.appendChild(go);
+    b.appendChild(f);
+    closer();
+    show();
+    setTimeout(function(){ em.focus(); }, 30);
+  }
+
+  window.NuggetMail = { compose: compose, invite: invite };
 })();
 </script></body></html>
