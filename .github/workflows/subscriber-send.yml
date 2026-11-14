@@ -1,9 +1,14 @@
 name: Subscriber send
 
 # Sends this morning's Buttondown draft to subscribers once the website shows
-# today's paper. GitHub cron is UTC and can run late, so it tries every 15
-# minutes; scripts/subscriber_send.py acts only 6:35-9:00 AM Pacific and only once.
+# today's paper. The Site Publisher's 5:55 AM push of the new edition starts a
+# run that waits (checking every 2 minutes, until 9:00 AM Pacific) for the 6:25
+# draft. GitHub cron skipped every slot on Nov 7, 2026, so it is only a backup.
+# scripts/subscriber_send.py acts only 5:45-9:00 AM Pacific and only once a day.
 on:
+  push:
+    branches: [main]
+    paths: ["index.html"]
   schedule:
     - cron: "5,20,35,50 13-16 * * *"
   workflow_dispatch:
@@ -23,11 +28,12 @@ concurrency:
 jobs:
   send:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 200
     steps:
       - uses: actions/checkout@v5
       - run: python3 scripts/subscriber_send.py
         env:
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
           IGNORE_WINDOW: ${{ github.event_name == 'workflow_dispatch' && 'yes' || 'no' }}
+          WAIT: ${{ github.event_name == 'push' && 'yes' || 'no' }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
