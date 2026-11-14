@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Nevada City Nugget is a free paper you read online: a new edition every morning by 6 at nevadacitynugget.com. How to get it on your phone, in your email, and to a friend.">
+<link rel="canonical" href="https://nevadacitynugget.com/daily.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<title>Every Morning · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+ul.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.srclist li{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--rule-soft)}
+ul.srclist li:first-child{border-top:1px solid var(--rule)}
+ul.srclist .s-name{font-family:var(--display);font-weight:700;min-width:210px}
+ul.srclist .s-what{font-size:14px;color:var(--ink-mid);flex:1;min-width:200px}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p + p{margin-top:8px}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+.eff{text-align:center;font-style:italic;font-size:14px;color:var(--ink-mid);margin:0}
+.notebox ul{margin:6px 0 0;padding-left:20px}
+.notebox li + li{margin-top:4px}
+.notebox h3{font-size:15.5px;margin:0 0 2px}
+.notebox h3 + p{margin-top:0}
+.notebox p + h3,.notebox ul + h3{margin-top:12px}
+.policynav{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;margin:8px 0 0}
+</style>
+<style>
+.signup{display:block;text-align:center;font-family:var(--display);font-weight:900;font-size:16px;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:2px solid var(--ink);padding:12px 10px;text-decoration:none}
+.signup:hover{background:var(--red);border-color:var(--red);color:var(--paper)}
+.fine{font-size:13px;color:var(--ink-mid);text-align:center}
+.bm-f{display:flex;gap:8px;align-items:stretch;margin:0;min-width:0}
+.bm-f label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bm-f input[type=email]{flex:1;min-width:0;font:16px var(--body);color:var(--ink);background:transparent;border:1px solid var(--ink);border-radius:0;padding:7px 10px;margin:0}
+.bm-f input[type=email]::placeholder{color:var(--ink-mid);font-style:italic;opacity:1}
+.bm-f input[type=email]:focus{outline:2px solid var(--red);outline-offset:1px}
+.bm-f button{font:800 12px var(--display);letter-spacing:.18em;text-transform:uppercase;background:none;color:var(--ink);border:2px solid var(--ink);border-radius:0;padding:6px 16px;cursor:pointer;white-space:nowrap}
+.bm-f button:hover,.bm-f button:focus-visible{color:var(--red);border-color:var(--red);outline:none}
+.bm-fine{grid-column:1/-1;margin:0;font-size:12.5px;font-style:italic;color:var(--ink-mid);text-align:center}
+.bm-fine a{color:inherit}
+.bmbig .bm-f input[type=email]{font-size:17px;padding:10px 12px}
+.bmbig .bm-f button{font-size:14px;padding:10px 18px}
+@media (max-width:480px){.bmbig .bm-f{flex-direction:column}}
+</style>
+<style>
+.friend{display:block;margin:0}
+.friend .bm-f{margin:0 0 8px}
+.friend .okbox{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.4;margin:0}
+.friend .okbox input{margin-top:3px;flex:none}
+.steps{margin:6px 0 0;padding-left:22px}
+.steps li + li{margin-top:5px}
+.big3{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner">Every Morning, Fresh</div>
+<div>
+  <h1>Nevada City Nugget</h1>
+  <p class="motto">A New Paper by Six, Seven Days a Week</p>
+</div>
+
+<a class="back" href="./">◂ Read Today's Edition</a>
+
+<section>
+  <h2 class="kicker"><span class="label">How the Nugget Works</span></h2>
+  <div class="notebox">
+    <p><b>The Nugget is a daily paper you read on a website.</b> Every morning a fresh edition is set in type, and by 6 AM it is up at <a href="./">nevadacitynugget.com</a>, in place of yesterday's. Same address, new paper, seven days a week.</p>
+    <p>So the trick is simply to come back. Open it with your morning coffee the way you would pick a paper off the porch. When news breaks, an Evening Edition may follow after 5 PM. Yesterday's papers are kept in <a href="editions/">the archive</a>.</p>
+  </div>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section id="ways">
+  <h2 class="kicker"><span class="label">Never Miss One</span></h2>
+
+  <p class="big3">1. Have it delivered by email</p>
+  <div class="bmbig"><form class="bm-f" action="https://buttondown.com/api/emails/embed-subscribe/nevadacitynugget" method="post"><label for="bm-daily">Your email address</label><input id="bm-daily" type="email" name="email" required autocomplete="email" placeholder="your@email.address"><input type="hidden" name="embed" value="1"><button type="submit">Sign Me Up ▸</button></form></div>
+  <p class="fine">The morning paper lands in your inbox at about half past six. Free, no trackers, one click to leave. Buttondown keeps the list and sends one email to confirm. <a href="subscribe.html">The particulars</a>.</p>
+
+  <p class="big3" style="margin-top:18px">2. Put it on your phone</p>
+  <div class="notebox">
+    <h3>iPhone or iPad</h3>
+    <ol class="steps">
+      <li>Open <b>nevadacitynugget.com</b> in Safari.</li>
+      <li>Tap the Share button (the square with an arrow pointing up).</li>
+      <li>Scroll down and tap <b>Add to Home Screen</b>, then <b>Add</b>.</li>
+    </ol>
+    <h3>Android</h3>
+    <ol class="steps">
+      <li>Open <b>nevadacitynugget.com</b> in Chrome.</li>
+      <li>Tap the menu (three dots, top right).</li>
+      <li>Tap <b>Add to Home screen</b> (some phones say <b>Install app</b>), then <b>Add</b>.</li>
+    </ol>
+    <p>The Nugget's icon then sits with your apps. Tap it each morning and the new paper is there.</p>
+  </div>
+
+  <p class="big3" style="margin-top:18px">3. Make it your computer's first page</p>
+  <div class="notebox">
+    <p><b>Bookmark it:</b> press Ctrl+D (Windows) or ⌘+D (Mac) while you are on the front page.</p>
+    <p><b>Or open it every time your browser starts.</b> In Chrome: Settings, then <b>On startup</b>, then <b>Open a specific page</b>, and add nevadacitynugget.com. In Safari: Settings, then <b>General</b>, and set <b>Homepage</b> to nevadacitynugget.com. In Edge: Settings, then <b>Start, home, and new tabs</b>.</p>
+  </div>
+</section>
+
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section id="friend">
+  <h2 class="kicker"><span class="label">Sign Up a Friend</span></h2>
+  <p>Know someone who would like the Nugget waiting in their inbox each morning? Put their address in and Buttondown will ask them.</p>
+  <div class="bmbig"><form class="friend" action="https://buttondown.com/api/emails/embed-subscribe/nevadacitynugget" method="post"><div class="bm-f"><label for="bm-friend">Your friend's email address</label><input id="bm-friend" type="email" name="email" required autocomplete="off" placeholder="friend@example.com"><input type="hidden" name="embed" value="1"><button type="submit">Invite ▸</button></div><label class="okbox"><input type="checkbox" required> <span>I know this person and I think they'd want it.</span></label></form></div>
+  <p class="fine">Buttondown sends your friend one email asking them to confirm. Nothing else arrives unless they click to say yes, and the Nugget never sees or keeps the address.</p>
+  <div class="notebox" style="margin-top:12px">
+    <p><b>Telling someone in person?</b> Here is the whole pitch: <i>"It's a free local paper online. Go to nevadacitynugget.com any morning and there's a new one."</i></p>
+  </div>
+</section>
+
+<a class="back" href="./">◂ Read Today's Edition</a>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p>Write the Nugget: <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a></p>
+  <p class="policynav">
+    <a href="standards.html">Standards &amp; Disclosures</a>
+    <a href="subscribe.html">Subscribe</a>
+    <a href="daily.html">Every Morning</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="sources.html">Sources &amp; Methods</a>
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

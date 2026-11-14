@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ=' 'sha256-fWTEMhz3O9XSo12O5OaMXtRptvWbWFkG75Erw+VstTc=' 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I=' 'sha256-YstO3SPKuxkxhX0zp4BuAC6cj3s+g6xisSg+mIcXlV0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://buttondown.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ=' 'sha256-fWTEMhz3O9XSo12O5OaMXtRptvWbWFkG75Erw+VstTc=' 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I=' 'sha256-YstO3SPKuxkxhX0zp4BuAC6cj3s+g6xisSg+mIcXlV0=' 'sha256-EUK9JvSKzBZK4/NdKYrgajFKsVxEnuabdlQqOtcjsPg='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://buttondown.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="A Modern-Vintage daily paper for Nevada City, California: City Hall and county coverage, fire and weather, public notices, the police blotter, amusements and showtimes, the KVMR radio log, and the stars over Deer Creek.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://nevadacitynugget.com/">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#f0ead9">
 <meta property="og:type" content="website">
@@ -1026,6 +1027,7 @@ a.sponsor img{width:100%;height:auto;display:block}
   var today = live && /^\/(index\.html)?$/.test(location.pathname);
   var url = live ? location.origin + location.pathname.replace(/index\.html$/, "") : HOME;
   var STATS = live ? "/stats.html" : HOME + "stats.html";
+  var HABIT = live ? "/daily.html" : HOME + "daily.html";
   var folio = document.querySelector(".folio");
   var footer = document.querySelector("footer");
   if (!folio) return;
@@ -1039,6 +1041,10 @@ a.sponsor img{width:100%;height:auto;display:block}
     ".circ .c-sub a{color:inherit;text-underline-offset:3px}" +
     ".circ .c-sub a:hover{color:var(--red)}" +
     ".circ [hidden]{display:none}" +
+    ".circ .c-habit{flex-basis:100%;text-align:center;text-transform:none;font-style:italic;letter-spacing:.02em;font-size:13px;color:var(--ink)}" +
+    ".circ .c-habit b{font-style:normal;font-family:var(--display);font-weight:800;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}" +
+    ".circ .c-habit a{color:inherit;text-underline-offset:3px}" +
+    ".circ .c-habit a:hover{color:var(--red)}" +
     ".wire-paper{font-size:10.5px;padding:4px 11px;border-color:var(--ink);color:var(--ink)}" +
     ".passiton{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}" +
     ".passiton p{font-style:italic;font-size:14.5px;color:var(--ink-mid);margin:0}" +
@@ -1071,15 +1077,22 @@ a.sponsor img{width:100%;height:auto;display:block}
   sub.hidden = true;
   var topBtn = paperButton();
   topBtn.className += " wire-paper";
+  var habit = el("span", "c-habit");
+  habit.appendChild(el("b", "", "New every morning by 6"));
+  habit.appendChild(document.createTextNode(" · Come back tomorrow for a fresh paper · "));
+  var ha = el("a", "", "Make it a habit ▸");
+  ha.href = HABIT;
+  habit.appendChild(ha);
   circ.appendChild(count);
   circ.appendChild(sub);
+  circ.appendChild(habit);
   circ.appendChild(topBtn);
   folio.insertAdjacentElement("afterend", circ);
 
   var buttons = [topBtn];
   if (footer){
     var pass = el("div", "passiton");
-    pass.appendChild(el("p", "", "Read it all? A paper lives on being passed along."));
+    pass.appendChild(el("p", "", "Read it all? A paper lives on being passed along. Tomorrow's is out by 6."));
     var endBtn = paperButton();
     pass.appendChild(endBtn);
     footer.insertAdjacentElement("beforebegin", pass);
@@ -1091,7 +1104,7 @@ a.sponsor img{width:100%;height:auto;display:block}
   if (bs.length) dateLine = bs[bs.length - 1].textContent.trim();
   var lede = document.querySelector("article.lede h3");
   var title = "The Nevada City Nugget" + (dateLine ? " · " + dateLine : "");
-  var note = "Thought you'd like today's Nevada City Nugget." + (lede ? "\nOn the front: " + lede.textContent.trim() : "");
+  var note = "Thought you'd like today's Nevada City Nugget. It's free, and there's a new one every morning." + (lede ? "\nOn the front: " + lede.textContent.trim() : "");
 
   function tally(kind){
     if (!today || !window.fetch) return Promise.resolve(null);

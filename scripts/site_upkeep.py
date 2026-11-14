@@ -290,6 +290,8 @@ def main():
         urls.append((f"{SITE}officials.html", None, "weekly", "0.6"))
     if (ROOT / "subscribe.html").exists():
         urls.append((f"{SITE}subscribe.html", None, "monthly", "0.5"))
+    if (ROOT / "daily.html").exists():
+        urls.append((f"{SITE}daily.html", None, "monthly", "0.6"))
     urls += [(f"{SITE}daytrip/{p.name}", None, "monthly", "0.6")
              for p in sorted((ROOT / "daytrip").glob("*.html"))]
     if (ROOT / "meetings" / "index.html").exists():

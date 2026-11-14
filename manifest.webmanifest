@@ -1,0 +1,22 @@
+{
+  "name": "The Nevada City Nugget",
+  "short_name": "Nugget",
+  "description": "A free daily paper for Nevada City, California. New every morning by 6.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#f0ead9",
+  "theme_color": "#f0ead9",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
