@@ -166,7 +166,7 @@ Todd's goal: grow by readers passing the paper along, not social media.
 - **Later ideas:** a rate limit if anyone games the count; a monthly "Circulation Report" in the paper;
   a milestone banner when a day passes 100, 500, 1,000 readers.
 
-## The paper and The Visitor's Nugget (added Nov 3, 2026)
+## The paper and the Nevada City Visitor Guide (added Nov 3, 2026; renamed Nov 14)
 - **Why.** On a phone the edition ran about 41 screens, the first headline sat just below the first
   screen, and county news was buried near screen 30 behind the visitor boxes. Todd preferred a newspaper
   layout to website navigation; Niel suggested giving visitors their own page.
@@ -174,9 +174,14 @@ Todd's goal: grow by readers passing the paper along, not social media.
   pitch, Merchant of the Day, Arts & Culture, Amusements, a "Visiting?" pointer, The Back Page, Meetings on
   the Record, From the Dais, The Docket, Coming Attractions, Civic Calendar, a compact Elected Officials box,
   Legal Notices & Permits, Meeting Watch, Subscriber Rolls, Previously (last 3 editions + archive).
-- **The Visitor's Nugget (visitor.html):** a daily supplement built by the morning task: Bill of Fare,
+- **The Nevada City Visitor Guide (visitor.html):** a daily supplement built by the morning task: Bill of Fare,
   Bar Guide, Trail of the Day, and a Getting Here & Staying Over box linking stay.html and the day trips.
   The Site Publisher copies it from the artifact.
+- **Renamed Nov 14, 2026 (Todd):** "The Visitor's Nugget" became the **Nevada City Visitor Guide**, the
+  words people actually search for. The headline is now the page's H1 with a small "from the Nevada City
+  Nugget" line under it, and the page has its own description, canonical URL and share tags. The URL stays
+  visitor.html. The title, meta tags and masthead live in the artifact files assets/visitor-head.html and
+  assets/visitor-masthead.html, which the morning task splices in, so they can change without a prompt edit.
 - **Also:** an "Inside" strip under a shorter weather strip, the left masthead ear links to sign-up, and the
   officials' full profiles moved to officials.html (refreshed by an interactive session after council meetings).
 
