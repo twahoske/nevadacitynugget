@@ -372,7 +372,7 @@ a.sponsor img{width:100%;height:auto;display:block}
 
     function sectionText(){
       var clone = sec.cloneNode(true);
-      clone.querySelectorAll(".wire-btn,.wire-menu").forEach(function(n){ n.remove(); });
+      clone.querySelectorAll(".wire-btn,.wire-menu,.plink").forEach(function(n){ n.remove(); });
       var holder = document.createElement("div");
       holder.style.position = "absolute";
       holder.style.left = "-9999px";
@@ -405,7 +405,7 @@ a.sponsor img{width:100%;height:auto;display:block}
       menu.appendChild(k);
 
       var text = sectionText();
-      var sig = "\n\n— " + tagline + "\n" + location.href;
+      var sig = "\n\n— " + tagline + "\n" + (window.NuggetLink ? window.NuggetLink(sec) : location.href);
 
       if (navigator.share){
         var sh = document.createElement("button");
@@ -809,6 +809,168 @@ a.sponsor img{width:100%;height:auto;display:block}
   }
 
   window.NuggetMail = { compose: compose, invite: invite };
+})();
+/* PERMALINKS: gives every section and story a steady #anchor (nevadacitynugget.com/#good-bones jumps to the Good Bones story), adds a Link choice to every Wire menu and a small ¶ link after each headline, and points shared links at the dated edition so they still find the story after today. Part of the wire service block; carry unchanged. */
+(function(){
+  var HOME = "https://nevadacitynugget.com/";
+  var live = /^(www\.)?nevadacitynugget\.com$/.test(location.hostname);
+  var path = location.pathname;
+  var MONTHS = ["january","february","march","april","may","june","july","august","september","october","november","december"];
+  var STOP = {a:1,an:1,the:1,and:1,of:1,to:1,at:1,"in":1,on:1,"for":1,its:1,it:1,is:1,"with":1,by:1,from:1,as:1};
+
+  function slug(t, cap, all){
+    var w = (t || "").toLowerCase().replace(/&amp;|&/g, " and ").normalize("NFKD").replace(/[̀-ͯ]/g, "")
+      .replace(/['’‘]/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(" ");
+    if (all){ w = w.filter(Boolean); if (w[0] === "the" && w.length > 1) w.shift(); return w.slice(0, cap).join("-"); }
+    var keep = w.filter(function(x){ return x && !STOP[x]; });
+    if (!keep.length) keep = w.filter(Boolean);
+    return keep.slice(0, cap || 6).join("-");
+  }
+
+  var day = "";
+  var folio = document.querySelector(".folio");
+  if (folio){
+    var bs = folio.querySelectorAll("b");
+    var m = bs.length && bs[bs.length - 1].textContent.toLowerCase().match(/([a-z]+)\s+(\d{1,2}),\s*(\d{4})/);
+    if (m && MONTHS.indexOf(m[1]) >= 0){
+      day = m[3] + "-" + ("0" + (MONTHS.indexOf(m[1]) + 1)).slice(-2) + "-" + ("0" + m[2]).slice(-2);
+    }
+  }
+  var edMatch = path.match(/\/editions\/(\d{4}-\d{2}-\d{2})\.html$/);
+  var visitor = /visitor\.html$/.test(path);
+  function base(){
+    if (edMatch) return HOME + "editions/" + edMatch[1] + ".html";
+    if (visitor) return HOME + "visitor.html";
+    return HOME + (day ? "?d=" + day : "");
+  }
+
+  var used = {};
+  document.querySelectorAll("[id]").forEach(function(n){ used[n.id] = 1; });
+  function claim(n, s){
+    if (!s) return;
+    var id = s, i = 2;
+    while (used[id]) id = s + "-" + i++;
+    used[id] = 1;
+    n.id = id;
+  }
+
+  var stories = [], sections = [];
+  document.querySelectorAll("section").forEach(function(sec){
+    var label = sec.querySelector(".kicker .label");
+    if (!label) return;
+    if (!sec.id) claim(sec, slug(label.textContent, 5, true));
+    if (sec.id) sections.push(sec);
+    sec.querySelectorAll("article").forEach(function(art){
+      var h = art.querySelector("h3");
+      if (!h) return;
+      if (!art.id) claim(art, slug(h.textContent));
+      if (!art.id) return;
+      stories.push(art);
+      art._nuggetHead = h;
+    });
+  });
+
+  function linkFor(n){ return base() + "#" + n.id; }
+  window.NuggetLink = function(sec){
+    var own = stories.filter(function(a){ return sec.contains(a); });
+    return linkFor(own.length === 1 ? own[0] : sec);
+  };
+
+  var css = document.createElement("style");
+  css.textContent =
+    "section[id],article[id]{scroll-margin-top:14px}" +
+    ".plink{font-family:var(--body,Georgia,serif);font-weight:400;font-size:.62em;color:var(--ink-mid);text-decoration:none;margin-left:.35em;vertical-align:.18em;opacity:.55;white-space:nowrap;cursor:pointer}" +
+    ".plink:hover,.plink:focus{opacity:1;color:var(--red)}" +
+    ".plink.ok{opacity:1;font-family:var(--display);font-weight:800;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}" +
+    ".nugget-hit{animation:nuggethit 2.8s ease-out}" +
+    "@keyframes nuggethit{0%,35%{box-shadow:0 0 0 3px var(--red)}100%{box-shadow:0 0 0 3px transparent}}";
+  document.head.appendChild(css);
+
+  function copy(t, done){
+    function fb(){
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = t; ta.style.position = "fixed"; ta.style.left = "-9999px";
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand("copy"); ta.remove(); done(ok);
+      } catch(e){ done(false); }
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function(){ done(true); }, fb);
+      else fb();
+    } catch(e){ fb(); }
+  }
+
+  stories.forEach(function(art){
+    var a = document.createElement("a");
+    a.className = "plink";
+    a.href = "#" + art.id;
+    a.textContent = "¶";
+    a.title = "Copy a link to this story";
+    a.setAttribute("aria-label", "Copy a link to this story");
+    a.addEventListener("click", function(e){
+      e.preventDefault();
+      copy(linkFor(art), function(ok){
+        if (!ok){ location.hash = art.id; return; }
+        a.textContent = "Link copied"; a.classList.add("ok");
+        setTimeout(function(){ a.textContent = "¶"; a.classList.remove("ok"); }, 2000);
+      });
+    });
+    art._nuggetHead.appendChild(a);
+  });
+
+  sections.forEach(function(sec){
+    var btn = sec.querySelector(".kicker .wire-btn");
+    var menu = sec.querySelector(".wire-menu");
+    if (!btn || !menu) return;
+    btn.addEventListener("click", function(){
+      if (!menu.classList.contains("open")) return;
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = "Link";
+      b.setAttribute("aria-label", "Copy a link that opens the paper at this spot");
+      b.addEventListener("click", function(){
+        copy(window.NuggetLink(sec), function(ok){
+          b.textContent = ok ? "Link copied ✓" : "Copy failed";
+          setTimeout(function(){ b.textContent = "Link"; }, 2000);
+        });
+      });
+      menu.appendChild(b);
+    });
+  });
+
+  function find(h, strict){
+    try { h = decodeURIComponent(h); } catch(e){}
+    if (!h) return null;
+    var exact = document.getElementById(h);
+    if (exact || strict) return exact;
+    var s = slug(h, 12);
+    if (!s) return null;
+    var all = stories.concat(sections), i, k;
+    function key(n){ return slug(n.id.replace(/-/g, " "), 12); }
+    for (i = 0; i < all.length; i++){ k = key(all[i]); if (k === s || k.indexOf(s + "-") === 0) return all[i]; }
+    for (i = 0; i < all.length; i++) if (("-" + key(all[i]) + "-").indexOf("-" + s + "-") >= 0) return all[i];
+    return null;
+  }
+  function go(again){
+    var h = location.hash.slice(1);
+    if (!h || h.indexOf(":~:") === 0) return;
+    var q = location.search.match(/[?&]d=(\d{4}-\d{2}-\d{2})\b/);
+    var older = live && !edMatch && !visitor && q && day && q[1] < day;
+    var n = find(h, older);
+    if (!n){
+      if (older && !again) location.replace(HOME + "editions/" + q[1] + ".html#" + h);
+      return;
+    }
+    if (again){ n.scrollIntoView(); return; }
+    n.scrollIntoView();
+    n.classList.remove("nugget-hit"); void n.offsetWidth; n.classList.add("nugget-hit");
+  }
+  go(false);
+  var moved = false;
+  ["wheel","touchstart","keydown"].forEach(function(t){ window.addEventListener(t, function(){ moved = true; }, {passive:true, once:true}); });
+  window.addEventListener("load", function(){ if (!moved) go(true); });
+  window.addEventListener("hashchange", function(){ go(false); });
 })();
 </script>
 
