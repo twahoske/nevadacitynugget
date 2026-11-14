@@ -468,6 +468,14 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     task to send directly, add the evening send, and give subscribers a choice of morning, evening, or both.
     Not started.
 
+28. **Victorian Christmas guide.** (Todd, Nov 14, 2026.) A standalone, search-friendly page,
+    `victorian-christmas.html`: the five 2026 dates and hours, getting here, the city's new paid event parking,
+    shuttles and the Grass Valley Wednesday bus, what to see, food and drink, kids, restrooms, lodging, and a
+    short FAQ, with Event and FAQ structured data and its own share image. Built from the Chamber's event page
+    and the Nov 12, 2026 council meeting; work files in the project's `victorian-christmas/` folder (`build.py`).
+    To do: add the city's parking prices and map and the Chamber's entertainment lineup when posted; a standing
+    pointer in the paper and Visitor Guide through Dec 20; roll the dates forward each fall.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
