@@ -269,8 +269,18 @@ script gets its CSP hash first, and games stay off archives except the puzzle an
     with name and town only.
 14. **Milestone witnesses.** Readers who were there when a milestone fell get a badge (device only).
 
+### The Funnies (Todd, Nov 15: "different art styles welcome")
+16. **A comics page** (Sundays to start, a daily single panel later), each strip in its own look, all original:
+    - a 1940s-style strip in heavy ink (working idea: an old prospector puzzling over modern Nevada City),
+    - a clean-line strip about tourists ("The Flatlanders") finding parking, fog and hills,
+    - a loose doodle panel starring the downtown deer,
+    - an editorial cartoon under the satire rules below.
+    Drawn as original SVG (no copying any existing strip's characters or look), or by local artists with
+    written OK, credit and paid/close disclosure (see the item 22 request kit). Invented characters only;
+    real public figures appear only in the labeled editorial cartoon. Runs via the scoop pipeline.
+
 ### Satire: local, labeled, a little wicked
-15. **A satire column** (working names: "The Claim Jumper," "Overheard on Broad Street," "Fool's Gold").
+17. **A satire column** (working names: "The Claim Jumper," "Overheard on Broad Street," "Fool's Gold").
     Weekly to start. Targets: City Hall, county bureaucracy, parking, permits, tourist season, ourselves.
     Guardrails, to go in standards.html before the first one runs:
     - Every piece is stamped SATIRE in its kicker, card and share text, so it can't be clipped and passed off as
