@@ -1,0 +1,41 @@
+name: Release notes check
+
+# A gentle reminder, never a blocker: if a pull request changes pages readers see
+# but leaves release-notes.html alone, leave a warning so the notes stay current.
+# Add "no release note" anywhere in the PR description to skip it on purpose.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Look for a release note
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+          BODY: ${{ github.event.pull_request.body }}
+        run: |
+          changed=$(git diff --name-only "$BASE" "$HEAD")
+          echo "Changed files:"; echo "$changed"
+          # Reader-facing: any .html page or image, except daily editions and the notes page itself.
+          facing=$(echo "$changed" | grep -E '\.(html|png|svg|webmanifest)$' | grep -vE '^(editions/|release-notes\.html$)' || true)
+          if [ -z "$facing" ]; then
+            echo "No reader-facing pages changed. Nothing to note."; exit 0
+          fi
+          if echo "$changed" | grep -qx 'release-notes.html'; then
+            echo "release-notes.html is updated. Thank you."; exit 0
+          fi
+          if echo "$BODY" | grep -qi 'no release note'; then
+            echo "PR says no release note is needed."; exit 0
+          fi
+          msg="This PR changes reader-facing pages but not release-notes.html. Add a bullet (and bump the point release and the artifact's Beta stamp), or write 'no release note' in the PR description."
+          echo "::warning title=Release notes::$msg"
+          { echo "### Release notes reminder"; echo; echo "$msg"; echo; echo "Reader-facing files changed:"; echo "$facing" | sed 's/^/- /'; } >> "$GITHUB_STEP_SUMMARY"

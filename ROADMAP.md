@@ -140,9 +140,14 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
 - **Release notes** at release-notes.html, built from merged pull requests and this roadmap.
   v0.1 launch (Oct 22), v0.2 Oct 26, v0.3 Oct 27, v0.4 Oct 28, v0.5 Oct 29, v0.6 Beta Mode (Oct 30),
   v0.7 Meetings on the Record (Oct 30), v0.8 Pass It On (Oct 31), v0.9 Total Circulation (Nov 3).
-- **Bumping the version:** the number goes up by a tenth when a batch of features ships; daily editions
-  don't change it. Add the new release to release-notes.html and change the number in the stamp on the
-  artifact in the same sitting.
+  Caught up Nov 15 with point releases v0.8.1 to v0.8.3 and v0.9.1 to v0.9.6. Staying in beta (Todd, Nov 15).
+- **Bumping the version:** a tenth for a big batch, a point (v0.9.7, v0.9.8...) for smaller reader-facing
+  additions; daily editions don't change it. Add the new release to release-notes.html and change the
+  number in the stamp on the artifact in the same sitting.
+- **Keeping them current (Nov 15):** every PR or artifact publish that changes what readers see adds a
+  bullet to release-notes.html in the same PR (or a follow-up PR the same day for artifact-only changes
+  such as new scoop features). Group a day's changes into one point release. The "Release notes check"
+  Action leaves a reminder on any PR that changes reader-facing pages without touching release-notes.html.
 
 ## Word of mouth (added Oct 31, 2026)
 Todd's goal: grow by readers passing the paper along, not social media.
