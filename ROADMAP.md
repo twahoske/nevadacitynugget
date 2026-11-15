@@ -226,6 +226,65 @@ and on social media, with humor and fun imagery.
   template and art, show Todd a preview. The Site Publisher stops at 9:55 PM, so later updates are pushed
   to this repo's index.html directly.
 
+## Games, badges & satire (added Nov 15, 2026)
+Todd (a former game developer) wants more play in the paper: "I love em all," plus classic newspaper games,
+badges for playing, celebrating the reader, and local political satire that is "subversive and funny without
+being too mean, well maybe just a little." Nothing below is built yet; each gets its own thread and PR.
+
+**Ground rules for every game.** No accounts, no logins, no leaderboards of named readers, nothing personal sent
+anywhere: streaks, badges and finds live only in the reader's own browser (like the daily count's date note),
+with a "forget my progress" button and a privacy page line before launch. Puzzles and art are original. Any new
+script gets its CSP hash first, and games stay off archives except the puzzle answers. Reduced motion respected.
+
+### Community goals (everyone plays together)
+1. **Road to the next milestone.** A thin progress bar under the circulation line: "96 copies to 500." Uses the
+   counter's total and the milestone ladder already in the Wire script. Small; good first build.
+2. **Beat the Record.** When today nears the best day (72, Oct. 31, 2026), the line says so and nudges a Wire.
+
+### Personal play (kept in the reader's browser)
+3. **Prospector's Streak.** Mornings in a row read: "Day 6 at the claim." Ranks at 7, 30, 100 days (Greenhorn,
+   Sourdough, Old-Timer), a gentle "you missed a day, the claim's still yours" instead of a reset scolding.
+4. **The Hidden Nugget.** A tiny gold nugget hidden somewhere different in each edition (placed by the morning
+   task); tap it for "You've found 9 nuggets." Rewards reading the whole paper. Todd's favorite category.
+5. **Paperboy badge.** Ribbons for wiring the paper to 3, 10 and 25 friends (counted on the device only).
+6. **The Badge Case.** One small page (badges.html) showing a reader's own ribbons, drawn as 1941-style merit
+   badges: streaks, nuggets found, puzzles solved, Paperboy, milestone witness ("was here for 1,000").
+
+### Classic newspaper games
+7. **The Daily Mini Crossword.** A 5x5 (Sundays 7x7) with original, local clues (streets, history, the Bar
+   Guide, this week's council meeting). Playable on the page, phone-first; yesterday's answers in today's paper.
+   Built a week at a time by a generator plus a human-quality clue pass, scheduled via the scoop pipeline.
+   Badges for first solve, solving without hints, and solve streaks.
+8. **The Scramble.** Four scrambled local words and a cartoon with a pun answer (original drawing). Answer tomorrow.
+9. **Cipher Corner.** A cryptogram of a line from the paper's own history features or a public-domain 1800s
+   Nevada City item, with a letter hint.
+10. **The Nugget Puzzler.** One local trivia question a day, answer in tomorrow's paper.
+11. **Gold Country Passport** (Visitor Guide). Stamp card for trails, Bar Guide stops and Merchants of the Day;
+    a full card prints an "Honorary Townsfolk" certificate.
+
+### Celebrating the reader
+12. **Reader notices, the old-fashioned way.** Free birthday, anniversary, new-baby, welcome-to-town and
+    "so long, we'll miss you" notices, sent in by email and run with consent (same rules as Citizen o' the Day).
+13. **Reader of the Week / Letters to the Editor.** Nominated or self-submitted, consent required, published
+    with name and town only.
+14. **Milestone witnesses.** Readers who were there when a milestone fell get a badge (device only).
+
+### Satire: local, labeled, a little wicked
+15. **A satire column** (working names: "The Claim Jumper," "Overheard on Broad Street," "Fool's Gold").
+    Weekly to start. Targets: City Hall, county bureaucracy, parking, permits, tourist season, ourselves.
+    Guardrails, to go in standards.html before the first one runs:
+    - Every piece is stamped SATIRE in its kicker, card and share text, so it can't be clipped and passed off as
+      news; it never appears in the news sections, the email subject or the social news cards.
+    - Punch up: public officials in their public roles, institutions, situations. Never private citizens,
+      never someone's looks, family, health or identity.
+    - No invented quotes attributed to real, named people; real officials may appear only in obviously absurd
+      scenarios. Invented characters are fine.
+    - Nothing that could move a vote: no satire on a live ballot measure or candidate in the 30 days before an
+      election.
+    - Publisher conflicts: no satire on matters Todd is party to (e.g. the 436 Broad St use determination) or on
+      The Hat Store's competitors.
+    - Todd approves each piece before it runs.
+
 ## Up next
 1. **The Subscriber Rolls (newsletter service).** Begin harvesting subscribers: pick a
    newsletter service (Buttondown is the standing candidate), verify news@nevadacitynugget.com
