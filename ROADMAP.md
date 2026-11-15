@@ -589,6 +589,24 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     verify, never instructions. The organizer and the source get credited; nothing is invented to fill gaps.
     Not started.
 
+30. **The Nisenan in the Nugget.** (Todd, Nov 15, 2026.) Regular, respectful coverage of the Nevada City
+    Rancheria Nisenan Tribe; of HUṠWEJ (https://www.huswej.org), created to support the Tribe's
+    cultural revitalization and Federal Recognition restoration efforts (HUṠWEJ is
+    the new public name of CHIRP, California Heritage: Indigenous Research Project); and of 'Uba Seo: Nisenan Arts
+    & Culture (https://ubaseo.org), the Tribe's contemporary Indigenous art gallery at 225 Broad St.
+    Ways in: 'Uba Seo shows and openings in Arts & Culture and the Visitor Guide (hours change with Tribal needs,
+    so always point readers to call ahead); HUṠWEJ events (huswej.org/events); the Federal Recognition and
+    sovereignty story; land and culture projects named on the HUṠWEJ site (the Nisenan Reclamation Corridor,
+    the Tribute Trail Suspension Bridge, ṡam je· – Fire Feathers with the Bear Yuba Land Trust); and Nisenan
+    history alongside Local History Unearthed (item 13).
+    Rules: the Tribe speaks for itself. Names and spellings come from the Tribe's own pages (HUṠWEJ with the dot,
+    'Uba Seo with the leading mark); quotes come from the Tribal Spokesperson or published statements; link only
+    pages seen; never invent. No one pays to appear.
+    Disclosure (every story): the publisher and his husband, Niel Locke, are close personal friends of Shelly
+    Covert, HUṠWEJ's executive director and the Tribe's spokesperson. Niel Locke is a former board chair of
+    the organization (then named CHIRP) and no longer has any role with it.
+    Not started.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
