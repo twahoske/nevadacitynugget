@@ -99,24 +99,24 @@ def caption(m, since="2026-10-30"):
 CARD = """<!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,700;0,800;0,900;1,400;1,600&family=Grenze+Gotisch:wght@900&display=swap">
 <style>
-:root{--paper:#f0ead9;--ink:#201c13;--mid:#564e3b;--rule:#9c927a;--red:#7e2a18;--d:"Besley",Georgia,serif}
+:root{--paper:#f0ead9;--ink:#201c13;--mid:#c9bfa6;--rule:#9c927a;--red:#7e2a18;--glow:#d08a6a;--d:"Besley",Georgia,serif}
 *{box-sizing:border-box;margin:0}
 html,body{width:1080px;height:__H__px;overflow:hidden}
-body{background:var(--paper);background-image:radial-gradient(ellipse at 50% 30%,rgba(255,255,255,.35),transparent 60%),radial-gradient(ellipse at 50% 120%,rgba(0,0,0,.08),transparent 60%);color:var(--ink);font-family:var(--d);padding:__PAD__;display:flex}
-.frame{flex:1;border:3px solid var(--ink);outline:1px solid var(--ink);outline-offset:-12px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:34px 46px 30px;gap:__GAP__px;position:relative;overflow:hidden}
+body{background:var(--ink);background-image:radial-gradient(ellipse at 50% 32%,rgba(240,234,217,.07),transparent 60%),radial-gradient(ellipse at 50% 120%,rgba(0,0,0,.35),transparent 60%);color:var(--paper);font-family:var(--d);padding:__PAD__;display:flex}
+.frame{flex:1;border:3px solid var(--paper);outline:1px solid var(--paper);outline-offset:-12px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:34px 46px 30px;gap:__GAP__px;position:relative;overflow:hidden}
 .extra{font-weight:900;font-size:30px;text-transform:uppercase;letter-spacing:.34em;color:var(--paper);background:var(--red);padding:10px 0 9px .34em;width:calc(100% + 92px);margin-top:-34px}
 .name{font-family:"Grenze Gotisch",serif;font-weight:900;font-size:__NAME__px;line-height:1;letter-spacing:.01em}
-.rule{width:100%;border-top:3px double var(--ink);border-bottom:1px solid var(--ink);padding:9px 0 8px;font-weight:800;font-size:22px;letter-spacing:.28em;text-transform:uppercase}
+.rule{width:100%;border-top:3px double var(--paper);border-bottom:1px solid var(--paper);padding:9px 0 8px;font-weight:800;font-size:22px;letter-spacing:.28em;text-transform:uppercase}
 .medal{position:relative;width:__M__px;height:__M__px;display:grid;place-items:center;flex:none}
-.medal::before{content:"";position:absolute;inset:-56px;border-radius:50%;background:repeating-conic-gradient(from 4deg,rgba(126,42,24,.13) 0 7deg,transparent 7deg 14deg)}
-.medal .disc{position:relative;width:100%;height:100%;border-radius:50%;background:var(--paper);box-shadow:0 0 0 7px var(--ink),0 0 0 13px var(--paper),0 0 0 17px var(--red);display:grid;place-items:center}
+.medal::before{content:"";position:absolute;inset:-56px;border-radius:50%;background:repeating-conic-gradient(from 4deg,rgba(240,234,217,.10) 0 7deg,transparent 7deg 14deg)}
+.medal .disc{position:relative;width:100%;height:100%;border-radius:50%;background:var(--paper);box-shadow:0 0 0 7px var(--red),0 0 0 13px var(--ink),0 0 0 17px var(--paper);display:grid;place-items:center}
 .medal img{width:82%;height:82%}
 .num{position:relative;z-index:1;font-weight:900;font-size:__NUM__px;line-height:.86;letter-spacing:-.01em;text-shadow:7px 7px 0 var(--red)}
 .k{font-weight:800;font-size:26px;letter-spacing:.34em;text-transform:uppercase;color:var(--mid);margin-top:10px;position:relative;z-index:2}
 h1{font-weight:900;font-size:__HEAD__px;line-height:1.08;text-wrap:balance;max-width:900px}
 .deck{font-size:__DECK__px;line-height:1.38;font-style:italic;color:var(--mid);max-width:860px;text-wrap:pretty}
-.foot{margin-top:auto;width:100%;border-top:3px double var(--ink);padding-top:14px;display:flex;justify-content:space-between;font-weight:800;font-size:19px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;gap:20px}
-.foot b{color:var(--red)}
+.foot{margin-top:auto;width:100%;border-top:3px double var(--paper);padding-top:14px;display:flex;justify-content:space-between;font-weight:800;font-size:19px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;gap:20px}
+.foot b{color:var(--glow)}
 </style></head><body><div class="frame">
 <div class="extra">Extra ✱ Extra ✱ Extra</div>
 <div class="name">The Nevada City Nugget</div>
