@@ -23,6 +23,10 @@ on:
         type: choice
         options: [merchant, spotlight]
         default: merchant
+      pick:
+        description: "Spotlight only: words from the one to post (blank = the first)"
+        type: string
+        default: ""
       dry_run:
         description: "Dry run (draw the cards, post nothing)"
         type: boolean
@@ -42,6 +46,7 @@ jobs:
     env:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
       SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || '' }}
+      SPOT_MATCH: ${{ github.event_name == 'workflow_dispatch' && inputs.pick || '' }}
     steps:
       - uses: actions/checkout@v5
       - id: gate
