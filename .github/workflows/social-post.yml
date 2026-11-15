@@ -1,0 +1,59 @@
+name: Social post
+
+# Posts this morning's Nugget to Instagram: one feed card and one Story card.
+# The Site Publisher's 5:55 AM push of the new edition starts a run that waits
+# (checking every 2 minutes, until 10:00 AM Pacific) for the site to show today's
+# date; the cron slots are a backup. scripts/social_post.py posts once a day,
+# keeps its cards and its record on the social-cards branch, and never touches main.
+# A manual run defaults to a dry run: it draws the cards and attaches them to the
+# run as "instagram-cards" for a look, and posts nothing.
+on:
+  push:
+    branches: [main]
+    paths: ["index.html"]
+  schedule:
+    - cron: "10,40 13-17 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (draw the cards, post nothing)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 260
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: gate
+        run: python3 scripts/social_post.py gate
+        env:
+          IGNORE_WINDOW: ${{ github.event_name == 'workflow_dispatch' && 'yes' || 'no' }}
+          WAIT: ${{ github.event_name == 'push' && 'yes' || 'no' }}
+      - if: steps.gate.outputs.go == 'yes'
+        run: |
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/social_post.py render
+      - if: steps.gate.outputs.go == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-cards
+          path: out/
+          retention-days: 14
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/social_post.py publish
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
