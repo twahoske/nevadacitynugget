@@ -609,6 +609,18 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     publisher knows nearly everyone.
     Not started.
 
+31. **Wild & Scenic Film Festival, every winter.** (Todd, Nov 15, 2026: "a big event", "just good to promote.")
+    SYRCL's environmental film festival (https://wildandscenicfilmfestival.org) fills downtown Nevada City and
+    Grass Valley each February; the 25th runs Feb 18-22, 2027 (theme "Momentum"). Ways in: a short brief when the
+    dates, art call, lodging-host and volunteer calls go out (first one runs Nov 16-18, 2026); the film lineup
+    and schedule in Arts & Culture once posted; a countdown line in Amusements and festival days on the Civic
+    Calendar for the two weeks before; a Visitor Guide "Plan Ahead" box pointing to the festival and the
+    Where to Stay guide (item 20). Standing watch: the morning task checks the festival home page and news
+    daily (paste-ready line in the project's `wild-scenic/` folder). Report only what the festival's own pages
+    say for the current year; never carry over venues, prices or films from an earlier year. No ties to the
+    festival (Todd, Nov 15, 2026); no one pays to appear.
+    Started Nov 15, 2026.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
