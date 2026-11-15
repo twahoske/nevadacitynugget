@@ -12,6 +12,11 @@ name: Social extras
 # (merchant 11:00 AM-2:30 PM, spotlight 4:00-7:30 PM), and skips Promotional,
 # Courtesy, Sponsored or Paid items. A manual run defaults to a dry run.
 on:
+  # GitHub's timer can run hours late (Nov 15 2026 the 11:30 run never came), so
+  # every push to main (the Site Publisher's hourly copy of the paper, Site upkeep)
+  # is also a chance to post whichever slot is open; it posts nothing outside one.
+  push:
+    branches: [main]
   schedule:
     - cron: "30 19 * * *"
     - cron: "15 20 * * *"
@@ -56,7 +61,7 @@ jobs:
     env:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
       # Weekly crons are the ones with a day of the week; the daily ones end "* * *".
-      SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || (endsWith(github.event.schedule, '* * *') && 'auto' || 'weekly') }}
+      SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || github.event_name == 'push' && 'auto' || (endsWith(github.event.schedule, '* * *') && 'auto' || 'weekly') }}
       SPOT_MATCH: ${{ github.event_name == 'workflow_dispatch' && inputs.pick || '' }}
     steps:
       - uses: actions/checkout@v5

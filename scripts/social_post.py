@@ -523,7 +523,9 @@ def current_slot(now=None):
         return slot
     now = now or now_pacific()
     m = now.hour * 60 + now.minute
-    return next((k for k, (a, b, _) in SLOTS.items() if a <= m <= b), "front")
+    # Weekly posts only run when asked for by name, never by the clock.
+    return next((k for k, (a, b, _) in SLOTS.items()
+                 if k != "weekly" and a <= m <= b), "front")
 
 
 def wanted(slot=None):
