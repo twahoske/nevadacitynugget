@@ -4,6 +4,9 @@ name: Social extras
 #   merchant   about 11:30 AM Pacific: Merchant of the Day (feed, Story, Facebook)
 #   spotlight  about 4:30 PM Pacific: the first Tonight / Grand Opening / Now Open item,
 #              only on days the paper has one (feed, Story, Facebook)
+#   weekly     Thursday ~3 PM Thirsty Thursday (a bar from the Bar Guide), Friday ~1 PM
+#              the Geezer Gig at the Crazy Horse, Saturday ~9 AM live music this weekend
+#              (only when social/weekly/YYYY-MM-DD.json exists)
 # Times are UTC and GitHub cron can run late or skip, so each slot has backup runs;
 # scripts/social_post.py posts each slot once a day, inside its Pacific window
 # (merchant 11:00 AM-2:30 PM, spotlight 4:00-7:30 PM), and skips Promotional,
@@ -16,12 +19,19 @@ on:
     - cron: "30 0 * * *"
     - cron: "15 1 * * *"
     - cron: "0 2 * * *"
+    # weekly (UTC day of week): Thursday ~3 PM, Friday ~1 PM, Saturday ~9 AM Pacific
+    - cron: "0 23 * * 4"
+    - cron: "45 23 * * 4"
+    - cron: "0 21 * * 5"
+    - cron: "45 21 * * 5"
+    - cron: "0 17 * * 6"
+    - cron: "45 17 * * 6"
   workflow_dispatch:
     inputs:
       slot:
         description: "Which post"
         type: choice
-        options: [merchant, spotlight]
+        options: [merchant, spotlight, weekly]
         default: merchant
       pick:
         description: "Spotlight only: words from the one to post (blank = the first)"
@@ -45,7 +55,8 @@ jobs:
     timeout-minutes: 30
     env:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
-      SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || '' }}
+      # Weekly crons are the ones with a day of the week; the daily ones end "* * *".
+      SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || (endsWith(github.event.schedule, '* * *') && 'auto' || 'weekly') }}
       SPOT_MATCH: ${{ github.event_name == 'workflow_dispatch' && inputs.pick || '' }}
     steps:
       - uses: actions/checkout@v5
