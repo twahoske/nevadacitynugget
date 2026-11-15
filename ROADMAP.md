@@ -602,9 +602,8 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     Rules: the Tribe speaks for itself. Names and spellings come from the Tribe's own pages (HUṠWEJ with the dot,
     'Uba Seo with the leading mark); quotes come from the Tribal Spokesperson or published statements; link only
     pages seen; never invent. No one pays to appear.
-    Disclosure (every story): the publisher and his husband, Niel Locke, are close personal friends of Shelly
-    Covert, HUṠWEJ's executive director and the Tribe's spokesperson. Niel Locke is a former board chair of
-    the organization (then named CHIRP) and no longer has any role with it.
+    No disclosure line (Todd, Nov 15, 2026): this is inclusion, not favors, and in a town this small the
+    publisher knows nearly everyone.
     Not started.
 
 ## Standing rules that don't change
