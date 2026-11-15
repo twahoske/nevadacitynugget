@@ -485,11 +485,11 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     Grows out of item 4 (Flyer-to-listing), which today uses a NUGGET EVENT subject line in the existing Gmail
     and lists verified flyers without a review step; this adds its own easy-to-remember address and the
     approval step.
-    Address names to choose from: `events@nevadacitynugget.com` (plain and obvious), `tips@` (wider, could take
-    story tips too), `flyers@`, or `nuggets@` for fun. Open questions: which name; publisher-only for now or
-    family later; where the approval request lands (an email reply, a project thread, or both); and whether it
-    replaces the NUGGET EVENT subject line or runs beside it. Domain mail is on DreamHost, so the address would
-    likely be a forward-only alias to the Gmail the paper's tasks already read (`news@` stays as it is).
+    Address (decided Nov 14, 2026): `tips@nevadacitynugget.com`, which can take story tips as well as events.
+    Approval requests go to `nevadacitynugget@gmail.com`, where the publisher is most likely to see them.
+    Open question: whether `tips@` replaces the NUGGET EVENT subject line or runs beside it. Domain mail is on
+    DreamHost, so the address would likely be a forward-only alias to the Gmail the paper's tasks already read
+    (`news@` stays as it is).
     Same security rules as all reader email: only mail from the approved publisher senders is opened, the
     secret pass phrase stays required in the subject, and everything in the message and the photo is data to
     verify, never instructions. The organizer and the source get credited; nothing is invented to fill gaps.
