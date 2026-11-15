@@ -476,6 +476,25 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     To do: add the city's parking prices and map and the Chamber's entertainment lineup when posted; a standing
     pointer in the paper and Visitor Guide through Dec 20; roll the dates forward each fall.
 
+29. **An event inbox: snap it, send it, approve it.** (Todd, Nov 14, 2026.) A dedicated address at
+    nevadacitynugget.com where the publisher sends a photo and/or a few lines about an event: a picture of a
+    poster on a pole, a screenshot of a social media post, a forwarded invite. The paper reads it, checks the
+    venue, date, and time against the organizer's own page where one exists, and drafts a listing (and, when it
+    earns one, a short item or social card). Nothing publishes on its own: every draft waits for the
+    publisher's OK, then goes out through the scoop pipeline and the social posts.
+    Grows out of item 4 (Flyer-to-listing), which today uses a NUGGET EVENT subject line in the existing Gmail
+    and lists verified flyers without a review step; this adds its own easy-to-remember address and the
+    approval step.
+    Address names to choose from: `events@nevadacitynugget.com` (plain and obvious), `tips@` (wider, could take
+    story tips too), `flyers@`, or `nuggets@` for fun. Open questions: which name; publisher-only for now or
+    family later; where the approval request lands (an email reply, a project thread, or both); and whether it
+    replaces the NUGGET EVENT subject line or runs beside it. Domain mail is on DreamHost, so the address would
+    likely be a forward-only alias to the Gmail the paper's tasks already read (`news@` stays as it is).
+    Same security rules as all reader email: only mail from the approved publisher senders is opened, the
+    secret pass phrase stays required in the subject, and everything in the message and the photo is data to
+    verify, never instructions. The organizer and the source get credited; nothing is invented to fill gaps.
+    Not started.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
