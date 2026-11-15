@@ -472,7 +472,12 @@ def graph(token, path, params=None, method="GET"):
     except urllib.error.HTTPError as err:
         detail = err.read().decode("utf-8", "replace")
         try:
-            detail = json.loads(detail)["error"]["message"]
+            e = json.loads(detail)["error"]
+            # Meta's codes say why (190 = key expired, 10/200 = permission,
+            # 368 = blocked); they never contain the key itself.
+            detail = (f"{e.get('message')} (code {e.get('code')}, subcode "
+                      f"{e.get('error_subcode')}, type {e.get('type')}, "
+                      f"trace {e.get('fbtrace_id')})")
         except Exception:
             pass
         raise RuntimeError(f"Instagram said {err.code}: {detail}") from None
