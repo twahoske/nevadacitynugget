@@ -67,7 +67,19 @@ SLOTS = {
     "front": (5 * 60 + 45, 10 * 60, ""),
     "merchant": (11 * 60, 14 * 60 + 30, "merchant_"),
     "spotlight": (16 * 60, 19 * 60 + 30, "spotlight_"),
+    # Weekly posts (Todd, Nov 14 2026); always started with SLOT=weekly:
+    # Thursday ~3 PM Thirsty Thursday, Friday ~1 PM the Geezer Gig, Saturday ~9 AM
+    # live music this weekend (from social/weekly/YYYY-MM-DD.json, written ahead).
+    "weekly": (8 * 60 + 30, 17 * 60 + 30, "weekly_"),
 }
+DRINKS = "https://nevadacitynugget.com/drinks.html"
+# Thirsty Thursday works down this list one bar a week (by ISO week number),
+# skipping any no longer in the Bar Guide. Bars closed Thursdays or members-only
+# are left off.
+THIRSTY = ["Golden Era", "Mine Shaft Saloon", "The Fern", "The National Bar",
+           "Trailhead Tavern", "Good Bones Biergarten", "Friar Tuck's", "The River Downtown",
+           "Three Forks", "Deer Creek Bar & Grill", "Crazy Horse Saloon", "Nevada City Winery",
+           "Jernigan's", "Northridge", "The Willo"]
 SPOT_LABELS = {"tonight", "grand opening", "now open", "this weekend", "special spotlight", "weekend spotlight"}
 SPOT_PREFIX = re.compile(r"^(special|weekend) spotlight\s*·\s*", re.I)
 
@@ -174,7 +186,69 @@ def pick(slot, page):
         return {**base, "lead": sec, "more": [], "detail": SPOT_PREFIX.sub("", sec["meta"]),
                 "kick": sec["label"], "foot": "Details in Today's Paper",
                 "small": "nevadacitynugget.com · link in bio"}
+    if slot == "weekly":
+        return weekly(base, now_pacific())
     raise SystemExit(f"unknown slot {slot}")
+
+
+def fetch(url):
+    req = urllib.request.Request(url + "?social=" + str(int(time.time())),
+                                 headers={"Cache-Control": "no-cache", **UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def bars(page):
+    """The Bar Guide's entries: name, address, hours, note (source line dropped)."""
+    out = []
+    for block in re.split(r'class="d-name"', page)[1:]:
+        def field(cls):
+            m = re.search(r'class="' + cls + r'"[^>]*>(.*?)</(?:span|p|div)>', block, re.S)
+            return text(m.group(1)) if m else ""
+        name = text(re.match(r"[^>]*>(.*?)</", block, re.S).group(1))
+        note = re.sub(r"\s*Source:.*$", "", field("d-note")).strip()
+        out.append({"name": name, "addr": field("d-addr"), "hours": field("d-hours"), "note": note})
+    return out
+
+
+def weekly(base, now):
+    day = now.weekday()  # Mon 0 ... Thu 3, Fri 4, Sat 5
+    if day == 3:
+        guide = bars(fetch(DRINKS))
+        listed = [b for want in THIRSTY for b in guide if b["name"].lower().startswith(want.lower())]
+        if not listed:
+            return None
+        bar = listed[now.isocalendar()[1] % len(listed)]
+        return {**base, "slot": "weekly", "lead": {"head": bar["name"], "deck": bar["note"], "meta": ""},
+                "more": [], "detail": bar["addr"],
+                "kick": "Thirsty Thursday", "foot": "Where Can I Get a Damn Drink?",
+                "small": "the Nugget's bar guide · nevadacitynugget.com/drinks.html · link in bio",
+                "tags": "#ThirstyThursday #NevadaCity #NevadaCityCA #GoldCountry #CheersToTheWeekend",
+                "more_text": ("Hours: " + bar["hours"] + "\n\n" if bar["hours"] else "") + "Hours change; check before you go. Every bar in town, in the Nugget's guide: nevadacitynugget.com/drinks.html (link in bio). Please drink responsibly."}
+    if day == 4:
+        # Facts: crazyhorsenc.com event listing (Nov 13, 2026: 5:00-8:00 pm, FREE) and Todd.
+        return {**base, "slot": "weekly",
+                "lead": {"head": "The Geezer Gig at the Crazy Horse", "meta": "",
+                         "deck": "Live music to start the weekend early, every Friday from 5 to 8 PM. Free."},
+                "more": [], "detail": "Crazy Horse Saloon · 230 Commercial St.",
+                "kick": "Friday Early Show", "foot": "Tonight, 5 to 8 PM",
+                "small": "this week's lineup at crazyhorsenc.com · more in the Nugget, link in bio",
+                "tags": "#NevadaCity #LiveMusic #FridayNight #NevadaCityCA #GoldCountry",
+                "more_text": "This week's lineup is on the Crazy Horse's calendar at crazyhorsenc.com. More to do this weekend in the Nugget, free at nevadacitynugget.com (link in bio)."}
+    if day == 5:
+        path = ROOT / "social" / "weekly" / f"{now:%Y-%m-%d}.json"
+        if not path.exists():
+            return None
+        d = json.loads(path.read_text(encoding="utf-8"))
+        return {**base, "slot": "weekly",
+                "lead": {"head": d["head"], "deck": d.get("deck", ""), "meta": ""},
+                "more": [{"head": x} for x in d.get("items", [])][:4], "also_label": d.get("items_label", "On the Bill"),
+                "detail": d.get("detail", ""), "kick": d.get("kick", "This Weekend"),
+                "foot": d.get("foot", "More in Today's Nugget"),
+                "small": "nevadacitynugget.com · link in bio",
+                "tags": "#NevadaCity #LiveMusic #ThingsToDo #NevadaCityCA #GoldCountry",
+                "caption": d.get("caption", "")}
+    return None
 
 
 def clip(s, n):
@@ -191,8 +265,13 @@ def caption(item):
     lines = [item["kick"], "", lead["head"]]
     if lead["deck"]:
         lines.append(lead["deck"])
+    if item.get("caption"):
+        return item["caption"].replace("\u2014", ",")[:2100]
     if item["detail"]:
         lines += ["", item["detail"]]
+    if slot == "weekly":
+        lines += ["", item["more_text"], "", item["tags"]]
+        return "\n".join(lines).replace("\u2014", ",")[:2100]
     if slot == "merchant":
         lines += ["", "Read the full profile in today's Nugget, free at nevadacitynugget.com (link in bio).",
                   "", "Chosen by the Nugget; no one pays to appear. The Nugget's publisher owns The Hat Store on Broad Street.",
@@ -283,14 +362,15 @@ def card_html(kind, item):
     deck = f'<div class="deck">{e(clip(lead["deck"], 120 if kind == "feed" else 170))}</div>' if lead["deck"] else ""
     also = ""
     if more:
-        also = ('<div class="also"><p class="k">Also in Today\'s Paper</p><ul>'
+        label = item.get("also_label") or "Also in Today's Paper"
+        also = ('<div class="also"><p class="k">' + e(label) + '</p><ul>'
                 + "".join(f"<li>{e(clip(s['head'], 90))}</li>" for s in more) + "</ul></div>")
     kick = item["kick"]
     detail = f'<div class="detail">{e(clip(item["detail"], 90))}</div>' if item["detail"] else ""
     return (CARD.replace("__H__", "1920" if story else "1350")
             .replace("__PAD__", "250px 74px 250px" if story else "56px 74px 58px")
             .replace("__X__", "" if item["slot"] == "front" else "x")
-            .replace("__HS__", ("96" if story else "80") if item["slot"] == "front" else ("124" if story else "108"))
+            .replace("__HS__", ("96" if story else "80") if item["slot"] == "front" else (("170" if story else "150") if len(lead["head"]) <= 16 else ("124" if story else "108")))
             .replace("__VOL__", e(vol or "Daily"))
             .replace("__DATE__", e(date))
             .replace("__KICK__", e(kick))
@@ -434,7 +514,7 @@ def slot_prefix(slot):
 def current_slot(now=None):
     """SLOT from the environment, else the slot whose window holds the time."""
     slot = os.environ.get("SLOT", "").strip()
-    if slot:
+    if slot and slot != "auto":
         return slot
     now = now or now_pacific()
     m = now.hour * 60 + now.minute
