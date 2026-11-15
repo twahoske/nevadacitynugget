@@ -1,6 +1,7 @@
 name: Social post
 
-# Posts this morning's Nugget to Instagram: one feed card and one Story card.
+# Posts this morning's Nugget to Instagram (one feed card, one Story card) and
+# the feed card to the Nugget's Facebook Page.
 # The Site Publisher's 5:55 AM push of the new edition starts a run that waits
 # (checking every 2 minutes, until 10:00 AM Pacific) for the site to show today's
 # date; the cron slots are a backup. scripts/social_post.py posts once a day,
@@ -40,6 +41,7 @@ jobs:
         env:
           IGNORE_WINDOW: ${{ github.event_name == 'workflow_dispatch' && 'yes' || 'no' }}
           WAIT: ${{ github.event_name == 'push' && 'yes' || 'no' }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       - if: steps.gate.outputs.go == 'yes'
         run: |
           pip install --quiet playwright
