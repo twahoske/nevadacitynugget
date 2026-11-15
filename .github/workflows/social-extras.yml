@@ -1,0 +1,68 @@
+name: Social extras
+
+# The day's second and third posts (Todd, Nov 14 2026), drawn from that morning's paper:
+#   merchant   about 11:30 AM Pacific: Merchant of the Day (feed, Story, Facebook)
+#   spotlight  about 4:30 PM Pacific: the first Tonight / Grand Opening / Now Open item,
+#              only on days the paper has one (feed, Story, Facebook)
+# Times are UTC and GitHub cron can run late or skip, so each slot has backup runs;
+# scripts/social_post.py posts each slot once a day, inside its Pacific window
+# (merchant 11:00 AM-2:30 PM, spotlight 4:00-7:30 PM), and skips Promotional,
+# Courtesy, Sponsored or Paid items. A manual run defaults to a dry run.
+on:
+  schedule:
+    - cron: "30 19 * * *"
+    - cron: "15 20 * * *"
+    - cron: "0 21 * * *"
+    - cron: "30 0 * * *"
+    - cron: "15 1 * * *"
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "Which post"
+        type: choice
+        options: [merchant, spotlight]
+        default: merchant
+      dry_run:
+        description: "Dry run (draw the cards, post nothing)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
+      SLOT: ${{ github.event_name == 'workflow_dispatch' && inputs.slot || '' }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: gate
+        run: python3 scripts/social_post.py gate
+        env:
+          IGNORE_WINDOW: ${{ github.event_name == 'workflow_dispatch' && 'yes' || 'no' }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - if: steps.gate.outputs.go == 'yes'
+        run: |
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/social_post.py render
+      - if: steps.gate.outputs.go == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-cards-${{ github.run_id }}
+          path: out/
+          retention-days: 14
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/social_post.py publish
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}

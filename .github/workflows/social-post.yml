@@ -6,6 +6,7 @@ name: Social post
 # (checking every 2 minutes, until 10:00 AM Pacific) for the site to show today's
 # date; the cron slots are a backup. scripts/social_post.py posts once a day,
 # keeps its cards and its record on the social-cards branch, and never touches main.
+# The midday and late-afternoon posts are in social-extras.yml.
 # A manual run defaults to a dry run: it draws the cards and attaches them to the
 # run as "instagram-cards" for a look, and posts nothing.
 on:
@@ -34,6 +35,7 @@ jobs:
     timeout-minutes: 260
     env:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
+      SLOT: front
     steps:
       - uses: actions/checkout@v5
       - id: gate

@@ -26,7 +26,11 @@ the many hourly runs that have nothing to do):
   render   draw out/feed.jpg, out/story.jpg and write out/caption.txt
   publish  push the cards, post them, record the result
 
-Window: 5:45-10:00 AM Pacific (a manual run skips the window check).
+Three slots a day (Todd, Nov 14 2026), each with its own Pacific window and keys
+in the day's record: "front" (the front page, 5:45-10:00 AM), "merchant" (Merchant
+of the Day, 11:00 AM-2:30 PM) and "spotlight" (the day's first Tonight / Grand
+Opening / Now Open item, 4:00-7:30 PM; skipped on days without one). SLOT picks
+one; otherwise the clock does. A manual run skips the window check.
 Secrets: IG_ACCESS_TOKEN and IG_USER_ID. A token that starts with "IG" (Instagram
 Login) goes to graph.instagram.com; any other (a Facebook Page token) goes to
 graph.facebook.com. DRY_RUN=yes renders and reports, and pushes or posts nothing.
@@ -49,13 +53,23 @@ REPO = "twahoske/nevadacitynugget"
 BRANCH = "social-cards"
 RAW = f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/"
 GRAPH_VERSION = "v23.0"
-START, END = 5 * 60 + 45, 10 * 60  # Pacific minutes after midnight
 UA = {"User-Agent": "nevadacitynugget-social-post"}
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "out"
 SKIP_META = re.compile(r"promotional|courtesy|sponsored|paid", re.I)
 SKIP_HEAD = re.compile(r"^(otherwise|quiet\b)|\bquiet record\b", re.I)
 HASHTAGS = "#NevadaCity #NevadaCityCA #NevadaCounty #GoldCountry #LocalNews"
+SHOP_TAGS = "#NevadaCity #ShopLocal #NevadaCityCA #GoldCountry #SmallBusiness"
+SPOT_TAGS = "#NevadaCity #NevadaCityCA #NevadaCounty #GoldCountry #ThingsToDo"
+# Three posts a day (Todd, Nov 14 2026). Each slot has its own Pacific window and
+# its own keys in posted/YYYY-MM-DD.json (front page keys have no prefix).
+SLOTS = {
+    "front": (5 * 60 + 45, 10 * 60, ""),
+    "merchant": (11 * 60, 14 * 60 + 30, "merchant_"),
+    "spotlight": (16 * 60, 19 * 60 + 30, "spotlight_"),
+}
+SPOT_LABELS = {"tonight", "grand opening", "now open", "this weekend", "special spotlight", "weekend spotlight"}
+SPOT_PREFIX = re.compile(r"^(special|weekend) spotlight\s*·\s*", re.I)
 
 
 # ---------------------------------------------------------------- reading the paper
@@ -110,6 +124,57 @@ def stories(page):
     return found
 
 
+def sections(page):
+    """Each section's kicker label and its first story, in paper order."""
+    out = []
+    for part in re.split(r'<h2 class="kicker">', page)[1:]:
+        label = text(part[: part.find("</h2>")])
+        body = part[part.find("</h2>"):]
+        h = re.search(r"<h3[^>]*>(.*?)</h3>", body, re.S)
+        if not h:
+            continue
+        meta_m = re.search(r'<p class="meta">(.*?)</p>', body, re.S)
+        deck_m = re.search(r'<p class="subdeck">(.*?)</p>', body, re.S)
+        out.append({"label": label, "head": text(h.group(1)),
+                    "meta": text(meta_m.group(1)) if meta_m else "",
+                    "deck": text(deck_m.group(1)) if deck_m else ""})
+    return out
+
+
+def pick(slot, page):
+    """What a slot posts: a dict for the card and caption, or None if nothing today."""
+    vol, date = folio(page)
+    base = {"vol": vol, "date": date, "slot": slot}
+    if slot == "front":
+        found = stories(page)
+        if not found:
+            return None
+        lead = found[0]
+        return {**base, "lead": lead, "more": found[1:4], "detail": "",
+                "kick": clip(lead["meta"].split("·")[0].strip(), 40) or "Today's Lead",
+                "foot": "Read Today's Paper Free",
+                "small": "nevadacitynugget.com · link in bio · new every morning by 6"}
+    if slot == "merchant":
+        sec = next((x for x in sections(page) if x["label"].lower() == "merchant of the day"), None)
+        if not sec or SKIP_META.search(sec["meta"]):
+            return None
+        bits = [b.strip() for b in sec["meta"].split("·") if b.strip()]
+        num = bits[0] if bits and bits[0].lower().startswith("no.") else ""
+        return {**base, "lead": sec, "more": [], "detail": " · ".join(bits[1:] if num else bits),
+                "kick": "Merchant of the Day" + (f" · {num}" if num else ""),
+                "foot": "Read the Full Profile",
+                "small": "nevadacitynugget.com · link in bio · chosen by the Nugget, no one pays to appear"}
+    if slot == "spotlight":
+        sec = next((x for x in sections(page) if x["label"].lower() in SPOT_LABELS
+                    and not SKIP_META.search(x["meta"])), None)
+        if not sec:
+            return None
+        return {**base, "lead": sec, "more": [], "detail": SPOT_PREFIX.sub("", sec["meta"]),
+                "kick": sec["label"], "foot": "Details in Today's Paper",
+                "small": "nevadacitynugget.com · link in bio"}
+    raise SystemExit(f"unknown slot {slot}")
+
+
 def clip(s, n):
     if len(s) <= n:
         return s
@@ -117,7 +182,25 @@ def clip(s, n):
     return cut + "…"
 
 
-def caption(vol, date, lead, more):
+def caption(item):
+    lead, slot = item["lead"], item["slot"]
+    if slot == "front":
+        return front_caption(item["vol"], item["date"], lead, item["more"])
+    lines = [item["kick"], "", lead["head"]]
+    if lead["deck"]:
+        lines.append(lead["deck"])
+    if item["detail"]:
+        lines += ["", item["detail"]]
+    if slot == "merchant":
+        lines += ["", "Read the full profile in today's Nugget, free at nevadacitynugget.com (link in bio).",
+                  "", "Chosen by the Nugget; no one pays to appear. The Nugget's publisher owns The Hat Store on Broad Street.",
+                  "", SHOP_TAGS]
+    else:
+        lines += ["", "More in today's Nugget, free at nevadacitynugget.com (link in bio).", "", SPOT_TAGS]
+    return "\n".join(lines).replace("\u2014", ",")[:2100]
+
+
+def front_caption(vol, date, lead, more):
     lines = [f"{date}" + (f" · {vol}" if vol else ""), "", lead["head"]]
     if lead["deck"]:
         lines.append(lead["deck"])
@@ -141,9 +224,12 @@ html,body{margin:0}
 h1{font-family:"Grenze Gotisch",var(--d);font-weight:900;font-size:118px;line-height:.95;margin:22px 0 0;text-align:center;white-space:nowrap}
 .folio{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:18px;border-top:3px solid var(--ink);border-bottom:1.5px solid var(--ink);padding:9px 4px;margin-top:16px;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
 .folio b{font-weight:800}.f-r{text-align:right}.f-c{text-align:center;padding:0 22px;border-inline:1.5px solid var(--rule)}
-.body{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.body{flex:1;display:flex;flex-direction:column;justify-content:safe center;min-height:0;box-sizing:border-box;padding:26px 0}
 .kick{text-align:center;color:var(--red);font-weight:800;font-size:24px;letter-spacing:.16em;text-transform:uppercase}
 .head{text-align:center;font-weight:900;font-size:__HS__px;line-height:1.02;letter-spacing:-.01em;margin:16px 0 0}
+.x .kick{align-self:center;background:var(--red);color:var(--paper);font-weight:900;font-size:26px;letter-spacing:.24em;padding:10px 18px 10px 24px}
+.x .detail{font-size:26px}
+.detail{text-align:center;font-weight:700;font-size:24px;letter-spacing:.1em;text-transform:uppercase;margin:22px 10px 0;padding:10px 0;border-top:1.5px solid var(--rule);border-bottom:1.5px solid var(--rule)}
 .deck{text-align:center;font-style:italic;font-weight:600;font-size:32px;line-height:1.25;color:var(--mid);margin:20px 20px 0}
 .also{margin-top:34px;border-top:1.5px solid var(--ink);padding-top:16px}
 .also p.k{margin:0 0 10px;text-align:center;font-weight:800;font-size:20px;letter-spacing:.24em;text-transform:uppercase}
@@ -152,7 +238,7 @@ h1{font-family:"Grenze Gotisch",var(--d);font-weight:900;font-size:118px;line-he
 .also li::before{content:"❦";position:absolute;left:4px;top:8px;color:var(--red)}
 .foot{border-top:3px solid var(--ink);padding-top:14px;margin-top:22px;text-align:center;font-weight:800;font-size:30px;letter-spacing:.12em;text-transform:uppercase}
 .foot small{display:block;font-weight:400;font-style:italic;font-size:22px;letter-spacing:.03em;text-transform:none;color:var(--mid);margin-top:4px}
-</style></head><body><div class="pg" id="pg">
+</style></head><body><div class="pg __X__" id="pg">
 <div class="banner">A Modern-Vintage Daily Paper</div>
 <h1>Nevada City Nugget</h1>
 <div class="folio"><span><b>__VOL__</b></span><span class="f-c"><b>__DATE__</b></span><span class="f-r"><b>Nevada City</b></span></div>
@@ -160,9 +246,10 @@ h1{font-family:"Grenze Gotisch",var(--d);font-weight:900;font-size:118px;line-he
 <div class="kick">__KICK__</div>
 <div class="head" id="head">__HEAD__</div>
 __DECK__
+__DETAIL__
 __ALSO__
 </div>
-<div class="foot">Read Today's Paper Free<small>nevadacitynugget.com · link in bio · new every morning by 6</small></div>
+<div class="foot">__FOOT__<small>__SMALL__</small></div>
 </div></body></html>"""
 
 FIT = """() => {
@@ -172,7 +259,7 @@ FIT = """() => {
   const items = [...document.querySelectorAll('.also li')];
   let guard = 0;
   while (body.scrollHeight > body.clientHeight + 1 && guard++ < 200) {
-    const d = document.querySelector('.deck');
+    const d = document.querySelector('.deck');  // the detail line always stays
     if (size > 64) { size -= 4; head.style.fontSize = size + 'px'; }
     else if (d) { d.remove(); }
     else if (items.length > 1) { items.pop().remove(); }
@@ -187,49 +274,53 @@ FIT = """() => {
 }"""
 
 
-def card_html(kind, vol, date, lead, more):
+def card_html(kind, item):
     e = htmlmod.escape
+    vol, date, lead, more = item["vol"], item["date"], item["lead"], item["more"]
     story = kind == "story"
     deck = f'<div class="deck">{e(clip(lead["deck"], 120 if kind == "feed" else 170))}</div>' if lead["deck"] else ""
     also = ""
     if more:
         also = ('<div class="also"><p class="k">Also in Today\'s Paper</p><ul>'
                 + "".join(f"<li>{e(clip(s['head'], 90))}</li>" for s in more) + "</ul></div>")
-    kick = clip(lead["meta"].split("·")[0].strip(), 40) or "Today's Lead"
+    kick = item["kick"]
+    detail = f'<div class="detail">{e(clip(item["detail"], 90))}</div>' if item["detail"] else ""
     return (CARD.replace("__H__", "1920" if story else "1350")
             .replace("__PAD__", "250px 74px 250px" if story else "56px 74px 58px")
-            .replace("__HS__", "96" if story else "80")
+            .replace("__X__", "" if item["slot"] == "front" else "x")
+            .replace("__HS__", ("96" if story else "80") if item["slot"] == "front" else ("124" if story else "108"))
             .replace("__VOL__", e(vol or "Daily"))
             .replace("__DATE__", e(date))
             .replace("__KICK__", e(kick))
             .replace("__HEAD__", e(lead["head"]))
             .replace("__DECK__", deck)
+            .replace("__DETAIL__", detail)
+            .replace("__FOOT__", e(item["foot"]))
+            .replace("__SMALL__", e(item["small"]))
             .replace("__ALSO__", also))
 
 
-def render(page=None):
+def render(page=None, slot=None):
     page = page or fetch_site()
-    vol, date = folio(page)
-    found = stories(page)
-    if not found:
-        raise SystemExit("no headlines found on the site; nothing rendered")
-    lead, more = found[0], found[1:4]
+    item = pick(slot or current_slot(), page)
+    if not item:
+        raise SystemExit("nothing for this slot on the site; nothing rendered")
     OUT.mkdir(exist_ok=True)
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         b = p.chromium.launch(executable_path=os.environ.get("CHROMIUM_PATH") or None)
         for kind, h in (("feed", 1350), ("story", 1920)):
             pg = b.new_page(viewport={"width": 1080, "height": h}, device_scale_factor=1)
-            pg.set_content(card_html(kind, vol, date, lead, more), wait_until="networkidle")
+            pg.set_content(card_html(kind, item), wait_until="networkidle")
             pg.evaluate("document.fonts.ready")
             pg.wait_for_timeout(500)
             fit = pg.evaluate(FIT)
             pg.screenshot(path=str(OUT / f"{kind}.jpg"), type="jpeg", quality=92)
             print(f"{kind}: headline {fit['size']}px, {fit['left']} more headlines")
         b.close()
-    (OUT / "caption.txt").write_text(caption(vol, date, lead, more), encoding="utf-8")
-    (OUT / "date.txt").write_text(date, encoding="utf-8")
-    print(caption(vol, date, lead, more))
+    (OUT / "caption.txt").write_text(caption(item), encoding="utf-8")
+    (OUT / "date.txt").write_text(item["date"] or "", encoding="utf-8")
+    print(caption(item))
 
 
 # ---------------------------------------------------------------- the record branch
@@ -324,11 +415,23 @@ def post(token, uid, image_url, caption_text=None, story=False):
 
 # ---------------------------------------------------------------- steps
 
-def wanted():
-    """What a finished day holds: Instagram feed + Story, plus the Facebook Page
-    when the token is a Facebook Page token (Instagram Login tokens start "IG")."""
+def current_slot(now=None):
+    """SLOT from the environment, else the slot whose window holds the time."""
+    slot = os.environ.get("SLOT", "").strip()
+    if slot:
+        return slot
+    now = now or now_pacific()
+    m = now.hour * 60 + now.minute
+    return next((k for k, (a, b, _) in SLOTS.items() if a <= m <= b), "front")
+
+
+def wanted(slot=None):
+    """Record keys a finished slot holds: Instagram feed + Story, plus the Facebook
+    Page when the token is a Facebook Page token (Instagram Login tokens start "IG")."""
     token = os.environ.get("IG_ACCESS_TOKEN", "")
-    return ["feed", "story"] + ([] if token.startswith("IG") or not token else ["facebook"])
+    keys = ["feed", "story"] + ([] if token.startswith("IG") or not token else ["facebook"])
+    prefix = SLOTS[slot or current_slot()][2]
+    return [prefix + k for k in keys]
 
 
 def facebook_caption(cap):
@@ -342,28 +445,34 @@ def post_facebook(token, image_url, message):
     return res.get("post_id") or res["id"]
 
 
-def in_window(now):
+def in_window(now, slot=None):
+    a, b, _ = SLOTS[slot or current_slot(now)]
     m = now.hour * 60 + now.minute
-    return START <= m <= END
+    return a <= m <= b
 
 
 def gate(wait=False, ignore_window=False, pause=120):
     while True:
         now = now_pacific()
         day = now.strftime("%Y-%m-%d")
-        if not ignore_window and not in_window(now):
-            return False, f"outside the 5:45-10:00 AM window ({now:%H:%M} Pacific); nothing to do"
+        slot = current_slot(now)
+        start, end, _ = SLOTS[slot]
+        if not ignore_window and not in_window(now, slot):
+            return False, f"{slot}: outside its window ({now:%H:%M} Pacific); nothing to do"
         done = record(day)
-        if all(done.get(k) for k in wanted()):
-            return False, f"already posted for {day}; nothing to do"
+        if all(done.get(k) for k in wanted(slot)):
+            return False, f"{slot}: already posted for {day}; nothing to do"
         try:
-            _, shown = folio(fetch_site())
+            page = fetch_site()
+            _, shown = folio(page)
         except Exception as err:
-            shown = f"error {type(err).__name__}"
+            page, shown = "", f"error {type(err).__name__}"
         if shown == long_date(now):
-            return True, f"site shows {shown}; posting"
-        msg = f'site folio shows "{shown}", not "{long_date(now)}"'
-        if not wait or now.hour * 60 + now.minute + pause / 60 > END:
+            if not pick(slot, page):
+                return False, f"{slot}: nothing for this slot in today's paper; nothing posted"
+            return True, f"{slot}: site shows {shown}; posting"
+        msg = f'{slot}: site folio shows "{shown}", not "{long_date(now)}"'
+        if not wait or now.hour * 60 + now.minute + pause / 60 > end:
             return False, msg + "; nothing posted"
         print(msg + "; will look again", flush=True)
         time.sleep(pause)
@@ -372,42 +481,45 @@ def gate(wait=False, ignore_window=False, pause=120):
 def publish(dry_run=False):
     token = os.environ.get("IG_ACCESS_TOKEN", "")
     uid = os.environ.get("IG_USER_ID", "") or ("me" if token.startswith("IG") else "")
-    day = now_pacific().strftime("%Y-%m-%d")
+    now = now_pacific()
+    day, slot = now.strftime("%Y-%m-%d"), current_slot(now)
+    pre = SLOTS[slot][2]
     cap = (OUT / "caption.txt").read_text(encoding="utf-8")
     if dry_run:
-        return "DRY RUN: cards rendered (see the run's artifacts); nothing pushed or posted"
+        return f"DRY RUN ({slot}): cards rendered (see the run's artifacts); nothing pushed or posted"
     if not token or not uid:
         return "no IG_ACCESS_TOKEN / IG_USER_ID secrets yet; cards rendered, nothing posted"
     done = record(day)
     stamp = str(int(time.time()))
-    feed_rel, story_rel = f"cards/{day}-feed-{stamp}.jpg", f"cards/{day}-story-{stamp}.jpg"
+    name = f"{day}-{pre}" if pre else f"{day}-"
+    feed_rel, story_rel = f"cards/{name}feed-{stamp}.jpg", f"cards/{name}story-{stamp}.jpg"
     push_files({feed_rel: (OUT / "feed.jpg").read_bytes(), story_rel: (OUT / "story.jpg").read_bytes(),
-                f"cards/{day}-caption.txt": cap.encode()}, f"Cards for {day}")
+                f"cards/{name}caption.txt": cap.encode()}, f"Cards for {day} ({slot})")
     time.sleep(20)  # let raw.githubusercontent.com see the new files
     results, errors = dict(done), []
-    if not done.get("feed"):
+    if not done.get(pre + "feed"):
         try:
-            results["feed"] = post(token, uid, RAW + feed_rel, cap)
+            results[pre + "feed"] = post(token, uid, RAW + feed_rel, cap)
         except Exception as err:
             errors.append(f"feed: {err}")
-    if not done.get("story"):
+    if not done.get(pre + "story"):
         try:
-            results["story"] = post(token, uid, RAW + story_rel, story=True)
+            results[pre + "story"] = post(token, uid, RAW + story_rel, story=True)
         except Exception as err:
             errors.append(f"story: {err}")
-    if "facebook" in wanted() and not done.get("facebook"):
+    if pre + "facebook" in wanted(slot) and not done.get(pre + "facebook"):
         try:
-            results["facebook"] = post_facebook(token, RAW + feed_rel, facebook_caption(cap))
+            results[pre + "facebook"] = post_facebook(token, RAW + feed_rel, facebook_caption(cap))
         except Exception as err:
             errors.append(f"facebook: {err}")
     if results != done:
-        results["at"] = now_pacific().isoformat(timespec="minutes")
+        results[pre + "at"] = now_pacific().isoformat(timespec="minutes")
         push_files({f"posted/{day}.json": (json.dumps(results, indent=1) + "\n").encode()},
-                   f"Posted {day}")
+                   f"Posted {day} ({slot})")
     if errors:
-        raise RuntimeError("; ".join(errors))
-    return (f"POSTED {day}: feed {results.get('feed')}, Story {results.get('story')}"
-            + (f", Facebook {results.get('facebook')}" if "facebook" in wanted() else ""))
+        raise RuntimeError(f"{slot}: " + "; ".join(errors))
+    return (f"POSTED {day} {slot}: feed {results.get(pre + 'feed')}, Story {results.get(pre + 'story')}"
+            + (f", Facebook {results.get(pre + 'facebook')}" if pre + "facebook" in wanted(slot) else ""))
 
 
 def report(msg):
