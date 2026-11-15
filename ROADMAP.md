@@ -602,6 +602,9 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     Rules: the Tribe speaks for itself. Names and spellings come from the Tribe's own pages (HUṠWEJ with the dot,
     'Uba Seo with the leading mark); quotes come from the Tribal Spokesperson or published statements; link only
     pages seen; never invent. No one pays to appear.
+    Standing watch (Todd, Nov 15, 2026: "definitely worth spotlighting, calling out when it feels right"):
+    the morning task checks https://www.huswej.org/events, https://www.huswej.org/blog and https://ubaseo.org
+    daily for events, exhibitions and statements (paste-ready line in the project's `nisenan/` folder).
     No disclosure line (Todd, Nov 15, 2026): this is inclusion, not favors, and in a town this small the
     publisher knows nearly everyone.
     Not started.
