@@ -237,14 +237,14 @@ with a "forget my progress" button and a privacy page line before launch. Puzzle
 script gets its CSP hash first, and games stay off archives except the puzzle answers. Reduced motion respected.
 
 ### Community goals (everyone plays together)
-1. **Road to the next milestone.** A thin progress bar under the circulation line: "96 copies to 500." Uses the
+1. **Road to the next milestone.** BUILT Nov 15 (PR, games batch 1). A thin progress bar under the circulation line: "96 copies to 500." Uses the
    counter's total and the milestone ladder already in the Wire script. Small; good first build.
 2. **Beat the Record.** When today nears the best day (72, Oct. 31, 2026), the line says so and nudges a Wire.
 
 ### Personal play (kept in the reader's browser)
-3. **Prospector's Streak.** Mornings in a row read: "Day 6 at the claim." Ranks at 7, 30, 100 days (Greenhorn,
+3. **Prospector's Streak.** BUILT Nov 15 (games batch 1). Mornings in a row read: "Day 6 at the claim." Ranks at 7, 30, 100 days (Greenhorn,
    Sourdough, Old-Timer), a gentle "you missed a day, the claim's still yours" instead of a reset scolding.
-4. **The Hidden Nugget.** A tiny gold nugget hidden somewhere different in each edition (placed by the morning
+4. **The Hidden Nugget.** BUILT Nov 15 (games batch 1; spot picked in the script from the date, no prompt change). A tiny gold nugget hidden somewhere different in each edition (placed by the morning
    task); tap it for "You've found 9 nuggets." Rewards reading the whole paper. Todd's favorite category.
 5. **Paperboy badge.** Ribbons for wiring the paper to 3, 10 and 25 friends (counted on the device only).
 6. **The Badge Case.** One small page (badges.html) showing a reader's own ribbons, drawn as 1941-style merit

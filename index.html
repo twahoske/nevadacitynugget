@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ=' 'sha256-fWTEMhz3O9XSo12O5OaMXtRptvWbWFkG75Erw+VstTc=' 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I=' 'sha256-YstO3SPKuxkxhX0zp4BuAC6cj3s+g6xisSg+mIcXlV0=' 'sha256-EUK9JvSKzBZK4/NdKYrgajFKsVxEnuabdlQqOtcjsPg=' 'sha256-Z7wlwidakfEYcuyAEs+Zn6+bf1sc410SpknDetNMgSU=' 'sha256-/sw+jZCl8AAY/cawBuJd6wjDbkNjZVdxVPhctwuMWQE='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://buttondown.com">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-qVgLWf8uvmPcx7xJnxp2fPGzJexcABJEJq7ql4Bty5A=' 'sha256-17fRgJqI75vixQqKdiL6OVQ1CL52PyiTA7Uj9qWC+NQ=' 'sha256-fWTEMhz3O9XSo12O5OaMXtRptvWbWFkG75Erw+VstTc=' 'sha256-MUuSVtPeo3UUvEiQ0fBWifR50O5sZmyXsQqrlaljO+I=' 'sha256-YstO3SPKuxkxhX0zp4BuAC6cj3s+g6xisSg+mIcXlV0=' 'sha256-EUK9JvSKzBZK4/NdKYrgajFKsVxEnuabdlQqOtcjsPg=' 'sha256-Z7wlwidakfEYcuyAEs+Zn6+bf1sc410SpknDetNMgSU=' 'sha256-/sw+jZCl8AAY/cawBuJd6wjDbkNjZVdxVPhctwuMWQE=' 'sha256-Lh/d2GPWVYYJhPEfFna4RUvbpPoK0mI+hlTSmKHOdKI='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://nugget-tally.todd-c0b.workers.dev; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action https://buttondown.com">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="A Modern-Vintage daily paper for Nevada City, California: City Hall and county coverage, fire and weather, public notices, the police blotter, amusements and showtimes, the KVMR radio log, and the stars over Deer Creek.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -1267,8 +1267,138 @@ a.sponsor img{width:100%;height:auto;display:block}
       });
     }
   }
-  if (counted()) tally("today").then(function(d){ show(d); celebrate(d, false); });
-  else tally("read").then(function(d){ if (d) markCounted(); show(d); celebrate(d, !!d); });
+  /* GAMES: Road to the next milestone, Prospector's Streak and the Hidden Nugget. Progress stays in this browser only (never sent anywhere); "forget" erases it. */
+  var playCss = document.createElement("style");
+  playCss.textContent =
+    ".circ .c-goal{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 10px;text-transform:none;letter-spacing:.02em;font-size:12.5px;font-style:italic}" +
+    ".circ .c-goal .g-bar{flex:none;width:140px;height:7px;border:1px solid var(--ink);background:transparent;position:relative;overflow:hidden}" +
+    ".circ .c-goal .g-fill{position:absolute;inset:0 auto 0 0;background:var(--red);transition:width 1.2s ease-out}" +
+    ".circ .c-goal b{font-style:normal;font-family:var(--display);font-weight:900;letter-spacing:.04em}" +
+    ".circ .c-play{flex-basis:100%;text-align:center;text-transform:none;letter-spacing:.02em;font-size:12.5px;font-style:italic;color:var(--ink)}" +
+    ".circ .c-play b{font-style:normal;font-family:var(--display);font-weight:800;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}" +
+    ".circ .c-play button{font:inherit;font-style:italic;color:var(--ink-mid);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}" +
+    ".nug{display:inline-block;vertical-align:middle;width:22px;height:18px;margin:0 2px;padding:0;border:0;background:none;cursor:pointer;line-height:0;animation:nug-glint 3.2s ease-in-out infinite}" +
+    ".nug svg{width:22px;height:18px;overflow:visible}" +
+    ".nug:hover,.nug:focus-visible{transform:scale(1.25);outline:none}" +
+    ".nug.got{animation:nug-pop .6s ease-out both;cursor:default}" +
+    ".nug-note{display:inline-block;margin-left:4px;font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#f0ead9;background:var(--red);padding:2px 8px;animation:nug-note .5s ease-out both}" +
+    "@keyframes nug-glint{0%,82%,100%{filter:none}88%{filter:brightness(1.5) drop-shadow(0 0 3px #e8c25a)}}" +
+    "@keyframes nug-pop{0%{transform:scale(1)}40%{transform:scale(1.9) rotate(-12deg)}100%{transform:scale(1)}}" +
+    "@keyframes nug-note{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}" +
+    "@media (prefers-reduced-motion:reduce){.nug,.nug.got,.nug-note{animation:none}.circ .c-goal .g-fill{transition:none}}";
+  document.head.appendChild(playCss);
+
+  function load(k){ try { return JSON.parse(localStorage.getItem(k) || "null"); } catch(e){ return null; } }
+  function save(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+  function dayBefore(day){
+    var p = day.split("-"), t = new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] - 1));
+    return t.toISOString().slice(0, 10);
+  }
+
+  /* Road to the next milestone: a bar from the last milestone to the next. */
+  function goal(d){
+    if (!d || typeof d.total !== "number") return;
+    var prev = 0, next = LADDER[0];
+    while (next <= d.total){ prev = next; next = nextAfter(next); }
+    var g = el("span", "c-goal");
+    var bar = el("span", "g-bar"), fill = el("span", "g-fill");
+    fill.style.width = "0%";
+    bar.appendChild(fill);
+    var t = el("span", "");
+    t.appendChild(el("b", "", fmt(next - d.total)));
+    t.appendChild(document.createTextNode(" more " + (next - d.total === 1 ? "copy" : "copies") + " to " + fmt(next) + ". Wire a friend!"));
+    g.appendChild(bar);
+    g.appendChild(t);
+    habit.insertAdjacentElement("beforebegin", g);
+    setTimeout(function(){ fill.style.width = Math.max(3, Math.round(100 * (d.total - prev) / (next - prev))) + "%"; }, 60);
+  }
+
+  /* Prospector's Streak: mornings in a row on today's paper. A missed day starts a new run but keeps the best. */
+  var streak = null, finds = null, play = null;
+  function rank(n){ return n >= 100 ? "Old-Timer" : n >= 30 ? "Sourdough" : n >= 7 ? "Greenhorn" : ""; }
+  function nextRank(n){ return n < 7 ? [7, "Greenhorn"] : n < 30 ? [30, "Sourdough"] : n < 100 ? [100, "Old-Timer"] : null; }
+  if (today){
+    streak = load("nugget-streak") || {};
+    if (streak.last !== pacificDay){
+      var back = !!streak.last && streak.last !== dayBefore(pacificDay);
+      streak.n = streak.last === dayBefore(pacificDay) ? (streak.n || 0) + 1 : 1;
+      streak.best = Math.max(streak.best || 0, streak.n);
+      streak.back = back;
+      streak.last = pacificDay;
+      save("nugget-streak", streak);
+    }
+    finds = load("nugget-finds") || { n: 0, last: "" };
+    play = el("span", "c-play");
+    habit.insertAdjacentElement("afterend", play);
+  }
+  function drawPlay(){
+    if (!play) return;
+    play.textContent = "";
+    var n = streak.n || 1, r = rank(n), nr = nextRank(n);
+    play.appendChild(el("b", "", "⛏ Day " + fmt(n) + " at the claim" + (r ? " · " + r : "")));
+    var words = " · ";
+    if (n === 1 && streak.back) words += "Welcome back; the claim's still yours (best run " + fmt(streak.best) + "). ";
+    else if (n === 1) words += "Come back tomorrow to start a streak. ";
+    else if (nr) words += fmt(nr[0] - n) + " more " + (nr[0] - n === 1 ? "morning" : "mornings") + " to " + nr[1] + ". ";
+    words += finds.last === pacificDay ? "Today's nugget: found ✓ (" + fmt(finds.n) + " in all) · "
+                                       : "A gold nugget is hidden in today's paper" + (finds.n ? " (you've found " + fmt(finds.n) + ")" : "") + ". Find it! · ";
+    play.appendChild(document.createTextNode(words));
+    var forget = el("button", "", "forget my progress");
+    forget.type = "button";
+    forget.addEventListener("click", function(){
+      try { localStorage.removeItem("nugget-streak"); localStorage.removeItem("nugget-finds"); } catch(e){}
+      play.textContent = "Forgotten. This browser now keeps only the date note for the daily count.";
+      play = null;
+    });
+    play.appendChild(forget);
+  }
+
+  /* The Hidden Nugget: one tiny nugget a day, in a paragraph picked by the date, so everyone hunts the same spot. */
+  function hideNugget(){
+    if (!today) return;
+    var spots = [].filter.call(document.querySelectorAll("article p"), function(p){
+      return !p.closest(".circ,.ms,footer,.passiton,.wire-menu") && p.textContent.trim().length > 60;
+    });
+    if (!spots.length) return;
+    var h = 7;
+    for (var i = 0; i < pacificDay.length; i++) h = (h * 31 + pacificDay.charCodeAt(i)) % 100003;
+    var spot = spots[h % spots.length];
+    var b = el("button", "nug");
+    b.type = "button";
+    b.setAttribute("aria-label", "A hidden gold nugget. Claim it!");
+    var NS = "http://www.w3.org/2000/svg", svg = document.createElementNS(NS, "svg");
+    svg.setAttribute("viewBox", "0 0 22 18");
+    svg.setAttribute("aria-hidden", "true");
+    [["M3 11 L6 5 L12 2 L18 5 L20 11 L15 16 L7 16 Z", "#c9952f"], ["M6 5 L12 2 L13 8 L8 10 Z", "#e8c25a"], ["M13 8 L18 5 L20 11 L15 12 Z", "#a87a24"]].forEach(function(s){
+      var path = document.createElementNS(NS, "path");
+      path.setAttribute("d", s[0]);
+      path.setAttribute("fill", s[1]);
+      path.setAttribute("stroke", "#201c13");
+      path.setAttribute("stroke-width", "1.2");
+      path.setAttribute("stroke-linejoin", "round");
+      svg.appendChild(path);
+    });
+    b.appendChild(svg);
+    if (finds.last === pacificDay) b.className += " got";
+    b.addEventListener("click", function(){
+      if (finds.last === pacificDay) return;
+      finds.n = (finds.n || 0) + 1;
+      finds.last = pacificDay;
+      save("nugget-finds", finds);
+      b.className = "nug got";
+      b.setAttribute("aria-label", "Today's nugget, found");
+      var note = el("span", "nug-note", "Eureka! Nugget No. " + fmt(finds.n));
+      note.setAttribute("role", "status");
+      b.insertAdjacentElement("afterend", note);
+      setTimeout(function(){ note.remove(); }, 6000);
+      drawPlay();
+    });
+    spot.appendChild(document.createTextNode(" "));
+    spot.appendChild(b);
+  }
+  if (today){ drawPlay(); hideNugget(); }
+  if (counted()) tally("today").then(function(d){ show(d); goal(d); celebrate(d, false); });
+  else tally("read").then(function(d){ if (d) markCounted(); show(d); goal(d); celebrate(d, !!d); });
 
   function copyText(t){
     try {
