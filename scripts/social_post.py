@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Post this morning's Nugget to Instagram: one feed post and one Story.
+"""Post this morning's Nugget to Instagram (one feed post and one Story) and to
+the Nugget's Facebook Page (the feed card, with clickable links).
 
 Run by .github/workflows/social-post.yml. Once a day, after the website shows
 today's date in its folio, it:
@@ -10,7 +11,9 @@ today's date in its folio, it:
      1941 style (Playwright + Chromium),
   3. pushes both JPEGs to the social-cards branch, which Instagram fetches
      from raw.githubusercontent.com (main and the website are never touched),
-  4. publishes them with Meta's official Instagram content-publishing API,
+  4. publishes them with Meta's official Instagram content-publishing API, and
+     posts the feed card to the Facebook Page (Page tokens only; needs the
+     pages_manage_posts permission),
   5. records what it posted in social-cards:posted/YYYY-MM-DD.json, so a day is
      never posted twice, and a half-finished day (feed done, Story failed) only
      retries the missing part.
@@ -321,6 +324,24 @@ def post(token, uid, image_url, caption_text=None, story=False):
 
 # ---------------------------------------------------------------- steps
 
+def wanted():
+    """What a finished day holds: Instagram feed + Story, plus the Facebook Page
+    when the token is a Facebook Page token (Instagram Login tokens start "IG")."""
+    token = os.environ.get("IG_ACCESS_TOKEN", "")
+    return ["feed", "story"] + ([] if token.startswith("IG") or not token else ["facebook"])
+
+
+def facebook_caption(cap):
+    """Facebook makes links clickable, so point straight at the paper."""
+    return cap.replace("nevadacitynugget.com (link in bio)", "https://nevadacitynugget.com")
+
+
+def post_facebook(token, image_url, message):
+    page = graph(token, "me", {"fields": "id"})["id"]
+    res = graph(token, f"{page}/photos", {"url": image_url, "message": message}, "POST")
+    return res.get("post_id") or res["id"]
+
+
 def in_window(now):
     m = now.hour * 60 + now.minute
     return START <= m <= END
@@ -333,7 +354,7 @@ def gate(wait=False, ignore_window=False, pause=120):
         if not ignore_window and not in_window(now):
             return False, f"outside the 5:45-10:00 AM window ({now:%H:%M} Pacific); nothing to do"
         done = record(day)
-        if done.get("feed") and done.get("story"):
+        if all(done.get(k) for k in wanted()):
             return False, f"already posted for {day}; nothing to do"
         try:
             _, shown = folio(fetch_site())
@@ -374,13 +395,19 @@ def publish(dry_run=False):
             results["story"] = post(token, uid, RAW + story_rel, story=True)
         except Exception as err:
             errors.append(f"story: {err}")
+    if "facebook" in wanted() and not done.get("facebook"):
+        try:
+            results["facebook"] = post_facebook(token, RAW + feed_rel, facebook_caption(cap))
+        except Exception as err:
+            errors.append(f"facebook: {err}")
     if results != done:
         results["at"] = now_pacific().isoformat(timespec="minutes")
         push_files({f"posted/{day}.json": (json.dumps(results, indent=1) + "\n").encode()},
                    f"Posted {day}")
     if errors:
         raise RuntimeError("; ".join(errors))
-    return f"POSTED {day}: feed {results.get('feed')}, Story {results.get('story')}"
+    return (f"POSTED {day}: feed {results.get('feed')}, Story {results.get('story')}"
+            + (f", Facebook {results.get('facebook')}" if "facebook" in wanted() else ""))
 
 
 def report(msg):
