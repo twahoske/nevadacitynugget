@@ -165,8 +165,10 @@ def pick(slot, page):
                 "foot": "Read the Full Profile",
                 "small": "nevadacitynugget.com · link in bio · chosen by the Nugget, no one pays to appear"}
     if slot == "spotlight":
+        want = spot_match()
         sec = next((x for x in sections(page) if x["label"].lower() in SPOT_LABELS
-                    and not SKIP_META.search(x["meta"])), None)
+                    and not SKIP_META.search(x["meta"])
+                    and (not want or want in " ".join((x["label"], x["head"], x["meta"])).lower())), None)
         if not sec:
             return None
         return {**base, "lead": sec, "more": [], "detail": SPOT_PREFIX.sub("", sec["meta"]),
@@ -415,6 +417,20 @@ def post(token, uid, image_url, caption_text=None, story=False):
 
 # ---------------------------------------------------------------- steps
 
+def spot_match():
+    """SPOT_MATCH (a manual run's "pick" box) chooses a spotlight other than the first."""
+    return " ".join(os.environ.get("SPOT_MATCH", "").lower().split())
+
+
+def slot_prefix(slot):
+    """Record-key prefix; a picked spotlight gets its own keys, so it can post
+    on a day the regular spotlight already did."""
+    pre = SLOTS[slot][2]
+    if slot == "spotlight" and spot_match():
+        pre += re.sub(r"[^a-z0-9]+", "-", spot_match()).strip("-")[:24] + "_"
+    return pre
+
+
 def current_slot(now=None):
     """SLOT from the environment, else the slot whose window holds the time."""
     slot = os.environ.get("SLOT", "").strip()
@@ -430,7 +446,7 @@ def wanted(slot=None):
     Page when the token is a Facebook Page token (Instagram Login tokens start "IG")."""
     token = os.environ.get("IG_ACCESS_TOKEN", "")
     keys = ["feed", "story"] + ([] if token.startswith("IG") or not token else ["facebook"])
-    prefix = SLOTS[slot or current_slot()][2]
+    prefix = slot_prefix(slot or current_slot())
     return [prefix + k for k in keys]
 
 
@@ -483,7 +499,7 @@ def publish(dry_run=False):
     uid = os.environ.get("IG_USER_ID", "") or ("me" if token.startswith("IG") else "")
     now = now_pacific()
     day, slot = now.strftime("%Y-%m-%d"), current_slot(now)
-    pre = SLOTS[slot][2]
+    pre = slot_prefix(slot)
     cap = (OUT / "caption.txt").read_text(encoding="utf-8")
     if dry_run:
         return f"DRY RUN ({slot}): cards rendered (see the run's artifacts); nothing pushed or posted"
