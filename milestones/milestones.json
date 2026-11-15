@@ -1,0 +1,92 @@
+{
+ "_note": "Circulation milestone words for the box under the date (Wire Service script) and scripts/milestone_post.py. {N} = the milestone, {NEXT} = the next one. No em-dashes.",
+ "kicker": "✱ Extra! Circulation Milestone ✱",
+ "mine": "You are copy No. {N}! Bragging rights are yours.",
+ "next": "Next stop: {NEXT}. Help us get there:",
+ "fine": "Total Circulation counts copies of today's paper read at nevadacitynugget.com since Oct. 30, 2026, one per phone or computer a day. No names, nothing added.",
+ "milestones": [
+  {
+   "n": 500,
+   "art": "bundle",
+   "alt": "A bundle of newspapers tied with red twine and a tag reading 500",
+   "head": "Five Hundred Copies, and Not One Landed in a Puddle",
+   "deck": "The Nugget has now been read {N} times since we started counting. Our paperboy, who is entirely imaginary, has been given the afternoon off."
+  },
+  {
+   "n": 1000,
+   "art": "cannon",
+   "alt": "A parade cannon firing confetti and stars",
+   "head": "One Thousand Copies! Somebody Fire the Cannon!",
+   "deck": "We would fire one down Broad Street to celebrate, but we suspect that takes a Conditional Use Permit. Kindly accept this drawing of a cannon instead."
+  },
+  {
+   "n": 1500,
+   "art": "adder",
+   "alt": "An adding machine spooling tape",
+   "head": "Fifteen Hundred, and the Counting Room Needs a Nap",
+   "deck": "The counting room reports {N} copies read. The counting room is one very small computer, and it would like to discuss a raise."
+  },
+  {
+   "n": 2000,
+   "art": "coffee",
+   "alt": "A coffee cup steaming on the morning paper",
+   "head": "Two Thousand Copies, Most of Them Over Coffee",
+   "deck": "Two thousand times somebody opened the Nugget. We picture half of them over coffee and at least one during a council meeting. We won't tell."
+  },
+  {
+   "n": 3000,
+   "art": "town",
+   "alt": "A row of Gold Rush storefronts and a steeple under a banner reading 3,000",
+   "head": "Three Thousand Copies, About One for Every Soul in Town",
+   "deck": "Nevada City counted a little over 3,100 residents in the 2020 Census. Copies aren't people, and the flatlanders are padding our numbers, but we will take the comparison."
+  },
+  {
+   "n": 4000,
+   "art": "pan",
+   "alt": "A miner's gold pan full of gold nuggets",
+   "head": "Four Thousand Copies: Still Gold in These Hills",
+   "deck": "Panning for news keeps paying out. {N} copies read, and not one claim jumper in sight."
+  },
+  {
+   "n": 5000,
+   "art": "cornet",
+   "alt": "A brass cornet with a red pennant and musical notes",
+   "head": "Five Thousand! Strike Up the Band!",
+   "deck": "{N} copies read. In 1941 that would have been a mountain of newsprint. This time it cost not one tree, so the band plays on."
+  },
+  {
+   "n": 7500,
+   "art": "hat",
+   "alt": "A tall top hat with a red band reading 7,500",
+   "head": "Seventy-Five Hundred, Which Fits on a Hatband (a Tall One)",
+   "deck": "We checked whether {N} fits on a hatband. It does, on a top hat. (Our publisher sells hats on Broad Street, so we had one handy.)"
+  },
+  {
+   "n": 10000,
+   "art": "fireworks",
+   "alt": "Fireworks bursting over rooftops",
+   "head": "Ten Thousand. Hold the Front Page.",
+   "deck": "Ten thousand copies read since we started counting. We would stop the presses to celebrate, but we have no presses, so we stopped the coffee pot instead. Briefly."
+  }
+ ],
+ "beyond": [
+  {
+   "art": "wreath",
+   "alt": "A laurel wreath around a red star",
+   "head": "{N} Copies, and Still Free Every Morning",
+   "deck": "Still daily, still free, still set like it's 1941. Thank you for reading, and for passing us along."
+  },
+  {
+   "art": "wreath",
+   "alt": "A laurel wreath around a red star",
+   "head": "{N} Copies Read. We Remain Unreasonably Pleased.",
+   "deck": "Another milestone for a small paper in a small town. The counting room has asked to lie down."
+  },
+  {
+   "art": "wreath",
+   "alt": "A laurel wreath around a red star",
+   "head": "{N} Copies, Townsfolk and Flatlanders Alike",
+   "deck": "Locals, visitors, and everyone just passing through on Highway 49: thank you, every one of you."
+  }
+ ]
+}

@@ -171,6 +171,25 @@ Todd's goal: grow by readers passing the paper along, not social media.
 - **Later ideas:** a rate limit if anyone games the count; a monthly "Circulation Report" in the paper;
   a milestone banner when a day passes 100, 500, 1,000 readers.
 
+## Circulation milestones (added Nov 15, 2026)
+Todd's ask: celebrate total circulation publicly at 500, 1,000, 1,500, 2,000, 3,000 and onward, on the site
+and on social media, with humor and fun imagery.
+- **What counts.** Total Circulation, the same figure under the date: copies of today's paper read at
+  nevadacitynugget.com since Oct. 30, 2026, one per phone or computer per Pacific day (nugget-tally Worker).
+  Email subscribers and followers are not added in; nothing is inflated.
+- **Ladder.** 500, 1,000, 1,500, 2,000, 3,000, 4,000, 5,000, 7,500, 10,000; then every 5,000 to 25,000,
+  every 25,000 to 100,000, every 50,000 after. Each of the first nine has its own headline, joke and drawing;
+  later ones rotate three wreath versions.
+- **On the site.** The Wire Service script (circulation part) shows an "Extra! Circulation Milestone" box
+  under the circulation line on the day a milestone is passed and the day after (worked out from the
+  counter's total, today and yesterday). The reader whose visit makes the exact number is told "You are copy
+  No. N!". Words and art live in milestones/ (milestones.json + one SVG each), so copy can change without
+  touching the script or its CSP hash.
+- **On social.** .github/workflows/milestone-post.yml (scripts/milestone_post.py) checks the counter on every
+  push to main and hourly, and posts a feed card, a Story and the Facebook Page post once per milestone,
+  9 AM to 8:30 PM Pacific, recorded in social-cards:posted/milestone-N.json. Manual run = dry run by default,
+  with a "milestone" box to draw any number for a look.
+
 ## The paper and the Nevada City Visitor Guide (added Nov 3, 2026; renamed Nov 14)
 - **Why.** On a phone the edition ran about 41 screens, the first headline sat just below the first
   screen, and county news was buried near screen 30 behind the visitor boxes. Todd preferred a newspaper

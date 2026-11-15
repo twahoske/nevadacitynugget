@@ -1,0 +1,68 @@
+name: Milestone post
+
+# Celebrate Total Circulation milestones on Instagram and Facebook (Todd, Nov 15 2026).
+# On every push to main (the Site Publisher's hourly copy of the paper) and an hourly
+# backup, scripts/milestone_post.py asks the Nugget's counter for the total; if a
+# milestone (500, 1,000, 1,500, 2,000, 3,000 ...) was passed today or yesterday and has
+# not been posted, it draws the cards and posts the feed card, a Story and the Facebook
+# Page post, once, between 9 AM and 8:30 PM Pacific. A manual run is a dry run unless
+# unticked; give it a milestone number to draw that one for a look (never posted).
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "40 16-23 * * *"
+    - cron: "40 0-3 * * *"
+  workflow_dispatch:
+    inputs:
+      milestone:
+        description: "Draw this milestone (e.g. 500) instead of checking the counter"
+        type: string
+        default: ""
+      dry_run:
+        description: "Dry run (draw the cards, post nothing)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: milestone-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: gate
+        run: python3 scripts/milestone_post.py gate
+        env:
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.milestone || '' }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - if: steps.gate.outputs.go == 'yes'
+        run: |
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/milestone_post.py render
+        env:
+          MILESTONE: ${{ steps.gate.outputs.milestone }}
+          SINCE: ${{ steps.gate.outputs.since }}
+      - if: steps.gate.outputs.go == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: milestone-cards-${{ github.run_id }}
+          path: out/
+          retention-days: 14
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/milestone_post.py publish
+        env:
+          MILESTONE: ${{ steps.gate.outputs.milestone }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.milestone || '' }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
