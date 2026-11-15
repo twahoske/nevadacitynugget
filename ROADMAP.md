@@ -487,7 +487,8 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     approval step.
     Address (decided Nov 14, 2026): `tips@nevadacitynugget.com`, which can take story tips as well as events.
     Approval requests go to `nevadacitynugget@gmail.com`, where the publisher is most likely to see them.
-    Open question: whether `tips@` replaces the NUGGET EVENT subject line or runs beside it. Domain mail is on
+    Decided Nov 14, 2026: `tips@` replaces the NUGGET EVENT subject line (one address, and every event waits for
+    the publisher's OK); when this is built, item 4's auto-listing is retired from the morning task. Domain mail is on
     DreamHost, so the address would likely be a forward-only alias to the Gmail the paper's tasks already read
     (`news@` stays as it is).
     Same security rules as all reader email: only mail from the approved publisher senders is opened, the
