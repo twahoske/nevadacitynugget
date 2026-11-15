@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="An adding machine spooling tape"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 176 L52 104 H148 L160 176 Z" fill="#f0ead9"/>
+<path d="M40 176 H160" stroke-width="5"/>
+<g fill="#201c13" stroke="none">
+<circle cx="72" cy="124" r="7"/><circle cx="92" cy="124" r="7"/><circle cx="112" cy="124" r="7"/>
+<circle cx="70" cy="144" r="7"/><circle cx="92" cy="144" r="7"/><circle cx="114" cy="144" r="7"/>
+<circle cx="68" cy="164" r="7"/><circle cx="92" cy="164" r="7"/><circle cx="116" cy="164" r="7"/></g>
+<path d="M140 116 L176 96" stroke-width="5"/><circle cx="180" cy="94" r="8" fill="#7e2a18" stroke="#7e2a18"/>
+<path d="M64 104 V84 H120 V104" fill="#f0ead9"/>
+<path d="M76 84 C70 60 96 54 88 34 C82 20 104 14 116 22 L124 30 C112 28 104 34 110 46 C118 64 92 70 96 84 Z" fill="#f0ead9" stroke-width="3"/>
+<path d="M94 44 H108 M90 56 H104 M92 68 H102" stroke-width="2.5"/>
+<text x="158" y="70" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="20" fill="#7e2a18" stroke="none" transform="rotate(-8 158 70)">1,500</text>
+<path d="M138 78 L118 70" stroke="#7e2a18" stroke-width="2.5"/></g></svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A coffee cup steaming on the morning paper"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M22 70 L150 54 L178 160 L46 178 Z" fill="#f0ead9"/>
+<path d="M36 88 L96 80 M40 102 L92 96 M44 116 L84 112 M48 132 L82 128 M52 146 L84 142 M56 160 L88 156" stroke-width="3"/>
+<path d="M36 88 L96 80" stroke-width="7"/>
+<circle cx="78" cy="152" r="18" stroke="#b8862f" stroke-width="4" stroke-dasharray="18 6 30 8"/>
+<path d="M100 92 H158 L152 140 C150 150 108 150 106 140 Z" fill="#7e2a18" stroke="#201c13"/>
+<path d="M156 102 C178 100 178 128 152 126" stroke-width="5"/>
+<ellipse cx="129" cy="92" rx="29" ry="7" fill="#201c13"/>
+<path d="M118 78 C110 68 124 62 116 50 M134 78 C126 66 142 60 134 46 M148 76 C142 68 152 62 148 54" stroke-width="3.5"/></g></svg>

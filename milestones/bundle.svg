@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A bundle of newspapers tied with red twine and a tag reading 500"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M38 150 L162 150 L162 166 L38 166 Z" fill="#f0ead9"/>
+<path d="M44 134 L158 134 L162 150 L38 150 Z" fill="#f0ead9"/>
+<path d="M40 118 L156 118 L158 134 L44 134 Z" fill="#f0ead9"/>
+<path d="M42 102 L160 102 L156 118 L40 118 Z" fill="#f0ead9"/>
+<path d="M54 108 H110 M54 124 H96 M54 140 H118 M54 156 H104" stroke-width="3"/>
+<path d="M100 98 V170" stroke="#7e2a18" stroke-width="6"/>
+<path d="M36 136 H164" stroke="#7e2a18" stroke-width="6"/>
+<path d="M100 98 C88 84 76 88 82 98 C86 104 96 100 100 98 C104 100 114 104 118 98 C124 88 112 84 100 98 Z" stroke="#7e2a18" stroke-width="5" fill="#f0ead9"/>
+<path d="M118 98 L138 66" stroke="#201c13" stroke-width="2.5"/>
+<path d="M128 44 L166 56 L156 88 L118 76 Z" fill="#f0ead9"/>
+<circle cx="132" cy="56" r="3" fill="#201c13"/>
+<text x="142" y="76" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="20" fill="#7e2a18" stroke="none" transform="rotate(17 142 76)">500</text>
+<path d="M30 70 L44 82 M24 92 H40 M48 52 L56 68" stroke-width="3.5"/></g></svg>

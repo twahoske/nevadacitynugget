@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A tall top hat with a red band reading 7,500"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="100" cy="158" rx="84" ry="18" fill="#201c13"/>
+<path d="M56 154 L62 46 C62 36 138 36 138 46 L144 154 Z" fill="#201c13"/>
+<ellipse cx="100" cy="46" rx="38" ry="9" fill="#201c13" stroke="#f0ead9" stroke-width="2.5"/>
+<path d="M58 118 L142 118 L143 146 C120 152 80 152 57 146 Z" fill="#7e2a18" stroke="#7e2a18"/>
+<text x="100" y="142" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#f0ead9" stroke="none">7,500</text>
+<path d="M150 74 l4 9 l10 1 l-7 7 l2 10 l-9 -5 l-9 5 l2 -10 l-7 -7 l10 -1 Z" fill="#b8862f" stroke="none"/>
+<path d="M36 70 l3 6 l7 1 l-5 5 l1 7 l-6 -3 l-6 3 l1 -7 l-5 -5 l7 -1 Z" fill="#b8862f" stroke="none"/></g></svg>

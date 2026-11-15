@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A miner's gold pan full of gold nuggets"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="100" cy="122" rx="82" ry="34" fill="#201c13"/>
+<ellipse cx="100" cy="116" rx="66" ry="24" fill="#f0ead9"/>
+<path d="M44 124 C70 134 130 134 156 124" stroke-width="2.5"/>
+<g fill="#b8862f" stroke="#201c13" stroke-width="2.5">
+<path d="M76 110 l10 -6 l12 3 l2 10 l-10 6 l-12 -3 Z"/>
+<path d="M108 104 l8 -4 l10 3 l1 8 l-9 4 l-9 -3 Z"/>
+<path d="M96 122 l6 -3 l7 2 l1 6 l-7 3 l-6 -2 Z"/>
+<path d="M124 118 l5 -3 l6 2 l0 5 l-5 3 l-5 -2 Z"/></g>
+<path d="M66 70 V50 M56 60 H76 M134 64 V48 M126 56 H142 M100 52 V30 M89 41 H111" stroke="#7e2a18" stroke-width="4"/>
+<path d="M30 168 C60 176 140 176 170 168" stroke-width="3"/></g></svg>
