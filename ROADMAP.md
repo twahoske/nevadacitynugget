@@ -621,6 +621,19 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     festival (Todd, Nov 15, 2026); no one pays to appear.
     Started Nov 15, 2026.
 
+32. **The Necessary (public restrooms, Visitor Guide).** (Todd, Nov 16, 2026; name picked Nov 16: "the necessary" is
+    the old 1800s word for a privy. Subtitle "Public restrooms in downtown Nevada City" keeps it findable in search.) A standing box on the Visitor Guide
+    (`visitor.html`), and a section people can link to, answering the question every visitor asks: where can I
+    find a public restroom downtown? Each listing gets the location (with a map link), hours and seasonal
+    closures, whether it is wheelchair accessible, whether it has a baby-changing station, and free or not.
+    Sourced from the City of Nevada City's own pages and public works information, checked in person or by the
+    publisher where the city is silent; never guessed. Official public restrooms only (Todd, Nov 16, 2026):
+    no businesses or customer-only restrooms. Also lists the extra event-day facilities for Victorian
+    Christmas, Summer Nights and other big events when the city or organizer posts them, and links from the Victorian Christmas guide
+    (item 28) and the Trails & Vistas trailheads (item 8) where restrooms exist. Gets its own `#restrooms` anchor
+    so the paper, social posts and the Wire can point to it. No one pays to appear.
+    Not started.
+
 33. **Good Works: Nevada City's nonprofits, and Nonprofit of the Day.** (Todd, Nov 16, 2026.) A standing page,
     `nonprofits.html`, listing Nevada City's nonprofits (33 at launch) in six groups: arts, music and stage; history
     and heritage; rivers, forests and trails; neighbors and kids; lodges, clubs and crews; and countywide groups down
