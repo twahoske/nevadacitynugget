@@ -621,6 +621,18 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     festival (Todd, Nov 15, 2026); no one pays to appear.
     Started Nov 15, 2026.
 
+33. **Good Works: Nevada City's nonprofits, and Nonprofit of the Day.** (Todd, Nov 16, 2026.) A standing page,
+    `nonprofits.html`, listing Nevada City's nonprofits (33 at launch) in six groups: arts, music and stage; history
+    and heritage; rivers, forests and trails; neighbors and kids; lodges, clubs and crews; and countywide groups down
+    the hill in Grass Valley. Each entry gives what the group does, where it is, how to give or volunteer, and its
+    source, checked against the group's own site first. Left off on purpose: churches, schools and PTAs, unions and
+    officers' associations, and private foundations. Plus a daily **Nonprofit of the Day** profile through the scoop
+    pipeline, modeled on Merchant of the Day (item 3), starting Giving Tuesday, Dec. 1, 2026, placed right after
+    Merchant of the Day. Disclosure: the publisher co-hosts a KVMR show, so KVMR's entry and profile say so; no other
+    ties (Todd, Nov 16); Nisenan groups carry no line (item 30). No one pays to appear. Work files in the project's
+    `nonprofits/` folder (`build.py`). To do: write week two (Dec. 8-14) by Dec. 7; re-check entries each quarter.
+    Live Nov 16, 2026.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
