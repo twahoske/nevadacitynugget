@@ -286,6 +286,8 @@ def main():
         urls.append((f"{SITE}stay.html", None, "monthly", "0.7"))
     if (ROOT / "nonprofits.html").exists():
         urls.append((f"{SITE}nonprofits.html", None, "monthly", "0.7"))
+    if (ROOT / "wellness.html").exists():
+        urls.append((f"{SITE}wellness.html", None, "monthly", "0.7"))
     if (ROOT / "visitor.html").exists():
         urls.append((f"{SITE}visitor.html", None, "daily", "0.8"))
     if (ROOT / "victorian-christmas.html").exists():
