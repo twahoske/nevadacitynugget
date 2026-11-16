@@ -154,6 +154,10 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
   deck, caption body, drawing) to social/whats-new/queue.json in the same PR as the release-notes bullet;
   a release with no entries is posted straight from its bullets with a generic NEW stamp drawing.
   Mark minor tweaks "skip": true.
+- **The Grand Tour: Howdy, Stranger! (Nov 16):** a welcome series for new followers, one section of the paper
+  or Visitor Guide per post (22 stops, social/grand-tour/tour.json + art/ID.svg), ink-dark card with a
+  ticket stub. It shares the What's New slots and posts only when no What's New item is waiting, so the
+  feed stays at five posts a day at most (Todd's choice).
 
 ## Word of mouth (added Oct 31, 2026)
 Todd's goal: grow by readers passing the paper along, not social media.
