@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nevada City nonprofits: 33 local charities, arts groups, museums, river and land trusts, and service clubs, with what each does, where to find it, and how to give or volunteer.">
+<link rel="canonical" href="https://nevadacitynugget.com/nonprofits.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nevada City Nugget">
+<meta property="og:title" content="Good Works: Nevada City's Nonprofits">
+<meta property="og:description" content="Where to give, join and volunteer in Nevada City: 33 local nonprofits in one place.">
+<meta property="og:url" content="https://nevadacitynugget.com/nonprofits.html">
+<meta property="og:image" content="https://nevadacitynugget.com/og-image.png">
+<title>Nevada City Nonprofits: Where to Give &amp; Volunteer · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+ul.srclist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.srclist li{display:flex;flex-wrap:wrap;gap:2px 14px;align-items:baseline;padding:8px 2px;border-bottom:1px solid var(--rule-soft)}
+ul.srclist li:first-child{border-top:1px solid var(--rule)}
+ul.srclist .s-name{font-family:var(--display);font-weight:700;min-width:210px}
+ul.srclist .s-what{font-size:14px;color:var(--ink-mid);flex:1;min-width:200px}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p + p{margin-top:8px}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+.eff{text-align:center;font-style:italic;font-size:14px;color:var(--ink-mid);margin:0}
+.notebox ul{margin:6px 0 0;padding-left:20px}
+.notebox li + li{margin-top:4px}
+.notebox h3{font-size:15.5px;margin:0 0 2px}
+.notebox h3 + p{margin-top:0}
+.notebox p + h3,.notebox ul + h3{margin-top:12px}
+.policynav{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;margin:8px 0 0}
+
+ul.drinks{list-style:none;margin:0;padding:0}
+ul.drinks li{padding:12px 2px;border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:3px}
+ul.drinks li:first-child{border-top:1px solid var(--rule)}
+.d-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;align-items:baseline}
+.d-name{font-family:var(--display);font-weight:800;font-size:17px}
+.d-addr{font-size:13.5px;font-style:italic;color:var(--ink-mid)}
+.d-hours{font-family:var(--display);font-weight:600;font-size:13.5px;letter-spacing:.02em}
+.d-note{font-size:15px}
+.d-help{font-size:14px}
+.d-help b{font-family:var(--display);color:var(--red);letter-spacing:.04em}
+.d-src{font-size:13px;color:var(--ink-mid)}
+.d-disc{font-size:13px;font-style:italic;color:var(--ink-mid);border-left:3px solid var(--rule);padding-left:8px}
+.lede{font-size:16px;text-align:center;font-style:italic;margin:0}
+.chk{font-size:13px;color:var(--red);border-left:3px solid var(--red);padding-left:8px}
+.draft{border:2px dashed var(--red);color:var(--red);font-family:var(--display);font-weight:600;font-size:13px;padding:8px 10px}
+.draft b{display:block;text-align:center;margin-bottom:4px}
+.draft ol{margin:0;padding-left:20px}
+.kicker .label{white-space:normal;text-align:center}
+.grp-dek{font-style:italic;color:var(--ink-mid);font-size:14.5px;text-align:center}
+.jump{text-align:center;font-size:14px;margin:0;line-height:1.9}
+.jump a{white-space:nowrap}
+.hero{background:var(--ink);color:var(--paper);padding:22px 18px 20px;text-align:center;position:relative;overflow:hidden}
+.hero .big{font-family:var(--display);font-weight:900;font-size:clamp(46px,13vw,84px);line-height:.9;letter-spacing:-.01em;margin:0}
+.hero .big span{color:#e0533d}
+.hero .sub{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.28em;text-transform:uppercase;margin:12px 0 0}
+.hero .heart{display:inline-block;color:#e0533d;animation:beat 2.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}12%{transform:scale(1.22)}24%{transform:scale(1)}36%{transform:scale(1.14)}48%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.hero .heart{animation:none}}
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.ways div{border:2px solid var(--ink);padding:10px 12px;text-align:center}
+.ways b{display:block;font-family:var(--display);font-weight:900;font-size:19px;color:var(--red)}
+.ways span{font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="banner">The Nugget's Guide to Nevada City Nonprofits</div>
+<div class="hero">
+  <p class="big">Good <span>Works</span></p>
+  <p class="sub">Give <span class="heart">♥</span> Join <span class="heart">♥</span> Pitch In</p>
+</div>
+
+<a class="back" href="./">◂ Back to Today's Edition</a>
+
+<p class="lede">Nevada City keeps a theater from 1865, a radio station, a river, a forest and a railroad museum running largely on volunteers and small gifts. Here are 33 of the groups doing it, what each does, and how to lend a hand.</p>
+<p class="jump"><a href="#arts-music">Arts, Music &amp; Stage</a> · <a href="#history-heritage">History &amp; Heritage</a> · <a href="#rivers-forests">Rivers, Forests &amp; Trails</a> · <a href="#neighbors-kids">Neighbors &amp; Kids</a> · <a href="#lodges-clubs">Lodges, Clubs &amp; Crews</a> · <a href="#down-the">Down the Hill in Grass Valley</a></p>
+<p class="eff">Last checked November 16, 2026</p>
+
+<div class="ways">
+  <div><b>Give</b><span>Nearly every group here takes donations, and most gifts are tax-deductible. Ask.</span></div>
+  <div><b>Join</b><span>Memberships keep the lights on and usually come with a newsletter.</span></div>
+  <div><b>Show Up</b><span>Ushers, river monitors, drivers, cooks, book sorters. Pick one.</span></div>
+</div>
+
+<section>
+  <h2 class="kicker" id="arts-music"><span class="label">Arts, Music &amp; Stage</span></h2>
+  <p class="grp-dek">The stages, the station and the bands that keep the town humming.</p>
+<ul class="drinks">
+  <li id="miners-foundry">
+    <div class="d-head"><span class="d-name">Miners Foundry Cultural Center</span><span class="d-addr">325 Spring St.</span></div>
+    <p class="d-hours">Box office Tue-Fri, 10 AM to 3:30 PM, as posted · office (530) 265-5040</p>
+    <p class="d-note">The old foundry on Spring Street, now a historic nonprofit venue for concerts, plays, dances, weddings and community gatherings, "serving Nevada County since 1859," as it puts it.</p>
+    <p class="d-help"><b>Lend a hand:</b> Give through its <a href="https://minersfoundry.kindful.com/">Make a Gift</a> page or <a href="https://minersfoundry.org/stay-connected/volunteer-with-us/">volunteer</a>. <span class="d-src">Source: <a href="https://minersfoundry.org">minersfoundry.org</a>.</span></p>
+  </li>
+  <li id="kvmr">
+    <div class="d-head"><span class="d-name">KVMR 89.5 FM</span><span class="d-addr">120 Bridge St.</span></div>
+    <p class="d-hours">Community radio since 1978 · (530) 265-9555</p>
+    <p class="d-note">Independent, listener-supported community radio, on the air since July 14, 1978, with music, news and public affairs. It reaches well beyond town on translators and online. Its stated aim: to give community members a way to connect through programs that "entertain, inform, and educate."</p>
+    <p class="d-help"><b>Lend a hand:</b> Become a member or give at <a href="https://www.kvmr.org">kvmr.org</a>. <span class="d-src">Source: <a href="https://www.bigdayofgiving.org/kvmr">Big Day of Giving profile</a>; <a href="https://en.wikipedia.org/wiki/KVMR">Wikipedia</a>.</span></p><p class="d-disc">Disclosure: The Nugget's publisher co-hosts a KVMR show, Under the Influence.</p>
+  </li>
+  <li id="nevada-theatre">
+    <div class="d-head"><span class="d-name">Nevada Theatre</span><span class="d-addr">401 Broad St.</span></div>
+    <p class="d-hours">Opened Sept. 11, 1865 · (530) 265-6161</p>
+    <p class="d-note">California's oldest theater building still in operation, the theater says, where Mark Twain and Jack London once appeared. A movie house from 1909, dark from 1957, and reopened by public donation in 1968, it hosts plays, concerts and films year round under the Nevada Theatre Commission.</p>
+    <p class="d-help"><b>Lend a hand:</b> Donations go to restoring and preserving the building; see <a href="https://nevadatheatre.com/about.html">nevadatheatre.com</a>. <span class="d-src">Source: <a href="https://nevadatheatre.com/about.html">nevadatheatre.com</a>.</span></p>
+  </li>
+  <li id="sierra-stages">
+    <div class="d-head"><span class="d-name">Sierra Stages</span><span class="d-addr">Plays at the Nevada Theatre and around the county</span></div>
+    <p class="d-hours">Community theater since 2008</p>
+    <p class="d-note">A nonprofit community theater company, incorporated in 2008 and tax-exempt since 2009, out to "enrich the cultural life of Nevada County" with affordable, high-quality shows at the Nevada Theatre, the Miners Foundry, Off Center Stage, the Center for the Arts and the North Star House.</p>
+    <p class="d-help"><b>Lend a hand:</b> Season, tickets and giving at <a href="https://sierrastages.org/contribute.html">sierrastages.org</a>. <span class="d-src">Source: <a href="https://sierrastages.org/about-us.html">sierrastages.org</a>.</span></p>
+  </li>
+  <li id="ncff">
+    <div class="d-head"><span class="d-name">Nevada City Film Festival</span><span class="d-addr">Downtown Nevada City each June</span></div>
+    <p class="d-hours">26th festival ran June 26-28, 2026 · back June 25-27, 2027</p>
+    <p class="d-note">An independent film festival led since 2001 by co-founder Jeff Clark, with a Filmed in Nevada County grant that backs local filmmakers and crews.</p>
+    <p class="d-help"><b>Lend a hand:</b> <a href="https://nevadacityfilmfestival.com">Volunteer or sponsor</a> through the festival. <span class="d-src">Source: <a href="https://nevadacityfilmfestival.com">nevadacityfilmfestival.com</a>; <a href="https://nevadacityfilmfestival.com/people/">festival people page</a>.</span></p>
+  </li>
+  <li id="ncarts">
+    <div class="d-head"><span class="d-name">Nevada County Arts Council</span><span class="d-addr">100 N. Pine St., Suite C</span></div>
+    <p class="d-hours">State-Local Partner with the California Arts Council</p>
+    <p class="d-note">The county's arts agency, a 501(c)(3) that works to "promote and sustain the visual, literary and performing arts of Nevada County," with grants, artist calls and the Grass Valley-Nevada City Cultural District.</p>
+    <p class="d-help"><b>Lend a hand:</b> Donate, join or volunteer at <a href="https://www.nevadacountyarts.org/initiatives">nevadacountyarts.org</a>. <span class="d-src">Source: <a href="https://www.nevadacountyarts.org/initiatives">nevadacountyarts.org</a>.</span></p>
+  </li>
+  <li id="concert-band">
+    <div class="d-head"><span class="d-name">Nevada County Concert Band</span><span class="d-addr">Parks and parades in Nevada City and Grass Valley</span></div>
+    <p class="d-hours">Free concerts by volunteer musicians</p>
+    <p class="d-note">Brings back the old Sunday band concert, the band says: a summer Picnic Pops series, the Fourth of July parade, the county fair, and a Constitution Day street concert.</p>
+    <p class="d-help"><b>Lend a hand:</b> Players and listeners welcome; contact the band through the Chamber listing. <span class="d-src">Source: <a href="https://business.nevadacitychamber.com/member-directory/Details/nevada-county-concert-band-4505430">Nevada City Chamber member directory</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="history-heritage"><span class="label">History &amp; Heritage</span></h2>
+  <p class="grp-dek">Gold Rush brick, narrow-gauge iron, and the people who were here first.</p>
+<ul class="drinks">
+  <li id="nchs">
+    <div class="d-head"><span class="d-name">Nevada County Historical Society &amp; Searls Historical Library</span><span class="d-addr">161 Nevada City Hwy.</span></div>
+    <p class="d-hours">Library Mon-Sat, 1 to 4 PM, as posted · (530) 265-5910</p>
+    <p class="d-note">Since 1944 the Society has worked "to preserve every source of Nevada County history." Its archive, the Searls Historical Library, holds more than 30,000 photographs, nearly 3,000 books, thousands of maps, and old journals, ledgers and county files. Free.</p>
+    <p class="d-help"><b>Lend a hand:</b> Join, renew or volunteer on scanning projects through <a href="https://nevadacountyhistory.org/">nevadacountyhistory.org</a>. <span class="d-src">Source: <a href="https://nevadacountyhistory.org/?p=428">nevadacountyhistory.org</a>; <a href="https://business.nevadacitychamber.com/member-directory/Details/nevada-county-historical-society-4505409">Nevada City Chamber member directory</a>.</span></p>
+  </li>
+  <li id="firehouse">
+    <div class="d-head"><span class="d-name">Firehouse No. 1 Museum</span><span class="d-addr">214 Main St.</span></div>
+    <p class="d-hours">May-Oct, Wed-Sun 1 to 4 PM · winter by appointment for groups of six or more</p>
+    <p class="d-note">The Historical Society's museum in the 1861 firehouse, open since 1947, with Nisenan cultural items, temple altars from Grass Valley's Chinatown, Donner Party relics and a Victorian parlor upstairs. Kept going by visitor donations.</p>
+    <p class="d-help"><b>Lend a hand:</b> Drop something in the box when it reopens; see <a href="https://nevadacountyhistory.org/?p=399">the museum page</a>. <span class="d-src">Source: <a href="https://nevadacountyhistory.org/?p=399">nevadacountyhistory.org</a>.</span></p>
+  </li>
+  <li id="narrow-gauge">
+    <div class="d-head"><span class="d-name">Nevada County Narrow Gauge Railroad Museum</span><span class="d-addr">5 Kidder Ct.</span></div>
+    <p class="d-hours">Sat-Sun 10 AM to 4 PM; Mon, Tue, Fri 10 AM to 2 PM, as posted · free · (530) 470-0902</p>
+    <p class="d-note">Home of Engine 5, an 1875 Baldwin, plus wooden rail cars, an early steam automobile and a restoration shop where volunteers keep the rolling stock running. Railbus rides on Saturdays April through October.</p>
+    <p class="d-help"><b>Lend a hand:</b> Donate, buy a tie, or join the Friends at <a href="https://ncngrrmuseum.org/">ncngrrmuseum.org</a>. <span class="d-src">Source: <a href="https://ncngrrmuseum.org/">ncngrrmuseum.org</a>; <a href="https://nevadacountyhistory.org/contact-us/">Historical Society contacts</a>.</span></p>
+  </li>
+  <li id="huswej">
+    <div class="d-head"><span class="d-name">HUṠWEJ</span><span class="d-addr">P.O. Box 2624, Nevada City</span></div>
+    <p class="d-hours">Formerly CHIRP (California Heritage: Indigenous Research Project)</p>
+    <p class="d-note">A Tribally-guided nonprofit supporting the Nevada City Rancheria Nisenan Tribe, with land rematriation, cultural revitalization and public education. Its line: "Restoring Culture to landscape, and landscape to Culture."</p>
+    <p class="d-help"><b>Lend a hand:</b> Give once or monthly through the Ancestral Homelands Reciprocity Program, or volunteer, at <a href="https://www.huswej.org">huswej.org</a>. <span class="d-src">Source: <a href="https://www.huswej.org">huswej.org</a>.</span></p>
+  </li>
+  <li id="uba-seo">
+    <div class="d-head"><span class="d-name">'Uba Seo: Nisenan Arts &amp; Culture</span><span class="d-addr">225 Broad St.</span></div>
+    <p class="d-hours">Thu &amp; Sun 11 AM to 5 PM; Fri &amp; Sat 10 AM to 5 PM, as posted · free · 530-955-5134</p>
+    <p class="d-note">HUṠWEJ's contemporary Indigenous art gallery and culture center, directed by Nisenan artists and perspectives. Hours shift with Tribal needs, so call ahead.</p>
+    <p class="d-help"><b>Lend a hand:</b> See current shows at <a href="https://ubaseo.org">ubaseo.org</a>. <span class="d-src">Source: <a href="https://ubaseo.org">ubaseo.org</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="rivers-forests"><span class="label">Rivers, Forests &amp; Trails</span></h2>
+  <p class="grp-dek">Clean water, healthy woods, and somewhere to ride.</p>
+<ul class="drinks">
+  <li id="syrcl">
+    <div class="d-head"><span class="d-name">South Yuba River Citizens League (SYRCL)</span><span class="d-addr">313 Railroad Ave., Suite 101</span></div>
+    <p class="d-hours">Mon-Fri 9 AM to 5 PM · (530) 265-5961</p>
+    <p class="d-note">The Yuba River's watchdog and restorer, working on rivers, meadows and forests, with salmon expeditions and field science for kids, and host of the Wild &amp; Scenic Film Festival (the 25th runs Feb. 18-22, 2027). Its vision: a Yuba watershed that "thrives and is resilient in the face of climate change."</p>
+    <p class="d-help"><b>Lend a hand:</b> <a href="https://yubariver.org/venues/syrcl-offices">Volunteer, join or donate</a> at yubariver.org. <span class="d-src">Source: <a href="https://yubariver.org/venues/syrcl-offices">yubariver.org</a>.</span></p>
+  </li>
+  <li id="sierra-streams">
+    <div class="d-head"><span class="d-name">Sierra Streams Institute</span><span class="d-addr">117 New Mohawk Rd., Suite H</span></div>
+    <p class="d-hours">Founded 1995 as Friends of Deer Creek · (530) 470-6037</p>
+    <p class="d-note">Citizen science, community engagement and education: volunteers sample water, bugs, algae and wildlife, and the institute restores creeks and forests and runs the California Naturalist course. Deer Creek is still its home watershed.</p>
+    <p class="d-help"><b>Lend a hand:</b> Volunteer, intern, or give at <a href="https://sierrastreamsinstitute.org/about/">sierrastreamsinstitute.org</a>. <span class="d-src">Source: <a href="https://sierrastreamsinstitute.org/about/">sierrastreamsinstitute.org</a>.</span></p>
+  </li>
+  <li id="ywi">
+    <div class="d-head"><span class="d-name">Yuba Watershed Institute</span><span class="d-addr">Nevada City</span></div>
+    <p class="d-hours">Stewards about 2,000 acres of the 'Inimim Forest</p>
+    <p class="d-note">A 501(c)(3) "promoting sustainable use of natural resources and protecting long-term biological diversity in the Yuba River watershed." Its flagship is the 'Inimim Forest on the San Juan Ridge, managed with the Bureau of Land Management, plus an annual Fungus Foray and seasonal walks and talks.</p>
+    <p class="d-help"><b>Lend a hand:</b> Join or donate at <a href="https://www.yubawatershedinstitute.org/projects">yubawatershedinstitute.org</a>. <span class="d-src">Source: <a href="https://www.yubawatershedinstitute.org/projects">yubawatershedinstitute.org</a>.</span></p>
+  </li>
+  <li id="bonc">
+    <div class="d-head"><span class="d-name">Bicyclists of Nevada County</span><span class="d-addr">P.O. Box 1311, Nevada City</span></div>
+    <p class="d-hours">Mountain-bike trail association</p>
+    <p class="d-note">A 501(c)(3) "committed to responsible mountain biking," with group rides and volunteer trail-building and maintenance days.</p>
+    <p class="d-help"><b>Lend a hand:</b> Find a workday or ride through its Trailforks listing. <span class="d-src">Source: <a href="https://www.trailforks.com/directory/7741">Trailforks directory</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="neighbors-kids"><span class="label">Neighbors &amp; Kids</span></h2>
+  <p class="grp-dek">For children in court, neighbors in a dispute, readers, and everyone in between.</p>
+<ul class="drinks">
+  <li id="child-advocates">
+    <div class="d-head"><span class="d-name">Child Advocates of Nevada County</span><span class="d-addr">200 Providence Mine Rd., Suites 119 &amp; 210</span></div>
+    <p class="d-hours">Mon-Fri 8:30 AM to 4:30 PM · 530-265-9550</p>
+    <p class="d-note">Trains volunteer CASAs, Court Appointed Special Advocates, to stand up for abused and neglected children in court, and runs Healthy Babies home visits for new families and One 2 One mentoring for ages 10 to 17. "We advocate for the wellbeing of children by disrupting the cycles of abuse."</p>
+    <p class="d-help"><b>Lend a hand:</b> Become a CASA or give at <a href="https://caofnc.org">caofnc.org</a>. <span class="d-src">Source: <a href="https://caofnc.org">caofnc.org</a>.</span></p>
+  </li>
+  <li id="crc">
+    <div class="d-head"><span class="d-name">Conflict Resolution Center of Nevada County</span><span class="d-addr">308 Main St., Suite 5</span></div>
+    <p class="d-hours">(530) 477-6517, voice or text</p>
+    <p class="d-note">A nonprofit that supplies trained mediators to help neighbors, families and businesses settle disputes, and trains new mediators.</p>
+    <p class="d-help"><b>Lend a hand:</b> See <a href="https://www.resolveconflicts.org">resolveconflicts.org</a>. <span class="d-src">Source: <a href="https://www.resolveconflicts.org">resolveconflicts.org</a>.</span></p>
+  </li>
+  <li id="sierra-services-blind">
+    <div class="d-head"><span class="d-name">Sierra Services for the Blind</span><span class="d-addr">546 Searls Ave.</span></div>
+    <p class="d-hours">530-265-2121</p>
+    <p class="d-note">Free help for people losing their sight in Nevada and Placer counties, for more than four decades: rides to medical appointments, peer groups, a library of visual aids, and advocacy.</p>
+    <p class="d-help"><b>Lend a hand:</b> Call to volunteer as a driver or to give. <span class="d-src">Source: <a href="https://business.nevadacitychamber.com/member-directory/Details/sierra-services-for-the-blind-visually-impaired-4505486">Nevada City Chamber member directory</a>; <a href="https://www.idealist.org/en/nonprofit/8fc3f643cd3948c7b4a897f65da93c6d-sierra-services-for-the-blind-nevada-city">Idealist</a>.</span></p>
+  </li>
+  <li id="pride">
+    <div class="d-head"><span class="d-name">Nevada County Pride</span><span class="d-addr">Western Nevada County</span></div>
+    <p class="d-hours">Free to join</p>
+    <p class="d-note">A 501(c)(3) social network of LGBTQ+ people and allies, with a book club, meetups, potlucks and advocacy all year.</p>
+    <p class="d-help"><b>Lend a hand:</b> Volunteer or donate at <a href="https://www.nevadacountypride.org">nevadacountypride.org</a>. <span class="d-src">Source: <a href="https://www.nevadacountypride.org">nevadacountypride.org</a>.</span></p>
+  </li>
+  <li id="friends-libraries">
+    <div class="d-head"><span class="d-name">Friends of the Nevada County Libraries</span><span class="d-addr">P.O. Box 23, Nevada City</span></div>
+    <p class="d-hours">Since 1971 · 530-557-0119</p>
+    <p class="d-note">Raises money for the county libraries' books, equipment and programs through memberships and used-book sales, sorted by volunteers known as the Bookies.</p>
+    <p class="d-help"><b>Lend a hand:</b> Join or find the next book sale at <a href="https://www.ncfol.org">ncfol.org</a>. <span class="d-src">Source: <a href="https://www.ncfol.org">ncfol.org</a>; <a href="https://yubanet.com/regional/national-friends-of-libraries-week-is-in-october-meet-the-friends-of-the-nevada-county-libraries/">YubaNet, Oct. 14, 2022</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="lodges-clubs"><span class="label">Lodges, Clubs &amp; Crews</span></h2>
+  <p class="grp-dek">The old fraternal halls, the service club, the ball club and the people who come find you in the snow.</p>
+<ul class="drinks">
+  <li id="rotary">
+    <div class="d-head"><span class="d-name">Rotary Club of Nevada City</span><span class="d-addr">Meets at 420 Providence Mine Rd.</span></div>
+    <p class="d-hours">Since Oct. 3, 1935 · Thursdays at 12:15 PM, with evening socials</p>
+    <p class="d-note">The town's service club, with Dolly Parton's Imagination Library (free books for kids up to age five), Pumpkins Palooza, polio eradication, and Project Warmth coat drives with United Way.</p>
+    <p class="d-help"><b>Lend a hand:</b> Visit a meeting or ask about joining at <a href="https://www.nevadacityrotary.org">nevadacityrotary.org</a>. <span class="d-src">Source: <a href="https://www.nevadacityrotary.org">nevadacityrotary.org</a>.</span></p>
+  </li>
+  <li id="elks">
+    <div class="d-head"><span class="d-name">Elks Lodge No. 518</span><span class="d-addr">P.O. Box 611, Nevada City</span></div>
+    <p class="d-hours">Benevolent and Protective Order of Elks</p>
+    <p class="d-note">The Nevada City lodge of the Elks, which by its federal filings backs veterans, scholarships, youth programs, and therapy and preschool vision screenings for children in need.</p>
+    <p class="d-help"><b>Lend a hand:</b> Ask a member about joining or the lodge's charity work. <span class="d-src">Source: <a href="https://www.causeiq.com/organizations/benevolent-and-protective-order-of-elks-518-nevada-city,941544599/">Cause IQ, from IRS filings</a>.</span></p>
+  </li>
+  <li id="odd-fellows">
+    <div class="d-head"><span class="d-name">Oustomah Lodge No. 16, Odd Fellows</span><span class="d-addr">Odd Fellows Hall, between Broad and Spring streets</span></div>
+    <p class="d-hours">Hall rentals 530-362-4888</p>
+    <p class="d-note">Friendship, Love and Truth, in a hall with doors on both Broad and Spring. Its Good Works committee backs Meals on Wheels, the Red Cross, Sierra Roots and the Kare Crisis Nursery; it also runs the Seven Stars Gallery, a Youth Arts Program, concerts, dances, and a first-Tuesday potluck at 5:30 PM.</p>
+    <p class="d-help"><b>Lend a hand:</b> Come to a potluck, rent the hall, or ask about joining at <a href="https://nevadacityoddfellows.com">nevadacityoddfellows.com</a>. <span class="d-src">Source: <a href="https://nevadacityoddfellows.com">nevadacityoddfellows.com</a>; <a href="https://nevadacityoddfellows.com/hall-rental/">hall rental</a>.</span></p>
+  </li>
+  <li id="masons">
+    <div class="d-head"><span class="d-name">Nevada Lodge No. 13, Free &amp; Accepted Masons</span><span class="d-addr">108 1/2 N. Pine St.</span></div>
+    <p class="d-hours">Meets the second Wednesday at 6:30 PM · (530) 559-0348</p>
+    <p class="d-note">The Masonic lodge on Pine Street, meeting monthly and marching in the Constitution Day parade.</p>
+    <p class="d-help"><b>Lend a hand:</b> Call the lodge secretary to ask about membership. <span class="d-src">Source: <a href="https://member.freemason.org/public_lodges/lodge/13">Masons of California lodge listing</a>; <a href="https://freemason.org/gm_events/nevada-city-constitution-parade-2/">Constitution Day parade</a>.</span></p>
+  </li>
+  <li id="little-league">
+    <div class="d-head"><span class="d-name">Nevada City Little League</span><span class="d-addr">Nevada City</span></div>
+    <p class="d-hours">Spring youth baseball · info@nevadacitybaseball.com</p>
+    <p class="d-note">Spring baseball for Nevada City kids, January through June. Last season, early-bird sign-ups opened November 15 and regular registration ran through January 31.</p>
+    <p class="d-help"><b>Lend a hand:</b> Sign up a player, coach or sponsor through <a href="https://www.teamsideline.com/sites/nevadacitybaseball/home">its league site</a>. <span class="d-src">Source: <a href="https://www.teamsideline.com/sites/nevadacitybaseball/home">league site</a>.</span></p>
+  </li>
+  <li id="sar">
+    <div class="d-head"><span class="d-name">Nevada County Sheriff's Search &amp; Rescue</span><span class="d-addr">Countywide</span></div>
+    <p class="d-hours">Volunteer rescuers, on call around the clock</p>
+    <p class="d-note">Volunteers who head out at any hour on rescue and recovery missions, working with the Sheriff's Office. Up to 27 of them worked a single day of the February 2026 Castle Peak avalanche response, and the team shared a Distinguished Service Award at the State Capitol in March. Its support nonprofit is based in Nevada City.</p>
+    <p class="d-help"><b>Lend a hand:</b> Ask the Sheriff's Office about the next volunteer academy. <span class="d-src">Source: <a href="https://www.sierrasun.com/news/nevada-county-sheriffs-office-and-sheriffs-search-and-rescue-honored-with-distinguished-service-award">Sierra Sun</a>; <a href="https://www.gudsy.org/nonprofits/nevada-county-sheriffs-search-rescue-inc-nevada-city-ca">Gudsy nonprofit listing</a>.</span></p>
+  </li>
+</ul>
+</section>
+<section>
+  <h2 class="kicker" id="down-the"><span class="label">Down the Hill in Grass Valley</span></h2>
+  <p class="grp-dek">Countywide groups based a few miles away that serve Nevada City every day.</p>
+<ul class="drinks">
+  <li id="bylt">
+    <div class="d-head"><span class="d-name">Bear Yuba Land Trust</span><span class="d-addr">12183 Auburn Rd., Grass Valley</span></div>
+    <p class="d-hours">(530) 272-5994</p>
+    <p class="d-note">"Saves land, builds trails, and offers programs that get people outdoors": more than 26,000 acres conserved and 55-plus miles of trail built or kept up, including many on our Trails &amp; Vistas page.</p>
+    <p class="d-help"><b>Lend a hand:</b> <a href="https://bylt.org">Join, give or volunteer</a> at bylt.org. <span class="d-src">Source: <a href="https://bylt.org">bylt.org</a>.</span></p>
+  </li>
+  <li id="hospitality-house">
+    <div class="d-head"><span class="d-name">Hospitality House</span><span class="d-addr">1262 Sutton Way, Grass Valley</span></div>
+    <p class="d-hours">Shelter line 530-271-7144</p>
+    <p class="d-note">Runs Utah's Place, the county's emergency shelter, plus housing, respite care and a pet program, "bringing homeless people in Nevada County into a circle of community caring." Cooks are always needed.</p>
+    <p class="d-help"><b>Lend a hand:</b> Volunteer to cook or give at <a href="https://hhshelter.org">hhshelter.org</a>. <span class="d-src">Source: <a href="https://hhshelter.org">hhshelter.org</a>.</span></p>
+  </li>
+  <li id="food-bank">
+    <div class="d-head"><span class="d-name">Food Bank of Nevada County</span><span class="d-addr">Warehouse at 310 Railroad Ave., Grass Valley</span></div>
+    <p class="d-hours">(530) 272-3796</p>
+    <p class="d-note">Hands out groceries around the county, with emergency pickups at the Grass Valley warehouse on weekdays.</p>
+    <p class="d-help"><b>Lend a hand:</b> Call to volunteer or give. <span class="d-src">Source: <a href="https://californialocal.com/localnews/nevada/ca/community_group/show/1247-food-bank-of-nevada-county/overview">California Local directory</a>.</span></p>
+  </li>
+  <li id="ifm">
+    <div class="d-head"><span class="d-name">Interfaith Food Ministry</span><span class="d-addr">440 Henderson St., Grass Valley</span></div>
+    <p class="d-hours">(530) 273-8132</p>
+    <p class="d-note">A food pantry sponsored by local churches and run by about 450 volunteers, with no government funding.</p>
+    <p class="d-help"><b>Lend a hand:</b> Call to volunteer or give. <span class="d-src">Source: <a href="https://californialocal.com/localnews/nevada/ca/community_group/show/1256-interfaith-food-ministry/overview">California Local directory</a>.</span></p>
+  </li>
+  <li id="sierra-harvest">
+    <div class="d-head"><span class="d-name">Sierra Harvest</span><span class="d-addr">113 Presley Way, Suite 2A, Grass Valley</span></div>
+    <p class="d-hours">(530) 265-2343</p>
+    <p class="d-note">"Real food. Grown locally. Shared equally." Farm-to-school lessons reach 96 percent of western Nevada County's K-8 students, plus gleaning, farmer help and classes.</p>
+    <p class="d-help"><b>Lend a hand:</b> Volunteer or donate at <a href="https://sierraharvest.org">sierraharvest.org</a>. <span class="d-src">Source: <a href="https://sierraharvest.org">sierraharvest.org</a>.</span></p>
+  </li>
+  <li id="sammies-friends">
+    <div class="d-head"><span class="d-name">Sammie's Friends</span><span class="d-addr">Nevada County Animal Shelter, 14647 McCourtney Rd., Grass Valley</span></div>
+    <p class="d-hours">Shelter Wed-Sat, noon to 5 PM, as posted · adoptions by appointment</p>
+    <p class="d-note">Runs the county animal shelter and pays for medical care that makes its dogs and cats adoptable; its Sammie's Angels drive helps families with pet food and vet bills over the holidays.</p>
+    <p class="d-help"><b>Lend a hand:</b> Adopt, volunteer or give at <a href="https://www.sammiesfriends.org">sammiesfriends.org</a>. <span class="d-src">Source: <a href="https://www.sammiesfriends.org">sammiesfriends.org</a>.</span></p>
+  </li>
+</ul>
+</section>
+
+<div class="notebox">
+  <p><b>Nonprofit of the Day.</b> Each morning the paper profiles one of these groups. No one pays to appear, and the Nugget picks them.</p>
+  <p><b>Missing, moved, or wrong?</b> Write <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a>. Details are as each group posts them; call before you count on hours. Listing here is not an endorsement, and the Nugget is not a nonprofit itself. Disclosure: the Nugget's publisher owns The Hat Store on Broad Street.</p>
+</div>
+
+<p class="stars">★ ★ ★</p>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p>Write the Nugget: <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a></p>
+  <p class="policynav">
+    <a href="standards.html">Standards &amp; Disclosures</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="sources.html">Sources &amp; Methods</a>
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
