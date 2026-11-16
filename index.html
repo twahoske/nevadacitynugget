@@ -244,6 +244,51 @@ a.sponsor img{width:100%;height:auto;display:block}
 .inside2{display:grid;grid-template-columns:1fr 1fr;border-top:3px double var(--ink);border-bottom:3px double var(--ink);margin:14px 0 4px;font-size:14px} .inside2>div{padding:7px 10px 9px} .inside2>div+div{border-left:1px solid var(--rule)} .inside2 b{font:800 11px var(--display);letter-spacing:.14em;text-transform:uppercase} .inside2 a{color:var(--ink)} .inside2 a b{text-decoration:none} .secb{margin:34px 0 10px;text-align:center;border-top:6px double var(--ink);padding-top:12px} .secb .tag{font:800 11px var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-mid)} .secb .np{font-family:"Grenze Gotisch",var(--display);font-size:46px;line-height:1;margin:4px 0 2px} .secb .mot{font-style:italic;font-size:14px;color:var(--ink-mid);border-bottom:1px solid var(--ink);padding-bottom:8px} .secb .mot a{color:var(--ink-mid)} .alm{border:3px double var(--ink);padding:12px 14px} .alm .row{display:flex;gap:10px;border-bottom:1px dotted var(--rule);padding:5px 0;font-size:14.5px} .alm .row:last-of-type{border-bottom:0} .alm .k{flex:0 0 112px;font:800 10.5px/1.9 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mid)} .ptr{text-align:center;font-size:14.5px} @media (max-width:640px){.inside2 .l{display:none}.inside2>div{text-align:center;padding:6px 4px}.inside2 b{font-size:10px;letter-spacing:.1em}.secb .np{font-size:34px}.alm .k{flex-basis:84px}}
 /* EMAIL SIGNUP (Nov 4, 2026): coupon after the folio, box after the Blotter, Subscriber Rolls coupon. Carry unchanged. */
 .bymail{border-top:3px double var(--ink);border-bottom:3px double var(--ink);margin:0;padding:10px 4px 11px;display:grid;grid-template-columns:1fr minmax(280px,1.05fr);gap:8px 20px;align-items:center} .bymail .bm-k{margin:0;font:800 11px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--red)} .bymail .bm-l{margin:3px 0 0;font-size:14.5px;line-height:1.4;color:var(--ink-mid);font-style:italic} .bm-f{display:flex;gap:8px;align-items:stretch;margin:0;min-width:0} .bm-f label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap} .bm-f input[type=email]{flex:1;min-width:0;font:16px var(--body);color:var(--ink);background:transparent;border:1px solid var(--ink);border-radius:0;padding:7px 10px;margin:0} .bm-f input[type=email]::placeholder{color:var(--ink-mid);font-style:italic;opacity:1} .bm-f input[type=email]:focus{outline:2px solid var(--red);outline-offset:1px} .bm-f button{font:800 12px var(--display);letter-spacing:.18em;text-transform:uppercase;background:none;color:var(--ink);border:2px solid var(--ink);border-radius:0;padding:6px 16px;cursor:pointer;white-space:nowrap} .bm-f button:hover,.bm-f button:focus-visible{color:var(--red);border-color:var(--red);outline:none} .bm-fine{grid-column:1/-1;margin:0;font-size:12.5px;font-style:italic;color:var(--ink-mid);text-align:center} .bm-fine a{color:inherit} .bmline{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 4px;margin:18px 0;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:15.5px} .bmline p{margin:0;flex:1 1 260px} .bmline .bm-f{flex:1 1 300px} .clip{border:1px dashed var(--ink);padding:18px 16px 16px;position:relative;text-align:center;display:flex;flex-direction:column;gap:10px} .clip::before{content:"\2702";position:absolute;top:-14px;left:18px;background:var(--paper);padding:0 6px;font-size:20px;line-height:1;color:var(--ink)} .clip .bm-k{margin:0;font:800 clamp(19px,4.4vw,24px)/1.1 var(--display);letter-spacing:.01em} .clip p{margin:0;font-size:14.5px;color:var(--ink-mid)} .clip p.bm-k{color:var(--ink)} .clip .bm-f{max-width:480px;width:100%;margin:2px auto 0} .ear .bm-cue{display:block;margin-top:4px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--red)} @media (max-width:620px){ .bymail{grid-template-columns:1fr;padding:10px 2px 11px;text-align:center} .bymail .bm-l{font-size:14.5px} .bm-f button{padding:6px 11px;letter-spacing:.12em} }
+/* TOP OF PAGE (Nov 16, 2026): small Beta badge, tighter classic masthead, big lead headline, sign-up and circulation under the lead story, slim nameplate bar on scroll. Carry unchanged. */
+html{scroll-padding-top:46px}
+.wrap{position:relative}
+.wrap > #section-a{order:1}
+.wrap:has(> #section-a) > .bymail,.wrap:has(> #section-a) > .circ,.wrap:has(> #section-a) > .ms,.wrap:has(> #section-a) > .inside2{order:2}
+.wrap > #section-a ~ *{order:3}
+.beta-bar{margin:10px 0 -22px;line-height:1}
+.beta-bar a{gap:0 7px;border:3px double var(--red);padding:3px 8px 2px;transform:rotate(-2deg)}
+.beta-bar .beta-stamp{border:0;padding:0;font-size:9.5px;letter-spacing:.18em;transform:none}
+.beta-bar .beta-stamp::before,.beta-bar .beta-stamp::after{content:none}
+.beta-bar .beta-v{font-size:9.5px;letter-spacing:.1em;color:var(--red)}
+.beta-bar .beta-note{display:none}
+.beta-bar a:hover{background:var(--panel)}
+@media (min-width:700px){
+  .beta-bar{position:absolute;right:4px;top:19px;margin:0;z-index:1}
+  .beta-bar + .banner{margin-top:12px;padding-inline:132px}
+}
+.wrap > .masthead{margin-top:-20px}
+.wrap > .folio{margin-top:-14px}
+.wrap > .weatherline{margin-top:-30px;border-bottom:3px double var(--ink);font-size:13.5px;gap:1px 18px;padding:7px 4px 8px}
+.wrap > .weatherline > span + span{font-size:12.5px;color:var(--ink-mid)}
+@media (max-width:620px){.nameplate .np-art{width:min(440px,84%);margin-bottom:-27px}}
+#section-a{margin-top:-16px}
+#section-a > article:first-of-type > h3{font-size:clamp(31px,8.6vw,50px);font-weight:900;line-height:1.01;letter-spacing:-.012em;margin:0 0 10px;text-align:center}
+#section-a > article:first-of-type > .meta,#section-a > article:first-of-type > .subdeck{text-align:center}
+#section-a > article:first-of-type > .meta{font-size:11px}
+.topdesk{display:flex;flex-direction:column;gap:12px;margin:4px 0 2px}
+.topdesk + article{border-top:1px solid var(--rule-soft);padding-top:16px}
+.wrap .bymail{border:1px dashed var(--ink);padding:9px 10px 8px;gap:6px 14px;grid-template-columns:auto 1fr}
+.wrap .bymail .bm-l{display:none}
+.wrap .bymail .bm-fine{font-size:12px}
+@media (max-width:620px){.wrap .bymail{grid-template-columns:1fr}}
+.wrap .topdesk .circ{margin:0;padding-bottom:9px}
+.wrap .topdesk .inside2{margin:0}
+.wrap .topdesk .ms{margin:6px 3px}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:30;background:var(--paper);border-bottom:3px double var(--ink);box-shadow:0 6px 14px -10px rgba(0,0,0,.55);padding-top:env(safe-area-inset-top,0px);transform:translateY(-115%);visibility:hidden;transition:transform .28s ease-out,visibility 0s .28s}
+.topbar.on{transform:none;visibility:visible;transition:transform .28s ease-out}
+.topbar .tb-in{max-width:792px;margin:0 auto;padding:5px 16px 4px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mid);white-space:nowrap}
+.topbar .tb-n{font-family:"Grenze Gotisch",var(--display);font-weight:900;font-size:23px;line-height:1;letter-spacing:.005em;text-transform:none;color:var(--ink);background:none;border:0;padding:0;margin:0;cursor:pointer}
+.topbar .tb-n:hover,.topbar .tb-s:hover{color:var(--red)}
+.topbar .tb-s{justify-self:end;color:var(--red);text-decoration:none}
+.topbar .tb-w{display:none}
+@media (min-width:700px){.topbar .tb-n{font-size:28px}.topbar .tb-in{font-size:10.5px;letter-spacing:.12em}.topbar .tb-w{display:inline}.topbar .tb-m{display:none}}
+@media (prefers-reduced-motion:reduce){.topbar,.topbar.on{transition:none}}
+@media print{.topbar{display:none}}
 </style></head>
 <body>
 
@@ -889,7 +934,7 @@ a.sponsor img{width:100%;height:auto;display:block}
 
     function sectionText(){
       var clone = sec.cloneNode(true);
-      clone.querySelectorAll(".wire-btn,.wire-menu,.plink").forEach(function(n){ n.remove(); });
+      clone.querySelectorAll(".wire-btn,.wire-menu,.plink,.topdesk").forEach(function(n){ n.remove(); });
       var holder = document.createElement("div");
       holder.style.position = "absolute";
       holder.style.left = "-9999px";
@@ -1281,7 +1326,7 @@ a.sponsor img{width:100%;height:auto;display:block}
   function hideNugget(){
     if (!today) return;
     var spots = [].filter.call(document.querySelectorAll("article p"), function(p){
-      return !p.closest(".circ,.ms,footer,.passiton,.wire-menu") && p.textContent.trim().length > 60;
+      return !p.closest(".circ,.ms,.topdesk,footer,.passiton,.wire-menu") && p.textContent.trim().length > 60;
     });
     if (!spots.length) return;
     var h = 7;
@@ -1719,6 +1764,51 @@ a.sponsor img{width:100%;height:auto;display:block}
   ["wheel","touchstart","keydown"].forEach(function(t){ window.addEventListener(t, function(){ moved = true; }, {passive:true, once:true}); });
   window.addEventListener("load", function(){ if (!moved) go(true); });
   window.addEventListener("hashchange", function(){ go(false); });
+})();
+
+/* TOP OF PAGE (Nov 16, 2026): moves the sign-up coupon, the circulation lines and the Inside strip under the lead story, and slides in a slim nameplate bar once the masthead has scrolled away. Part of the wire service block; carry unchanged. */
+(function(){
+  var wrap = document.querySelector(".wrap");
+  if (!wrap) return;
+  function el(tag, cls, text){ var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
+
+  var lead = document.querySelector(".wrap > #section-a > article");
+  if (lead){
+    var desk = el("div", "topdesk");
+    [".bymail", ".circ", ".ms", ".inside2"].forEach(function(s){
+      var n = document.querySelector(".wrap > " + s);
+      if (n) desk.appendChild(n);
+    });
+    if (desk.firstChild) lead.insertAdjacentElement("afterend", desk);
+  }
+
+  var mast = document.querySelector(".wrap > .masthead") || document.querySelector(".wrap > .secb");
+  var h1 = document.querySelector(".wrap h1");
+  if (!mast || !h1 || !window.IntersectionObserver) return;
+  var bar = el("div", "topbar"), row = el("div", "tb-in"), date = el("span", "tb-d");
+  var bs = document.querySelectorAll(".folio b");
+  var full = bs.length ? bs[bs.length - 1].textContent.trim() : "";
+  var p = /^(\w+), (\w+) (\d+), \d{4}$/.exec(full);
+  if (p){
+    date.appendChild(el("span", "tb-w", p[1] + ", " + p[2] + " " + p[3]));
+    date.appendChild(el("span", "tb-m", (p[2].length > 5 ? p[2].slice(0, 3) + "." : p[2]) + " " + p[3]));
+  } else date.textContent = full;
+  var name = el("button", "tb-n", h1.textContent.trim());
+  name.type = "button";
+  name.setAttribute("aria-label", "Back to the top of the page");
+  name.addEventListener("click", function(){ window.scrollTo(0, 0); });
+  var sub = el("a", "tb-s");
+  sub.href = "https://nevadacitynugget.com/subscribe.html";
+  sub.appendChild(document.createTextNode("✉ Free"));
+  sub.appendChild(el("span", "tb-w", " by email"));
+  sub.appendChild(document.createTextNode(" ▸"));
+  row.appendChild(date); row.appendChild(name); row.appendChild(sub);
+  bar.appendChild(row);
+  document.body.appendChild(bar);
+  new IntersectionObserver(function(e){
+    var x = e[e.length - 1];
+    bar.classList.toggle("on", !x.isIntersecting && x.boundingClientRect.top < 0);
+  }).observe(mast);
 })();
 </script>
 
