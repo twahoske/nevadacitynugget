@@ -621,14 +621,14 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     festival (Todd, Nov 15, 2026); no one pays to appear.
     Started Nov 15, 2026.
 
-32. **Where's the Restroom? (Visitor Guide).** (Todd, Nov 16, 2026.) A standing box on the Visitor Guide
+32. **Where's the Restroom? (Visitor Guide; cheekier name to come).** (Todd, Nov 16, 2026.) A standing box on the Visitor Guide
     (`visitor.html`), and a section people can link to, answering the question every visitor asks: where can I
     find a public restroom downtown? Each listing gets the location (with a map link), hours and seasonal
     closures, whether it is wheelchair accessible, whether it has a baby-changing station, and free or not.
     Sourced from the City of Nevada City's own pages and public works information, checked in person or by the
-    publisher where the city is silent; never guessed. Also notes customer-only restrooms as a courtesy
-    reminder (buy something first), the extra event-day facilities for Victorian Christmas, Summer Nights and
-    other big events when the city or organizer posts them, and links from the Victorian Christmas guide
+    publisher where the city is silent; never guessed. Official public restrooms only (Todd, Nov 16, 2026):
+    no businesses or customer-only restrooms. Also lists the extra event-day facilities for Victorian
+    Christmas, Summer Nights and other big events when the city or organizer posts them, and links from the Victorian Christmas guide
     (item 28) and the Trails & Vistas trailheads (item 8) where restrooms exist. Gets its own `#restrooms` anchor
     so the paper, social posts and the Wire can point to it. No one pays to appear.
     Not started.
