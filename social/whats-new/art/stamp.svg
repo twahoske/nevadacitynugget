@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A red rubber stamp reading NEW over a sheet of newsprint"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34 120 h132 v56 h-132 Z" fill="#f0ead9" stroke-width="3"/>
+<path d="M46 134 h108 M46 146 h108 M46 158 h80" stroke="#9c927a" stroke-width="3"/>
+<g transform="rotate(-10 100 146)"><rect x="56" y="128" width="88" height="36" rx="3" stroke="#7e2a18" stroke-width="4"/><rect x="61" y="133" width="78" height="26" rx="2" stroke="#7e2a18" stroke-width="1.5"/><text x="100" y="155" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="22" fill="#7e2a18" stroke="none" letter-spacing="3">NEW</text></g>
+<path d="M78 30 h44 v18 h-44 Z" fill="#201c13"/><path d="M92 48 h16 v34 h-16 Z" fill="#b8862f"/><path d="M70 82 h60 v14 h-60 Z" fill="#201c13"/>
+<path d="M50 100 l-10 -6 M150 100 l10 -6 M100 106 v8" stroke="#7e2a18" stroke-width="3"/></g></svg>

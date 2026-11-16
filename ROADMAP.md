@@ -148,6 +148,12 @@ How the publisher's own reporting gets into the paper on a schedule, and stays t
   bullet to release-notes.html in the same PR (or a follow-up PR the same day for artifact-only changes
   such as new scoop features). Group a day's changes into one point release. The "Release notes check"
   Action leaves a reminder on any PR that changes reader-facing pages without touching release-notes.html.
+- **What's New posts (Nov 16):** each release-notes feature also gets its own Instagram + Facebook post,
+  one feature per post, about 10 AM and 8 PM Pacific, oldest first, starting with v0.9.7
+  (.github/workflows/whats-new-post.yml, scripts/whats_new_post.py). Add a matching entry (headline,
+  deck, caption body, drawing) to social/whats-new/queue.json in the same PR as the release-notes bullet;
+  a release with no entries is posted straight from its bullets with a generic NEW stamp drawing.
+  Mark minor tweaks "skip": true.
 
 ## Word of mouth (added Oct 31, 2026)
 Todd's goal: grow by readers passing the paper along, not social media.

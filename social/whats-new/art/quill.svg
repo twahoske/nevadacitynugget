@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A dip pen drawing a ridgeline and a pair of saloon doors"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M18 168 L50 132 L70 150 L98 118 L124 146" stroke-width="3.5"/>
+<path d="M30 60 h56 v62 h-56 Z" stroke-width="3"/>
+<path d="M34 70 C40 64 52 64 56 70 L56 112 L34 112 Z M82 70 C76 64 64 64 60 70 L60 112 L82 112 Z" fill="#7e2a18" stroke-width="3"/>
+<path d="M40 80 h10 M40 92 h10 M66 80 h10 M66 92 h10" stroke="#f0ead9" stroke-width="2.5"/>
+<path d="M176 22 C150 40 132 70 124 104 L132 108 C148 76 168 50 186 34 Z" fill="#f0ead9"/>
+<path d="M124 104 L116 150 L134 112 Z" fill="#201c13"/>
+<path d="M128 120 v14" stroke="#f0ead9" stroke-width="2"/>
+<path d="M140 80 l18 -14 M148 66 l16 -12" stroke-width="2.5"/>
+<circle cx="114" cy="158" r="5" fill="#201c13" stroke="none"/>
+<path d="M150 170 q10 -6 20 0 q10 6 20 0" stroke="#b8862f" stroke-width="4"/></g></svg>
