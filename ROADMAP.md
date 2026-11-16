@@ -662,3 +662,7 @@ Nevada City Nugget beyond admiration.
   Changing the script means adding its new hash to the CSP in index.html here first.
 - Anything placed between the banner and the first section (an Extra box, election returns) still sits
   above the lead story.
+- Follow-ups the same day: the script trims a red line that opens with its own section's name
+  ("Weather · Tuesday Night" becomes "Tuesday Night"), and the right masthead ear now reads "If you want to
+  read about your town, read The Nugget. Just visiting? Visitor Guide" and links visitor.html (ear text is
+  carried forward by the morning task; ears show on wide screens only).
