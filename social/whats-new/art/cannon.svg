@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A parade cannon firing confetti and stars"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 128 L128 92 L136 112 L50 150 Z" fill="#201c13"/>
+<path d="M124 88 L140 82 L150 106 L134 114 Z" fill="#201c13"/>
+<circle cx="66" cy="152" r="24" fill="#f0ead9"/>
+<circle cx="66" cy="152" r="5" fill="#201c13"/>
+<path d="M66 128 V176 M42 152 H90 M49 135 L83 169 M83 135 L49 169" stroke-width="3"/>
+<path d="M24 176 H176" stroke-width="3"/>
+<path d="M156 92 L176 84 M154 74 L170 56 M140 70 L144 46 M162 106 L184 108" stroke="#7e2a18" stroke-width="4"/>
+<path d="M150 40 l4 9 l10 1 l-7 7 l2 10 l-9 -5 l-9 5 l2 -10 l-7 -7 l10 -1 Z" fill="#7e2a18" stroke="none"/>
+<path d="M176 64 l3 6 l7 1 l-5 5 l1 7 l-6 -3 l-6 3 l1 -7 l-5 -5 l7 -1 Z" fill="#201c13" stroke="none"/>
+<rect x="120" y="30" width="9" height="5" fill="#b8862f" stroke="none" transform="rotate(30 124 32)"/>
+<rect x="178" y="122" width="9" height="5" fill="#7e2a18" stroke="none" transform="rotate(-20 182 124)"/>
+<rect x="104" y="52" width="8" height="5" fill="#b8862f" stroke="none" transform="rotate(-35 108 54)"/>
+<rect x="186" y="36" width="8" height="5" fill="#b8862f" stroke="none" transform="rotate(50 190 38)"/>
+<circle cx="132" cy="58" r="3" fill="#7e2a18" stroke="none"/><circle cx="188" cy="92" r="3" fill="#b8862f" stroke="none"/></g></svg>

@@ -1,0 +1,84 @@
+{
+ "_note": "What's New posts (Todd, Nov 16 2026): one feature per post, AM ~10 and PM ~8 Pacific, oldest release first, posted once each by scripts/whats_new_post.py. Add entries here in the same PR as each release-notes.html bullet. A release in release-notes.html at or after 'start' with no entries here is posted straight from its bullets with the NEW stamp drawing. 'skip': true leaves an item out. No em-dashes. art = social/whats-new/art/NAME.svg. link = page on nevadacitynugget.com.",
+ "start": "0.9.7",
+ "items": [
+  {
+   "id": "0.9.7-milestones",
+   "version": "0.9.7",
+   "art": "cannon",
+   "head": "Extra! Extra! The Paper Now Throws Itself a Party",
+   "deck": "When Total Circulation passes a milestone, an Extra! box with its own drawing pops up under the date. And if you happen to be the exact milestone copy, the paper tells you so.",
+   "body": "Every time Total Circulation passes a milestone (500, 1,000, 1,500 and on up), an Extra! box with its own drawing appears under the date that day and the next, and we celebrate here too. If your copy is the exact milestone copy, the paper tells you, and the bragging rights are yours. The count is the same honest one as always: copies of today's paper read at nevadacitynugget.com, one per phone or computer a day, no names kept.",
+   "link": "stats.html"
+  },
+  {
+   "id": "0.9.7-streak",
+   "version": "0.9.7",
+   "art": "pickaxe",
+   "head": "Prospector's Streak: How Many Mornings at the Claim?",
+   "deck": "Read the paper day after day and the Nugget keeps your tally. Seven days makes you a Greenhorn, thirty a Sourdough, a hundred an Old-Timer.",
+   "body": "Under the date you'll now find your Prospector's Streak: \"Day 6 at the claim\" means six mornings in a row with the Nugget. Hit 7 days and you're a Greenhorn, 30 a Sourdough, 100 an Old-Timer. The tally lives only in your own browser; we never see it.",
+   "link": ""
+  },
+  {
+   "id": "0.9.7-hidden-nugget",
+   "version": "0.9.7",
+   "art": "magnifier",
+   "head": "There's Gold in Them Thar Columns",
+   "deck": "A tiny gold nugget is tucked somewhere different in every edition. Find it, tap it, and add it to your poke.",
+   "body": "The Hidden Nugget: every morning a tiny gold nugget is tucked somewhere new in the paper. Find it and tap it. We won't say where today's is. Your finds stay in your own browser, same as your streak.",
+   "link": ""
+  },
+  {
+   "id": "0.9.7-road",
+   "version": "0.9.7",
+   "art": "gauge",
+   "head": "The Road to the Next Milestone",
+   "deck": "A little progress bar under the date now shows how many copies to go before the next Extra! Every reader, and every friend you wire the paper to, moves the needle.",
+   "body": "A little progress bar now sits under the date, showing how many copies to go before the next circulation milestone. Every morning you read moves it, and so does every friend you wire the paper to (tap \"Wire The Nugget\" in any edition).",
+   "link": ""
+  },
+  {
+   "id": "0.9.7-wild-scenic",
+   "version": "0.9.7",
+   "art": "river",
+   "head": "Wild & Scenic Is Now on the Nugget's Beat",
+   "deck": "SYRCL's film festival turns 25 this February. The Nugget watches it every morning: new films, schedules and deadlines as they post.",
+   "body": "SYRCL's Wild & Scenic Film Festival turns 25 this winter, Feb. 18 to 22, 2027, and the Nugget now keeps watch on it every morning: new films, schedules and deadlines as they post, a countdown in Amusements the two weeks before, and a Plan Ahead box in the Visitor Guide.",
+   "link": "visitor.html"
+  },
+  {
+   "id": "0.9.8-top",
+   "version": "0.9.8",
+   "art": "frontpage",
+   "head": "A Tidier Front Page, Headline First",
+   "deck": "The pile of notices above the news is gone. The classic nameplate stays, the day's lead story runs big on the first screen, and a slim nameplate bar follows you down the page.",
+   "body": "The front page got a makeover. The classic nameplate stays, the Beta badge shrinks to a small stamp, and the day's lead headline now runs big and bold on the first screen. Email sign-up, Total Circulation and the Inside strip moved to just under the lead story, and a slim nameplate bar follows you down the page with a quick way back to the top.",
+   "link": ""
+  },
+  {
+   "id": "0.9.8-good-works",
+   "version": "0.9.8",
+   "art": "hands",
+   "head": "Good Works: Nevada City's Nonprofits, All in One Place",
+   "deck": "A standing guide to 33 local nonprofits: what each does, where to find it, and how to give, join or pitch in. Nonprofit of the Day starts on Giving Tuesday, Dec. 1.",
+   "body": "New: Good Works, a standing guide to 33 Nevada City nonprofits, from the Miners Foundry and the Narrow Gauge Railroad Museum to SYRCL, Child Advocates and the Odd Fellows: what each does, where to find it, and how to give, join or pitch in. And starting Giving Tuesday, Dec. 1, a Nonprofit of the Day runs each morning through the giving season. No one pays to appear.",
+   "link": "nonprofits.html"
+  },
+  {
+   "id": "0.9.8-visitor-drawings",
+   "version": "0.9.8",
+   "art": "quill",
+   "head": "Fresh Ink on the Visitor Guide",
+   "deck": "Every section of the Visitor Guide now opens under its own drawing: a covered dish for the Bill of Fare, batwing doors for the Bar Guide, ridgelines for Trails & Vistas, and more.",
+   "body": "The Nevada City Visitor Guide got some fresh ink. Every section now opens under a slim illustrated band, drawn for the Nugget: a covered dish for the Bill of Fare, batwing doors for the Bar Guide, ridgelines for Trails & Vistas, and more. They switch to light ink in dark mode.",
+   "link": "visitor.html"
+  },
+  {
+   "id": "0.9.8-red-dot",
+   "version": "0.9.8",
+   "skip": true,
+   "_why": "schedule tweak (Red Dot notice Wed-Sun), not news for new readers"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+name: What's New post
+
+# Release-notes features on Instagram (feed + Story) and Facebook, one feature per
+# post, twice a day (Todd, Nov 16 2026): am 10:00-11:00 AM and pm 8:00-9:15 PM Pacific,
+# clear of the front (~6 AM), Saturday roundup (~9 AM), Merchant (11 AM), Geezer Gig
+# (Fri ~1 PM), Thirsty Thursday (~3 PM) and spotlight (4-7:30 PM) posts.
+# Queue: social/whats-new/queue.json (oldest release first); a release in
+# release-notes.html with no queue entries is posted from its bullets.
+# GitHub's timer runs late, so every push to main (the Site Publisher's hourly copy at
+# :55) is also a chance; scripts/whats_new_post.py posts at most one item per slot a day.
+# A manual run is a dry run unless unticked; give it an item id to draw that one.
+on:
+  push:
+    branches: [main]
+  schedule:
+    # am: 10:05 and 10:35 AM Pacific (PST 18 UTC, PDT 17 UTC)
+    - cron: "5,35 17,18 * * *"
+    # pm: 8:05 and 8:35 PM Pacific (PST 4 UTC, PDT 3 UTC)
+    - cron: "5,35 3,4 * * *"
+  workflow_dispatch:
+    inputs:
+      item:
+        description: "Draw this item id (e.g. 0.9.7-streak) for a look; never posted"
+        type: string
+        default: ""
+      dry_run:
+        description: "Dry run (draw the cards, post nothing)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: whats-new-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && 'yes' || 'no' }}
+    steps:
+      - uses: actions/checkout@v5
+      - id: gate
+        run: python3 scripts/whats_new_post.py gate
+        env:
+          ITEM: ${{ github.event_name == 'workflow_dispatch' && inputs.item || '' }}
+          IGNORE_WINDOW: ${{ github.event_name == 'workflow_dispatch' && 'yes' || 'no' }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - if: steps.gate.outputs.go == 'yes'
+        run: |
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/whats_new_post.py render
+        env:
+          ITEM_ID: ${{ steps.gate.outputs.item }}
+      - if: steps.gate.outputs.go == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: whats-new-cards-${{ github.run_id }}
+          path: out/
+          retention-days: 14
+      - if: steps.gate.outputs.go == 'yes'
+        run: python3 scripts/whats_new_post.py publish
+        env:
+          ITEM_ID: ${{ steps.gate.outputs.item }}
+          SLOT: ${{ steps.gate.outputs.slot }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
