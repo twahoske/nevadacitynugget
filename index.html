@@ -325,7 +325,7 @@ html{scroll-padding-top:46px}
     <h1>Nevada City Nugget</h1>
     <p class="motto">❦&nbsp; Covering the Richest Gold Area in California &nbsp;❦</p>
   </div>
-  <div class="ear">Complete coverage of all local happenings. If you want to read about your town, read The Nugget.</div>
+  <div class="ear">If you want to read about your town, read <a href="#section-a" style="color:inherit"><span class="bm-cue" style="display:inline">Today's Paper ▾</span></a> Just visiting? Take the <a href="visitor.html" style="color:inherit"><span class="bm-cue" style="display:inline">Visitor Guide ▸</span></a></div>
 </header>
 
 <div class="folio">
@@ -1771,6 +1771,19 @@ html{scroll-padding-top:46px}
   var wrap = document.querySelector(".wrap");
   if (!wrap) return;
   function el(tag, cls, text){ var n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
+
+  /* A red line that opens with its own section's name ("Weather · Tuesday Night") drops the repeated name. */
+  document.querySelectorAll("section").forEach(function(sec){
+    var label = sec.querySelector(".kicker .label");
+    if (!label) return;
+    var name = label.textContent.trim().toLowerCase();
+    sec.querySelectorAll("article > .meta").forEach(function(m){
+      var n = m.firstChild;
+      if (!n || n.nodeType !== 3) return;
+      var t = n.textContent, i = t.indexOf(" · ");
+      if (i > 0 && t.slice(0, i).trim().toLowerCase() === name && t.length > i + 3) n.textContent = t.slice(i + 3);
+    });
+  });
 
   var lead = document.querySelector(".wrap > #section-a > article");
   if (lead){
