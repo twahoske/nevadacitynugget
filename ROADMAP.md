@@ -675,6 +675,30 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     (Nov. 26-Dec. 2) by Nov. 25; re-check entries each quarter.
     Live Nov 16, 2026.
 
+35. **Your Paper, Your Way: a reader Settings page.** (Todd, Nov 16, 2026: "allow users to display or hide each
+    section of the paper.") A small page, `settings.html`, linked from a quiet "Arrange your paper" line near the
+    Inside strip and from the footer, listing every section of the paper (Weather, City Hall & Politics, Here &
+    There, Police Blotter, Merchant of the Day, Amusements, The Back Page, Meetings on the Record, The Docket,
+    Coming Attractions, Civic Calendar, Elected Officials, Legal Notices & Permits, Meeting Watch and the rest)
+    with a show/hide switch beside each, plus "Show everything" to reset. The Visitor Guide gets nothing; it stays
+    as it is (Todd, Nov 16).
+    Likely approach: the choices live only in the reader's own browser (`localStorage`, like the streak and the
+    hidden nugget), with no cookie, no account and nothing sent to the Nugget, so the privacy page needs only one
+    new sentence beside the game notes, and "Forget my progress" or clearing browser data wipes them. Each section
+    gets a stable name the morning task always writes (for example `data-sec="police-blotter"` on its `<section>`,
+    in the spirit of the story-link anchors), so a hide survives from one edition to the next. The wire service script
+    reads the list on load and hides those sections, and the Inside strip skips them. A hidden section is folded,
+    not deleted: a slim "Police Blotter hidden · show" line keeps it one tap away. Any new or changed script block
+    means adding its hash to the CSP in `index.html` here first; nothing new is fetched, so no new hosts.
+    Open questions for Todd: (a) Should some sections be always on (corrections, an Extra! box, election returns,
+    emergency weather, the Hat Store ad and disclosure lines)? Suggest yes. (b) Should readers also reorder
+    sections, or only show and hide? Suggest show/hide first. (c) Does the email edition follow the choices? It
+    can't without accounts, so suggest the web page only. (d) Do short-run boxes (The Holiday Table, Victorian
+    Christmas, Film Festival) get their own switch, or one "Seasonal boxes" switch? (e) Where does the page link
+    live, and should the slim "hidden" lines show or stay out of sight? (f) Should the lead story's section ever
+    be hideable, given the top-of-page layout sets `#section-a` big?
+    Not started.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
