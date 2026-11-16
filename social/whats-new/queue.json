@@ -87,6 +87,16 @@
    "version": "0.9.8",
    "skip": true,
    "_why": "schedule tweak (Red Dot notice Wed-Sun), not news for new readers"
+  },
+  {
+   "id": "0.9.8-tonics",
+   "version": "0.9.8",
+   "art": "0.9.8-tonics",
+   "head": "Step Right Up! Tonics & Tinctures for the Weary Traveler",
+   "deck": "Seventeen Nevada City apothecaries, elixir bars, limbering parlors, healers and rock shops in one new guide. The Daily Restorative spotlights one each morning from Nov. 19.",
+   "body": "Gather 'round, friends. New at the Nugget: Tonics & Tinctures, the Nevada City Wellness Guide. Seventeen of the town's apothecaries, elixir bars, yoga and Pilates parlors, spas, healers, rock shops and the pottery studio, each in its own words, with a wink from the medicine wagon. Starting Thursday, Nov. 19, The Daily Restorative spotlights one each morning. The Nugget cures nothing, not even Mondays. No one pays to appear.",
+   "link": "wellness.html",
+   "alt": "A cartoon old-time medicine bottle labeled Tonics and Tinctures, with gold sparkles"
   }
  ]
 }

@@ -656,6 +656,25 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     `nonprofits/` folder (`build.py`). To do: write week two (Dec. 8-14) by Dec. 7; re-check entries each quarter.
     Live Nov 16, 2026.
 
+34. **Tonics & Tinctures: the Nevada City wellness guide, and The Daily Restorative.** (Todd, Nov 16, 2026: "Wellness
+    is a major trend in Nevada City right now.") A standing page, `wellness.html`, in the voice of a turn-of-the-century
+    medicine show, kind and affectionate ("Snake oil anyone? Be kind though"): 17 places at launch in seven sections
+    (Tonics, Elixirs & Tinctures; Limbering Parlors; Restoratives for Body & Spirit; Stones, Crystals & Curiosities;
+    Handicrafts for the Nerves; The Licensed Herb; Up the Ridge & Down the Hill). Each entry has a red barker line
+    whose joke lands on the old patent-medicine trade, the town or the Nugget, never on a person, and describes the
+    business in its own published words; the Nugget makes no health claims ("The Nugget cures nothing, not even
+    Mondays"). Cannabis: state-licensed retailers only, checked on the Department of Cannabis Control's license
+    search. Left off on purpose: clinics, chiropractors and acupuncturists (licensed health care), gyms, and
+    practitioners with no public listing. Plus **The Daily Restorative**, a daily spotlight through the scoop
+    pipeline (Merchant of the Day style), from Thursday, Nov. 19, 2026, placed after Nonprofit of the Day, Merchant
+    of the Day or the Police Blotter, ending with a drawn medicine bottle and "The Rest of the Cabinet," a linked
+    list of every other place. Social: a What's New launch post, then a Daily Restorative card on Wednesdays and
+    Saturdays (Todd's pick). No ties (Todd, Nov 16). Evolve/Evoke Magic, said to be opening at 436 Broad St., goes on
+    only once it opens and then carries the 436 Broad disclosure line (Todd, Nov 16; see the entheogen story).
+    No one pays to appear. Work files in the project's `wellness/` folder (`build.py`). To do: write week two
+    (Nov. 26-Dec. 2) by Nov. 25; re-check entries each quarter.
+    Live Nov 16, 2026.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
