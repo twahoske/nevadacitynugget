@@ -621,7 +621,7 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     festival (Todd, Nov 15, 2026); no one pays to appear.
     Started Nov 15, 2026.
 
-32. **Good Works: Nevada City's nonprofits, and Nonprofit of the Day.** (Todd, Nov 16, 2026.) A standing page,
+33. **Good Works: Nevada City's nonprofits, and Nonprofit of the Day.** (Todd, Nov 16, 2026.) A standing page,
     `nonprofits.html`, listing Nevada City's nonprofits (33 at launch) in six groups: arts, music and stage; history
     and heritage; rivers, forests and trails; neighbors and kids; lodges, clubs and crews; and countywide groups down
     the hill in Grass Valley. Each entry gives what the group does, where it is, how to give or volunteer, and its
