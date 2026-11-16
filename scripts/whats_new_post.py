@@ -34,6 +34,7 @@ import social_post as sp  # noqa: E402  (shares the card branch, Graph calls and
 ROOT = sp.ROOT
 OUT = sp.OUT
 HERE = ROOT / "social" / "whats-new"
+TOUR = ROOT / "social" / "grand-tour"
 NOTES = ROOT / "release-notes.html"
 SLOTS = {"am": (10 * 60, 11 * 60), "pm": (20 * 60, 21 * 60 + 15)}
 TAGS = "#NevadaCity #NevadaCityCA #NevadaCounty #GoldCountry #LocalNews"
@@ -82,10 +83,37 @@ def queue():
     for x in items:
         for k in ("head", "deck", "body"):
             x[k] = (x.get(k) or "").replace("—", ",").replace("–", "-")
-    return items
+    return items + tour()
+
+
+def tour():
+    """The Grand Tour welcome series (Todd, Nov 16 2026): one paper or Visitor Guide
+    section per post, after any What's New items, so a new release always cuts in."""
+    f = TOUR / "tour.json"
+    if not f.exists():
+        return []
+    stops = [x for x in json.loads(f.read_text(encoding="utf-8"))["stops"] if not x.get("skip")]
+    for n, x in enumerate(stops, 1):
+        x.update(series="tour", version="", n=n, total=len(stops))
+        for k in ("head", "deck", "body"):
+            x[k] = (x.get(k) or "").replace("—", ",").replace("–", "-")
+    return stops
+
+
+def tour_caption(item):
+    url = "nevadacitynugget.com/" + item["link"] if item.get("link") else "nevadacitynugget.com (link in bio)"
+    where = "the Nevada City Visitor Guide" if item.get("where") == "visitor" else "the paper"
+    lines = [f"THE GRAND TOUR ✱ HOWDY, STRANGER! ✱ STOP {item['n']} OF {item['total']}", "",
+             item["head"].upper(), "", item["body"], "", f"Find it in {where}: {url}", "",
+             "New around here? Welcome. The Nevada City Nugget is a free daily paper for Nevada City, "
+             "out every morning by 6. This tour shows you around, one section at a time.", "",
+             TAGS]
+    return "\n".join(lines).replace("—", ",")[:2100]
 
 
 def caption(item):
+    if item.get("series") == "tour":
+        return tour_caption(item)
     url = "nevadacitynugget.com/" + item["link"] if item.get("link") else "nevadacitynugget.com (link in bio)"
     lines = [f"WHAT'S NEW AT THE NUGGET ✱ v{item['version']}", "", item["head"].upper(), "",
              item["body"], "", f"See it: {url}",
@@ -125,9 +153,36 @@ __DECK_T__
 </div></body></html>"""
 
 
+TOUR_CSS = """<style>
+body{background:#201c13;background-image:radial-gradient(ellipse at 50% 30%,rgba(240,234,217,.08),transparent 60%),radial-gradient(ellipse at 50% 120%,rgba(0,0,0,.35),transparent 60%);color:#f0ead9}
+.frame{border-color:#b8862f;outline-color:#b8862f}
+.rule{border-color:#b8862f;color:#e3c27a}
+.deck{color:#c9bfa6}
+.foot{border-color:#b8862f}.foot b{color:#e3c27a}
+.art{box-shadow:0 0 0 5px #b8862f,0 0 0 11px #201c13,0 0 0 14px #f0ead9}
+.stamp{position:static;transform:rotate(-4deg);margin-top:4px;font-size:30px;border:none;outline:none;background:#b8862f;color:#201c13;padding:12px 30px 10px;
+ -webkit-mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,transparent 98%,#000) right/51% 100% no-repeat;
+ mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,transparent 98%,#000) right/51% 100% no-repeat}
+.stamp small{border-top:2px dashed #201c13;margin-top:6px;padding-top:5px}
+</style></head>"""
+
+
 def card_html(kind, item):
+    if item.get("series") == "tour":
+        t = dict(item, version="")
+        where = "Visitor Guide" if item.get("where") == "visitor" else "The Paper"
+        h = _card_html(kind, t, TOUR / "art" / f"{item['id']}.svg")
+        return (h.replace("</head>", TOUR_CSS, 1)
+                .replace("What's New at the Nugget", "The Grand Tour ✱ Howdy, Stranger!")
+                .replace('<div class="stamp">Beta<small>v</small></div>',
+                         f'<div class="stamp">Stop {item["n"]} of {item["total"]}<small>{where}</small></div>'))
+    return _card_html(kind, item)
+
+
+def _card_html(kind, item, art=None):
     esc = htmlmod.escape
-    svg = (HERE / "art" / f"{item.get('art') or 'stamp'}.svg").read_bytes()
+    art = art if art and art.exists() else HERE / "art" / f"{item.get('art') or 'stamp'}.svg"
+    svg = art.read_bytes()
     story = kind == "story"
     deck = f'<p class="deck">{esc(item["deck"])}</p>' if item.get("deck") else ""
     footl = "Free every morning by 6"
