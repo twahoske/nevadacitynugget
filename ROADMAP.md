@@ -650,3 +650,15 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
 Nevada City Nugget beyond admiration.
+
+## Top of the page (Nov 16, 2026)
+- **Makeover done as CSS plus one script block, no task-prompt change.** The markup the morning task writes is
+  unchanged. A "TOP OF PAGE" block at the end of the style block shrinks the Beta badge to a small clickable
+  stamp (the "Fresh ink" words are hidden, not removed), tightens the masthead, and sets the first story of
+  the first section (`#section-a`) big and centered. A "TOP OF PAGE" block at the end of the wire service
+  script moves the email coupon, the circulation lines (and a milestone box) and the Inside strip to just
+  under the lead story, and adds a slim nameplate bar that slides in once the masthead scrolls away.
+- Both blocks live in the artifact's index.html and are carried forward with the rest of the page furniture.
+  Changing the script means adding its new hash to the CSP in index.html here first.
+- Anything placed between the banner and the first section (an Extra box, election returns) still sits
+  above the lead story.
