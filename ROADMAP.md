@@ -664,5 +664,6 @@ Nevada City Nugget beyond admiration.
   above the lead story.
 - Follow-ups the same day: the script trims a red line that opens with its own section's name
   ("Weather · Tuesday Night" becomes "Tuesday Night"), and the right masthead ear now reads "If you want to
-  read about your town, read The Nugget. Just visiting? Visitor Guide" and links visitor.html (ear text is
+  read about your town, read Today's Paper. Just visiting? Take the Visitor Guide", linking #section-a and
+  visitor.html (Todd's pick; ear text is
   carried forward by the morning task; ears show on wide screens only).
