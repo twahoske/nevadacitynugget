@@ -28,7 +28,8 @@ the many hourly runs that have nothing to do):
 
 Three slots a day (Todd, Nov 14 2026), each with its own Pacific window and keys
 in the day's record: "front" (the front page, 5:45-10:00 AM), "merchant" (Merchant
-of the Day, 11:00 AM-2:30 PM) and "spotlight" (the day's first Tonight / Grand
+of the Day, 11:00 AM-2:30 PM), "restorative" (The Daily Restorative, Wednesdays and
+Saturdays only, 2:45-3:45 PM) and "spotlight" (the day's first Tonight / Grand
 Opening / Now Open item, 4:00-7:30 PM; skipped on days without one). SLOT picks
 one; otherwise the clock does. A manual run skips the window check.
 Secrets: IG_ACCESS_TOKEN and IG_USER_ID. A token that starts with "IG" (Instagram
@@ -61,12 +62,17 @@ SKIP_HEAD = re.compile(r"^(otherwise|quiet\b)|\bquiet record\b", re.I)
 HASHTAGS = "#NevadaCity #NevadaCityCA #NevadaCounty #GoldCountry #LocalNews"
 SHOP_TAGS = "#NevadaCity #ShopLocal #NevadaCityCA #GoldCountry #SmallBusiness"
 SPOT_TAGS = "#NevadaCity #NevadaCityCA #NevadaCounty #GoldCountry #ThingsToDo"
+WELL_TAGS = "#NevadaCity #NevadaCityCA #Wellness #GoldCountry #ShopLocal"
+RESTORATIVE_DAYS = {2, 5}  # Wednesday, Saturday (Python weekday)
 # Three posts a day (Todd, Nov 14 2026). Each slot has its own Pacific window and
 # its own keys in posted/YYYY-MM-DD.json (front page keys have no prefix).
 SLOTS = {
     "front": (5 * 60 + 45, 10 * 60, ""),
     "merchant": (11 * 60, 14 * 60 + 30, "merchant_"),
     "spotlight": (16 * 60, 19 * 60 + 30, "spotlight_"),
+    # The Daily Restorative (Todd, Nov 16 2026): Wednesdays and Saturdays only,
+    # about 3 PM, from that morning's paper (see RESTORATIVE_DAYS).
+    "restorative": (14 * 60 + 45, 15 * 60 + 45, "restorative_"),
     # Weekly posts (Todd, Nov 14 2026); always started with SLOT=weekly:
     # Thursday ~3 PM Thirsty Thursday, Friday ~1 PM the Geezer Gig, Saturday ~9 AM
     # live music this weekend (from social/weekly/YYYY-MM-DD.json, written ahead).
@@ -176,6 +182,16 @@ def pick(slot, page):
                 "kick": "Merchant of the Day" + (f" · {num}" if num else ""),
                 "foot": "Read the Full Profile",
                 "small": "nevadacitynugget.com · link in bio · chosen by the Nugget, no one pays to appear"}
+    if slot == "restorative":
+        sec = next((x for x in sections(page) if x["label"].lower() == "the daily restorative"), None)
+        if not sec or SKIP_META.search(sec["meta"]):
+            return None
+        bits = [b.strip() for b in sec["meta"].split("·") if b.strip()]
+        num = bits[0] if bits and bits[0].lower().startswith("no.") else ""
+        return {**base, "lead": sec, "more": [], "detail": " · ".join(bits[1:] if num else bits),
+                "kick": "The Daily Restorative" + (f" · {num}" if num else ""),
+                "foot": "Step Right Up: Read the Spotlight",
+                "small": "nevadacitynugget.com/wellness.html · link in bio · no one pays to appear"}
     if slot == "spotlight":
         want = spot_match()
         sec = next((x for x in sections(page) if x["label"].lower() in SPOT_LABELS
@@ -276,6 +292,10 @@ def caption(item):
         lines += ["", "Read the full profile in today's Nugget, free at nevadacitynugget.com (link in bio).",
                   "", "Chosen by the Nugget; no one pays to appear. The Nugget's publisher owns The Hat Store on Broad Street.",
                   "", SHOP_TAGS]
+    elif slot == "restorative":
+        lines += ["", "Today's spotlight is in the Nugget, free at nevadacitynugget.com, and the whole cabinet is in Tonics & Tinctures, our Nevada City wellness guide: nevadacitynugget.com/wellness.html (link in bio).",
+                  "", "Chosen by the Nugget; no one pays to appear. The Nugget cures nothing and offers no medical advice. The Nugget's publisher owns The Hat Store on Broad Street.",
+                  "", WELL_TAGS]
     else:
         lines += ["", "More in today's Nugget, free at nevadacitynugget.com (link in bio).", "", SPOT_TAGS]
     return "\n".join(lines).replace("\u2014", ",")[:2100]
@@ -525,7 +545,8 @@ def current_slot(now=None):
     m = now.hour * 60 + now.minute
     # Weekly posts only run when asked for by name, never by the clock.
     return next((k for k, (a, b, _) in SLOTS.items()
-                 if k != "weekly" and a <= m <= b), "front")
+                 if k != "weekly" and (k != "restorative" or now.weekday() in RESTORATIVE_DAYS)
+                 and a <= m <= b), "front")
 
 
 def wanted(slot=None):

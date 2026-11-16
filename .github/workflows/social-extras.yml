@@ -4,6 +4,8 @@ name: Social extras
 #   merchant   about 11:30 AM Pacific: Merchant of the Day (feed, Story, Facebook)
 #   spotlight  about 4:30 PM Pacific: the first Tonight / Grand Opening / Now Open item,
 #              only on days the paper has one (feed, Story, Facebook)
+#   restorative about 3 PM Pacific, Wednesdays and Saturdays only: The Daily Restorative
+#              (Tonics & Tinctures wellness spotlight; window 2:45-3:45 PM)
 #   weekly     Thursday ~3 PM Thirsty Thursday (a bar from the Bar Guide), Friday ~1 PM
 #              the Geezer Gig at the Crazy Horse, Saturday ~9 AM live music this weekend
 #              (only when social/weekly/YYYY-MM-DD.json exists)
@@ -24,6 +26,10 @@ on:
     - cron: "30 0 * * *"
     - cron: "15 1 * * *"
     - cron: "0 2 * * *"
+    # restorative (Wed + Sat ~3 PM Pacific; the script ignores other days)
+    - cron: "50 22 * * *"
+    - cron: "5 23 * * *"
+    - cron: "35 23 * * *"
     # weekly (UTC day of week): Thursday ~3 PM, Friday ~1 PM, Saturday ~9 AM Pacific
     - cron: "0 23 * * 4"
     - cron: "45 23 * * 4"
@@ -36,7 +42,7 @@ on:
       slot:
         description: "Which post"
         type: choice
-        options: [merchant, spotlight, weekly]
+        options: [merchant, spotlight, restorative, weekly]
         default: merchant
       pick:
         description: "Spotlight only: words from the one to post (blank = the first)"
