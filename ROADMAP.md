@@ -621,7 +621,8 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     festival (Todd, Nov 15, 2026); no one pays to appear.
     Started Nov 15, 2026.
 
-32. **Where's the Restroom? (Visitor Guide; cheekier name to come).** (Todd, Nov 16, 2026.) A standing box on the Visitor Guide
+32. **The Necessary (public restrooms, Visitor Guide).** (Todd, Nov 16, 2026; name picked Nov 16: "the necessary" is
+    the old 1800s word for a privy. Subtitle "Public restrooms in downtown Nevada City" keeps it findable in search.) A standing box on the Visitor Guide
     (`visitor.html`), and a section people can link to, answering the question every visitor asks: where can I
     find a public restroom downtown? Each listing gets the location (with a map link), hours and seasonal
     closures, whether it is wheelchair accessible, whether it has a baby-changing station, and free or not.
