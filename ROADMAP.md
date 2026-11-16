@@ -205,8 +205,9 @@ and on social media, with humor and fun imagery.
   screen, and county news was buried near screen 30 behind the visitor boxes. Todd preferred a newspaper
   layout to website navigation; Niel suggested giving visitors their own page.
 - **The paper (index.html):** City Hall & Politics, Here & There, Police Blotter, a one-line subscribe
-  pitch, Merchant of the Day, Arts & Culture, Amusements, a "Visiting?" pointer, The Back Page, Meetings on
-  the Record, From the Dais, The Docket, Coming Attractions, Civic Calendar, a compact Elected Officials box,
+  pitch, Merchant of the Day, Arts & Culture, Amusements, a "Visiting?" pointer, The Back Page, a compact
+  Elected Officials box (moved above Meetings on the Record Nov 16, 2026, by the wire script's CITY HALL ORDER
+  block), Meetings on the Record, From the Dais, The Docket, Coming Attractions, Civic Calendar,
   Legal Notices & Permits, Meeting Watch, Subscriber Rolls, Previously (last 3 editions + archive).
 - **The Nevada City Visitor Guide (visitor.html):** a daily supplement built by the morning task: Bill of Fare,
   Bar Guide, Trail of the Day, and a Getting Here & Staying Over box linking stay.html and the day trips.
