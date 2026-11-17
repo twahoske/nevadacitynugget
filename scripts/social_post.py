@@ -68,7 +68,10 @@ RESTORATIVE_DAYS = {2, 5}  # Wednesday, Saturday (Python weekday)
 # its own keys in posted/YYYY-MM-DD.json (front page keys have no prefix).
 SLOTS = {
     "front": (5 * 60 + 45, 10 * 60, ""),
-    "merchant": (11 * 60, 14 * 60 + 30, "merchant_"),
+    # Merchant of the Day (Todd, Nov 17 2026: out by 10 AM so readers can go that
+    # day). The morning push run holds until 8:30 and posts it; the window stays
+    # open until 7:30 PM so any later run catches a missed one.
+    "merchant": (8 * 60 + 30, 19 * 60 + 30, "merchant_"),
     "spotlight": (16 * 60, 19 * 60 + 30, "spotlight_"),
     # The Daily Restorative (Todd, Nov 16 2026): Wednesdays and Saturdays only,
     # about 3 PM, from that morning's paper (see RESTORATIVE_DAYS).
@@ -536,17 +539,24 @@ def slot_prefix(slot):
     return pre
 
 
-def current_slot(now=None):
-    """SLOT from the environment, else the slot whose window holds the time."""
+def open_slots(now=None):
+    """SLOT from the environment, else every slot whose window holds the time,
+    in posting order (an earlier missed slot goes before a later one)."""
     slot = os.environ.get("SLOT", "").strip()
     if slot and slot != "auto":
-        return slot
+        return [slot]
     now = now or now_pacific()
     m = now.hour * 60 + now.minute
     # Weekly posts only run when asked for by name, never by the clock.
-    return next((k for k, (a, b, _) in SLOTS.items()
-                 if k != "weekly" and (k != "restorative" or now.weekday() in RESTORATIVE_DAYS)
-                 and a <= m <= b), "front")
+    return [k for k in ("front", "merchant", "restorative", "spotlight")
+            if (k != "restorative" or now.weekday() in RESTORATIVE_DAYS)
+            and SLOTS[k][0] <= m <= SLOTS[k][1]]
+
+
+def current_slot(now=None):
+    """SLOT from the environment (the gate passes on the one it chose), else the
+    first slot whose window holds the time."""
+    return (open_slots(now) or ["front"])[0]
 
 
 def wanted(slot=None):
@@ -575,29 +585,38 @@ def in_window(now, slot=None):
     return a <= m <= b
 
 
-def gate(wait=False, ignore_window=False, pause=120):
+def gate(wait=False, ignore_window=False, pause=120, until=None):
+    """Returns (go, slot, message). Picks the first open slot not yet posted today
+    that has something in today's paper."""
+    m = now_pacific().hour * 60 + now_pacific().minute
+    if until and until - 300 <= m:  # hold: the morning run waits for the window
+        while now_pacific().hour * 60 + now_pacific().minute < until:
+            time.sleep(60)
     while True:
         now = now_pacific()
         day = now.strftime("%Y-%m-%d")
-        slot = current_slot(now)
-        start, end, _ = SLOTS[slot]
-        if not ignore_window and not in_window(now, slot):
-            return False, f"{slot}: outside its window ({now:%H:%M} Pacific); nothing to do"
+        cands = [s for s in open_slots(now) if ignore_window or in_window(now, s)]
+        if ignore_window and not cands:
+            cands = [current_slot(now)]
+        if not cands:
+            return False, "", f"outside every window ({now:%H:%M} Pacific); nothing to do"
         done = record(day)
-        if all(done.get(k) for k in wanted(slot)):
-            return False, f"{slot}: already posted for {day}; nothing to do"
+        todo = [s for s in cands if not all(done.get(k) for k in wanted(s))]
+        if not todo:
+            return False, "", f"{'/'.join(cands)}: already posted for {day}; nothing to do"
         try:
             page = fetch_site()
             _, shown = folio(page)
         except Exception as err:
             page, shown = "", f"error {type(err).__name__}"
         if shown == long_date(now):
-            if not pick(slot, page):
-                return False, f"{slot}: nothing for this slot in today's paper; nothing posted"
-            return True, f"{slot}: site shows {shown}; posting"
-        msg = f'{slot}: site folio shows "{shown}", not "{long_date(now)}"'
-        if not wait or now.hour * 60 + now.minute + pause / 60 > end:
-            return False, msg + "; nothing posted"
+            for slot in todo:
+                if pick(slot, page):
+                    return True, slot, f"{slot}: site shows {shown}; posting"
+            return False, "", f"{'/'.join(todo)}: nothing for this slot in today's paper; nothing posted"
+        msg = f'{todo[0]}: site folio shows "{shown}", not "{long_date(now)}"'
+        if not wait or now.hour * 60 + now.minute + pause / 60 > SLOTS[todo[0]][1]:
+            return False, "", msg + "; nothing posted"
         print(msg + "; will look again", flush=True)
         time.sleep(pause)
 
@@ -659,12 +678,19 @@ if __name__ == "__main__":
     dry = os.environ.get("DRY_RUN") == "yes"
     try:
         if step == "gate":
-            go, msg = gate(wait=os.environ.get("WAIT") == "yes",
-                           ignore_window=os.environ.get("IGNORE_WINDOW") == "yes")
+            hold = os.environ.get("HOLD_UNTIL", "")  # "8:30" Pacific
+            until = None
+            if hold:
+                h, m = (int(x) for x in hold.split(":"))
+                until = h * 60 + m
+            go, slot, msg = gate(wait=os.environ.get("WAIT") == "yes",
+                                 ignore_window=os.environ.get("IGNORE_WINDOW") == "yes",
+                                 until=until)
             out = os.environ.get("GITHUB_OUTPUT")
             if out:
                 with open(out, "a") as f:
                     f.write(f"go={'yes' if go or dry else 'no'}\n")
+                    f.write(f"slot={slot or current_slot()}\n")
             report(msg)
         elif step == "render":
             render()

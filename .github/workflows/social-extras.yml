@@ -1,7 +1,8 @@
 name: Social extras
 
 # The day's second and third posts (Todd, Nov 14 2026), drawn from that morning's paper:
-#   merchant   about 11:30 AM Pacific: Merchant of the Day (feed, Story, Facebook)
+#   merchant   8:30 AM Pacific: Merchant of the Day (feed, Story, Facebook); posted by
+#              the morning run in social-post.yml, these runs catch it up until 7:30 PM
 #   spotlight  about 4:30 PM Pacific: the first Tonight / Grand Opening / Now Open item,
 #              only on days the paper has one (feed, Story, Facebook)
 #   restorative about 3 PM Pacific, Wednesdays and Saturdays only: The Daily Restorative
@@ -11,7 +12,7 @@ name: Social extras
 #              (only when social/weekly/YYYY-MM-DD.json exists)
 # Times are UTC and GitHub cron can run late or skip, so each slot has backup runs;
 # scripts/social_post.py posts each slot once a day, inside its Pacific window
-# (merchant 11:00 AM-2:30 PM, spotlight 4:00-7:30 PM), and skips Promotional,
+# (merchant 8:30 AM-7:30 PM, spotlight 4:00-7:30 PM), and skips Promotional,
 # Courtesy, Sponsored or Paid items. A manual run defaults to a dry run.
 on:
   # GitHub's timer can run hours late (Nov 15 2026 the 11:30 run never came), so
@@ -82,6 +83,8 @@ jobs:
           python3 -m playwright install --with-deps chromium
       - if: steps.gate.outputs.go == 'yes'
         run: python3 scripts/social_post.py render
+        env:
+          SLOT: ${{ steps.gate.outputs.slot }}
       - if: steps.gate.outputs.go == 'yes'
         uses: actions/upload-artifact@v4
         with:
@@ -91,5 +94,31 @@ jobs:
       - if: steps.gate.outputs.go == 'yes'
         run: python3 scripts/social_post.py publish
         env:
+          SLOT: ${{ steps.gate.outputs.slot }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      # Second pass (Nov 17 2026): when two slots are open and unposted (a missed
+      # merchant post and the spotlight at the 4:58 PM Evening Edition push),
+      # post the other one in the same run. Automatic runs only.
+      - id: gate2
+        if: steps.gate.outputs.go == 'yes' && github.event_name != 'workflow_dispatch'
+        run: python3 scripts/social_post.py gate
+        env:
+          IGNORE_WINDOW: "no"
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - if: steps.gate2.outputs.go == 'yes'
+        run: python3 scripts/social_post.py render
+        env:
+          SLOT: ${{ steps.gate2.outputs.slot }}
+      - if: steps.gate2.outputs.go == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-cards-${{ github.run_id }}-2
+          path: out/
+          retention-days: 14
+      - if: steps.gate2.outputs.go == 'yes'
+        run: python3 scripts/social_post.py publish
+        env:
+          SLOT: ${{ steps.gate2.outputs.slot }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}

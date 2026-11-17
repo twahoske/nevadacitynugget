@@ -61,3 +61,33 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      # Merchant of the Day by 10 AM (Todd, Nov 17 2026): the morning push run,
+      # which reliably comes at ~5:55, holds until 8:30 Pacific and posts it.
+      # GitHub's timers ran hours late, so this does not wait on them.
+      - id: hold
+        if: github.event_name == 'push' && !failure()
+        run: python3 scripts/social_post.py gate
+        env:
+          SLOT: merchant
+          HOLD_UNTIL: "8:30"
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - if: steps.hold.outputs.go == 'yes' && steps.gate.outputs.go != 'yes'
+        run: |
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+      - if: steps.hold.outputs.go == 'yes'
+        run: python3 scripts/social_post.py render
+        env:
+          SLOT: merchant
+      - if: steps.hold.outputs.go == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-cards-merchant
+          path: out/
+          retention-days: 14
+      - if: steps.hold.outputs.go == 'yes'
+        run: python3 scripts/social_post.py publish
+        env:
+          SLOT: merchant
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
