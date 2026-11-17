@@ -1287,12 +1287,33 @@ html{scroll-padding-top:46px}
     ".nug{display:inline-block;vertical-align:middle;width:22px;height:18px;margin:0 2px;padding:0;border:0;background:none;cursor:pointer;line-height:0;animation:nug-glint 3.2s ease-in-out infinite}" +
     ".nug svg{width:22px;height:18px;overflow:visible}" +
     ".nug:hover,.nug:focus-visible{transform:scale(1.25);outline:none}" +
-    ".nug.got{animation:nug-pop .6s ease-out both;cursor:default}" +
+    ".nug.got{opacity:.45;filter:grayscale(.5);animation:none}" +
+    ".nug.mined{animation:nug-pop .6s ease-out both}" +
+    ".nug-dust{position:fixed;width:0;height:0;pointer-events:none;z-index:80}" +
+    ".nug-dust i{position:absolute;left:-4px;top:-4px;width:8px;height:8px;background:#e8c25a;border:1px solid #a87a24;transform:rotate(45deg);animation:nug-fly 1s cubic-bezier(.15,.7,.3,1) forwards}" +
+    ".assay-veil{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(20,17,11,.6);animation:assay-in .25s ease-out both}" +
+    ".assay{position:relative;width:100%;max-width:380px;box-sizing:border-box;background:#f3ecd8;color:#201c13;border:4px double #201c13;padding:20px 22px 16px;text-align:center;font-family:Georgia,serif;box-shadow:0 0 0 6px #f3ecd8,0 0 0 7px #201c13,0 22px 50px rgba(0,0,0,.5);animation:assay-drop .6s cubic-bezier(.2,1.35,.4,1) .15s both}" +
+    ".assay .a-office{font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:.26em;text-transform:uppercase;margin:0}" +
+    ".assay .a-town{font-style:italic;font-size:12px;margin:2px 0 6px;border-bottom:1px solid #201c13;padding-bottom:7px}" +
+    ".assay .a-eureka{font-family:var(--display);font-weight:900;font-size:56px;line-height:1;letter-spacing:.02em;color:#7e2a18;margin:8px 0 4px;text-shadow:2px 2px 0 #e8c25a}" +
+    ".assay .a-recd{font-style:italic;font-size:13px;margin:6px 0 2px}" +
+    ".assay .a-item{font-family:var(--display);font-weight:900;font-size:19px;letter-spacing:.08em;text-transform:uppercase;margin:0}" +
+    ".assay .a-no{position:relative;font-family:var(--display);font-weight:900;font-size:34px;margin:6px 0 0}" +
+    ".assay .a-no small{font-size:13px;letter-spacing:.2em;text-transform:uppercase;vertical-align:middle;margin-right:6px}" +
+    ".assay .a-meta{font-size:12.5px;margin:4px 0 8px;border-top:1px solid #201c13;border-bottom:1px solid #201c13;padding:6px 0}" +
+    ".assay .a-wink{font-style:italic;font-size:12px;margin:0 0 10px}" +
+    ".assay .a-next{font-size:13px;margin:0 0 12px}" +
+    ".assay button{font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#f3ecd8;background:#201c13;border:0;padding:9px 16px;cursor:pointer}" +
+    ".assay .a-stamp{position:relative;display:inline-block;vertical-align:middle;margin-left:18px;font-family:var(--display);font-weight:900;font-size:20px;line-height:1.2;letter-spacing:.14em;text-transform:uppercase;color:#b0281a;border:3px solid #b0281a;outline:1px solid #b0281a;outline-offset:2px;padding:2px 10px;transform:rotate(-14deg);opacity:.85;mix-blend-mode:multiply;animation:assay-stamp .35s cubic-bezier(.3,1.6,.5,1) .75s both}" +
+    "@keyframes nug-fly{to{transform:translate(var(--dx),var(--dy)) rotate(225deg) scale(.4);opacity:0}}" +
+    "@keyframes assay-in{from{opacity:0}to{opacity:1}}" +
+    "@keyframes assay-drop{from{opacity:0;transform:translateY(-60px) rotate(-3deg)}to{opacity:1;transform:none}}" +
+    "@keyframes assay-stamp{from{opacity:0;transform:rotate(-14deg) scale(2.6)}to{opacity:.85;transform:rotate(-14deg) scale(1)}}" +
     ".nug-note{display:inline-block;margin-left:4px;font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#f0ead9;background:var(--red);padding:2px 8px;animation:nug-note .5s ease-out both}" +
     "@keyframes nug-glint{0%,82%,100%{filter:none}88%{filter:brightness(1.5) drop-shadow(0 0 3px #e8c25a)}}" +
     "@keyframes nug-pop{0%{transform:scale(1)}40%{transform:scale(1.9) rotate(-12deg)}100%{transform:scale(1)}}" +
     "@keyframes nug-note{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}" +
-    "@media (prefers-reduced-motion:reduce){.nug,.nug.got,.nug-note{animation:none}.circ .c-goal .g-fill{transition:none}}";
+    "@media (prefers-reduced-motion:reduce){.nug,.nug.got,.nug.mined,.nug-note,.assay-veil,.assay,.assay .a-stamp{animation:none}.nug-dust{display:none}.circ .c-goal .g-fill{transition:none}}";
   document.head.appendChild(playCss);
 
   function load(k){ try { return JSON.parse(localStorage.getItem(k) || "null"); } catch(e){ return null; } }
@@ -1335,6 +1356,7 @@ html{scroll-padding-top:46px}
       save("nugget-streak", streak);
     }
     finds = load("nugget-finds") || { n: 0, last: "" };
+    if (finds.day !== pacificDay){ finds.got = finds.last === pacificDay ? ["m"] : []; finds.day = pacificDay; }
     play = el("span", "c-play");
     habit.insertAdjacentElement("afterend", play);
   }
@@ -1347,8 +1369,12 @@ html{scroll-padding-top:46px}
     if (n === 1 && streak.back) words += "Welcome back; the claim's still yours (best run " + fmt(streak.best) + "). ";
     else if (n === 1) words += "Come back tomorrow to start a streak. ";
     else if (nr) words += fmt(nr[0] - n) + " more " + (nr[0] - n === 1 ? "morning" : "mornings") + " to " + nr[1] + ". ";
-    words += finds.last === pacificDay ? "Today's nugget: found ✓ (" + fmt(finds.n) + " in all) · "
-                                       : "A gold nugget is hidden in today's paper" + (finds.n ? " (you've found " + fmt(finds.n) + ")" : "") + ". Find it! · ";
+    var got = finds.got.length, all = finds.n ? " (" + fmt(finds.n) + " in all)" : "";
+    if (got >= 2) words += "Both of today's nuggets found ✓✓" + all + ". More tomorrow! · ";
+    else if (got === 1) words += (evening ? "1 of today's 2 nuggets found ✓" + all + ". One more is hiding! · "
+                                          : "Morning nugget found ✓" + all + ". Another turns up after 5 PM. · ");
+    else words += (evening ? "Two gold nuggets are hidden in today's paper" : "A gold nugget is hidden in today's paper, and another turns up after 5 PM") +
+                  (finds.n ? " (you've found " + fmt(finds.n) + ")" : "") + ". Find " + (evening ? "them" : "it") + "! · ";
     play.appendChild(document.createTextNode(words));
     var forget = el("button", "", "forget my progress");
     forget.type = "button";
@@ -1360,19 +1386,64 @@ html{scroll-padding-top:46px}
     play.appendChild(forget);
   }
 
-  /* The Hidden Nugget: one tiny nugget a day, in a paragraph picked by the date, so everyone hunts the same spot. */
-  function hideNugget(){
-    if (!today) return;
-    var spots = [].filter.call(document.querySelectorAll("article p"), function(p){
-      return !p.closest(".circ,.ms,.topdesk,footer,.passiton,.wire-menu") && p.textContent.trim().length > 60;
-    });
-    if (!spots.length) return;
-    var h = 7;
-    for (var i = 0; i < pacificDay.length; i++) h = (h * 31 + pacificDay.charCodeAt(i)) % 100003;
-    var spot = spots[h % spots.length];
+  /* The Hidden Nugget: two a day. The Morning Nugget all day, the Evening Nugget from 5 PM (when the Evening Edition lands), each in a paragraph picked by the date so everyone hunts the same spots. */
+  var evening = +new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", hour: "numeric", hourCycle: "h23" }).format(new Date()) >= 17;
+  var SLOT = { m: "the Morning Nugget", e: "the Evening Nugget" };
+  function nugHint(){
+    if (finds.got.length >= 2) return "That's both of today's. Come back tomorrow!";
+    if (!evening) return "The Evening Nugget turns up after 5 PM.";
+    return "One more is hidden in today's paper.";
+  }
+  function dust(b){
+    var r = b.getBoundingClientRect(), box = el("span", "nug-dust");
+    box.style.left = (r.left + r.width / 2) + "px";
+    box.style.top = (r.top + r.height / 2) + "px";
+    for (var i = 0; i < 18; i++){
+      var g = el("i", ""), a = i / 18 * 6.283 + Math.random() * .4, d = 40 + Math.random() * 60;
+      g.style.setProperty("--dx", Math.round(Math.cos(a) * d) + "px");
+      g.style.setProperty("--dy", Math.round(Math.sin(a) * d - 18) + "px");
+      g.style.animationDelay = Math.round(Math.random() * 90) + "ms";
+      box.appendChild(g);
+    }
+    document.body.appendChild(box);
+    setTimeout(function(){ box.remove(); }, 1300);
+  }
+  function assay(slot, back){
+    var veil = el("div", "assay-veil"), card = el("div", "assay");
+    card.setAttribute("role", "dialog");
+    card.setAttribute("aria-modal", "true");
+    card.setAttribute("aria-label", "Eureka! Gold nugget number " + fmt(finds.n));
+    var longDay = new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", weekday: "long", month: "long", day: "numeric", year: "numeric" }).format(new Date());
+    card.appendChild(el("p", "a-office", "✦ Assay Office ✦"));
+    card.appendChild(el("p", "a-town", "The Nevada City Nugget · Nevada City, Cal."));
+    card.appendChild(el("p", "a-eureka", "Eureka!"));
+    card.appendChild(el("p", "a-recd", "Received of the bearer"));
+    card.appendChild(el("p", "a-item", "One (1) Gold Nugget"));
+    var no = el("p", "a-no");
+    no.appendChild(el("small", "", "No."));
+    no.appendChild(document.createTextNode(fmt(finds.n)));
+    card.appendChild(no);
+    card.appendChild(el("p", "a-meta", SLOT[slot].replace(/^the /, "The ") + " · " + longDay));
+    card.appendChild(el("p", "a-wink", "Fineness: pure Nevada City. Cash value: nil. Bragging rights: considerable."));
+    card.appendChild(el("p", "a-next", nugHint()));
+    var stamp = el("span", "a-stamp", "Staked");
+    stamp.setAttribute("aria-hidden", "true");
+    no.appendChild(stamp);
+    var ok = el("button", "", "Into the poke ▸");
+    ok.type = "button";
+    card.appendChild(ok);
+    veil.appendChild(card);
+    function close(){ veil.remove(); document.removeEventListener("keydown", esc); if (back) try { back.focus({ preventScroll: true }); } catch(e){} }
+    function esc(e){ if (e.key === "Escape" || e.key === "Tab"){ e.preventDefault(); if (e.key === "Escape") close(); } }
+    veil.addEventListener("click", close);
+    document.addEventListener("keydown", esc);
+    document.body.appendChild(veil);
+    try { ok.focus({ preventScroll: true }); } catch(e){}
+  }
+  function placeNugget(spot, slot){
     var b = el("button", "nug");
     b.type = "button";
-    b.setAttribute("aria-label", "A hidden gold nugget. Claim it!");
+    b.setAttribute("aria-label", "A hidden gold nugget, " + SLOT[slot] + ". Claim it!");
     var NS = "http://www.w3.org/2000/svg", svg = document.createElementNS(NS, "svg");
     svg.setAttribute("viewBox", "0 0 22 18");
     svg.setAttribute("aria-hidden", "true");
@@ -1386,22 +1457,48 @@ html{scroll-padding-top:46px}
       svg.appendChild(path);
     });
     b.appendChild(svg);
-    if (finds.last === pacificDay) b.className += " got";
+    if (finds.got.indexOf(slot) >= 0){ b.className += " got"; b.setAttribute("aria-label", "A gold nugget, already staked"); }
+    var note = null;
     b.addEventListener("click", function(){
-      if (finds.last === pacificDay) return;
+      if (finds.got.indexOf(slot) >= 0){
+        if (note) note.remove();
+        note = el("span", "nug-note", "Already staked! " + nugHint());
+        note.setAttribute("role", "status");
+        b.insertAdjacentElement("afterend", note);
+        var mine = note;
+        setTimeout(function(){ mine.remove(); }, 5000);
+        return;
+      }
       finds.n = (finds.n || 0) + 1;
       finds.last = pacificDay;
+      finds.got.push(slot);
       save("nugget-finds", finds);
-      b.className = "nug got";
-      b.setAttribute("aria-label", "Today's nugget, found");
-      var note = el("span", "nug-note", "Eureka! Nugget No. " + fmt(finds.n));
-      note.setAttribute("role", "status");
-      b.insertAdjacentElement("afterend", note);
-      setTimeout(function(){ note.remove(); }, 6000);
+      b.className = "nug mined";
+      b.setAttribute("aria-label", "A gold nugget, already staked");
+      var moving = !window.matchMedia || !matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (moving) dust(b);
+      setTimeout(function(){ b.className = "nug got"; }, 900);
+      setTimeout(function(){ assay(slot, b); }, moving ? 650 : 0);
       drawPlay();
     });
     spot.appendChild(document.createTextNode(" "));
     spot.appendChild(b);
+  }
+  function hideNugget(){
+    if (!today) return;
+    var spots = [].filter.call(document.querySelectorAll("article p"), function(p){
+      return !p.closest(".circ,.ms,.topdesk,footer,.passiton,.wire-menu") && p.textContent.trim().length > 60;
+    });
+    if (!spots.length) return;
+    var h = 7;
+    for (var i = 0; i < pacificDay.length; i++) h = (h * 31 + pacificDay.charCodeAt(i)) % 100003;
+    var mi = h % spots.length;
+    placeNugget(spots[mi], "m");
+    if (evening && spots.length > 1){
+      var ei = (h * 7 + 13) % spots.length;
+      if (ei === mi) ei = (mi + Math.max(1, Math.floor(spots.length / 2))) % spots.length;
+      placeNugget(spots[ei], "e");
+    }
   }
   if (today){ drawPlay(); hideNugget(); }
   if (counted()) tally("today").then(function(d){ show(d); goal(d); celebrate(d, false); });
