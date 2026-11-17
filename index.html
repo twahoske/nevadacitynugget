@@ -289,8 +289,7 @@ html{scroll-padding-top:46px}
 @media (min-width:700px){.topbar .tb-n{font-size:28px}.topbar .tb-in{font-size:10.5px;letter-spacing:.12em}.topbar .tb-w{display:inline}.topbar .tb-m{display:none}}
 @media (prefers-reduced-motion:reduce){.topbar,.topbar.on{transition:none}}
 @media print{.topbar{display:none}}
-</style></head>
-<body>
+</style></head><body>
 
 <div class="wrap">
 
@@ -1861,6 +1860,25 @@ html{scroll-padding-top:46px}
     var x = e[e.length - 1];
     bar.classList.toggle("on", !x.isIntersecting && x.boundingClientRect.top < 0);
   }).observe(mast);
+})();
+
+/* CITY HALL ORDER (Nov 16, 2026): Elected Officials sits directly above Meetings on the Record (Todd). Part of the wire service block; carry unchanged. */
+(function(){
+  function sec(name){
+    var found = null;
+    document.querySelectorAll(".wrap > section").forEach(function(s){
+      var l = s.querySelector(".kicker .label");
+      if (!found && l && l.textContent.trim() === name) found = s;
+    });
+    return found;
+  }
+  var eo = sec("Elected Officials"), mr = sec("Meetings on the Record");
+  if (!eo || !mr || !(eo.compareDocumentPosition(mr) & Node.DOCUMENT_POSITION_PRECEDING)) return;
+  var after = eo.nextElementSibling, stars;
+  if (after && after.classList.contains("stars")) stars = after;
+  else { stars = document.createElement("p"); stars.className = "stars"; stars.textContent = "✱ ✱ ✱ ✱ ✱"; }
+  mr.parentNode.insertBefore(eo, mr);
+  mr.parentNode.insertBefore(stars, mr);
 })();
 </script>
 
