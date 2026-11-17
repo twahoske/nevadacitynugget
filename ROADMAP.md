@@ -257,6 +257,15 @@ script gets its CSP hash first, and games stay off archives except the puzzle an
    Sourdough, Old-Timer), a gentle "you missed a day, the claim's still yours" instead of a reset scolding.
 4. **The Hidden Nugget.** BUILT Nov 15 (games batch 1; spot picked in the script from the date, no prompt change). A tiny gold nugget hidden somewhere different in each edition (placed by the morning
    task); tap it for "You've found 9 nuggets." Rewards reading the whole paper. Todd's favorite category.
+   **Two a day, Nov 16 (Todd):** Morning Nugget all day plus an Evening Nugget from 5 PM PT in a different
+   paragraph; a find bursts into gold dust and shows an Assay Office receipt stamped STAKED; tapping a found
+   nugget says "Already staked!" instead of doing nothing. Same nugget-finds note (adds day + slots found).
+4b. **Nugget Karma** (Todd, Nov 16: "lightweight and easy, no accounts... yet"). Let readers spend or show off
+   their nuggets without accounts, all in the reader's own browser: e.g. 10 nuggets buys a printable Claim Deed
+   with a name the reader types (never sent anywhere), 25 unlock a vintage nameplate, 50 an Old-Timer ribbon in
+   the Badge Case (item 6). Later, only if Todd wants karma that follows readers between devices or shows
+   publicly: a no-account "assay receipt" code readers copy to carry their count to another device, or real
+   accounts; either needs a privacy page rewrite first (it now promises no accounts and no leaderboards).
 5. **Paperboy badge.** Ribbons for wiring the paper to 3, 10 and 25 friends (counted on the device only).
 6. **The Badge Case.** One small page (badges.html) showing a reader's own ribbons, drawn as 1941-style merit
    badges: streaks, nuggets found, puzzles solved, Paperboy, milestone witness ("was here for 1,000").
