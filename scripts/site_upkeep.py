@@ -210,7 +210,7 @@ def archive_page(entries):
   <p class="motto">Every Edition, Day by Day</p>
 </div>
 
-<a class="back" href="/">◂ Back to Today's Edition</a>
+<a class="back" href="/">◂ Back to Today's Paper</a>
 
 <section>
   <h2 class="kicker" id="editions"><span class="label">Past Editions</span></h2>
