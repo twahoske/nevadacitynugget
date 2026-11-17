@@ -97,6 +97,13 @@
    "body": "Gather 'round, friends. New at the Nugget: Tonics & Tinctures, the Nevada City Wellness Guide. Seventeen of the town's apothecaries, elixir bars, yoga and Pilates parlors, spas, healers, rock shops and the pottery studio, each in its own words, with a wink from the medicine wagon. Starting Thursday, Nov. 19, The Daily Restorative spotlights one each morning. The Nugget cures nothing, not even Mondays. No one pays to appear.",
    "link": "wellness.html",
    "alt": "A cartoon old-time medicine bottle labeled Tonics and Tinctures, with gold sparkles"
+  },
+  {
+   "id": "0.9.8-tab-icon",
+   "version": "0.9.8",
+   "skip": true,
+   "head": "A Gold Nugget in Your Browser Tab",
+   "note": "Small housekeeping item; left out of social posts."
   }
  ]
 }
