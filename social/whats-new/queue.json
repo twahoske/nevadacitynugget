@@ -104,6 +104,13 @@
    "skip": true,
    "head": "A Gold Nugget in Your Browser Tab",
    "note": "Small housekeeping item; left out of social posts."
+  },
+  {
+   "id": "0.9.9-back-link",
+   "version": "0.9.9",
+   "skip": true,
+   "head": "An Easier Way Back to the Paper",
+   "note": "Small housekeeping item; left out of social posts."
   }
  ]
 }
