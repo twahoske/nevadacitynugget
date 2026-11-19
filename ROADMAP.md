@@ -740,7 +740,17 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     Nugget's Guides line. Source to confirm before building: the station's own schedule (likely a Spinitron page
     like KVMR's https://spinitron.com/KVMR/calendar, and kvmr.org), stored as a roster file like
     `assets/kvmr-schedule.json` on the artifact. Ties in with item 5, Yesterday on the Air. Disclosure: the
-    publisher co-hosts a KVMR show (Under the Influence), so a radio page carries that line. Not started.
+    publisher co-hosts a KVMR show (Under the Influence), so a radio page carries that line.
+    **Part one LIVE Nov 19, 2026 (v0.9.14):** a KVMRx block at the end of the Radio Log box: today's 6 AM to
+    midnight run-in line plus an "Unfold the KVMRx week" fold-out (all seven days, reruns marked, today first).
+    Source: the station's Spinitron calendar feed (https://spinitron.com/KVMRx/calendar; weeks of Nov 16 and
+    Nov 23 agree; every show airs weekly). Stored on the artifact as `assets/kvmrx-schedule.json`, rendered as
+    seven weekday fragments `assets/features/standing-kvmrx-<mon..sun>.html`, scheduled one per date in
+    `assets/features.json` through Dec 31, 2026 (no task-prompt change; the morning run splices the fragment
+    and flags any mismatch with the live Spinitron page). Builder: project folder `kvmrx/build.py`.
+    **Still to do:** extend the dated entries before Dec 31 (re-read the calendar first); hosts and show-page
+    links (the calendar feed carries titles only); a KVMRx Listen Live stream link (no stream URL seen yet;
+    the line links kvmrx.org); the optional standalone radio page.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
