@@ -123,6 +123,26 @@
    "alt": "The Nugget's NEW stamp drawing"
   },
   {
+   "id": "0.9.11-radio",
+   "version": "0.9.11",
+   "art": "0.9.11-radio",
+   "head": "Tune In, Nevada City!",
+   "deck": "On the third Wednesday of every month, a Tonight box at the top of the paper points you to Under the Influence on 89.5 KVMR FM, 8 to 10 PM.",
+   "body": "Jerianne Van Dijk and Todd Wahoske host Under the Influence, a musical journey through time, space and cultures, on 89.5 KVMR FM the third Wednesday of every month from 8 to 10 PM. On those nights the Nugget now carries a Tonight box at the top of the paper from 7 to 11 PM, with links to listen live, the playlists and the KVMR Archives.",
+   "link": "",
+   "alt": "An old radio microphone sending out sound waves"
+  },
+  {
+   "id": "0.9.12-listen-again",
+   "version": "0.9.12",
+   "art": "0.9.11-radio",
+   "head": "Missed the Show? Listen Again!",
+   "deck": "The Radio Log now has a Listen Again button for Under the Influence: Crooner Lounge, Vol. 2, streaming through Dec. 2.",
+   "body": "Jerianne Van Dijk and Todd Wahoske's Nov. 18 Under the Influence, Crooner Lounge Vol. 2, aired 8 to 10 PM on 89.5 KVMR FM. The Nugget's Radio Log now carries a Listen Again button that streams it from the KVMR archive, skipping the dead air at the top, through Dec. 2.",
+   "link": "",
+   "alt": "An old radio microphone sending out sound waves"
+  },
+  {
    "id": "0.9.13-one-disclosure",
    "version": "0.9.13",
    "skip": true,
