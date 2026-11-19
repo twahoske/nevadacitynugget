@@ -244,7 +244,7 @@ def pick(slot, page):
                 "small": "radiorethink.com/listen/kvmr · the Nugget's publisher co-hosts",
                 "caption": RADIO_CAPTION}
     if slot == "weekly":
-        return weekly(base, now_pacific())
+        return weekly(base, now_pacific(), page)
     raise SystemExit(f"unknown slot {slot}")
 
 
@@ -268,7 +268,7 @@ def bars(page):
     return out
 
 
-def weekly(base, now):
+def weekly(base, now, page=""):
     day = now.weekday()  # Mon 0 ... Thu 3, Fri 4, Sat 5
     if day == 3:
         guide = bars(fetch(DRINKS))
@@ -295,7 +295,7 @@ def weekly(base, now):
     if day == 5:
         path = ROOT / "social" / "weekly" / f"{now:%Y-%m-%d}.json"
         if not path.exists():
-            return None
+            return saturday_from_paper(base, now, page)
         d = json.loads(path.read_text(encoding="utf-8"))
         return {**base, "slot": "weekly",
                 "lead": {"head": d["head"], "deck": d.get("deck", ""), "meta": ""},
@@ -306,6 +306,61 @@ def weekly(base, now):
                 "tags": "#NevadaCity #LiveMusic #ThingsToDo #NevadaCityCA #GoldCountry",
                 "caption": d.get("caption", "")}
     return None
+
+
+VENUE = re.compile(r"<b>([^<]{3,60})</b>\s*\(([^)]{3,60})\)\.(.*?)(?=<b>|</p>|</div>)", re.S)
+DAYMARK = re.compile(r"\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) [A-Z][a-z]{2} \d{1,2}:")
+
+
+def saturday_shows(page, now):
+    """Saturday's dated listings from the paper's venue calendars (Amusements):
+    "<b>Venue</b> (address). Sat Nov 21: <a>Show</a>, 9:00 PM, $20; <a>...</a>..."
+    Returns [(show, venue, address, rest)] exactly as the paper prints them."""
+    mark = now.strftime("Sat %b ") + str(now.day) + ":"
+    out = []
+    for m in VENUE.finditer(page):
+        venue, addr, body = (htmlmod.unescape(x).strip() for x in m.groups())
+        body_text = htmlmod.unescape(re.sub(r"<[^>]+>", "", m.group(3)))
+        i = body_text.find(mark)
+        if i < 0:
+            continue
+        seg = body_text[i + len(mark):]
+        nxt = DAYMARK.search(seg)
+        seg = seg[:nxt.start()] if nxt else seg
+        seg = seg.split(" Listings via")[0].strip().rstrip(".")
+        for entry in seg.split(";"):
+            parts = [x.strip() for x in entry.split(",")]
+            show = parts[0]
+            rest = ", ".join(x for x in parts[1:] if x)
+            if show and not SKIP_META.search(entry):
+                out.append((show, venue.split(" (")[0], addr, rest))
+    return out
+
+
+def saturday_from_paper(base, now, page):
+    """No hand-written file for this Saturday: build the roundup from that
+    morning's venue listings in the paper (Todd, Nov 19 2026: live music venues
+    and bars). Nothing listed means no post."""
+    shows = saturday_shows(page, now)
+    if not shows:
+        return None
+    short = lambda v: re.sub(r"\s+(Saloon & Grill|Saloon|& Grill)$", "", v)
+    items = [" · ".join(x for x in (show, short(venue), rest.replace(":00 ", " ").replace(", ", " · ")) if x)
+             for show, venue, addr, rest in shows]
+    lines = [f"{show}, {venue}, {addr}" + (f", {rest}" if rest else "") for show, venue, addr, rest in shows]
+    when = now.strftime("%A, %b. ") + str(now.day)
+    cap = ("This Weekend\n\nTonight in Nevada City, " + when + "\n\n" + "\n".join("❦ " + x for x in lines)
+           + "\n\nPer the venues' own calendars, as listed in this morning's Nugget; check before you go. "
+           "More listings every morning, free at nevadacitynugget.com (link in bio).\n\n"
+           "#NevadaCity #NevadaCityCA #LiveMusic #GoldCountry #ThingsToDo")
+    return {**base, "slot": "weekly",
+            "lead": {"head": "Saturday Night Out", "meta": "",
+                     "deck": f"{len(shows)} on the bill tonight, from the venues' own calendars" if len(shows) > 1 else "On the bill tonight, from the venue's own calendar"},
+            "more": [{"head": x} for x in items][:4], "also_label": "On the Bill",
+            "detail": when, "kick": "This Weekend", "foot": "More in Today's Nugget",
+            "small": "nevadacitynugget.com · link in bio",
+            "tags": "#NevadaCity #LiveMusic #ThingsToDo #NevadaCityCA #GoldCountry",
+            "caption": cap}
 
 
 def clip(s, n):
