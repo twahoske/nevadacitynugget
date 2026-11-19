@@ -209,6 +209,7 @@ and on social media, with humor and fun imagery.
   Elected Officials box (moved above Meetings on the Record Nov 16, 2026, by the wire script's CITY HALL ORDER
   block), Meetings on the Record, From the Dais, The Docket, Coming Attractions, Civic Calendar,
   Legal Notices & Permits, Meeting Watch, Subscriber Rolls, Previously (last 3 editions + archive).
+  **Superseded Nov 18, 2026 by "The trim" below.**
 - **The Nevada City Visitor Guide (visitor.html):** a daily supplement built by the morning task: Bill of Fare,
   Bar Guide, Trail of the Day, and a Getting Here & Staying Over box linking stay.html and the day trips.
   The Site Publisher copies it from the artifact.
@@ -219,6 +220,51 @@ and on social media, with humor and fun imagery.
   assets/visitor-masthead.html, which the morning task splices in, so they can change without a prompt edit.
 - **Also:** an "Inside" strip under a shorter weather strip, the left masthead ear links to sign-up, and the
   officials' full profiles moved to officials.html (refreshed by an interactive session after council meetings).
+
+## The trim (Nov 18, 2026)
+- **Why.** Todd: "I tacked too many things on too quickly. I kind of miss the more basic page." The Nov. 18
+  edition measured 49 phone screens (30 on a desktop); the news itself, lead story through Police Blotter,
+  was 12 of them.
+- **What changed (about 34 phone screens now, nothing dropped):**
+  - The Holiday Table and the full Red Dot notice moved to the Visitor Guide; the paper's Victorian Christmas
+    box ended (the Guide keeps its own). The "Visiting?" box now lists what is in the Guide that day.
+  - Elected Officials, Meetings on the Record, From the Dais and Meeting Watch became one box,
+    **City Hall on the Record**. From the Dais snippets are now fragments spliced inside it.
+  - Coming Attractions became a one-line countdown atop the Civic Calendar.
+  - Fold-outs (plain `<details class="fold">`, no script, words stay on the page for search): Docket digests
+    of bodies other than the City Council and city Planning Commission; calendar dates past seven days; the
+    full Radio Log (a one-line run of the day's programs stays visible); standing legal notices.
+  - City Hall & Politics prints three stories in full; further stories are briefs with the whole story in a
+    "Read the whole story" fold-out (Todd: keep a way for readers who want all of it).
+  - The Nugget's Guides is one line of links; Previously is three headlines; Tomorrow lost its boilerplate.
+- **The order now:** lead (Weather or City Hall), City Hall & Politics, Here & There, Police Blotter,
+  subscribe line, Merchant of the Day and the other daily profiles, Arts & Culture (short), Amusements with
+  the Hat Store ad and Radio Log, Visiting?, history features, The Back Page, City Hall on the Record,
+  The Docket, Civic Calendar, Legal Notices & Permits, Subscriber Rolls, Tomorrow in the Nugget,
+  The Nugget's Guides, Corrections, Previously.
+- **How it sticks.** The fold-out CSS sits at the end of the main style block ("FOLD-OUTS AND TRIM"), the
+  rules are in the Morning task's instructions (TRIM RULES, THE ORDER, CITY HALL ON THE RECORD), and the
+  Evening task leaves fold-outs alone. The wire script did not change, so no new CSP hash.
+- **House habit going forward:** one in, one out. A new daily section should replace or fold into an
+  existing one, or live in the Visitor Guide.
+
+## The Composing Room: a layout desk for the publisher (idea, Nov 18, 2026; not built)
+Todd asked for "an admin window of sorts to re-layer and condense" the paper himself, then chose to hold it
+for later. The sketch:
+- **A layout slip.** One small file on the artifact, `assets/layout.json`, lists every section in order with
+  a setting for each: full, short, pointer only, Visitor Guide only, or off. The Morning task reads it and
+  builds the paper to match (one sentence in its instructions, which lets the long order paragraphs come
+  out). Scheduled features keep using features.json; the slip only decides where each kind of section sits
+  and how much of it shows.
+- **The Composing Room.** A private page only the publisher can open. Sections appear as a stack of slugs
+  drawn to scale; drag to reorder, pick a setting for each, and watch a running length in phone screens and
+  a live preview of today's edition. Save stores the layout where the Morning task reads it; it takes effect
+  the next morning, or at once on request.
+- **Guard rails.** The nameplate, the Hat Store ad, standing links, corrections at the bottom and source
+  lines cannot be switched off. News sections can be reordered but not hidden.
+- **Fits with reader settings** ("Your Paper, Your Way", proposed in PR #83): one shared section list. The
+  publisher's layout is the default; a reader's own show and hide choices apply on top, on their device.
+- **Order of work:** the layout slip and the Morning instructions first, then the page.
 
 ## Election nights (added Nov 3, 2026)
 - **Standing rule (Todd, Nov 3, 2026):** every major election night gets an Election Returns box at the top
