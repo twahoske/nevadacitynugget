@@ -81,6 +81,9 @@ SLOTS = {
     # live music this weekend (from social/weekly/YYYY-MM-DD.json, written ahead).
     "weekly": (8 * 60 + 30, 17 * 60 + 30, "weekly_"),
 }
+# When a push may post the weekly card by the clock (Python weekday: Thu 3, Fri 4,
+# Sat 5): Thursday 3-5:30 PM, Friday 1-4:30 PM, Saturday 9 AM-noon.
+WEEKLY_AUTO = {3: (15 * 60, 17 * 60 + 30), 4: (13 * 60, 16 * 60 + 30), 5: (9 * 60, 12 * 60)}
 DRINKS = "https://nevadacitynugget.com/drinks.html"
 # Thirsty Thursday works down this list one bar a week (by ISO week number),
 # skipping any no longer in the Bar Guide. Bars closed Thursdays or members-only
@@ -547,10 +550,15 @@ def open_slots(now=None):
         return [slot]
     now = now or now_pacific()
     m = now.hour * 60 + now.minute
-    # Weekly posts only run when asked for by name, never by the clock.
-    return [k for k in ("front", "merchant", "restorative", "spotlight")
-            if (k != "restorative" or now.weekday() in RESTORATIVE_DAYS)
-            and SLOTS[k][0] <= m <= SLOTS[k][1]]
+    slots = [k for k in ("front", "merchant", "restorative", "spotlight")
+             if (k != "restorative" or now.weekday() in RESTORATIVE_DAYS)
+             and SLOTS[k][0] <= m <= SLOTS[k][1]]
+    # Weekly posts also get a clock window on their own day, so a push can post
+    # one when GitHub's weekly timer runs late (see WEEKLY_AUTO).
+    w = WEEKLY_AUTO.get(now.weekday())
+    if w and w[0] <= m <= w[1]:
+        slots.append("weekly")
+    return slots
 
 
 def current_slot(now=None):
