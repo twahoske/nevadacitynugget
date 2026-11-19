@@ -121,6 +121,16 @@
    "body": "The Nugget had grown to about 49 phone screens, and only a dozen of them were news. It now runs about 34. Nothing was thrown out. The Holiday Table moved to the Visitor Guide, four City Hall boxes became one, and the long lists (regional agendas, the calendar further out, the full Radio Log, standing legal notices) now start folded. Tap one and it unfolds, every word still there.",
    "link": "release-notes.html",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.11-radio",
+   "version": "0.9.11",
+   "art": "0.9.11-radio",
+   "head": "Tune In, Nevada City!",
+   "deck": "On the third Wednesday of every month, a Tonight box at the top of the paper points you to Under the Influence on 89.5 KVMR FM, 8 to 10 PM.",
+   "body": "Jerianne Van Dijk and Todd Wahoske host Under the Influence, a musical journey through time, space and cultures, on 89.5 KVMR FM the third Wednesday of every month from 8 to 10 PM. On those nights the Nugget now carries a Tonight box at the top of the paper from 7 to 11 PM, with links to listen live, the playlists and the KVMR Archives. Disclosure: Todd is the Nugget's publisher.",
+   "link": "",
+   "alt": "An old radio microphone sending out sound waves"
   }
  ]
 }

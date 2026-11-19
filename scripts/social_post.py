@@ -73,6 +73,10 @@ SLOTS = {
     # open until 7:30 PM so any later run catches a missed one.
     "merchant": (8 * 60 + 30, 19 * 60 + 30, "merchant_"),
     "spotlight": (16 * 60, 19 * 60 + 30, "spotlight_"),
+    # Under the Influence (Todd, Nov 18 2026): the publisher's KVMR show, 8-10 PM on
+    # the third Wednesday of each month. Posted about 7:30 PM from the paper's
+    # third-Wednesday "Tonight" box (see RADIO_* below); never by the spotlight slot.
+    "radio": (19 * 60 + 25, 20 * 60 + 30, "radio_"),
     # The Daily Restorative (Todd, Nov 16 2026): Wednesdays and Saturdays only,
     # about 3 PM, from that morning's paper (see RESTORATIVE_DAYS).
     "restorative": (14 * 60 + 45, 15 * 60 + 45, "restorative_"),
@@ -89,6 +93,28 @@ THIRSTY = ["Golden Era", "Mine Shaft Saloon", "The Fern", "The National Bar",
            "Trailhead Tavern", "Good Bones Biergarten", "Friar Tuck's", "The River Downtown",
            "Three Forks", "Deer Creek Bar & Grill", "Crazy Horse Saloon", "Nevada City Winery",
            "Jernigan's", "Northridge", "The Willo"]
+RADIO_HEAD = "under the influence"
+RADIO_START = "2026-12-01"  # Nov 18 2026 went out by hand as a spotlight
+RADIO_CAPTION = """Tonight on KVMR
+
+Under the Influence, live 8 to 10 PM on 89.5 KVMR FM, Nevada City.
+
+Jerianne Van Dijk and Todd Wahoske take you on a musical journey through time, space and cultures: folk songs to old-school hip-hop, the influences behind the music, and new artists pushing their genres somewhere new. Every third Wednesday of the month.
+
+Listen live: radiorethink.com/listen/kvmr
+Playlists: spinitron.com/KVMR
+Missed it? kvmr.org/archives
+
+Disclosure: the Nugget's publisher, Todd Wahoske, co-hosts the show.
+
+#NevadaCity #KVMR #CommunityRadio #NevadaCounty #GoldCountry"""
+
+
+def radio_night(now):
+    """The third Wednesday of the month (days 15-21), from RADIO_START on."""
+    return now.weekday() == 2 and 15 <= now.day <= 21 and now.strftime("%Y-%m-%d") >= RADIO_START
+
+
 SPOT_LABELS = {"tonight", "grand opening", "now open", "this weekend", "special spotlight", "weekend spotlight"}
 SPOT_PREFIX = re.compile(r"^(special|weekend) spotlight\s*·\s*", re.I)
 
@@ -199,12 +225,21 @@ def pick(slot, page):
         want = spot_match()
         sec = next((x for x in sections(page) if x["label"].lower() in SPOT_LABELS
                     and not SKIP_META.search(x["meta"])
+                    and RADIO_HEAD not in x["head"].lower()
                     and (not want or want in " ".join((x["label"], x["head"], x["meta"])).lower())), None)
         if not sec:
             return None
         return {**base, "lead": sec, "more": [], "detail": SPOT_PREFIX.sub("", sec["meta"]),
                 "kick": sec["label"], "foot": "Details in Today's Paper",
                 "small": "nevadacitynugget.com · link in bio"}
+    if slot == "radio":
+        sec = next((x for x in sections(page) if RADIO_HEAD in x["head"].lower()), None)
+        if not sec:
+            return None
+        return {**base, "lead": sec, "more": [], "detail": SPOT_PREFIX.sub("", sec["meta"]),
+                "kick": "Tonight on KVMR", "foot": "Tune In: 89.5 FM or Listen Live",
+                "small": "radiorethink.com/listen/kvmr · the Nugget's publisher co-hosts",
+                "caption": RADIO_CAPTION}
     if slot == "weekly":
         return weekly(base, now_pacific())
     raise SystemExit(f"unknown slot {slot}")
@@ -548,8 +583,9 @@ def open_slots(now=None):
     now = now or now_pacific()
     m = now.hour * 60 + now.minute
     # Weekly posts only run when asked for by name, never by the clock.
-    return [k for k in ("front", "merchant", "restorative", "spotlight")
+    return [k for k in ("front", "merchant", "restorative", "spotlight", "radio")
             if (k != "restorative" or now.weekday() in RESTORATIVE_DAYS)
+            and (k != "radio" or radio_night(now))
             and SLOTS[k][0] <= m <= SLOTS[k][1]]
 
 

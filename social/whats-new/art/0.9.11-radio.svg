@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="An old radio microphone sending out sound waves"><g fill="none" stroke="#201c13" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M52 52a62 62 0 0 1 0 76M36 38a84 84 0 0 1 0 104"/>
+<path d="M148 52a62 62 0 0 0 0 76M164 38a84 84 0 0 0 0 104"/>
+<rect x="72" y="26" width="56" height="100" rx="28"/>
+<path d="M76 50h48M73 68h54M73 86h54M76 104h48"/>
+<path d="M100 126v26M74 152h52M64 178h72M100 152v26"/>
+</g><circle cx="100" cy="77" r="6" fill="#7e2a18"/></svg>
