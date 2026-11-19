@@ -121,6 +121,13 @@
    "body": "The Nugget had grown to about 49 phone screens, and only a dozen of them were news. It now runs about 34. Nothing was thrown out. The Holiday Table moved to the Visitor Guide, four City Hall boxes became one, and the long lists (regional agendas, the calendar further out, the full Radio Log, standing legal notices) now start folded. Tap one and it unfolds, every word still there.",
    "link": "release-notes.html",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.13-one-disclosure",
+   "version": "0.9.13",
+   "skip": true,
+   "head": "One Disclosure",
+   "note": "Housekeeping (disclaimers consolidated); left out of social posts."
   }
  ]
 }
