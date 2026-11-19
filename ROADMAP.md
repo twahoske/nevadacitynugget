@@ -731,6 +731,17 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     (Nov. 26-Dec. 2) by Nov. 25; re-check entries each quarter.
     Live Nov 16, 2026.
 
+36. **KVMRX schedule: the sister station on the dial.** (Todd, Nov 18, 2026: "KVMR X schedule"; "KVMRX is the
+    online sister station at 105.7.") Add KVMRX, KVMR's sister station at 105.7 (also streamed online), alongside
+    KVMR 89.5 in the radio coverage: its program schedule with show, host, time and a link to each show's page,
+    a "now playing / up next" line, and its Listen Live stream. In the paper, KVMRX gets a line in the Radio Log
+    (the full schedule sits in the Radio Log fold-out, per the trim's one-in, one-out habit); the full week can
+    also live on a standalone, search-friendly radio page linked from the Radio Log, the Visitor Guide and The
+    Nugget's Guides line. Source to confirm before building: the station's own schedule (likely a Spinitron page
+    like KVMR's https://spinitron.com/KVMR/calendar, and kvmr.org), stored as a roster file like
+    `assets/kvmr-schedule.json` on the artifact. Ties in with item 5, Yesterday on the Air. Disclosure: the
+    publisher co-hosts a KVMR show (Under the Influence), so a radio page carries that line. Not started.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
