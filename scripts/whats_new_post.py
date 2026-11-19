@@ -2,9 +2,12 @@
 """What's New at the Nugget: release-notes features on Instagram (feed + Story)
 and the Facebook Page, one feature per post, twice a day (Todd, Nov 16 2026).
 
-Slots (Pacific): am 10:00-11:00, pm 8:00-9:15. They sit between the paper's other
-posts (front ~6 AM, Saturday roundup ~9 AM, Merchant 11 AM-2:30 PM, Friday Geezer
-Gig ~1 PM, Thirsty Thursday ~3 PM, spotlight 4-7:30 PM).
+Slots (Pacific): am 10:00 AM-12:00 PM, pm 8:00-11:30 PM. They aim for ~10 AM and
+~8 PM, between the paper's other posts (front ~6 AM, Merchant ~8:30 AM, Saturday
+roundup ~9 AM, Friday Geezer Gig ~1 PM, Thirsty Thursday ~3 PM, spotlight 4-7:30 PM).
+The windows are wide on purpose (Nov 19 2026): GitHub's timer can run an hour or
+more late, and on Nov 17-18 three slots were missed because no run landed inside the
+old one-hour windows.
 
 The queue is social/whats-new/queue.json, oldest release first. Each item posts once
 and is recorded in social-cards:posted/whats-new-ID.json; each slot posts at most one
@@ -36,7 +39,7 @@ OUT = sp.OUT
 HERE = ROOT / "social" / "whats-new"
 TOUR = ROOT / "social" / "grand-tour"
 NOTES = ROOT / "release-notes.html"
-SLOTS = {"am": (10 * 60, 11 * 60), "pm": (20 * 60, 21 * 60 + 15)}
+SLOTS = {"am": (10 * 60, 12 * 60), "pm": (20 * 60, 23 * 60 + 30)}
 TAGS = "#NevadaCity #NevadaCityCA #NevadaCounty #GoldCountry #LocalNews"
 
 

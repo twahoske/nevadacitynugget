@@ -148,6 +148,16 @@
    "skip": true,
    "head": "One Disclosure",
    "note": "Housekeeping (disclaimers consolidated); left out of social posts."
+  },
+  {
+   "id": "0.9.14-kvmrx",
+   "version": "0.9.14",
+   "art": "stamp",
+   "head": "KVMRx Joins the Radio Log",
+   "deck": "KVMR's sister station, KVMRx at 105.7 FM, now has its own line in the Radio Log, with the whole week a tap away.",
+   "body": "The Radio Log now carries KVMRx, KVMR's sister station at 105.7 FM. The day's shows from 6 AM to midnight sit on one line under KVMR's, and \"Unfold the KVMRx week\" opens all seven days, reruns included, starting with today. The lineup comes from the station's own Spinitron calendar.",
+   "link": "release-notes.html#v0.9.14",
+   "alt": "The Nugget's NEW stamp drawing"
   }
  ]
 }
