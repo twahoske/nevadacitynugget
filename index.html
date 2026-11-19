@@ -294,7 +294,7 @@ html{scroll-padding-top:46px}
 
 <div class="wrap">
 
-<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.9.13</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
+<p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.9.14</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
 
 <p class="banner">Morning Edition</p>
 <header class="masthead">
@@ -615,9 +615,28 @@ html{scroll-padding-top:46px}
     <p class="venue">Radio Log</p>
     <p class="addr">KVMR 89.5 FM · Nevada City · Thursday's Programs</p>
     <a class="listenlive" href="https://www.radiorethink.com/tuner/index.cfm?stationCode=KVMR&amp;stream=hi&amp;launchedFrom=secureStreamRedirect">▸ Listen Live · KVMR 89.5 FM</a>
-<div class="uti-replay" style="margin:0 0 10px;text-align:center;font-size:14px;line-height:1.5">
-  <a class="listenlive" style="margin:0 0 4px" href="https://archive.kvmr.org/mp3/kvmr_261118_200000celtcad.mp3#t=45">▸ Listen Again · Crooner Lounge, Vol. 2</a>
-  <p style="margin:0"><i><b>Under the Influence</b> with Jerianne Van Dijk &amp; Todd Wahoske, as aired Nov. 18 on KVMR. Two hours, streaming here through Dec. 2.</i></p>
+<style>
+.uti-replay{margin:0 0 10px;text-align:center}
+details.uti-player{margin:0}
+details.uti-player>summary{list-style:none;cursor:pointer;margin:0 0 4px}
+details.uti-player>summary::-webkit-details-marker{display:none}
+details.uti-player>summary .when-open{display:none}
+details.uti-player[open]>summary .when-open{display:inline}
+details.uti-player[open]>summary .when-shut{display:none}
+details.uti-player[open]>summary{background:var(--panel)}
+details.uti-player .deck{border:2px solid var(--ink);border-top:0;margin:-4px 0 6px;padding:10px 10px 8px;background:var(--panel)}
+details.uti-player audio{display:block;width:100%;margin:0 0 6px}
+.uti-replay .meta{margin:0;font-size:14px;line-height:1.5}
+</style>
+<div class="uti-replay">
+<details class="uti-player">
+  <summary class="listenlive"><span class="when-shut">▸ Listen Again · Crooner Lounge, Vol. 2</span><span class="when-open">▾ Now Playing · Crooner Lounge, Vol. 2</span></summary>
+  <div class="deck">
+    <audio controls preload="none" src="https://archive.kvmr.org/mp3/kvmr_261118_200000celtcad.mp3#t=45">Your browser can't play this here: <a href="https://archive.kvmr.org/mp3/kvmr_261118_200000celtcad.mp3" target="_blank" rel="noopener">open the show in a new tab</a>.</audio>
+    <p class="meta" style="font-size:12.5px">Press play. Or <a href="https://archive.kvmr.org/mp3/kvmr_261118_200000celtcad.mp3#t=45" target="_blank" rel="noopener">open it in a new tab</a> to keep listening while you browse.</p>
+  </div>
+</details>
+<p class="meta uti-credit"><i><b>Under the Influence</b> with Jerianne Van Dijk &amp; Todd Wahoske, as aired Nov. 18 on KVMR. Two hours, streaming here through Dec. 2.</i></p>
 </div>
     <p style="margin:0 0 10px;text-align:center;font-size:13.5px">This paper's publisher on the air: <a href="https://widgets.spinitron.com/KVMR/show/257224/Under-The-Influence"><b>Under the Influence</b></a>, playlists and air dates on Spinitron (aired last night; next on the third Wednesday of December, 8 to 10 PM) · Local news: <a href="https://www.kvmr.org/show/kvmr-news/">KVMR News</a> (latest: <a href="https://kvmrnews.transistor.fm/episodes/large-mouth-bass-virus-confirmed-in-lake-of-the-pines">Bass Virus At Lake Of The Pines, Nov 17</a>)</p>
     <p class="radioline">7 AM Thursday Morning Show · 10 AM Resilience Radio · 2 PM Sierra Soul Train or Funky Grooves · 4 PM Thursday Music Magazine · 7 PM Democracy Now! · 8 PM Jazz Workshop · 10 PM Road Dog Radio</p>
@@ -632,6 +651,21 @@ html{scroll-padding-top:46px}
       <li><span class="d">10:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58409/Road-Dog-Radio">Road Dog Radio</a></b><span class="sub">Edy Cassell · listed every other week, but aired Nov 5 and Nov 12; alternating weeks</span></span></li>
     </ul></details>
     <p class="fine">Today's lineup per each program's own <a href="https://spinitron.com/KVMR">Spinitron</a> page; slots that rotate by week are marked. Full schedule at <a href="https://www.kvmr.org/kvmr-schedule/">kvmr.org</a>; listen at 89.5 FM.</p>
+  <div class="kvmrx" style="margin:16px 0 0;padding-top:4px;border-top:2px solid var(--ink)">
+    <p class="addr">KVMRx 105.7 FM · KVMR's Sister Station · Thursday's Programs</p>
+    <a class="listenlive" href="https://www.radiorethink.com/tuner/?stationCode=KVMRX&amp;stream=hi">▸ Listen Live · KVMRx 105.7 FM</a>
+    <p class="radioline">6 AM Second Breakfast · 8 AM The Deepest Blue · 10 AM Daydream Nation · Noon Twisted Stars · 2 PM Queer &amp; Now · 4 PM Bing Bong · 6 PM Belly Up Get Down · 8 PM Snowflake · 10 PM Reliquary</p>
+    <details class="fold"><summary>Unfold the KVMRx week</summary><div style="font-size:14.5px;line-height:1.5;margin-top:6px">
+      <p style="margin:0 0 8px"><b>Thursday (today).</b> 12 AM The Cretaceous Space (rerun) · 2 AM Open Floor Mat (rerun) · 6 AM Second Breakfast · 8 AM The Deepest Blue · 10 AM Daydream Nation · Noon Twisted Stars · 2 PM Queer &amp; Now · 4 PM Bing Bong · 6 PM Belly Up Get Down · 8 PM Snowflake · 10 PM Reliquary</p>
+      <p style="margin:0 0 8px"><b>Friday.</b> 12 AM Play Anything… (rerun) · 2 AM Space Travel Rock 'n' Roll (rerun) · 4 AM Random Rules (rerun) · 6 AM Gone Scrumping (rerun) · 8 AM Papaya Rock · 10 AM Million Sunrises (rerun) · Noon Made in Brazil · 2 PM Stereo Cosmic Jellyfish · 4 PM Energy Hour · 6 PM Sonic Soulstice · 8 PM Underground Will Live Forever · 10 PM The Underground Den</p>
+      <p style="margin:0 0 8px"><b>Saturday.</b> 12 AM Get Off the Dance Floor (rerun) · 2 AM Sky Burial (rerun) · 4 AM The Get Up · 6 AM bangs in my tear duct (rerun) · 8 AM Around With Sound · Noon The Cretaceous Space · 2 PM Dream Warriors · 4 PM The Island (rerun) · 6 PM Yip Yap (rerun) · 8 PM The Dance Floor</p>
+      <p style="margin:0 0 8px"><b>Sunday.</b> 12 AM Transmissions from Zero (rerun) · 2 AM From the Institute of Horology (rerun) · 4 AM Belly Up Get Down (rerun) · 6 AM The Deepest Blue (rerun) · 8 AM Mawkish Twaddle · 10 AM You didn’t hear it from me · Noon Cabbage Sandwich Records · 2 PM All Mixed Up · 4 PM Play Anything… · 6 PM Live &amp; Direct · 8 PM Random Rules · 10 PM 13</p>
+      <p style="margin:0 0 8px"><b>Monday.</b> 12 AM Known Pleasures (rerun) · 2 AM Microdose (rerun) · 4 AM Sonic Soulstice (rerun) · 6 AM The Get Up (rerun) · 8 AM Shiny Things · 10 AM Gone Scrumping · Noon Yip Yap · 2 PM bangs in my tear duct · 4 PM Digital Anarchy · 6 PM The Moore Bros. DJ Game · 8 PM Open Floor Mat</p>
+      <p style="margin:0 0 8px"><b>Tuesday.</b> 12 AM Stereo Cosmic Jellyfish (rerun) · 2 AM Energy Hour (rerun) · 4 AM Twisted Stars (rerun) · 6 AM Papaya Rock (rerun) · 8 AM The upShift · 10 AM Known Pleasures · Noon The Mirror of Ink · 2 PM Million Sunrises · 4 PM From the Institute of Horology · 6 PM Microdose · 8 PM Transmissions from Zero · 10 PM Get Off the Dance Floor</p>
+      <p style="margin:0 0 8px"><b>Wednesday.</b> 12 AM Midnight Sesh · 2 AM Around with Sound (rerun) · 6 AM Daydream Nation (rerun) · 8 AM Sky Burial · 10 AM The Moore Bros. DJ Game (rerun) · Noon The Mixtape Rewind · 2 PM The Greg Cipes Experience · 4 PM Cabbage Sandwich Records (rerun) · 6 PM Space Travel Rock 'n' Roll · 8 PM The Funk Train Express · 10 PM The Island</p>
+    </div></details>
+    <p class="fine">KVMRx lineup per the station's <a href="https://spinitron.com/KVMRx/calendar">Spinitron calendar</a>, as read Nov. 19, 2026; reruns marked. On the air right now: <a href="https://spinitron.com/KVMRx/">spinitron.com/KVMRx</a>. Station site: <a href="http://kvmrx.org">kvmrx.org</a>.</p>
+  </div>
   </div>
 </section>
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
