@@ -731,18 +731,16 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     (Nov. 26-Dec. 2) by Nov. 25; re-check entries each quarter.
     Live Nov 16, 2026.
 
-36. **KVMR schedule: the whole week on the dial.** (Todd, Nov 18, 2026: "KVMR X schedule.") A fuller program
-    guide for KVMR 89.5 FM than the one-line run of the day's programs in the paper's Radio Log: every show of the
-    week, day by day, with host, time, genre and a link to the show's Spinitron page, a "now playing / up next"
-    line, and the Listen Live stream. Most likely a standalone, search-friendly page (`kvmr.html` or similar)
-    linked from the Radio Log, the Visitor Guide and The Nugget's Guides line, so the paper itself grows by one
-    link at most (the trim's one-in, one-out habit). Source: Spinitron's KVMR calendar
-    (https://spinitron.com/KVMR/calendar) checked against the station's own site; builds on
-    `assets/kvmr-schedule.json` on the artifact, which already holds the roster, including the every-other-week
-    and monthly shows (The Playground, The Music Grotto, Under the Influence). Ties in with item 5, Yesterday on
-    the Air (archive links), and the monthly Under the Influence box (PR #90). Disclosure: the publisher co-hosts
-    Under the Influence, so the page says so. Open question for Todd: what the "X" means (a weekly grid, an X/Twitter
-    post of the day's lineup, or a placeholder). Not started.
+36. **KVMRX schedule: the sister station on the dial.** (Todd, Nov 18, 2026: "KVMR X schedule"; "KVMRX is the
+    online sister station at 105.7.") Add KVMRX, KVMR's sister station at 105.7 (also streamed online), alongside
+    KVMR 89.5 in the radio coverage: its program schedule with show, host, time and a link to each show's page,
+    a "now playing / up next" line, and its Listen Live stream. In the paper, KVMRX gets a line in the Radio Log
+    (the full schedule sits in the Radio Log fold-out, per the trim's one-in, one-out habit); the full week can
+    also live on a standalone, search-friendly radio page linked from the Radio Log, the Visitor Guide and The
+    Nugget's Guides line. Source to confirm before building: the station's own schedule (likely a Spinitron page
+    like KVMR's https://spinitron.com/KVMR/calendar, and kvmr.org), stored as a roster file like
+    `assets/kvmr-schedule.json` on the artifact. Ties in with item 5, Yesterday on the Air. Disclosure: the
+    publisher co-hosts a KVMR show (Under the Influence), so a radio page carries that line. Not started.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
