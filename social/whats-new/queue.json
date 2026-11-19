@@ -111,6 +111,16 @@
    "skip": true,
    "head": "An Easier Way Back to the Paper",
    "note": "Small housekeeping item; left out of social posts."
+  },
+  {
+   "id": "0.9.10-trim",
+   "version": "0.9.10",
+   "art": "stamp",
+   "head": "A Shorter Paper, Every Word Still There",
+   "deck": "The Nugget went on a diet: about a third shorter on your phone. Long lists now start folded, and a tap unfolds them.",
+   "body": "The Nugget had grown to about 49 phone screens, and only a dozen of them were news. It now runs about 34. Nothing was thrown out. The Holiday Table moved to the Visitor Guide, four City Hall boxes became one, and the long lists (regional agendas, the calendar further out, the full Radio Log, standing legal notices) now start folded. Tap one and it unfolds, every word still there.",
+   "link": "release-notes.html",
+   "alt": "The Nugget's NEW stamp drawing"
   }
  ]
 }
