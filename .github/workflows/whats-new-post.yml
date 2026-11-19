@@ -1,22 +1,51 @@
 name: What's New post
 
 # Release-notes features on Instagram (feed + Story) and Facebook, one feature per
-# post, twice a day (Todd, Nov 16 2026): am 10:00-11:00 AM and pm 8:00-9:15 PM Pacific,
-# clear of the front (~6 AM), Saturday roundup (~9 AM), Merchant (11 AM), Geezer Gig
+# post, twice a day (Todd, Nov 16 2026): aimed at ~10 AM and ~8 PM Pacific, with windows
+# of 10:00 AM-12:00 PM and 8:00-11:30 PM so a late timer still lands (Nov 19 2026), clear
+# of the front (~6 AM), Merchant (~8:30 AM), Saturday roundup (~9 AM), Geezer Gig
 # (Fri ~1 PM), Thirsty Thursday (~3 PM) and spotlight (4-7:30 PM) posts.
 # Queue: social/whats-new/queue.json (oldest release first); a release in
 # release-notes.html with no queue entries is posted from its bullets.
-# GitHub's timer runs late, so every push to main (the Site Publisher's hourly copy at
-# :55) is also a chance; scripts/whats_new_post.py posts at most one item per slot a day.
+# GitHub's timer runs late and drops runs (on Nov 17-18 the old "5,35" entries fired
+# hours off and three slots were missed), so each window gets its own one-line crons
+# every 15 minutes at odd minutes, and every push to main is also a chance.
+# scripts/whats_new_post.py posts at most one item per slot a day, so extra runs are safe.
 # A manual run is a dry run unless unticked; give it an item id to draw that one.
 on:
   push:
     branches: [main]
   schedule:
-    # am: 10:05 and 10:35 AM Pacific (PST 18 UTC, PDT 17 UTC)
-    - cron: "5,35 17,18 * * *"
-    # pm: 8:05 and 8:35 PM Pacific (PST 4 UTC, PDT 3 UTC)
-    - cron: "5,35 3,4 * * *"
+    # am: 10 AM-12 PM Pacific (PST 18-19 UTC, PDT 17-18 UTC), every 15 minutes
+    - cron: "7 17 * * *"
+    - cron: "22 17 * * *"
+    - cron: "37 17 * * *"
+    - cron: "52 17 * * *"
+    - cron: "7 18 * * *"
+    - cron: "22 18 * * *"
+    - cron: "37 18 * * *"
+    - cron: "52 18 * * *"
+    - cron: "7 19 * * *"
+    - cron: "22 19 * * *"
+    - cron: "37 19 * * *"
+    - cron: "52 19 * * *"
+    # pm: 8-11:30 PM Pacific (PST 4-7 UTC, PDT 3-6 UTC), every 15 minutes
+    - cron: "7 3 * * *"
+    - cron: "22 3 * * *"
+    - cron: "37 3 * * *"
+    - cron: "52 3 * * *"
+    - cron: "7 4 * * *"
+    - cron: "22 4 * * *"
+    - cron: "37 4 * * *"
+    - cron: "52 4 * * *"
+    - cron: "7 5 * * *"
+    - cron: "22 5 * * *"
+    - cron: "37 5 * * *"
+    - cron: "52 5 * * *"
+    - cron: "7 6 * * *"
+    - cron: "22 6 * * *"
+    - cron: "37 6 * * *"
+    - cron: "52 6 * * *"
   workflow_dispatch:
     inputs:
       item:
