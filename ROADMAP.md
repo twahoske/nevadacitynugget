@@ -752,6 +752,24 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     links (the calendar feed carries titles only); a KVMRx Listen Live stream link (no stream URL seen yet;
     the line links kvmrx.org); the optional standalone radio page.
 
+37. **Nugget Network advertising (a 2027 initiative).** (Todd, Nov 20, 2026: "I need to get a lot more readers
+    before launching this"; "a 2027 initiative"; "ads are linked across multisite".) Paid advertising waits until
+    the readership makes it worth an advertiser's money. When it comes, it is sold as one Nugget Network buy that
+    runs across every Nugget site and email list (the Nevada City Nugget, the Grass Valley Nugget, and the day-trip
+    guides in item 26), not paper by paper.
+    **The trigger:** a one-week average, all Nugget sites combined, of either **300 readers a day** or **500 email
+    subscribers**. Readers = the Total Circulation count (one per device per day), summed across sites; each new
+    Nugget site needs its own count before it can add to the total. Check the 7-day average weekly; when it crosses
+    either line, flag it to the publisher in the project chat. Nothing launches without his OK.
+    **Until then:** courtesy notices (free, labeled, at the publisher's discretion) carry on, like the Laughter Shock
+    and local-author listings. The Standards page keeps saying ads are unpaid.
+    **Ready on the shelf:** a draft Founding Advertiser rate card and ad policy (Nov 20, 2026; Claude Doc in the
+    project): small labeled placements in the paper, Visitor Guide, morning email and socials; no advertorials;
+    stories, Merchant of the Day, Nonprofit of the Day and guide listings never for sale; no political ads in beta.
+    Prices get reset to the network's audience when the trigger is hit. Going paid also means revising Standards,
+    Terms and the footer line the same day, settling how money is taken (kept apart from The Hat Store), and the
+    LLC and insurance question.
+
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
 The horoscope is the only invented content in the paper. No relation to the historical
