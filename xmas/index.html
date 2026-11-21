@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Your Victorian Christmas pocket guide from the Nevada City Nugget: the five days, the full guide, and the free morning paper by email.">
+<link rel="canonical" href="https://nevadacitynugget.com/victorian-christmas.html">
+<link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<title>Victorian Christmas Pocket Guide · The Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+
+:root{
+  --paper:#f0ead9;
+  --ink:#201c13;
+  --ink-soft:#5f5743;
+  --ink-mid:#564e3b;
+  --rule:#9c927a;
+  --rule-soft:#c9c0a8;
+  --panel:#e7e0cb;
+  --red:#7e2a18;
+  --display:"Besley","Georgia",serif;
+  --body:"Source Serif 4","Georgia",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#17150f;
+    --ink:#e6dfcc;
+    --ink-soft:#a79d85;
+    --ink-mid:#bdb299;
+    --rule:#5d5440;
+    --rule-soft:#3a362a;
+    --panel:#201d14;
+    --red:#d08a6a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#17150f;
+  --ink:#e6dfcc;
+  --ink-soft:#a79d85;
+  --ink-mid:#bdb299;
+  --rule:#5d5440;
+  --rule-soft:#3a362a;
+  --panel:#201d14;
+  --red:#d08a6a;
+  color-scheme: dark;
+}
+body{
+  background:var(--paper);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.035), transparent 60%);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.55;
+  margin:0;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 56px;
+}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(28px,7vw,44px);line-height:1;margin:0;text-align:center;text-wrap:balance}
+.motto{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.24em;text-transform:uppercase;margin:8px 0 0;text-align:center}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+section{display:flex;flex-direction:column;gap:12px}
+h3{font-family:var(--display);font-weight:800;font-size:17px;margin:0}
+p{margin:0}
+/* EMAIL SIGN-UP (Nov 21, 2026): same boxes as the paper's, posting straight to Buttondown. */
+.bymail{border-top:3px double var(--ink);border-bottom:3px double var(--ink);padding:10px 4px 11px;display:grid;grid-template-columns:1fr minmax(280px,1.05fr);gap:8px 20px;align-items:center}
+.bymail .bm-k,.clip .bm-k{margin:0;font:800 11px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.bymail .bm-l{margin:3px 0 0;font-size:14.5px;line-height:1.4;color:var(--ink-mid);font-style:italic}
+.bm-f{display:flex;gap:8px;align-items:stretch;margin:0;min-width:0}
+.bm-f label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bm-f input[type=email]{flex:1;min-width:0;font:16px var(--body);color:var(--ink);background:transparent;border:1px solid var(--ink);border-radius:0;padding:7px 10px;margin:0}
+.bm-f input[type=email]::placeholder{color:var(--ink-mid);font-style:italic;opacity:1}
+.bm-f input[type=email]:focus{outline:2px solid var(--red);outline-offset:1px}
+.bm-f button{font:800 12px var(--display);letter-spacing:.18em;text-transform:uppercase;background:none;color:var(--ink);border:2px solid var(--ink);border-radius:0;padding:6px 16px;cursor:pointer;white-space:nowrap}
+.bm-f button:hover,.bm-f button:focus-visible{color:var(--red);border-color:var(--red);outline:none}
+.bm-fine{grid-column:1/-1;margin:0;font-size:12.5px;font-style:italic;color:var(--ink-mid);text-align:center}
+.clip{border:1px dashed var(--ink);padding:18px 16px 16px;position:relative;text-align:center;display:flex;flex-direction:column;gap:10px}
+.clip::before{content:"\2702";position:absolute;top:-14px;left:18px;background:var(--paper);padding:0 6px;font-size:20px;line-height:1;color:var(--ink)}
+.clip .bm-k{font-size:clamp(19px,4.4vw,24px);line-height:1.1;letter-spacing:.01em;text-transform:none;color:var(--ink)}
+.clip p{margin:0;font-size:14.5px;color:var(--ink-mid)}
+.clip .bm-f{max-width:480px;width:100%;margin:2px auto 0}
+.clip .bm-drw{font-size:13px;font-style:italic}
+@media (max-width:620px){.bymail{grid-template-columns:1fr;padding:10px 2px 11px;text-align:center}.bm-f button{padding:6px 11px;letter-spacing:.12em}}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:9px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+.back.big{font-size:15px;padding:12px 10px;background:var(--ink);color:var(--paper)}
+.back.big:hover{background:var(--red);border-color:var(--red);color:var(--paper)}
+ul.days{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:8px}
+ul.days li{border:1px solid var(--ink);padding:8px 6px;text-align:center;font-family:var(--display)}
+ul.days b{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+ul.days span{font-size:22px;font-weight:900;display:block}
+ul.days i{font-size:13px;color:var(--ink-mid)}
+@media (max-width:620px){ul.days li:last-child{grid-column:1/-1}}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="banner">The Nevada City Nugget</p>
+  <h1 style="margin-top:18px">Victorian Christmas, in Your Pocket</h1>
+  <p class="motto">Gaslight, carolers &amp; chestnuts since 1978</p>
+</header>
+
+<ul class="days" aria-label="The five days">
+  <li><b>Sun</b><span>Dec 6</span><i>1:30 to 6 PM</i></li>
+  <li><b>Wed</b><span>Dec 9</span><i>5 to 9 PM</i></li>
+  <li><b>Sun</b><span>Dec 13</span><i>1:30 to 6 PM</i></li>
+  <li><b>Wed</b><span>Dec 16</span><i>5 to 9 PM</i></li>
+  <li><b>Sun</b><span>Dec 20</span><i>1:30 to 6 PM</i></li>
+</ul>
+
+<a class="back big" href="/victorian-christmas.html">Open the Full Guide ▸</a>
+<p style="text-align:center;font-size:14.5px;color:var(--ink-mid);margin-top:-14px">Shuttles and parking, restrooms, what to see, where to eat, drink and stay.</p>
+
+<aside class="clip" aria-label="Get the Nugget by email">
+  <p class="bm-k">The Nugget, free every morning</p>
+  <p>Nevada City's daily paper in your inbox: what's on tonight, shuttle and weather changes, who's open downtown. No trackers, one click to leave.</p>
+  <form class="bm-f" action="https://buttondown.com/api/emails/embed-subscribe/nevadacitynugget" method="post"><label for="bm-xmas">Your email address</label><input id="bm-xmas" type="email" name="email" required autocomplete="email" placeholder="your@email.address"><input type="hidden" name="embed" value="1"><input type="hidden" name="utm_source" value="holiday-print"><button type="submit">Sign Me Up ▸</button></form>
+  <p class="bm-drw">Sign up by December 20 and you're entered in the Nugget's December drawing. <a href="/drawing/">Rules</a>.</p>
+</aside>
+
+<a class="back" href="/">◂ Read Today's Paper</a>
+
+<div class="notebox"><p>Dates from the Nevada City Chamber of Commerce, which produces Victorian Christmas; rain or shine, though extreme weather can cancel a day. This page is the Nugget's own. Questions: (530) 265-2692 (Chamber) or <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a>.</p></div>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication.</p>
+  <p><a href="/standards.html">Standards &amp; Disclosures</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms of Use</a></p>
+</footer>
+
+</div>
+</body>
+</html>
