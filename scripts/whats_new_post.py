@@ -133,7 +133,7 @@ def holiday_caption(item):
     url = "nevadacitynugget.com/" + item["link"] if item.get("link") else "nevadacitynugget.com (link in bio)"
     lines = [item["kicker"].upper(), "", item["head"].upper(), "", item["body"], ""]
     if item.get("hat"):
-        lines += [HAT_LINE, ""]
+        lines += [item.get("hat_line") or HAT_LINE, ""]
     lines += [f"Read it: {url}", "",
               "The Nevada City Nugget is a free daily paper for Nevada City, out every morning by 6.", "",
               (item.get("tags", "") + " " + TAGS).strip()]
