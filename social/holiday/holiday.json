@@ -1,10 +1,10 @@
 {
- "_note": "Holiday push posts (Todd, Nov 21 2026): Black Friday, Small Business Saturday and the five Victorian Christmas days, the day before, the day of and the day after. Each posts once, on its date, in its What's New slot (am ~10 AM, pm ~8 PM Pacific), ahead of the regular What's New queue. boost = Todd's own pick list (he boosts by hand in Meta); never printed. hat = add the Hat Store line with the publisher disclosure. No em-dashes. art = social/holiday/art/NAME.svg. link = page on nevadacitynugget.com.",
+ "_note": "Holiday push posts (Todd, Nov 21 2026): Black Friday, Small Business Saturday and the five Victorian Christmas days, the day before, the day of and the day after. Each posts once, on its date, in the What's New morning slot (~10 AM Pacific; all am so a boost has the whole day to run), ahead of the regular What's New queue. boost = Todd's own pick list (he boosts by hand in Meta); never printed. hat = add the Hat Store line with the publisher disclosure. No em-dashes. art = social/holiday/art/NAME.svg. link = page on nevadacitynugget.com.",
  "posts": [
   {
    "id": "hol-2026-11-26-bf-eve",
    "date": "2026-11-26",
-   "slot": "pm",
+   "slot": "am",
    "boost": "out of town",
    "art": "shop",
    "kicker": "Shop Small Weekend",
@@ -74,7 +74,7 @@
   {
    "id": "hol-2026-12-05-eve",
    "date": "2026-12-05",
-   "slot": "pm",
+   "slot": "am",
    "boost": "out of town",
    "art": "lamp",
    "kicker": "Victorian Christmas ✱ Tomorrow",
@@ -126,7 +126,7 @@
   {
    "id": "hol-2026-12-08-eve",
    "date": "2026-12-08",
-   "slot": "pm",
+   "slot": "am",
    "boost": "out of town",
    "art": "lamp-night",
    "night": true,
@@ -180,7 +180,7 @@
   {
    "id": "hol-2026-12-12-eve",
    "date": "2026-12-12",
-   "slot": "pm",
+   "slot": "am",
    "boost": "out of town",
    "art": "lamp",
    "kicker": "Victorian Christmas ✱ Tomorrow",
@@ -232,7 +232,7 @@
   {
    "id": "hol-2026-12-15-eve",
    "date": "2026-12-15",
-   "slot": "pm",
+   "slot": "am",
    "boost": "out of town",
    "art": "lamp-night",
    "night": true,
@@ -286,7 +286,7 @@
   {
    "id": "hol-2026-12-19-eve",
    "date": "2026-12-19",
-   "slot": "pm",
+   "slot": "am",
    "boost": "out of town",
    "art": "lamp",
    "kicker": "Victorian Christmas ✱ Tomorrow",
