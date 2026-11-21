@@ -15,6 +15,8 @@ item a day (social-cards:posted/whats-new-DATE-SLOT.json). A release in
 release-notes.html at or after the queue's "start" that has no queue entries is
 posted straight from its bullets, with the NEW stamp drawing, so the posts keep
 coming even if a thread forgets the queue. When the queue runs dry, nothing posts.
+Holiday posts (social/holiday/holiday.json, Nov 21 2026) are dated: on its date, in its
+slot, a holiday post goes ahead of the queue; on other days they never post.
 
 Steps (run by .github/workflows/whats-new-post.yml):
   gate     is a slot open, and is there an item to post?
@@ -103,6 +105,41 @@ def tour():
     return stops
 
 
+HOLIDAY = ROOT / "social" / "holiday"
+HAT_LINE = ("While you're on Broad Street: The Hat Store, 314 Broad, has a hat for every head "
+            "and every kind of weather. (Full disclosure: it's the Nugget publisher's own shop.)")
+
+
+def holiday():
+    """Dated holiday posts (Todd, Nov 21 2026): Black Friday, Small Business Saturday
+    and Victorian Christmas, the day before, the day of and the day after. Each one
+    posts only on its own date, in its own slot, ahead of the regular queue."""
+    f = HOLIDAY / "holiday.json"
+    if not f.exists():
+        return []
+    posts = [x for x in json.loads(f.read_text(encoding="utf-8"))["posts"] if not x.get("skip")]
+    for x in posts:
+        x.update(series="holiday", version="")
+        for k in ("head", "deck", "body"):
+            x[k] = (x.get(k) or "").replace("—", ",").replace("–", "-")
+    return posts
+
+
+def holiday_today(now, slot):
+    return next((x for x in holiday() if x["date"] == f"{now:%Y-%m-%d}" and x["slot"] == slot), None)
+
+
+def holiday_caption(item):
+    url = "nevadacitynugget.com/" + item["link"] if item.get("link") else "nevadacitynugget.com (link in bio)"
+    lines = [item["kicker"].upper(), "", item["head"].upper(), "", item["body"], ""]
+    if item.get("hat"):
+        lines += [HAT_LINE, ""]
+    lines += [f"Read it: {url}", "",
+              "The Nevada City Nugget is a free daily paper for Nevada City, out every morning by 6.", "",
+              (item.get("tags", "") + " " + TAGS).strip()]
+    return "\n".join(lines).replace("—", ",")[:2100]
+
+
 def tour_caption(item):
     url = "nevadacitynugget.com/" + item["link"] if item.get("link") else "nevadacitynugget.com (link in bio)"
     where = "the Nevada City Visitor Guide" if item.get("where") == "visitor" else "the paper"
@@ -115,6 +152,8 @@ def tour_caption(item):
 
 
 def caption(item):
+    if item.get("series") == "holiday":
+        return holiday_caption(item)
     if item.get("series") == "tour":
         return tour_caption(item)
     url = "nevadacitynugget.com/" + item["link"] if item.get("link") else "nevadacitynugget.com (link in bio)"
@@ -170,7 +209,23 @@ body{background:#201c13;background-image:radial-gradient(ellipse at 50% 30%,rgba
 </style></head>"""
 
 
+HOLIDAY_CSS = """<style>
+.stamp{position:static;transform:rotate(-4deg);margin-top:4px;font-size:30px;border:none;outline:none;background:#7e2a18;color:#f0ead9;padding:12px 30px 10px;
+ -webkit-mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,transparent 98%,#000) right/51% 100% no-repeat;
+ mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 9px at 100% 50%,transparent 98%,#000) right/51% 100% no-repeat}
+.stamp small{border-top:2px dashed #f0ead9;margin-top:6px;padding-top:5px}
+</style></head>"""
+
+
 def card_html(kind, item):
+    if item.get("series") == "holiday":
+        esc = htmlmod.escape
+        h = _card_html(kind, item, HOLIDAY / "art" / f"{item.get('art')}.svg")
+        h = h.replace("</head>", TOUR_CSS if item.get("night") else HOLIDAY_CSS, 1)
+        top, bottom = (item.get("stamp") or ["", ""])[:2]
+        return (h.replace("What's New at the Nugget", esc(item["kicker"]))
+                .replace('<div class="stamp">Beta<small>v</small></div>',
+                         f'<div class="stamp">{esc(top)}<small>{esc(bottom)}</small></div>'))
     if item.get("series") == "tour":
         t = dict(item, version="")
         where = "Visitor Guide" if item.get("where") == "visitor" else "The Paper"
@@ -248,7 +303,7 @@ def gate():
     items = queue()
     forced = os.environ.get("ITEM", "").strip()
     if forced:
-        item = next((x for x in items if x["id"] == forced), None)
+        item = next((x for x in items + holiday() if x["id"] == forced), None)
         return item, "manual", (f"ITEM: drawing {forced}" if item else f"no item {forced} in the queue")
     now = sp.now_pacific()
     slot = current_slot(now)
@@ -260,9 +315,12 @@ def gate():
     if took.get("item"):
         if complete(sp.record(f"whats-new-{took['item']}")):
             return None, slot, f"{slot} slot already posted today ({took['item']})"
-        item = next((x for x in items if x["id"] == took["item"]), None)
+        item = next((x for x in items + holiday() if x["id"] == took["item"]), None)
         if item:
             return item, slot, f"finishing {item['id']} in the {slot} slot"
+    hol = holiday_today(now, slot)
+    if hol and not complete(sp.record(f"whats-new-{hol['id']}")):
+        return hol, slot, f"{slot} slot: holiday post {hol['id']}"
     for x in items:
         if not complete(sp.record(f"whats-new-{x['id']}")):
             return x, slot, f"{slot} slot: posting {x['id']}"
@@ -315,7 +373,7 @@ def publish(item, slot, dry_run=False):
 
 
 def _item(item_id):
-    return next(x for x in queue() if x["id"] == item_id)
+    return next(x for x in queue() + holiday() if x["id"] == item_id)
 
 
 if __name__ == "__main__":
@@ -337,6 +395,8 @@ if __name__ == "__main__":
         elif step == "list":
             for x in queue():
                 print(x["id"], "|", x["head"])
+            for x in holiday():
+                print(x["id"], "|", x["date"], x["slot"], "|", x["head"])
         else:
             raise SystemExit("usage: whats_new_post.py gate|render|publish|list")
     except Exception as err:  # report, never print the token

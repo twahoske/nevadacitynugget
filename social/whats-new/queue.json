@@ -188,6 +188,18 @@
    "body": "The Nevada City Visitor Guide got a new suit of clothes: a drawing of Broad Street up top, picture buttons for each part of the guide, After Dark for nightlife, Galleries & Stages for the arts, and Spotlight on Downtown Nevada City, a directory of more than 90 shops, tables, bars, stages and inns.",
    "link": "visitor.html",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.17-holiday",
+   "version": "0.9.17",
+   "skip": true,
+   "_why": "The holiday posts announce themselves (social/holiday/holiday.json); the Hat Store ad is no What's New item.",
+   "head": "Holiday posts",
+   "deck": "",
+   "body": "",
+   "link": "",
+   "art": "stamp",
+   "alt": ""
   }
  ]
 }
