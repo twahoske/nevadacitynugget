@@ -1,0 +1,26 @@
+name: Caption probe (temporary)
+on:
+  push:
+    branches: [claude/meeting-captions-probe]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Channel page and feed
+        run: |
+          curl -sS -L -A "Mozilla/5.0" -o ch.html -w "channel page %{http_code}\n" "https://www.youtube.com/@nevadacitypublicmeetings1540/videos" || true
+          CID=$(grep -o '"channelId":"UC[^"]*"' ch.html | head -1 | cut -d'"' -f4); echo "CID=$CID"
+          grep -o '"videoId":"[^"]*"' ch.html | head -5 || true
+          curl -sS -o feed.xml -w "feed %{http_code}\n" "https://www.youtube.com/feeds/videos.xml?channel_id=$CID" || true
+          grep -E "<title>|<published>|<yt:videoId>" feed.xml | head -12 || true
+      - name: yt-dlp captions
+        run: |
+          pip install -q -U yt-dlp && yt-dlp --version
+          yt-dlp --skip-download --write-auto-subs --sub-langs en --sub-format vtt -o "probe.%(ext)s" "https://www.youtube.com/watch?v=YF1poEKNShs" 2>&1 | tail -15 || true
+          ls -la probe* || true; wc -l probe*.vtt || true; sed -n 1,25p probe*.vtt || true
+      - name: youtube-transcript-api
+        run: |
+          pip install -q youtube-transcript-api
+          python3 -c "from youtube_transcript_api import YouTubeTranscriptApi as Y; t=Y().fetch('YF1poEKNShs'); print(len(t.snippets)); print(t.snippets[:3])" 2>&1 | tail -6 || true
