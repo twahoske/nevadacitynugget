@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A cartoon little storefront with a striped awning, a wreath on the door and an OPEN sign"><g fill="none" stroke="#201c13" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34 64 h132 v110 h-132 z" fill="#c9b48a"/>
+<path d="M28 40 h144 l-6 24 h-132 z" fill="#f4ecd8"/>
+<path d="M28 64 c0 10 18 10 18 0 c0 10 18 10 18 0 c0 10 18 10 18 0 c0 10 18 10 18 0 c0 10 18 10 18 0 c0 10 18 10 18 0 c0 10 18 10 18 0 c0 10 18 10 18 0" fill="#7e2a18"/>
+<rect x="46" y="88" width="50" height="46" fill="#f4c46a"/>
+<path d="M71 88 v46 M46 111 h50" stroke-width="2.5"/>
+<rect x="112" y="92" width="40" height="82" fill="#7a4f24"/>
+<circle cx="132" cy="114" r="12" stroke="#3f5a2a" stroke-width="6"/>
+<path d="M126 124 l6 -4 6 4" stroke="#7e2a18" stroke-width="3"/>
+<circle cx="145" cy="140" r="2.5" fill="#201c13"/>
+<rect x="50" y="144" width="42" height="16" fill="#fbf1dc" stroke-width="2.5"/>
+</g>
+<text x="71" y="156.5" font-family="Georgia,serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#7e2a18">OPEN</text>
+<g fill="#c9a24a" stroke="#201c13" stroke-width="1.5" stroke-linejoin="round">
+<path d="M22 108 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4 z"/>
+<path d="M178 96 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3 z"/>
+</g>
+</svg>
