@@ -158,6 +158,16 @@
    "body": "The Radio Log now carries KVMRx, KVMR's sister station at 105.7 FM. The day's shows from 6 AM to midnight sit on one line under KVMR's, and \"Unfold the KVMRx week\" opens all seven days, reruns included, starting with today. The lineup comes from the station's own Spinitron calendar.",
    "link": "release-notes.html#v0.9.14",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.15-meetings",
+   "version": "0.9.15",
+   "art": "stamp",
+   "head": "Meetings, On Their Own",
+   "deck": "New City Council and Planning Commission meetings now land on Meetings on the Record by themselves, transcript and summary.",
+   "body": "When the city posts a new City Council or Planning Commission video, the Nugget now writes up its transcript and a plain-English \"Short of It\" summary without anyone sending a link. First up: the November 19 Planning Commission, including a test dome for Geoship.",
+   "link": "meetings/",
+   "alt": "The Nugget's NEW stamp drawing"
   }
  ]
 }
