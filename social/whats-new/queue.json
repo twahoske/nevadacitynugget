@@ -158,6 +158,48 @@
    "body": "The Radio Log now carries KVMRx, KVMR's sister station at 105.7 FM. The day's shows from 6 AM to midnight sit on one line under KVMR's, and \"Unfold the KVMRx week\" opens all seven days, reruns included, starting with today. The lineup comes from the station's own Spinitron calendar.",
    "link": "release-notes.html#v0.9.14",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.15-meetings",
+   "version": "0.9.15",
+   "art": "stamp",
+   "head": "Meetings, On Their Own",
+   "deck": "New City Council and Planning Commission meetings now land on Meetings on the Record by themselves, transcript and summary.",
+   "body": "When the city posts a new City Council or Planning Commission video, the Nugget now writes up its transcript and a plain-English \"Short of It\" summary without anyone sending a link. First up: the November 19 Planning Commission, including a test dome for Geoship.",
+   "link": "meetings/",
+   "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.15-park",
+   "version": "0.9.15",
+   "art": "stamp",
+   "head": "Park First. Then the Necessary.",
+   "deck": "The Visitor Guide now opens with two big buttons: where to park downtown, and where the public restrooms are.",
+   "body": "Drove an hour to get here? The Nevada City Visitor Guide now starts with what you need first. Where to Park lists the city's public lots, the meter rates and the streets the city suggests for all-day stays. The Necessary, the 1800s word for a privy, lists the public restrooms downtown.",
+   "link": "visitor.html#where-to-park",
+   "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.15-visitor-guide",
+   "version": "0.9.15",
+   "art": "stamp",
+   "head": "The Visitor Guide, Dressed Up",
+   "deck": "A new drawing of Broad Street, picture buttons, a nightlife guide, an arts guide, and a downtown directory of more than 90 places.",
+   "body": "The Nevada City Visitor Guide got a new suit of clothes: a drawing of Broad Street up top, picture buttons for each part of the guide, After Dark for nightlife, Galleries & Stages for the arts, and Spotlight on Downtown Nevada City, a directory of more than 90 shops, tables, bars, stages and inns.",
+   "link": "visitor.html",
+   "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.17-holiday",
+   "version": "0.9.17",
+   "skip": true,
+   "_why": "The holiday posts announce themselves (social/holiday/holiday.json); the Hat Store ad is no What's New item.",
+   "head": "Holiday posts",
+   "deck": "",
+   "body": "",
+   "link": "",
+   "art": "stamp",
+   "alt": ""
   }
  ]
 }

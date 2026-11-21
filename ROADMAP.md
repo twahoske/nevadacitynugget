@@ -698,7 +698,10 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     Christmas, Summer Nights and other big events when the city or organizer posts them, and links from the Victorian Christmas guide
     (item 28) and the Trails & Vistas trailheads (item 8) where restrooms exist. Gets its own `#restrooms` anchor
     so the paper, social posts and the Wire can point to it. No one pays to appear.
-    Not started.
+    Shipped Nov 21, 2026 (v0.9.15): the box is live on the Visitor Guide with the three public restrooms the publisher
+    confirmed (Robinson Plaza by the Chamber, the Commercial Street lot, City Hall on weekdays), a Restrooms button at
+    the top, and a Where to Park box beside it. Its anchor is `#necessary`. Still to add: hours, accessibility and
+    baby-changing details once the city or the publisher confirms them, and map links.
 
 33. **Good Works: Nevada City's nonprofits, and Nonprofit of the Day.** (Todd, Nov 16, 2026.) A standing page,
     `nonprofits.html`, listing Nevada City's nonprofits (33 at launch) in six groups: arts, music and stage; history

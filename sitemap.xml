@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nevadacitynugget.com/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,6 +75,11 @@
     <loc>https://nevadacitynugget.com/meetings/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nevadacitynugget.com/meetings/planning-2026-11-19.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://nevadacitynugget.com/meetings/planning-2026-10-15.html</loc>
@@ -158,8 +163,14 @@
   </url>
   <url>
     <loc>https://nevadacitynugget.com/editions/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nevadacitynugget.com/editions/2026-11-20.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>never</changefreq>
     <priority>0.6</priority>
   </url>
   <url>

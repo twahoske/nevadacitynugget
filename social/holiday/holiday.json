@@ -1,0 +1,344 @@
+{
+ "_note": "Holiday push posts (Todd, Nov 21 2026): Black Friday, Small Business Saturday and the five Victorian Christmas days, the day before, the day of and the day after. Each posts once, on its date, in the What's New morning slot (~10 AM Pacific; all am so a boost has the whole day to run), ahead of the regular What's New queue. boost = Todd's own pick list (he boosts by hand in Meta); never printed. hat = add the Hat Store line with the publisher disclosure. No em-dashes. art = social/holiday/art/NAME.svg. link = page on nevadacitynugget.com.",
+ "posts": [
+  {
+   "id": "hol-2026-11-26-bf-eve",
+   "date": "2026-11-26",
+   "slot": "am",
+   "boost": "out of town",
+   "art": "shop",
+   "kicker": "Shop Small Weekend",
+   "stamp": [
+    "Tomorrow",
+    "Fri Nov 27"
+   ],
+   "head": "Skip the Mall. Walk Broad Street.",
+   "deck": "Black Friday and Small Business Saturday in downtown Nevada City: gas lamps, cedar garland, and shops run by the people behind the counter.",
+   "body": "Tomorrow is Black Friday, and Saturday is Small Business Saturday. Downtown Nevada City is a better place to spend them than any parking lot: Gold Rush brick, gas lamps, and dozens of independent shops within a few blocks. Tomorrow's Nugget lists who is open and what they're up to, free, by 6 AM.",
+   "link": "",
+   "tags": "#ShopSmall #BlackFriday #SmallBusinessSaturday"
+  },
+  {
+   "id": "hol-2026-11-27-bf",
+   "date": "2026-11-27",
+   "slot": "am",
+   "boost": "local",
+   "art": "shop",
+   "kicker": "Black Friday ✱ Shop Small",
+   "stamp": [
+    "Today",
+    "Fri Nov 27"
+   ],
+   "head": "Black Friday, Nevada City Style",
+   "deck": "Today's Nugget has the Shop Small Weekend box: downtown hours and specials, straight from the merchants.",
+   "body": "No doorbusters, no stampede. Downtown Nevada City does Black Friday on foot: hats, books, rocks and gems, art, chocolate, wine, and lunch somewhere with a fireplace. Today's Nugget lists who is open and any specials, as the merchants sent them. Nobody pays to be listed.",
+   "hat": true,
+   "link": "",
+   "tags": "#ShopSmall #BlackFriday #ShopLocal"
+  },
+  {
+   "id": "hol-2026-11-28-sbs",
+   "date": "2026-11-28",
+   "slot": "am",
+   "boost": "local",
+   "art": "shop",
+   "kicker": "Small Business Saturday",
+   "stamp": [
+    "Today",
+    "Sat Nov 28"
+   ],
+   "head": "Today, Every Dollar Stays in Town",
+   "deck": "Small Business Saturday on Broad, Commercial, Pine and Main. The Saturday farmers market runs in Union Alley till 1.",
+   "body": "Small Business Saturday is the day to buy your gifts from a neighbor. Start at the farmers market in Union Alley (8:30 AM to 1 PM, per the Chamber), then work your way up Broad Street. Today's Nugget has the Shop Small Weekend box: who is open and what's special.",
+   "hat": true,
+   "link": "",
+   "tags": "#SmallBusinessSaturday #ShopSmall #ShopLocal"
+  },
+  {
+   "id": "hol-2026-11-29-after",
+   "date": "2026-11-29",
+   "slot": "am",
+   "boost": "",
+   "art": "hat",
+   "kicker": "Thank You, Shoppers",
+   "stamp": [
+    "Next up",
+    "Sun Dec 6"
+   ],
+   "head": "Thanks for Shopping Small. Next Up: Victorian Christmas.",
+   "deck": "The gas lamps get their cedar and the carolers get their bonnets. Victorian Christmas starts next Sunday, Dec. 6.",
+   "body": "Thank you to everyone who spent Thanksgiving weekend downtown. Next Sunday, Dec. 6, Nevada City turns into Victorian Christmas, as it has every December since 1978: five days, Sundays Dec. 6, 13 and 20 from 1:30 to 6 PM and Wednesdays Dec. 9 and 16 from 5 to 9 PM. Our guide has parking, shuttles, food and what to see.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas"
+  },
+  {
+   "id": "hol-2026-12-05-eve",
+   "date": "2026-12-05",
+   "slot": "am",
+   "boost": "out of town",
+   "art": "lamp",
+   "kicker": "Victorian Christmas ✱ Tomorrow",
+   "stamp": [
+    "Tomorrow",
+    "Sun Dec 6"
+   ],
+   "head": "Victorian Christmas Starts Tomorrow",
+   "deck": "Sunday, Dec. 6, 1:30 to 6 PM, downtown Nevada City. Gas lamps, carolers, roasted chestnuts and Father Christmas.",
+   "body": "The first of five days is tomorrow, Sunday, Dec. 6, from 1:30 to 6 PM. Broad and Commercial streets close to traffic, more than 100 artisan vendors set up, and Father Christmas walks the streets (Sundays only, per the Chamber). Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free. Everything you need is in our free guide.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas #GoldCountryChristmas"
+  },
+  {
+   "id": "hol-2026-12-06-day",
+   "date": "2026-12-06",
+   "slot": "am",
+   "boost": "local",
+   "art": "lamp",
+   "kicker": "Victorian Christmas ✱ Today",
+   "stamp": [
+    "Today",
+    "1:30 to 6"
+   ],
+   "head": "Today: Victorian Christmas, 1:30 to 6",
+   "deck": "Opening afternoon. Free roasted chestnuts at the Food Court fire pit, Father Christmas on the streets, the town tree in Robinson Plaza.",
+   "body": "Victorian Christmas opens today, 1:30 to 6 PM, rain or shine. Look for free roasted chestnuts at the Food Court fire pit, the Dickens Village display in the windows at 210 Broad, the 25-foot town tree in Robinson Plaza, 132 Main, and Father Christmas. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "hat": true,
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas",
+   "hat_line": "While you're on Broad Street: The Hat Store, 314 Broad, is open 10 AM to 9 PM on every Victorian Christmas day, with a hat for every head and every kind of weather. (Full disclosure: it's the Nugget publisher's own shop.)"
+  },
+  {
+   "id": "hol-2026-12-07-after",
+   "date": "2026-12-07",
+   "slot": "am",
+   "boost": "",
+   "art": "hat",
+   "kicker": "Victorian Christmas ✱ Next",
+   "stamp": [
+    "Next",
+    "Wed Dec 9"
+   ],
+   "head": "Missed Sunday? Come Wednesday Night.",
+   "deck": "The first evening by gaslight is Wednesday, Dec. 9, from 5 to 9 PM.",
+   "body": "Thank you to everyone who came out for opening day. If Sunday afternoon didn't work, Wednesday night might be better anyway: Victorian Christmas by gaslight, Wednesday, Dec. 9, from 5 to 9 PM. The guide has shuttles, restrooms, food and drink.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas"
+  },
+  {
+   "id": "hol-2026-12-08-eve",
+   "date": "2026-12-08",
+   "slot": "am",
+   "boost": "out of town",
+   "art": "lamp-night",
+   "night": true,
+   "kicker": "Victorian Christmas ✱ Tomorrow Night",
+   "stamp": [
+    "Tomorrow",
+    "Wed Dec 9"
+   ],
+   "head": "Tomorrow Night, the Gas Lamps Get Busy",
+   "deck": "Victorian Christmas by gaslight: Wednesday, Dec. 9, 5 to 9 PM, downtown Nevada City.",
+   "body": "The first of two Wednesday nights is tomorrow, Dec. 9, from 5 to 9 PM: carolers, vendors, shops open late, and every gas lamp on Broad Street wrapped in cedar. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free. Dress for a mountain December.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas #GoldCountryChristmas"
+  },
+  {
+   "id": "hol-2026-12-09-day",
+   "date": "2026-12-09",
+   "slot": "am",
+   "boost": "local",
+   "art": "lamp-night",
+   "night": true,
+   "kicker": "Victorian Christmas ✱ Tonight",
+   "stamp": [
+    "Tonight",
+    "5 to 9 PM"
+   ],
+   "head": "Tonight: Victorian Christmas by Gaslight",
+   "deck": "5 to 9 PM, downtown Nevada City. Shops stay open late; the chestnuts are on the fire.",
+   "body": "Tonight from 5 to 9 PM, Victorian Christmas lights up downtown: carolers in Victorian dress, more than 100 artisan vendors, boutique shops open late, and free roasted chestnuts at the Food Court fire pit. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "hat": true,
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas",
+   "hat_line": "While you're on Broad Street: The Hat Store, 314 Broad, is open 10 AM to 9 PM on every Victorian Christmas day, with a hat for every head and every kind of weather. (Full disclosure: it's the Nugget publisher's own shop.)"
+  },
+  {
+   "id": "hol-2026-12-10-after",
+   "date": "2026-12-10",
+   "slot": "am",
+   "boost": "",
+   "art": "hat",
+   "kicker": "Victorian Christmas ✱ Next",
+   "stamp": [
+    "Next",
+    "Sun Dec 13"
+   ],
+   "head": "Two Down, Three to Go",
+   "deck": "Next: Sunday, Dec. 13, 1:30 to 6 PM.",
+   "body": "Thank you for a fine first night. Three days of Victorian Christmas remain: Sunday, Dec. 13 (1:30 to 6 PM), Wednesday, Dec. 16 (5 to 9 PM) and Sunday, Dec. 20 (1:30 to 6 PM). Plan your trip with the guide.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas"
+  },
+  {
+   "id": "hol-2026-12-12-eve",
+   "date": "2026-12-12",
+   "slot": "am",
+   "boost": "out of town",
+   "art": "lamp",
+   "kicker": "Victorian Christmas ✱ Tomorrow",
+   "stamp": [
+    "Tomorrow",
+    "Sun Dec 13"
+   ],
+   "head": "Tomorrow: Father Christmas Walks Broad Street",
+   "deck": "Victorian Christmas, Sunday, Dec. 13, 1:30 to 6 PM. Bring the kids, a scarf and an appetite.",
+   "body": "Tomorrow, Sunday, Dec. 13, Victorian Christmas returns from 1:30 to 6 PM. Kids can visit Santa for a picture, Father Christmas makes his Sunday rounds, and the Walking Christmas Tree wanders the streets on clear days, per the Chamber. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas #GoldCountryChristmas"
+  },
+  {
+   "id": "hol-2026-12-13-day",
+   "date": "2026-12-13",
+   "slot": "am",
+   "boost": "local",
+   "art": "lamp",
+   "kicker": "Victorian Christmas ✱ Today",
+   "stamp": [
+    "Today",
+    "1:30 to 6"
+   ],
+   "head": "Today: Victorian Christmas, 1:30 to 6",
+   "deck": "Santa for the kids, Father Christmas on the streets, chestnuts by the fire.",
+   "body": "Victorian Christmas is on today from 1:30 to 6 PM, rain or shine. Santa takes pictures with the kids, Father Christmas walks the streets, the Dickens Village fills the windows at 210 Broad, and the Food Court fire pit roasts free chestnuts. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "hat": true,
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas",
+   "hat_line": "While you're on Broad Street: The Hat Store, 314 Broad, is open 10 AM to 9 PM on every Victorian Christmas day, with a hat for every head and every kind of weather. (Full disclosure: it's the Nugget publisher's own shop.)"
+  },
+  {
+   "id": "hol-2026-12-14-after",
+   "date": "2026-12-14",
+   "slot": "am",
+   "boost": "",
+   "art": "hat",
+   "kicker": "Victorian Christmas ✱ Next",
+   "stamp": [
+    "Next",
+    "Wed Dec 16"
+   ],
+   "head": "One More Night by Gaslight",
+   "deck": "The last Wednesday evening is Dec. 16, 5 to 9 PM.",
+   "body": "Thank you, Sunday crowd. The second and last Wednesday night of Victorian Christmas is Dec. 16, from 5 to 9 PM, and the final afternoon is Sunday, Dec. 20. The guide has shuttles, restrooms, food and where to stay.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas"
+  },
+  {
+   "id": "hol-2026-12-15-eve",
+   "date": "2026-12-15",
+   "slot": "am",
+   "boost": "out of town",
+   "art": "lamp-night",
+   "night": true,
+   "kicker": "Victorian Christmas ✱ Tomorrow Night",
+   "stamp": [
+    "Tomorrow",
+    "Wed Dec 16"
+   ],
+   "head": "Tomorrow: The Last Night by Gaslight",
+   "deck": "Victorian Christmas, Wednesday, Dec. 16, 5 to 9 PM. The final evening of 2026.",
+   "body": "Tomorrow, Wednesday, Dec. 16, is the last Victorian Christmas evening this year, 5 to 9 PM. Carolers, chestnuts, shops open late, and Nevada City's gas lamps doing what they do best. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas #GoldCountryChristmas"
+  },
+  {
+   "id": "hol-2026-12-16-day",
+   "date": "2026-12-16",
+   "slot": "am",
+   "boost": "local",
+   "art": "lamp-night",
+   "night": true,
+   "kicker": "Victorian Christmas ✱ Tonight",
+   "stamp": [
+    "Tonight",
+    "5 to 9 PM"
+   ],
+   "head": "Tonight: The Last Gaslight Evening",
+   "deck": "5 to 9 PM, downtown Nevada City. Last chance for an evening visit this year.",
+   "body": "Tonight, 5 to 9 PM, is the final Wednesday night of Victorian Christmas 2026. Walk Broad Street under cedar garland, pick up a last gift from a downtown shop, and warm your hands at the chestnut fire. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "hat": true,
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas",
+   "hat_line": "While you're on Broad Street: The Hat Store, 314 Broad, is open 10 AM to 9 PM on every Victorian Christmas day, with a hat for every head and every kind of weather. (Full disclosure: it's the Nugget publisher's own shop.)"
+  },
+  {
+   "id": "hol-2026-12-17-after",
+   "date": "2026-12-17",
+   "slot": "am",
+   "boost": "",
+   "art": "hat",
+   "kicker": "Victorian Christmas ✱ Last One",
+   "stamp": [
+    "Last day",
+    "Sun Dec 20"
+   ],
+   "head": "One Sunday Left",
+   "deck": "The final afternoon of Victorian Christmas is Sunday, Dec. 20, 1:30 to 6 PM.",
+   "body": "Thank you for two fine Wednesday nights. Victorian Christmas has one afternoon left: Sunday, Dec. 20, from 1:30 to 6 PM, the last one before Christmas. Plan it with the guide.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas"
+  },
+  {
+   "id": "hol-2026-12-19-eve",
+   "date": "2026-12-19",
+   "slot": "am",
+   "boost": "out of town",
+   "art": "lamp",
+   "kicker": "Victorian Christmas ✱ Tomorrow",
+   "stamp": [
+    "Tomorrow",
+    "Sun Dec 20"
+   ],
+   "head": "Tomorrow Is the Last Victorian Christmas of 2026",
+   "deck": "Sunday, Dec. 20, 1:30 to 6 PM. Five days, one left.",
+   "body": "Last call: Victorian Christmas wraps up tomorrow, Sunday, Dec. 20, from 1:30 to 6 PM, five days before Christmas. Father Christmas, carolers, chestnuts, and downtown shops for the last gifts on your list. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas #GoldCountryChristmas"
+  },
+  {
+   "id": "hol-2026-12-20-day",
+   "date": "2026-12-20",
+   "slot": "am",
+   "boost": "local",
+   "art": "lamp",
+   "kicker": "Victorian Christmas ✱ Final Day",
+   "stamp": [
+    "Today",
+    "1:30 to 6"
+   ],
+   "head": "Today: The Last Victorian Christmas Afternoon",
+   "deck": "1:30 to 6 PM, downtown Nevada City. See you next December.",
+   "body": "The 2026 Victorian Christmas ends today, 1:30 to 6 PM, rain or shine. Visit Santa, find Father Christmas, try a roasted chestnut, and finish your shopping downtown. Downtown parking is scarce. The Chamber's shuttles run from the Rood Center, 950 Maidu Ave., and Bodhi Hive, 420 Providence Mine Rd.: $8, free under 15, free in Victorian costume, rides back free.",
+   "hat": true,
+   "link": "victorian-christmas.html",
+   "tags": "#VictorianChristmas #NevadaCityVictorianChristmas",
+   "hat_line": "While you're on Broad Street: The Hat Store, 314 Broad, is open 10 AM to 9 PM on every Victorian Christmas day, with a hat for every head and every kind of weather. (Full disclosure: it's the Nugget publisher's own shop.)"
+  },
+  {
+   "id": "hol-2026-12-21-after",
+   "date": "2026-12-21",
+   "slot": "am",
+   "boost": "",
+   "art": "hat",
+   "kicker": "That's a Wrap",
+   "stamp": [
+    "Thank you",
+    "2026"
+   ],
+   "head": "Thank You, Victorian Christmas Crowds",
+   "deck": "Five days of gaslight, done. Nevada City will be here all winter.",
+   "body": "That's Victorian Christmas 2026. Thank you to the Chamber, the merchants, the carolers, the shuttle drivers and everyone who came. Nevada City doesn't close for the season: the Nugget is free every morning with what's on, from shows to shop news.",
+   "link": "",
+   "tags": "#VictorianChristmas #NevadaCity"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A cartoon gas street lamp wrapped in cedar garland with a red bow, glowing in falling snow"><g fill="none" stroke="#201c13" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="100" cy="58" r="34" fill="#f4c46a" stroke="none" opacity=".45"/>
+<path d="M84 34 h32 l-4 -8 h-24 z" fill="#3a3a32"/>
+<path d="M86 34 l-4 46 h36 l-4 -46 z" fill="#fbe6a8"/>
+<path d="M100 40 c-6 8 -6 16 0 22 c6 -6 6 -14 0 -22 z" fill="#e8892f" stroke-width="2"/>
+<path d="M80 80 h40 l-6 10 h-28 z" fill="#3a3a32"/>
+<path d="M94 90 v90 M106 90 v90" />
+<path d="M94 90 h12 v90 h-12" fill="#3a3a32"/>
+<path d="M82 180 h36 v8 h-36 z" fill="#3a3a32"/>
+<path d="M78 112 c10 -8 34 -8 44 0 c-10 8 -34 8 -44 0 z" fill="#3f5a2a" stroke-width="3"/>
+<path d="M84 104 l-10 -6 M116 104 l10 -6 M80 118 l-8 4 M120 118 l8 4" stroke="#3f5a2a" stroke-width="4"/>
+<path d="M100 112 l-14 -10 v20 z M100 112 l14 -10 v20 z" fill="#b8372a" stroke-width="2.5"/>
+<path d="M100 112 l-6 22 M100 112 l6 22" stroke="#b8372a" stroke-width="4"/>
+<circle cx="100" cy="112" r="4" fill="#7e2a18" stroke-width="2"/>
+</g>
+<g fill="#fbf7ec" stroke="#9c927a" stroke-width="1">
+<circle cx="34" cy="40" r="4"/><circle cx="160" cy="30" r="3.5"/><circle cx="150" cy="96" r="4"/><circle cx="42" cy="120" r="3.5"/><circle cx="168" cy="150" r="3"/><circle cx="28" cy="170" r="3.5"/><circle cx="58" cy="78" r="2.5"/><circle cx="140" cy="62" r="2.5"/>
+</g>
+</svg>
