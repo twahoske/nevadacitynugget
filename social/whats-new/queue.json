@@ -210,6 +210,16 @@
    "body": "The Nevada City Visitor Guide has new shortcuts. Under The Bill of Fare, a row of buttons jumps straight to the downtown restaurants, coffee and sweets, the Seven Hills kitchens and the markets. The Bar Guide, the nightlife guide and the arts guide have the same.",
    "link": "visitor.html",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.18-off-broadstreet",
+   "version": "0.9.18",
+   "art": "stamp",
+   "head": "Curtain Up on Commercial Street",
+   "deck": "Off Broadstreet, the cabaret dessert theatre at 305 Commercial, is now in the Visitor Guide and the paper's Amusements.",
+   "body": "Off Broadstreet, the cabaret dessert theatre at 305 Commercial Street, is now in the Nevada City Visitor Guide's downtown directory, arts guide and nightlife guide. When a show is coming up, the paper lists it under Amusements, starting with Holiday Express, November 28 through December 20.",
+   "link": "visitor.html",
+   "alt": "The Nugget's NEW stamp drawing"
   }
  ]
 }
