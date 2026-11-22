@@ -5,7 +5,7 @@ name: Site upkeep
 on:
   push:
     branches: [main]
-    paths: ["*.html", "editions/**", "meetings/**", "scripts/**"]
+    paths: ["**.html", "scripts/**", ".github/workflows/site-upkeep.yml"]
   workflow_dispatch:
 
 permissions:
@@ -20,13 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0  # page dates in sitemap.xml come from git history
       - run: python3 scripts/site_upkeep.py
       - name: Commit if anything changed
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A editions sitemap.xml drinks.html
+            git add -A .
             git commit -m "Site upkeep: archive canonicals and sitemap"
             # The publisher can push in the same second; retry instead of failing.
             for attempt in 1 2 3 4 5; do
