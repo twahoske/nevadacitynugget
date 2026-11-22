@@ -200,6 +200,16 @@
    "link": "",
    "art": "stamp",
    "alt": ""
+  },
+  {
+   "id": "0.9.18-quick-links",
+   "version": "0.9.18",
+   "art": "stamp",
+   "head": "Shortcuts to Supper",
+   "deck": "New buttons on the Visitor Guide jump straight to downtown restaurants, coffee, Seven Hills kitchens and the markets.",
+   "body": "The Nevada City Visitor Guide has new shortcuts. Under The Bill of Fare, a row of buttons jumps straight to the downtown restaurants, coffee and sweets, the Seven Hills kitchens and the markets. The Bar Guide, the nightlife guide and the arts guide have the same.",
+   "link": "visitor.html",
+   "alt": "The Nugget's NEW stamp drawing"
   }
  ]
 }
