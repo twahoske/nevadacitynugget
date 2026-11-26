@@ -613,7 +613,16 @@ def post(token, uid, image_url, caption_text=None, story=False):
         if status in ("ERROR", "EXPIRED"):
             raise RuntimeError(f"Instagram could not prepare the {'Story' if story else 'post'} ({status})")
         time.sleep(4)
-    return graph(token, f"{uid}/media_publish", {"creation_id": cid}, "POST")["id"]
+    # Instagram sometimes reports FINISHED a little before the media can be
+    # published and answers "Media ID is not available" (subcode 2207027).
+    # Wait and try again rather than failing the whole run.
+    for attempt in range(6):
+        try:
+            return graph(token, f"{uid}/media_publish", {"creation_id": cid}, "POST")["id"]
+        except RuntimeError as err:
+            if "2207027" not in str(err) or attempt == 5:
+                raise
+            time.sleep(10)
 
 
 # ---------------------------------------------------------------- steps
