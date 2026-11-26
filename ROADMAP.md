@@ -324,7 +324,12 @@ script gets its CSP hash first, and games stay off archives except the puzzle an
 8. **The Scramble.** Four scrambled local words and a cartoon with a pun answer (original drawing). Answer tomorrow.
 9. **Cipher Corner.** A cryptogram of a line from the paper's own history features or a public-domain 1800s
    Nevada City item, with a letter hint.
-10. **The Nugget Puzzler.** One local trivia question a day, answer in tomorrow's paper.
+10. **The Nugget Puzzler.** BUILT Nov 26 (Todd's pitch: a small daily word or trivia game about local history with a
+    streak counter, a reason to open the paper every morning). puzzler.html: three pans a day (The Assay, a four-way
+    question; True or Tall Tale?; The Scramble), a nugget per good pan, a Puzzler streak for days in a row, back issues,
+    "Wire Your Score". Puzzles live in puzzler/puzzles.json (one per Pacific date; editing it needs no new CSP hash);
+    every fact comes from a named source, mostly NRHP nominations already used in Local History Unearthed. Streak kept in
+    the browser only (localStorage nugget-puzzler). First 15 puzzles run Nov 30 to Dec 14; add the next batch before then.
 11. **Gold Country Passport** (Visitor Guide). Stamp card for trails, Bar Guide stops and Merchants of the Day;
     a full card prints an "Honorary Townsfolk" certificate.
 

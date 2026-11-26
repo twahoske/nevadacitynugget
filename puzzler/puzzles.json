@@ -1,0 +1,515 @@
+{
+ "note": "The Nugget Puzzler. One puzzle per Pacific date. Every fact comes from the source named on that day; tall tales are made-up claims the reveal corrects. No em-dashes.",
+ "puzzles": [
+  {
+   "date": "2026-11-30",
+   "theme": "The Fire Of 1856",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "The worst fire in town history, on July 19, 1856, destroyed about how many buildings?",
+     "choices": [
+      "40",
+      "140",
+      "400",
+      "1,400"
+     ],
+     "answer": 2,
+     "fact": "About 400 buildings went, along with the new courthouse and every county record, and ten people died."
+    },
+    {
+     "type": "tale",
+     "claim": "That was the only big fire downtown, which is why so many wooden storefronts from the 1850s still stand.",
+     "truth": false,
+     "fact": "Tall tale. Fire took nearly all of the business district again in 1858 and once more on November 8, 1863. What stands today is mostly what went up after."
+    },
+    {
+     "type": "scramble",
+     "hint": "What the town rebuilt with after the fires",
+     "word": "BRICK",
+     "fact": "Brick buildings from the 1850s and '60s line Broad and Commercial today, many of them still pouring."
+    }
+   ],
+   "source": {
+    "label": "National Register nomination, Nevada City Downtown Historic District (1985)",
+    "url": "https://npgallery.nps.gov/GetAsset/8c2543a3-7c56-413e-b750-bc573422f498"
+   }
+  },
+  {
+   "date": "2026-12-01",
+   "theme": "The Firehouse A Dance Paid For",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "How did the town first pay for the little red-brick firehouse at 420 Broad Street?",
+     "choices": [
+      "A gold tax on the miners",
+      "A ball and a show, then a subscription drive",
+      "A loan from a San Francisco bank",
+      "A grant from the State of California"
+     ],
+     "answer": 1,
+     "fact": "On December 26, 1859, the women of Nevada City held a ball at the Court House that netted $923.50; a show a week later added $149, and the Broad Street side of town raised another thousand by subscription."
+    },
+    {
+     "type": "tale",
+     "claim": "The square cupola that holds the fire bell was there on opening day.",
+     "truth": false,
+     "fact": "Tall tale. The cupola for the fire bell was added a few years after the firehouse opened in January 1861."
+    },
+    {
+     "type": "scramble",
+     "hint": "The hose company that took the Broad Street house (also California's motto)",
+     "word": "EUREKA",
+     "fact": "Eureka Hose Company No. 2 organized on June 13, 1860, with 34 men and moved into the Broad Street house."
+    }
+   ],
+   "source": {
+    "label": "National Register nomination, Nevada City Firehouse #2 (c. 1975)",
+    "url": "https://npgallery.nps.gov/GetAsset/fba62ebc-7517-44eb-8b42-b0e19b968efd"
+   }
+  },
+  {
+   "date": "2026-12-02",
+   "theme": "The Assay On Main Street",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "In 1859, ore samples tested at James J. Ott's assay office helped set off which rush?",
+     "choices": [
+      "The Klondike",
+      "The Washoe rush to the Comstock Lode",
+      "The Fraser River",
+      "The Black Hills"
+     ],
+     "answer": 1,
+     "fact": "Two men brought Ott ore from Washoe in June 1859. The Nevada Journal's July 1, 1859, story on the results set off the stampede over the Sierra to the Comstock Lode."
+    },
+    {
+     "type": "tale",
+     "claim": "In the 1960s, the state bent its freeway design around Ott's Assay Office rather than tear it down.",
+     "truth": true,
+     "fact": "True. The state highway division changed its design at an estimated cost of $235,000. The buildings were restored in 1978."
+    },
+    {
+     "type": "scramble",
+     "hint": "Testing ore to learn what it's worth",
+     "word": "ASSAY",
+     "fact": "Ott's family kept the assay business going until 1955; his son Emil ran it after Ott died in 1907."
+    }
+   ],
+   "source": {
+    "label": "National Register nomination, Ott's Assay Office / South Yuba Canal Office (1975)",
+    "url": "https://npgallery.nps.gov/GetAsset/8ea1913f-579c-4f12-b59f-d91b2d175e83"
+   }
+  },
+  {
+   "date": "2026-12-03",
+   "theme": "The Oldest Shop In Town",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "Whose 1855 brick store on Main Street is called the oldest business building left in Nevada City?",
+     "choices": [
+      "Dr. John Lark, the first druggist",
+      "James J. Ott, the assayer",
+      "The South Yuba Canal Company",
+      "Wells Fargo"
+     ],
+     "answer": 0,
+     "fact": "The drug store was finished in August 1855 for Dr. John Lark, built of native brick laid in sand and lime mortar. Fires in 1851 and 1854 took the two wooden buildings before it."
+    },
+    {
+     "type": "tale",
+     "claim": "A young lawyer named Aaron A. Sargent kept an office upstairs.",
+     "truth": true,
+     "fact": "True. Sargent, admitted to the bar in April 1854, had an office upstairs, as did the doctors Robert M. and Harvey Hunt."
+    },
+    {
+     "type": "scramble",
+     "hint": "Dr. Lark's trade",
+     "word": "DRUGGIST",
+     "fact": "Ott later bought the old drug store for $600 after his own office burned in the 1863 fire."
+    }
+   ],
+   "source": {
+    "label": "National Register nomination, Ott's Assay Office / South Yuba Canal Office (1975)",
+    "url": "https://npgallery.nps.gov/GetAsset/8ea1913f-579c-4f12-b59f-d91b2d175e83"
+   }
+  },
+  {
+   "date": "2026-12-04",
+   "theme": "Mr. Carnegie Writes Back",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "How much did Andrew Carnegie offer Nevada City in 1904 for a library building?",
+     "choices": [
+      "$1,000",
+      "$10,000",
+      "$50,000",
+      "$100,000"
+     ],
+     "answer": 1,
+     "fact": "Carnegie offered $10,000 on March 20, 1904, and the offer came back by return mail. The trustees later asked for $5,000 more and did not get it."
+    },
+    {
+     "type": "tale",
+     "claim": "The North Pine Street library was the first Carnegie library built in California.",
+     "truth": false,
+     "fact": "Tall tale. Its nomination calls it the last of six Romanesque Carnegie libraries built in California."
+    },
+    {
+     "type": "scramble",
+     "hint": "The steel man who answered by return mail",
+     "word": "CARNEGIE",
+     "fact": "The library opened on October 4, 1907, with a reception from 2 to 5 and a party from 8 to 11."
+    }
+   ],
+   "source": {
+    "label": "National Register nomination, California Carnegie Libraries: Nevada City Library (1990)",
+    "url": "https://npgallery.nps.gov/GetAsset/424f7fdb-bb18-49d6-81d8-b76f2bd2b26a"
+   }
+  },
+  {
+   "date": "2026-12-05",
+   "theme": "Three And A Half Years To Open",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "Since 1988 the old Carnegie library has been the county's branch for what?",
+     "choices": [
+      "Children's books",
+      "Local history and historical records",
+      "Law books",
+      "Music and recordings"
+     ],
+     "answer": 1,
+     "fact": "On October 5, 1988, the county supervisors made it the branch for local history and historical records."
+    },
+    {
+     "type": "tale",
+     "claim": "The 1906 San Francisco earthquake helped slow down the library's construction.",
+     "truth": true,
+     "fact": "True. The stone company's crew arrived in April 1906, just as the quake pulled workers away and drove up prices. A hard winter and leaky stonework followed."
+    },
+    {
+     "type": "scramble",
+     "hint": "County historian whose name is on the old Carnegie library today",
+     "word": "FOLEY",
+     "fact": "It is now the Doris Foley Library for Historical Research."
+    }
+   ],
+   "source": {
+    "label": "National Register nomination, California Carnegie Libraries: Nevada City Library (1990)",
+    "url": "https://npgallery.nps.gov/GetAsset/424f7fdb-bb18-49d6-81d8-b76f2bd2b26a"
+   }
+  },
+  {
+   "date": "2026-12-06",
+   "theme": "The Lady Who Dealt On Broad Street",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "What card game did Eleanore Dumont deal in her Broad Street rooms in the 1850s?",
+     "choices": [
+      "Faro",
+      "Stud poker",
+      "Vingt-et-un",
+      "Three-card monte"
+     ],
+     "answer": 2,
+     "fact": "Vingt-et-un is French for twenty-one, an ancestor of blackjack. KQED puts her arrival in town in 1854."
+    },
+    {
+     "type": "tale",
+     "claim": "She made the miners at her table take their hats off.",
+     "truth": true,
+     "fact": "True, by the Time-Life book's telling: jackets on, hats off, easy on the swearing, no brawling."
+    },
+    {
+     "type": "scramble",
+     "hint": "The surname she gave when she stepped off the stage",
+     "word": "DUMONT",
+     "fact": "Her birth name and birthplace are uncertain. No source names her Broad Street storefront."
+    }
+   ],
+   "source": {
+    "label": "The Gamblers (Time-Life, 1978), pp. 99-101, and KQED on Eleanor Dumont (2022)",
+    "url": "https://www.kqed.org/arts/13908327/the-pistol-packing-gold-rush-gambler-who-beat-men-at-their-own-game"
+   }
+  },
+  {
+   "date": "2026-12-07",
+   "theme": "Madame Moustache Moves On",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "In a steamboatman's yarn from Montana, what did she serve a man she had just cleaned out at cards?",
+     "choices": [
+      "A shot of whiskey",
+      "A glass of milk",
+      "A cup of coffee",
+      "A cigar"
+     ],
+     "answer": 1,
+     "fact": "Louis Rosché said it was her habit to send every man she cleaned out on his way with milk. The book warns he liked to exaggerate."
+    },
+    {
+     "type": "tale",
+     "claim": "She was already known as Madame Moustache while she dealt cards on Broad Street.",
+     "truth": false,
+     "fact": "Tall tale. The book says the nickname came later, from the dark hair above her lip, and it was not meant kindly."
+    },
+    {
+     "type": "scramble",
+     "hint": "The California mining town of her last stop, in 1879",
+     "word": "BODIE",
+     "fact": "She followed strikes for 23 years and, the book says, never again found the respect she had in Nevada City."
+    }
+   ],
+   "source": {
+    "label": "The Gamblers (Time-Life, 1978), pp. 99-101, and KQED on Eleanor Dumont (2022)",
+    "url": "https://www.kqed.org/arts/13908327/the-pistol-packing-gold-rush-gambler-who-beat-men-at-their-own-game"
+   }
+  },
+  {
+   "date": "2026-12-08",
+   "theme": "The Grand Fair Of 1870",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "An 1870 lottery called the Grand Fair was meant to pay off the debts of what?",
+     "choices": [
+      "The county jail",
+      "The Nevada City school district",
+      "The hose companies",
+      "The Methodist church"
+     ],
+     "answer": 1,
+     "fact": "An October 1870 newspaper ad sold season tickets at $2.50 \"in aid of the Nevada School District.\""
+    },
+    {
+     "type": "tale",
+     "claim": "The ad promised a top prize of $10,000.",
+     "truth": true,
+     "fact": "True. The Grand Fair opened October 27, 1870, with gold coin premiums and a top prize of $10,000."
+    },
+    {
+     "type": "scramble",
+     "hint": "What James Monroe Pattee was later crowned king of",
+     "word": "LOTTERY",
+     "fact": "Pattee went on to run the Wyoming Lottery, where most winners were told they had won fifty cents."
+    }
+   ],
+   "source": {
+    "label": "The Democratic News, Jacksonville, Ore., Oct. 8, 1870, p. 2, and The Gamblers (Time-Life, 1978)",
+    "url": "https://oregonnews.uoregon.edu/lccn/sn93051611/1870-10-08/ed-1/seq-2/"
+   }
+  },
+  {
+   "date": "2026-12-09",
+   "theme": "The First Pub Crawl",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "Counting the town's first business directory (December 1855) entry by entry, about how many saloons are listed?",
+     "choices": [
+      "3",
+      "30",
+      "300",
+      "800"
+     ],
+     "answer": 1,
+     "fact": "About thirty saloons, three breweries, and a handful of wine and liquor dealers, by the Nugget's own count."
+    },
+    {
+     "type": "tale",
+     "claim": "A document has been found proving Nevada City once had over 800 bars and saloons.",
+     "truth": false,
+     "fact": "Tall tale, for now. It's the publisher's favorite piece of lore, but no one has shown us the paper. Got one? Write news@nevadacitynugget.com."
+    },
+    {
+     "type": "scramble",
+     "hint": "The Belle Creole, the Lone Star and the El Dorado were each one",
+     "word": "SALOON",
+     "fact": "Other 1855 names: the Golden Gate, the Young American, the Diana, and the Magnolia on Pine."
+    }
+   ],
+   "source": {
+    "label": "Brown & Dallison's directory, transcribed by Nevada County CAGenWeb",
+    "url": "https://cagenweb.org/nevada/nc1856.html"
+   }
+  },
+  {
+   "date": "2026-12-10",
+   "theme": "Still Pouring At The Old Addresses",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "The 1985 survey said 246 Commercial was, for many years, the town's best-known saloon. What was it called?",
+     "choices": [
+      "Blaze's",
+      "The Belle Creole",
+      "Eddy's",
+      "The Golden Gate"
+     ],
+     "answer": 0,
+     "fact": "246 Commercial dates to 1858. By 1985 it held a clothing shop."
+    },
+    {
+     "type": "tale",
+     "claim": "In 1985 the surveyors found a saloon called Chief Crazy Horse at 230 Commercial.",
+     "truth": true,
+     "fact": "True. The Crazy Horse Saloon & Grill is at the same address today, in a building from about 1863."
+    },
+    {
+     "type": "scramble",
+     "hint": "The street Blaze's poured on",
+     "word": "COMMERCIAL",
+     "fact": "Across the street, 235 Commercial had a brick-faced bar and a dance hall in 1985. That's The Fern's address now."
+    }
+   ],
+   "source": {
+    "label": "National Register nomination, Nevada City Downtown Historic District (1985)",
+    "url": "https://npgallery.nps.gov/GetAsset/8c2543a3-7c56-413e-b750-bc573422f498"
+   }
+  },
+  {
+   "date": "2026-12-11",
+   "theme": "The Librarian On The Sign",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "When Madelyn Helling was hired in 1974, which county librarian was she?",
+     "choices": [
+      "The first",
+      "The second",
+      "The third",
+      "The fifth"
+     ],
+     "answer": 1,
+     "fact": "She said so herself in 1997: the first lasted about a year and a half, and she stayed 17 years."
+    },
+    {
+     "type": "tale",
+     "claim": "The library named for her opened in 1991 next to the Rood Center.",
+     "truth": true,
+     "fact": "True. The $2.2 million library was built with grants, county matching funds and foundation money she went out and found."
+    },
+    {
+     "type": "scramble",
+     "hint": "Her name is on the library and on its street",
+     "word": "HELLING",
+     "fact": "Before the library, she worked for United Airlines and Air France."
+    }
+   ],
+   "source": {
+    "label": "Paul Matson, One person who made a big difference (The Union)",
+    "url": "https://www.theunion.com/opinion/columns/paul-matson-one-person-who-made-a-big-difference/article_4dfb9b70-8b38-5fa6-a659-824c94f5e816.html"
+   }
+  },
+  {
+   "date": "2026-12-12",
+   "theme": "Friends Of The Narrow Gauge",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "Madelyn Helling co-founded the Friends of the Narrow Gauge in 1983. In what year did its museum open?",
+     "choices": [
+      "1983",
+      "1991",
+      "2002",
+      "2016"
+     ],
+     "answer": 2,
+     "fact": "The group became the Nevada County Narrow Gauge Railroad and Transportation Museum, which opened in 2002."
+    },
+    {
+     "type": "tale",
+     "claim": "She was grand marshal of both the Fourth of July parade and the Chinese New Year parade.",
+     "truth": true,
+     "fact": "True, by Paul Matson's account in The Union."
+    },
+    {
+     "type": "scramble",
+     "hint": "What the Narrow Gauge was",
+     "word": "RAILROAD",
+     "fact": "She co-founded the group with historical society director Cliff Sommarstrom, then served as its secretary and later its director."
+    }
+   ],
+   "source": {
+    "label": "Paul Matson, One person who made a big difference (The Union)",
+    "url": "https://www.theunion.com/opinion/columns/paul-matson-one-person-who-made-a-big-difference/article_4dfb9b70-8b38-5fa6-a659-824c94f5e816.html"
+   }
+  },
+  {
+   "date": "2026-12-13",
+   "theme": "Ditches, Flumes And Footpaths",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "Sugarloaf Mountain, the town's own 30-acre peak, was bought as open space in what year?",
+     "choices": [
+      "1911",
+      "1961",
+      "1991",
+      "2011"
+     ],
+     "answer": 3,
+     "fact": "Bought in 2011. The trail climbs 220 feet to a summit meadow at about 3,060 feet."
+    },
+    {
+     "type": "tale",
+     "claim": "The wooden flumes on the Independence Trail, including Flume 28 over Rush Creek, came through the 2020 Jones Fire.",
+     "truth": false,
+     "fact": "Tall tale. The 2020 Jones Fire burned the trail's wooden flumes, Flume 28 over the Rush Creek waterfall included."
+    },
+    {
+     "type": "scramble",
+     "hint": "A miner's wooden water chute",
+     "word": "FLUME",
+     "fact": "Gold Rush miners dug ditches and flumes all over these hills, and plenty are footpaths now."
+    }
+   ],
+   "source": {
+    "label": "Bear Yuba Land Trust trail pages, via the Nugget's Trails & Vistas guide",
+    "url": "https://nevadacitynugget.com/trails.html"
+   }
+  },
+  {
+   "date": "2026-12-14",
+   "theme": "The Hills The Water Cannons Cut",
+   "pans": [
+    {
+     "type": "pick",
+     "q": "On the trails behind the Rood Center you'll find old hydraulic mining \"monitors.\" What were they?",
+     "choices": [
+      "Mine guards",
+      "Water cannons",
+      "Telegraph keys",
+      "Ore cars"
+     ],
+     "answer": 1,
+     "fact": "Monitors were the water cannons that tore up these hills. A display of them stands along the Government Center trails."
+    },
+    {
+     "type": "tale",
+     "claim": "Hirschman's Pond is kept full by water pumped up from Deer Creek.",
+     "truth": false,
+     "fact": "Tall tale. It's about five acres of water from natural sources, at the foot of cliffs cut by 1800s hydraulic mining."
+    },
+    {
+     "type": "scramble",
+     "hint": "The kind of mining that cut those cliffs",
+     "word": "HYDRAULIC",
+     "fact": "Hirschman's Pond has been a county historical landmark since 2021."
+    }
+   ],
+   "source": {
+    "label": "Bear Yuba Land Trust trail pages, via the Nugget's Trails & Vistas guide",
+    "url": "https://nevadacitynugget.com/trails.html"
+   }
+  }
+ ]
+}
