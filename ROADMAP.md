@@ -752,8 +752,19 @@ Todd's new batch, grouped. Each item waits on his answers to the open questions 
     `assets/features.json` through Dec 31, 2026 (no task-prompt change; the morning run splices the fragment
     and flags any mismatch with the live Spinitron page). Builder: project folder `kvmrx/build.py`.
     **Still to do:** extend the dated entries before Dec 31 (re-read the calendar first); hosts and show-page
-    links (the calendar feed carries titles only); a KVMRx Listen Live stream link (no stream URL seen yet;
-    the line links kvmrx.org); the optional standalone radio page.
+    links (the calendar feed carries titles only); the optional standalone radio page. (Listen Live button added Nov 19,
+    stream https://www.radiorethink.com/tuner/?stationCode=KVMRX&stream=hi, from Todd.)
+
+38. **A Nevada City restaurant guide (its own page).** (Todd, Nov 22, 2026: "I could see having a whole page as a
+    restaurant guide.") A standing, search-friendly page like `drinks.html` for every place to eat: downtown,
+    Seven Hills and the edges of town, grouped by meal or kind, with addresses, links and hours only as each
+    place posts them. It would gather the Bill of Fare roster and the Eat groups of the two Spotlight
+    directories in one place, and the Visitor Guide's Eat button and The Nugget's Guides shelves would point to
+    it. Same rules as the bar guide: no paid listings, hours from each restaurant's own site or its Google
+    listing via the publisher. **Not built; an idea until the publisher says go.**
+    **First step, Nov 22, 2026 (v0.9.18):** quick-link buttons on the Visitor Guide. The Bill of Fare, The
+    Bar Guide, After Dark, Galleries & Stages and both Spotlights carry a row of jump links to the matching
+    Spotlight groups (anchors `dt-*` and `sh-*`); builder `visitor-redesign/quicklinks.py` in the project files.
 
 ## Standing rules that don't change
 Accuracy over speed. Real sources, linked. Corrections printed, never silently rewritten.
