@@ -419,6 +419,8 @@ def main():
         urls.append((f"{SITE}subscribe.html", None, "monthly", "0.5"))
     if (ROOT / "daily.html").exists():
         urls.append((f"{SITE}daily.html", None, "monthly", "0.6"))
+    if (ROOT / "puzzler.html").exists():
+        urls.append((f"{SITE}puzzler.html", None, "daily", "0.6"))
     if (ROOT / "drawing" / "index.html").exists():
         urls.append((f"{SITE}drawing/", None, "monthly", "0.5"))
     urls += [(f"{SITE}daytrip/{p.name}", None, "monthly", "0.6")

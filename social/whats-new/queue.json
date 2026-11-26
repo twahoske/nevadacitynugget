@@ -242,6 +242,16 @@
    "body": "Have something to say about Nevada City? Write 200 words or fewer, sign it with your name and town, and send it to tips@nevadacitynugget.com with \"Letter to the Editor\" in the subject. The publisher reads every one; letters run in the morning paper on days there are letters.",
    "link": "letters.html",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.23-puzzler",
+   "version": "0.9.23",
+   "art": "stamp",
+   "head": "The Nugget Puzzler",
+   "deck": "Three quick pans of Nevada City history, fresh every day.",
+   "body": "A four-way question, a True or Tall Tale, and a scrambled local word, every day from Monday, November 30. Each good pan earns a gold nugget, and days in a row build your Puzzler streak. Every answer is checked against a real document.",
+   "link": "puzzler.html",
+   "alt": "The Nugget's NEW stamp drawing"
   }
  ]
 }

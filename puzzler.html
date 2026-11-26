@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'sha256-CwM3fB+PM9polhHRyAzs7Dkt3EmzBbbPsd9yaLgdpzs='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="description" content="The Nugget Puzzler: three quick pans of Nevada City history every day, a trivia question, a true-or-tall-tale and a word scramble, with a streak counter kept in your own browser.">
+<link rel="canonical" href="https://nevadacitynugget.com/puzzler.html">
+<link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
+<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<title>The Nugget Puzzler · Nevada City Nugget</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+:root{--paper:#f0ead9;--ink:#201c13;--ink-soft:#5f5743;--ink-mid:#564e3b;--rule:#9c927a;--rule-soft:#c9c0a8;--panel:#e7e0cb;--red:#7e2a18;--gold:#c9952f;--gold-hi:#e8c25a;--display:"Besley","Georgia",serif;--body:"Source Serif 4","Georgia",serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#17150f;--ink:#e6dfcc;--ink-soft:#a79d85;--ink-mid:#bdb299;--rule:#5d5440;--rule-soft:#3a362a;--panel:#201d14;--red:#d08a6a;color-scheme:dark}}
+body{background:var(--paper);background-image:radial-gradient(ellipse at 50% 0%,rgba(0,0,0,.035),transparent 60%);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.55;margin:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 56px}
+.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--red)}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.banner{margin-top:26px;text-align:center;font-family:var(--display);font-weight:900;font-size:clamp(13px,3vw,17px);letter-spacing:.3em;text-transform:uppercase;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:5px 0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(40px,11vw,72px);line-height:.95;margin:0;text-align:center;text-wrap:balance;letter-spacing:-.01em}
+h1 small{display:block;font-size:.3em;letter-spacing:.32em;text-transform:uppercase;font-weight:800;margin-bottom:6px}
+.motto{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;margin:10px 0 0;text-align:center}
+p{margin:0}
+.back{display:block;text-align:center;font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:2px solid var(--ink);padding:7px 10px;text-decoration:none}
+.back:hover{background:var(--panel);color:var(--red)}
+.kicker{display:flex;align-items:center;gap:14px;margin:0}
+.kicker::before,.kicker::after{content:"";height:3px;border-block:1px solid var(--ink);flex:1}
+.kicker .label{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+.pz-top{background:var(--ink);color:var(--paper);padding:18px 16px 16px;text-align:center;display:flex;flex-direction:column;gap:6px;border:3px double var(--paper);outline:2px solid var(--ink)}
+#pz-no{font-family:var(--display);font-weight:800;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-hi)}
+#pz-theme{font-family:var(--display);font-weight:900;font-size:clamp(28px,7.5vw,46px);line-height:1.02;margin:0;text-wrap:balance}
+#pz-streak{font-style:italic;font-size:14.5px;opacity:.92}
+#pz-streak b{font-style:normal;font-family:var(--display);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi)}
+#pz-status{text-align:center;font-style:italic;color:var(--ink-mid);font-size:17px}
+#pz-pans{display:flex;flex-direction:column;gap:18px}
+.pz-card{border:2px solid var(--ink);box-shadow:5px 5px 0 var(--rule-soft);background:var(--paper);padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px;animation:pz-in .45s ease-out both}
+.pz-card:nth-child(2){animation-delay:.08s}.pz-card:nth-child(3){animation-delay:.16s}
+.pz-kicker{font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:3px double var(--ink);padding-bottom:6px}
+.pz-kicker b{color:var(--red)}
+.pz-tip{font-size:13px;font-style:italic;color:var(--ink-mid);margin-top:-4px}
+.pz-q{font-family:var(--display);font-weight:800;font-size:clamp(19px,4.8vw,24px);line-height:1.2;text-wrap:pretty}
+.pz-choices{display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:560px){.pz-choices{grid-template-columns:1fr 1fr}}
+.pz-choices.two{grid-template-columns:1fr 1fr}
+.pz-choice{font:600 16.5px/1.25 var(--body);color:var(--ink);background:var(--panel);border:2px solid var(--ink);padding:11px 12px;text-align:left;cursor:pointer;min-height:48px;transition:transform .12s ease,background .12s ease}
+.pz-choices.two .pz-choice{text-align:center;font-family:var(--display);font-weight:900;font-size:18px;letter-spacing:.06em;text-transform:uppercase}
+.pz-choice:hover:not(:disabled){background:var(--paper);transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.pz-choice:disabled{cursor:default;opacity:.55}
+.pz-choice.right{opacity:1;background:var(--gold);color:#201c13;border-color:#201c13}
+.pz-choice.wrong{opacity:1;text-decoration:line-through;text-decoration-thickness:2px;border-style:dashed}
+.pz-slots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.pz-slot,.pz-tile{font:900 clamp(20px,6vw,26px)/1 var(--display);width:clamp(32px,9.5vw,44px);height:clamp(40px,11vw,52px);display:inline-flex;align-items:center;justify-content:center;padding:0;color:var(--ink);cursor:pointer}
+.pz-slot{background:transparent;border:0;border-bottom:3px solid var(--ink)}
+.pz-slot.full{border-bottom-color:var(--red)}
+.pz-slot.solved{color:#201c13;background:var(--gold);border-bottom-color:#201c13;animation:pz-pop .4s ease-out both}
+.pz-slot.shown{color:var(--ink-mid)}
+.pz-tray{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px 0 2px}
+.pz-tile{background:var(--panel);border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.pz-tile:disabled{opacity:.18;box-shadow:none;cursor:default}
+.pz-tools{display:flex;gap:16px;justify-content:center}
+.pz-tool{font:italic 14px var(--body);color:var(--ink-mid);background:none;border:0;padding:4px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.pz-tool:disabled{opacity:.4;cursor:default}
+.pz-msg{text-align:center;font-style:italic;font-size:14px;color:var(--ink-mid);min-height:1em;white-space:pre-line}
+.shake{animation:pz-shake .4s ease-in-out}
+.pz-verdict{display:flex;flex-direction:column;gap:8px;align-items:flex-start;border-top:1px solid var(--rule);padding-top:10px}
+.pz-stamp{font-family:var(--display);font-weight:900;font-size:15px;letter-spacing:.2em;text-transform:uppercase;padding:3px 10px;border:3px double currentColor;transform:rotate(-3deg);animation:pz-stamp .35s cubic-bezier(.2,1.6,.4,1) both}
+.pz-stamp.gold{color:var(--red)}
+.pz-stamp.fool{color:var(--ink-mid)}
+.pz-fact{font-size:15.5px}
+#pz-result{border:3px solid var(--ink);outline:1px solid var(--ink);outline-offset:3px;background:var(--panel);padding:18px 16px;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center}
+.pz-rk{font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
+.pz-nuggets{display:flex;gap:14px;justify-content:center;padding:4px 0}
+.pz-nug{width:60px;height:50px;background:var(--rule-soft);clip-path:polygon(14% 61%,27% 28%,55% 11%,82% 28%,91% 61%,68% 89%,32% 89%);animation:pz-drop .5s ease-out both}
+.pz-nug.got{background:linear-gradient(135deg,var(--gold-hi) 0%,var(--gold) 45%,#a87a24 100%)}
+.pz-big{font-family:var(--display);font-weight:900;font-size:clamp(30px,8vw,44px);line-height:1}
+.pz-line{font-style:italic}
+.pz-line.small{font-size:13.5px;color:var(--ink-mid)}
+.pz-share{font-family:var(--display);font-weight:900;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);background:var(--red);border:0;padding:11px 20px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);margin-top:6px}
+.pz-share:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.pz-src{font-size:13px;color:var(--ink-mid)}
+.notebox{border:1px solid var(--rule);background:var(--panel);padding:12px 14px;font-size:14.5px}
+.notebox p+p{margin-top:8px}
+.notebox button{font:inherit;font-style:italic;color:var(--ink-mid);background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+section.blk{display:flex;flex-direction:column;gap:12px}
+#pz-back{list-style:none;margin:0;padding:0}
+#pz-back li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;padding:7px 2px;border-bottom:1px solid var(--rule-soft)}
+#pz-back li:first-child{border-top:1px solid var(--rule)}
+#pz-back li span{font-size:13.5px;color:var(--ink-mid);font-style:italic}
+#pz-back li a{font-family:var(--display);font-weight:700}
+#pz-back li.on a{color:var(--red)}
+#pz-preview{border:2px dashed var(--red);padding:10px 12px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#pz-preview select{font:inherit}
+.stars{text-align:center;letter-spacing:1.2em;color:var(--ink-mid);font-size:13px;margin:0;padding-left:1.2em}
+footer{border-top:3px double var(--ink);padding-top:14px;font-size:13px;color:var(--ink-mid);text-align:center;font-family:var(--display)}
+footer p+p{margin-top:6px}
+.policynav{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;margin:8px 0 0}
+[hidden]{display:none!important}
+@keyframes pz-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pz-stamp{from{opacity:0;transform:rotate(-3deg) scale(1.8)}to{opacity:1;transform:rotate(-3deg) scale(1)}}
+@keyframes pz-pop{40%{transform:scale(1.18)}}
+@keyframes pz-shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes pz-drop{from{opacity:0;transform:translateY(-18px) rotate(-20deg)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="banner">The Nugget Puzzler</div>
+<div>
+  <h1><small>Nevada City Nugget</small>The Puzzler</h1>
+  <p class="motto">Three Pans of Local History · Fresh Every Day</p>
+</div>
+<a class="back" href="./">◂ Back to Today's Paper</a>
+<p id="pz-preview" hidden><b>PREVIEW ONLY.</b> Pretend today is:</p>
+
+<div class="pz-top">
+  <p id="pz-no">The Nugget Puzzler</p>
+  <h2 id="pz-theme">Panning…</h2>
+  <p id="pz-streak"></p>
+</div>
+<p id="pz-status" hidden></p>
+<div id="pz-pans"></div>
+<div id="pz-result" hidden role="region" aria-label="Your score"></div>
+
+<section class="blk">
+  <h2 class="kicker"><span class="label">How To Play</span></h2>
+  <div class="notebox">
+    <p><b>Three pans a day.</b> <i>The Assay</i> is a four-way question. <i>True or Tall Tale?</i> asks whether a claim holds up or is campfire talk. <i>The Scramble</i> is a local word with its letters stirred. Each good pan earns a gold nugget.</p>
+    <p><b>The streak.</b> Finish the day's puzzle on days in a row to build your Puzzler streak. Miss a day and a new run starts; your best stays on the books. Back issues are free to play but don't count.</p>
+    <p><b>Every answer is checked.</b> Each day's facts come from a document named at the bottom of the puzzle, mostly National Register nominations and old newspapers. The tall tales are ours, made up on purpose, and each one is set straight the moment you answer. Spot an error? <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a>.</p>
+    <p><b>Kept on your device.</b> Your streak and scores stay in this browser and are never sent to the Nugget or anyone else. No accounts, no leaderboards. <button type="button" id="pz-forget">Forget my Puzzler progress</button> <span id="pz-forgot"></span></p>
+  </div>
+</section>
+
+<section class="blk">
+  <h2 class="kicker"><span class="label">Back Issues</span></h2>
+  <ul id="pz-back"></ul>
+</section>
+
+<p class="stars">✱ ✱ ✱</p>
+<a class="back" href="./">◂ Back to Today's Paper</a>
+
+<footer>
+  <p><b>The Nevada City Nugget</b> is an independent daily summary compiled each morning, not an official city publication, and no relation to the historical paper of the same name beyond admiration.</p>
+  <p>Write the Nugget: <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a></p>
+  <p class="follow"><b>Follow the Nugget:</b> <a href="https://www.instagram.com/nevadacitynugget/">Instagram</a> · <a href="https://www.facebook.com/nevadacitynugget">Facebook</a></p>
+  <p class="policynav">
+    <a href="standards.html">Standards &amp; Disclosures</a>
+    <a href="subscribe.html">Subscribe</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="sources.html">Sources &amp; Methods</a>
+  </p>
+</footer>
+
+</div>
+<script>(function(){
+  /* The Nugget Puzzler: three pans of local history a day. Progress stays in this browser only (never sent anywhere). */
+  var KEY = "nugget-puzzler", PREVIEW = window.PZ_PREVIEW || null;
+  var $ = function(id){ return document.getElementById(id); };
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY) || "null") || {}; } catch(e){ return {}; } }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(rec)); } catch(e){} }
+  function pacific(d){ return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(d || new Date()); }
+  function dayBefore(day){ var p = day.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2] - 1)).toISOString().slice(0, 10); }
+  function longDate(day){ var p = day.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12)).toLocaleDateString("en-US", { timeZone: "UTC", weekday: "long", month: "long", day: "numeric", year: "numeric" }); }
+  function hash(s){ var h = 7; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 1000003; return h; }
+
+  function ss(k, v){ try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch(e){ return null; } }
+  var rec = load(); rec.days = rec.days || {};
+  var today = PREVIEW && ss("pz-pretend") || pacific();
+  var all = [], puz = null, num = 0, state = null;
+
+  function streakNow(){
+    /* A run counts finished puzzles on consecutive days, through today or yesterday. */
+    if (!rec.last || (rec.last !== today && rec.last !== dayBefore(today))) return 0;
+    return rec.n || 0;
+  }
+  function finishDay(){
+    if (puz.date !== today || rec.last === today) return;
+    rec.n = rec.last === dayBefore(today) ? (rec.n || 0) + 1 : 1;
+    rec.best = Math.max(rec.best || 0, rec.n);
+    rec.last = today;
+  }
+  function score(st){ return st.r.filter(function(r){ return r && r.ok; }).length; }
+  function done(st){ return st.r.length === 3 && st.r[0] && st.r[1] && st.r[2]; }
+  function totalNuggets(){ var t = 0; for (var k in rec.days) t += score(rec.days[k]); return t; }
+  function prune(){ var ks = Object.keys(rec.days).sort(); while (ks.length > 120) delete rec.days[ks.shift()]; }
+
+  function drawStreak(){
+    var s = $("pz-streak"); s.textContent = "";
+    var n = streakNow();
+    var b = el("b", "", n ? "Puzzler streak: " + n + (n === 1 ? " day" : " days") : "No streak yet");
+    s.appendChild(b);
+    s.appendChild(document.createTextNode(" · Best " + (rec.best || 0) + " · " + totalNuggets() + " nuggets panned"));
+  }
+
+  function verdict(card, ok, fact){
+    var v = el("div", "pz-verdict");
+    v.appendChild(el("span", "pz-stamp " + (ok ? "gold" : "fool"), ok ? "Pure Gold" : "Fool's Gold"));
+    v.appendChild(el("p", "pz-fact", fact));
+    v.setAttribute("role", "status");
+    card.appendChild(v);
+  }
+  function settle(i, ok, pick){
+    state.r[i] = { ok: ok, v: pick };
+    rec.days[puz.date] = state;
+    if (done(state)) finishDay();
+    prune(); save();
+    drawStreak();
+    if (done(state)){ drawResult(); drawBackIssues(); }
+  }
+
+  function pickPan(card, pan, i, kind){
+    var opts = kind === "tale" ? ["True", "Tall Tale"] : pan.choices;
+    var right = kind === "tale" ? (pan.truth ? 0 : 1) : pan.answer;
+    card.appendChild(el("p", "pz-q", kind === "tale" ? "“" + pan.claim + "”" : pan.q));
+    var row = el("div", "pz-choices" + (kind === "tale" ? " two" : ""));
+    var btns = opts.map(function(o, j){
+      var b = el("button", "pz-choice", o); b.type = "button";
+      b.addEventListener("click", function(){ if (state.r[i]) return; mark(j); settle(i, j === right, j); verdict(card, j === right, pan.fact); });
+      row.appendChild(b); return b;
+    });
+    function mark(j){ btns.forEach(function(b, k){ b.disabled = true; if (k === right) b.className += " right"; else if (k === j) b.className += " wrong"; }); }
+    card.appendChild(row);
+    if (state.r[i]){ mark(state.r[i].v); verdict(card, state.r[i].ok, pan.fact); }
+  }
+
+  function scramblePan(card, pan, i){
+    var word = pan.word, n = word.length;
+    card.appendChild(el("p", "pz-q", pan.hint));
+    var slots = el("div", "pz-slots"), tray = el("div", "pz-tray"), tools = el("div", "pz-tools");
+    var order = word.split("").map(function(c, k){ return { c: c, k: k }; });
+    var h = hash(puz.date + word);
+    for (var t = 0; t < 40; t++){
+      for (var a = n - 1; a > 0; a--){ h = (h * 1103515245 + 12345) % 2147483648; var b = h % (a + 1), x = order[a]; order[a] = order[b]; order[b] = x; }
+      if (order.map(function(o){ return o.c; }).join("") !== word) break;
+    }
+    var placed = [], tiles = [], sbox = [];
+    for (var s = 0; s < n; s++){ var sl = el("button", "pz-slot"); sl.type = "button"; sl.setAttribute("aria-label", "Letter " + (s + 1)); slots.appendChild(sl); sbox.push(sl); }
+    order.forEach(function(o, k){
+      var tb = el("button", "pz-tile", o.c); tb.type = "button";
+      tb.addEventListener("click", function(){ put(k); });
+      tray.appendChild(tb); tiles.push(tb);
+    });
+    var clear = el("button", "pz-tool", "Clear"); clear.type = "button";
+    var give = el("button", "pz-tool", "Show me"); give.type = "button";
+    tools.appendChild(clear); tools.appendChild(give);
+    var msg = el("p", "pz-msg"); msg.setAttribute("aria-live", "polite");
+    card.appendChild(slots); card.appendChild(tray); card.appendChild(tools); card.appendChild(msg);
+
+    function draw(){
+      sbox.forEach(function(sl, k){ sl.textContent = placed[k] != null ? order[placed[k]].c : ""; sl.className = "pz-slot" + (placed[k] != null ? " full" : ""); });
+      tiles.forEach(function(tb, k){ tb.disabled = placed.indexOf(k) >= 0 || !!state.r[i]; });
+    }
+    function put(k){
+      if (state.r[i] || placed.indexOf(k) >= 0 || placed.length >= n) return;
+      placed.push(k); draw();
+      if (placed.length === n){
+        var guess = placed.map(function(p){ return order[p].c; }).join("");
+        if (guess === word){ end(true); }
+        else { msg.textContent = "Not quite. Tap a letter in the row to pull it back, or Clear."; slots.className = "pz-slots shake"; setTimeout(function(){ slots.className = "pz-slots"; }, 500); }
+      }
+    }
+    sbox.forEach(function(sl, k){ sl.addEventListener("click", function(){ if (state.r[i] || placed[k] == null) return; placed.splice(k, 1); msg.textContent = ""; draw(); }); });
+    clear.addEventListener("click", function(){ if (state.r[i]) return; placed = []; msg.textContent = ""; draw(); });
+    give.addEventListener("click", function(){ if (state.r[i]) return; end(false); });
+    function end(ok){
+      placed = word.split("").map(function(c, k){ return order.findIndex(function(o){ return o.k === k; }); });
+      draw(); clear.disabled = give.disabled = true; msg.textContent = "";
+      sbox.forEach(function(sl){ sl.className += ok ? " solved" : " shown"; sl.disabled = true; });
+      if (!state.r[i]) settle(i, ok, ok ? 1 : 0);
+      verdict(card, ok, pan.fact);
+    }
+    document.addEventListener("keydown", function(e){
+      if (!card.isConnected || state.r[i] || e.metaKey || e.ctrlKey || e.altKey) return;
+      var a = document.activeElement;
+      if (!card.contains(a) && a !== document.body) return;
+      if (e.key === "Backspace" && placed.length){ placed.pop(); msg.textContent = ""; draw(); e.preventDefault(); return; }
+      var c = (e.key || "").toUpperCase();
+      if (c.length !== 1) return;
+      for (var k = 0; k < order.length; k++) if (order[k].c === c && placed.indexOf(k) < 0){ put(k); e.preventDefault(); return; }
+    });
+    if (state.r[i]) end(state.r[i].ok); else draw();
+  }
+
+  function shareText(){
+    var sc = score(state), marks = state.r.map(function(r){ return r.ok ? "◆" : "◇"; }).join(" ");
+    var t = "The Nugget Puzzler No. " + num + "\n" + marks + "  " + sc + " of 3 nuggets";
+    var n = streakNow(); if (puz.date === today && n > 1) t += "\nPuzzler streak: " + n + " days";
+    return t + "\nhttps://nevadacitynugget.com/puzzler.html";
+  }
+  function drawResult(){
+    var box = $("pz-result"); box.textContent = ""; box.hidden = false;
+    var sc = score(state);
+    box.appendChild(el("p", "pz-rk", "The Day's Take"));
+    var row = el("div", "pz-nuggets");
+    state.r.forEach(function(r, k){ var g = el("span", "pz-nug" + (r.ok ? " got" : "")); g.style.animationDelay = (k * 0.18) + "s"; g.setAttribute("aria-hidden", "true"); row.appendChild(g); });
+    box.appendChild(row);
+    box.appendChild(el("p", "pz-big", sc + " of 3 nuggets"));
+    var lines = ["Back to the creek with an empty pan. There's always tomorrow.", "Color in the pan. Not bad for a greenhorn.", "Two good pans. The assayer nods.", "A clean sweep. Drinks are on the house (milk, naturally)."];
+    box.appendChild(el("p", "pz-line", lines[sc]));
+    var n = streakNow();
+    if (puz.date === today) box.appendChild(el("p", "pz-line", n > 1 ? "Puzzler streak: " + n + " days running. Keep it alive tomorrow." : "That starts your streak. Come back tomorrow to keep it going."));
+    else box.appendChild(el("p", "pz-line", "A back issue: fun to play, but only today's puzzle counts toward your streak."));
+    var share = el("button", "pz-share", "☞ Wire Your Score"); share.type = "button";
+    var note = el("p", "pz-msg"); note.setAttribute("aria-live", "polite");
+    share.addEventListener("click", function(){
+      var t = shareText();
+      function copy(){
+        if (navigator.clipboard){ navigator.clipboard.writeText(t).then(function(){ note.textContent = "Copied. Paste it to a friend."; }, function(){ note.textContent = t; }); }
+        else note.textContent = t;
+      }
+      if (navigator.share){ navigator.share({ text: t }).catch(function(e){ if (!e || e.name !== "AbortError") copy(); }); return; }
+      copy();
+    });
+    box.appendChild(share); box.appendChild(note);
+    var src = el("p", "pz-src"); src.appendChild(document.createTextNode("Source: "));
+    var a = el("a", "", puz.source.label); a.href = puz.source.url; src.appendChild(a); box.appendChild(src);
+    if (puz.date === today) box.appendChild(el("p", "pz-line small", "A new puzzle every day after midnight, Pacific time. The paper is out by 6."));
+  }
+
+  function drawBackIssues(){
+    var ul = $("pz-back"); ul.textContent = "";
+    all.forEach(function(p, k){
+      if (p.date > today && !PREVIEW) return;
+      var li = el("li"), a = el("a", "", "No. " + (k + 1) + " · " + p.theme);
+      a.href = "?day=" + p.date; li.appendChild(a);
+      var st = rec.days[p.date];
+      li.appendChild(el("span", "", (p.date === today ? "Today" : longDate(p.date).replace(/, \d{4}$/, "")) + (st && done(st) ? " · " + score(st) + " of 3 ✓" : "")));
+      if (puz && p.date === puz.date) li.className = "on";
+      ul.appendChild(li);
+    });
+    if (!ul.children.length) ul.appendChild(el("li", "", "The first puzzle is still on the press."));
+  }
+
+  function render(){
+    var want = (location.search.match(/[?&]day=(\d{4}-\d{2}-\d{2})/) || [])[1];
+    var pick = null;
+    all.forEach(function(p, k){ if (p.date === (want || today) && (PREVIEW || p.date <= today)){ pick = p; num = k + 1; } });
+    drawStreak();
+    $("pz-status").hidden = !!pick;
+    if (!pick){
+      var later = all.filter(function(p){ return p.date > today; })[0];
+      $("pz-status").textContent = later && !all.some(function(p){ return p.date <= today; })
+        ? "The first Nugget Puzzler arrives " + longDate(later.date) + ". Come back then."
+        : "No puzzle on the press today. Try a back issue below.";
+      drawBackIssues(); return;
+    }
+    puz = pick;
+    state = rec.days[puz.date] || { r: [] };
+    $("pz-no").textContent = "Puzzler No. " + num + " · " + longDate(puz.date) + (puz.date !== today ? " · Back Issue" : "");
+    $("pz-theme").textContent = puz.theme;
+    var pans = $("pz-pans"); pans.textContent = "";
+    var names = ["The Assay", "True or Tall Tale?", "The Scramble"], tips = ["Pick one. One try.", "Fact or campfire yarn? One try.", "Tap the letters in order. Tap a placed letter to pull it back."];
+    puz.pans.forEach(function(pan, i){
+      var card = el("section", "pz-card");
+      var k = el("p", "pz-kicker"); k.appendChild(el("b", "", "Pan No. " + (i + 1))); k.appendChild(document.createTextNode(" · " + names[i]));
+      card.appendChild(k); card.appendChild(el("p", "pz-tip", tips[i]));
+      if (pan.type === "scramble") scramblePan(card, pan, i); else pickPan(card, pan, i, pan.type);
+      pans.appendChild(card);
+    });
+    if (done(state)) drawResult(); else $("pz-result").hidden = true;
+    drawBackIssues();
+  }
+
+  $("pz-forget").addEventListener("click", function(){
+    try { localStorage.removeItem(KEY); } catch(e){}
+    rec = { days: {} }; $("pz-forgot").textContent = "Forgotten. This browser no longer keeps any Puzzler notes."; render();
+  });
+
+  if (PREVIEW){
+    var bar = $("pz-preview"); bar.hidden = false;
+    var sel = el("select"); sel.setAttribute("aria-label", "Pretend today is");
+    PREVIEW.puzzles.forEach(function(p){ var o = el("option", "", longDate(p.date)); o.value = p.date; if (p.date === today) o.selected = true; sel.appendChild(o); });
+    if (!ss("pz-pretend")){ today = PREVIEW.puzzles[0].date; }
+    sel.value = today;
+    sel.addEventListener("change", function(){ ss("pz-pretend", sel.value); today = sel.value; history.replaceState(null, "", location.pathname); render(); });
+    bar.appendChild(sel);
+    all = PREVIEW.puzzles; render();
+  } else {
+    fetch("/puzzler/puzzles.json", { cache: "no-cache" }).then(function(r){ return r.json(); }).then(function(d){ all = d.puzzles || []; render(); })
+      .catch(function(){ $("pz-status").textContent = "The puzzle didn't load. Check your connection and try again."; });
+  }
+})();
+</script>
+</body>
+</html>
