@@ -330,6 +330,11 @@ script gets its CSP hash first, and games stay off archives except the puzzle an
     "Wire Your Score". Puzzles live in puzzler/puzzles.json (one per Pacific date; editing it needs no new CSP hash);
     every fact comes from a named source, mostly NRHP nominations already used in Local History Unearthed. Streak kept in
     the browser only (localStorage nugget-puzzler). First 15 puzzles run Nov 30 to Dec 14; add the next batch before then.
+10b. **The Gold Rush Almanac.** BUILT Nov 26 (Todd said yes Nov 26): a daily box at the top of the Weather section,
+    one 1850s Nevada County line plus a period weather saying. Scoop-pipeline fragments (assets/features/YYYY-MM-DD-almanac.html,
+    div.gra), no prompt change. History only from Bean's 1867 and Thompson & West 1880 county histories (archive.org) or another
+    named source; "On This Day" only for exact dates, else "This Month" / "This Winter". Sayings from Inwards, Weather Lore (1869).
+    Dec 1-31 scheduled; add January's batch before Dec 31.
 11. **Gold Country Passport** (Visitor Guide). Stamp card for trails, Bar Guide stops and Merchants of the Day;
     a full card prints an "Honorary Townsfolk" certificate.
 
