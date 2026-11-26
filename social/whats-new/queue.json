@@ -232,6 +232,16 @@
    "link": "sources.html",
    "art": "stamp",
    "alt": ""
+  },
+  {
+   "id": "0.9.23-letters",
+   "version": "0.9.23",
+   "art": "stamp",
+   "head": "The Mail Bag Is Open",
+   "deck": "The Nugget now prints letters to the editor, signed, short, and about this town.",
+   "body": "Have something to say about Nevada City? Write 200 words or fewer, sign it with your name and town, and send it to tips@nevadacitynugget.com with \"Letter to the Editor\" in the subject. The publisher reads every one; letters run in the morning paper on days there are letters.",
+   "link": "letters.html",
+   "alt": "The Nugget's NEW stamp drawing"
   }
  ]
 }
