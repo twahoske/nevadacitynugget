@@ -220,6 +220,18 @@
    "body": "Off Broadstreet, the cabaret dessert theatre at 305 Commercial Street, is now in the Nevada City Visitor Guide's downtown directory, arts guide and nightlife guide. When a show is coming up, the paper lists it under Amusements, starting with Holiday Express, November 28 through December 20.",
    "link": "visitor.html",
    "alt": "The Nugget's NEW stamp drawing"
+  },
+  {
+   "id": "0.9.21-sierra-sun",
+   "version": "0.9.21",
+   "skip": true,
+   "_why": "A new name on the sources page is housekeeping, not a feature worth a post.",
+   "head": "The Sierra Sun joins the sources",
+   "deck": "",
+   "body": "",
+   "link": "sources.html",
+   "art": "stamp",
+   "alt": ""
   }
  ]
 }
