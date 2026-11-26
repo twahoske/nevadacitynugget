@@ -405,6 +405,8 @@ def main():
         urls.append((f"{SITE}stay.html", None, "monthly", "0.7"))
     if (ROOT / "nonprofits.html").exists():
         urls.append((f"{SITE}nonprofits.html", None, "monthly", "0.7"))
+    if (ROOT / "letters.html").exists():
+        urls.append((f"{SITE}letters.html", None, "monthly", "0.5"))
     if (ROOT / "wellness.html").exists():
         urls.append((f"{SITE}wellness.html", None, "monthly", "0.7"))
     if (ROOT / "visitor.html").exists():

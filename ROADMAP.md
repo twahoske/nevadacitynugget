@@ -337,7 +337,8 @@ script gets its CSP hash first, and games stay off archives except the puzzle an
 12. **Reader notices, the old-fashioned way.** Free birthday, anniversary, new-baby, welcome-to-town and
     "so long, we'll miss you" notices, sent in by email and run with consent (same rules as Citizen o' the Day).
 13. **Reader of the Week / Letters to the Editor.** Nominated or self-submitted, consent required, published
-    with name and town only.
+    with name and town only. *Letters half SHIPPED Nov 26, 2026 (v0.9.23): letters.html rules, letters to
+    tips@ approved one by one by Todd in chat, run via the scoop pipeline before The Back Page; launch box Nov 30-Dec 6.*
 14. **Milestone witnesses.** Readers who were there when a milestone fell get a badge (device only).
 
 ### The Funnies (Todd, Nov 15: "different art styles welcome")
