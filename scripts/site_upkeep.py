@@ -12,7 +12,9 @@ It never touches index.html, which the Site Publisher owns. It:
   - points a stray duplicate (editions/YYYY-MM-DD-N.html) at the edition it duplicates,
   - writes editions/index.html, a list of every edition,
   - gives the bar guide (drinks.html) structured data for each bar it lists,
-  - rewrites sitemap.xml.
+  - gives every other page share-card tags (Open Graph + Twitter), a font preconnect hint,
+    and WebPage + BreadcrumbList structured data (Search Console "page" upkeep),
+  - rewrites sitemap.xml, with a real lastmod for each page.
 Safe to run repeatedly; it only writes files whose content changes.
 """
 import datetime
@@ -20,6 +22,7 @@ import html as htmllib
 import json
 import pathlib
 import re
+import subprocess
 
 SITE = "https://nevadacitynugget.com/"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -263,6 +266,122 @@ def bar_guide():
     write_if_changed(path, new)
 
 
+# ---- Page upkeep: share cards, breadcrumbs, last-modified dates ----------------------
+
+DEFAULT_IMAGE = (f"{SITE}og-image.png",
+                 "The Nevada City Nugget nameplate: a Modern-Vintage daily paper for Nevada City, California")
+EFF_RE = re.compile(r'class="eff">\s*(?:Last checked|Updated|Last updated)\s+([A-Z][a-z]+ \d{1,2}, \d{4})')
+SECTION_PARENTS = {"meetings": ("Meetings on the Record", f"{SITE}meetings/"),
+                   "editions": ("The Archive", f"{SITE}editions/")}
+
+
+def git_date(path):
+    """Day of the last commit that touched path, skipping this script's own commits."""
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--invert-grep", "--grep=^Site upkeep",
+                              "--", str(path.relative_to(ROOT))], cwd=ROOT, capture_output=True,
+                             text=True, check=True).stdout.strip()
+        return out or None
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return None
+
+
+def page_date(path):
+    """The later of the page's own 'Last checked' date and its last real commit."""
+    dates = [git_date(path)]
+    m = EFF_RE.search(path.read_text(encoding="utf-8"))
+    if m:
+        try:
+            dates.append(datetime.datetime.strptime(m.group(1), "%B %d, %Y").date().isoformat())
+        except ValueError:
+            pass
+    dates = [d for d in dates if d]
+    return max(dates) if dates else None
+
+
+def head_value(head, pattern):
+    m = re.search(pattern, head, re.S | re.I)
+    return htmllib.unescape(m.group(1)).strip() if m else None
+
+
+def add_meta(html, attr, name, value, after):
+    """Insert <meta attr="name"> only if the page does not already carry one."""
+    head_end = html.find("</head>")
+    if re.search(rf'<meta {attr}="{re.escape(name)}"', html[:head_end]):
+        return html
+    tag = f'<meta {attr}="{name}" content="{htmllib.escape(value, quote=True)}">'
+    return set_head_tag(html, r"(?!)", tag, after)
+
+
+def fix_page(path, url, indexable=True, card=None):
+    """Share-card tags for every page; breadcrumbs + WebPage data for pages meant for search."""
+    html = path.read_text(encoding="utf-8")
+    head_end = html.find("</head>")
+    if head_end == -1:
+        return
+    head = html[:head_end]
+    title = head_value(head, r"<title>(.*?)</title>")
+    desc = head_value(head, r'<meta name="description" content="([^"]*)"')
+    if not title:
+        return
+    name = re.split(r" · (?:The )?Nevada City Nugget$", title)[0]
+    new = html
+    if "fonts.googleapis.com" in head and "fonts.gstatic.com" not in head:
+        new = re.sub(r'<link rel="stylesheet" href="https://fonts\.googleapis\.com',
+                     lambda m: '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
+                               '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' + m.group(0),
+                     new, count=1)
+    image = head_value(head, r'<meta property="og:image" content="([^"]*)"')
+    anchor = r'<title>.*?</title>'
+    tags = [("property", "og:type", "website"), ("property", "og:site_name", "Nevada City Nugget"),
+            ("property", "og:locale", "en_US"), ("property", "og:title", name),
+            ("property", "og:url", url)]
+    if desc:
+        tags.append(("property", "og:description", desc))
+    if not image:
+        src, alt = card or DEFAULT_IMAGE
+        tags += [("property", "og:image", src), ("property", "og:image:width", "1200"),
+                 ("property", "og:image:height", "630"), ("property", "og:image:alt", alt)]
+    tags += [("name", "twitter:card", "summary_large_image"), ("name", "twitter:title", name)]
+    if desc:
+        tags.append(("name", "twitter:description", desc))
+    for attr, key, value in reversed(tags):
+        new = add_meta(new, attr, key, value, anchor)
+
+    if indexable:
+        crumbs = [{"@type": "ListItem", "position": 1, "name": "Nevada City Nugget", "item": SITE}]
+        parent = SECTION_PARENTS.get(path.parent.name)
+        if parent and url != parent[1]:
+            crumbs.append({"@type": "ListItem", "position": 2, "name": parent[0], "item": parent[1]})
+        crumbs.append({"@type": "ListItem", "position": len(crumbs) + 1, "name": name, "item": url})
+        page = {"@type": "WebPage", "@id": f"{url}#webpage", "url": url, "name": name,
+                "inLanguage": "en-US", "isPartOf": {"@id": f"{SITE}#website"},
+                "publisher": {"@id": f"{SITE}#organization"}, "breadcrumb": {"@id": f"{url}#breadcrumb"},
+                "about": {"@type": "City", "name": "Nevada City",
+                          "address": {"@type": "PostalAddress", "addressLocality": "Nevada City",
+                                      "addressRegion": "CA", "addressCountry": "US"}}}
+        if desc:
+            page["description"] = desc
+        page["primaryImageOfPage"] = {"@type": "ImageObject",
+                                                         "url": image or DEFAULT_IMAGE[0]}
+        modified = page_date(path)
+        if modified:
+            page["dateModified"] = modified
+        nodes = ld_nodes() + [page, {"@type": "BreadcrumbList", "@id": f"{url}#breadcrumb",
+                                     "itemListElement": crumbs}]
+        script = ld_script(nodes, "ld-page")
+        head_end = new.find("</head>")
+        page_ld = r'<script type="application/ld\+json" id="ld-page">.*?</script>'
+        if re.search(page_ld, new[:head_end], re.S):
+            new = re.sub(page_ld, lambda _: script, new[:head_end], count=1, flags=re.S) + new[head_end:]
+        else:
+            new = set_head_tag(new, r"(?!)", script, anchor)
+
+    if new != html:
+        path.write_text(new, encoding="utf-8")
+        print(f"updated {path.relative_to(ROOT)}")
+
+
 def iso(day):
     return datetime.datetime.strptime(day, "%A, %B %d, %Y").date().isoformat()
 
@@ -298,6 +417,8 @@ def main():
         urls.append((f"{SITE}subscribe.html", None, "monthly", "0.5"))
     if (ROOT / "daily.html").exists():
         urls.append((f"{SITE}daily.html", None, "monthly", "0.6"))
+    if (ROOT / "drawing" / "index.html").exists():
+        urls.append((f"{SITE}drawing/", None, "monthly", "0.5"))
     urls += [(f"{SITE}daytrip/{p.name}", None, "monthly", "0.6")
              for p in sorted((ROOT / "daytrip").glob("*.html"))]
     if (ROOT / "meetings" / "index.html").exists():
@@ -310,6 +431,28 @@ def main():
              for page in ("standards.html", "privacy.html", "terms.html") if (ROOT / page).exists()]
     urls.append((f"{SITE}editions/", dated[0] if dated else None, "daily", "0.6"))
     urls += [(f"{SITE}editions/{d}.html", d, "never", "0.6") for d in sorted(set(dated), reverse=True)]
+
+    # Every page that is not an edition: share cards + breadcrumbs, and a real lastmod.
+    # Pages meant for ads and print (noindex) get share cards only and stay out of the sitemap.
+    def local(loc):
+        rel = loc[len(SITE):]
+        return ROOT / (rel + "index.html" if rel.endswith("/") or not rel else rel)
+    for i, (loc, lastmod, freq, prio) in enumerate(urls):
+        path = local(loc)
+        if loc == SITE or path.name == "visitor.html" or path.parent.name == "editions" or not path.exists():
+            continue
+        fix_page(path, loc)
+        if not lastmod:
+            urls[i] = (loc, page_date(path), freq, prio)
+    for i, (loc, lastmod, freq, prio) in enumerate(urls):
+        if loc == f"{SITE}visitor.html" and not lastmod:
+            urls[i] = (loc, iso(today) if today else None, freq, prio)
+    holiday = (f"{SITE}victorian-christmas-og.png",
+               "A gas lamp wrapped in cedar and a red bow on a snowy night in Nevada City")
+    for landing in ("join", "hello", "visit", "xmas", "radio"):
+        path = ROOT / landing / "index.html"
+        if path.exists():
+            fix_page(path, f"{SITE}{landing}/", indexable=False, card=holiday if landing == "xmas" else None)
 
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
