@@ -17,7 +17,7 @@ every 2 minutes until it sends, finds it already sent, or the window closes
 (GitHub's own cron proved unreliable, so the morning edition's push starts a
 waiting run). Standard library only.
 """
-import json, os, re, sys, time, urllib.parse, urllib.request
+import json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -52,6 +52,19 @@ def bd(key, path, method="GET", body=None):
     with urllib.request.urlopen(req, timeout=30) as r:
         text = r.read().decode()
     return json.loads(text) if text else {}
+
+
+def describe(err):
+    """Name an error, with Buttondown's own explanation when it gave one."""
+    text = f"{type(err).__name__}: {err}"
+    if isinstance(err, urllib.error.HTTPError):
+        try:
+            detail = err.read().decode("utf-8", "replace").strip()
+        except Exception:
+            detail = ""
+        if detail:
+            text += " | " + " ".join(detail.split())[:600]
+    return text
 
 
 def site_folio():
@@ -91,8 +104,16 @@ def run_waiting(key, dry_run=False, pause=120, **kw):
     while True:
         try:
             msg = run(key, dry_run=dry_run, **kw)
+        except urllib.error.HTTPError as err:
+            if 400 <= err.code < 500 and err.code != 429:
+                # Buttondown refused the request itself; retrying the same
+                # thing for hours will not help. Stop and fail the run so
+                # GitHub flags it (and emails the repository owner).
+                msg = f"FAILED: Buttondown said no: {describe(err)}"
+            else:
+                msg = f"error {describe(err)}; will look again"
         except Exception as err:  # a network blip should not end the wait
-            msg = f"error {type(err).__name__}: {err}; will look again"
+            msg = f"error {describe(err)}; will look again"
         print(msg, flush=True)
         if "will look again" not in msg:
             return msg
@@ -111,10 +132,13 @@ if __name__ == "__main__":
         else:
             msg = run(key, ignore_window=os.environ.get("IGNORE_WINDOW") == "yes", dry_run=dry)
     except Exception as err:  # report, never print the key
-        print(f"ERROR: {type(err).__name__}: {err}")
+        print(f"ERROR: {describe(err)}")
         sys.exit(1)
     print(msg)
+    failed = msg.startswith("FAILED") or msg.startswith("error ")
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
         with open(summary, "a") as f:
             f.write(msg + "\n")
+    if failed:
+        sys.exit(1)
