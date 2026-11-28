@@ -298,7 +298,7 @@ html{scroll-padding-top:46px}
 <p class="beta-bar"><a href="https://nevadacitynugget.com/release-notes.html" title="What is new at the Nugget"><span class="beta-stamp">Beta Mode</span><span class="beta-v">v0.9.23</span><span class="beta-note">Fresh ink, still drying. <u>Read the release notes</u> ▸</span></a></p>
 
 
-<p class="banner">Evening Edition</p>
+<p class="banner">Small Business Saturday</p>
 <header class="masthead">
   <div class="ear"><a href="https://nevadacitynugget.com/subscribe.html" style="color:inherit">The Nugget is delivered to your inbox every morning at half past six, free of charge.<span class="bm-cue">Sign up free ▸</span></a></div>
   <div class="nameplate">
@@ -329,54 +329,45 @@ html{scroll-padding-top:46px}
 </header>
 
 <div class="folio">
-  <span class="f-l"><b>Vol. 1, No. 37</b><i>The County Seat Paper</i></span>
-  <span class="f-c"><b>Friday, November 27, 2026</b><i>Nevada City, California</i></span>
+  <span class="f-l"><b>Vol. 1, No. 38</b><i>The County Seat Paper</i></span>
+  <span class="f-c"><b>Saturday, November 28, 2026</b><i>Nevada City, California</i></span>
   <span class="f-r"><span class="f-hi">Elev. 2,477 Ft.</span><i>Mmm nuggets</i></span>
 </div>
 
 <style>
-/* Black Friday, Nov 27, 2026 only: the whole paper goes to press in black, with gold ink for the accents. Arrives and leaves with this one-day feature. */
-:root:not(#bf):not(#bf2){--paper:#0f0e0b;--ink:#ece4cf;--ink-soft:#b3a98f;--ink-mid:#c9bfa5;--rule:#5a5038;--rule-soft:#2e2a20;--panel:#1a1812;--red:#e0b24e;--gold:#e0b24e;color-scheme:dark}
-body{background-image:none}
-.banner{background:var(--gold);color:#0f0e0b;border-top:3px double var(--ink);border-bottom:3px double var(--ink)}
+/* Small Business Saturday, Nov 28, 2026 only: a red-ink callout under the folio. Arrives and leaves with this one-day feature. */
+.banner{background:var(--red);color:var(--paper);border-top:3px double var(--ink);border-bottom:3px double var(--ink)}
 .banner::before,.banner::after{content:"✦";margin:0 .6em;letter-spacing:0}
-.nameplate .motto{color:var(--gold)}
-.folio{border-bottom:2px solid var(--gold)}
-.stars{color:var(--gold)}
 .beta-bar a{background:var(--paper)}
-.blackfri{margin:8px auto 16px;padding:16px 14px 14px;text-align:center;border:2px solid var(--gold);outline:1px solid var(--gold);outline-offset:4px;max-width:620px;background:#000}
-.blackfri .bf-k{margin:0;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
-.blackfri svg{width:min(150px,44%);height:auto;display:block;margin:8px auto 2px;color:var(--gold)}
-.blackfri .bf-t{font-family:"Grenze Gotisch",var(--display);font-weight:900;font-size:clamp(40px,11vw,60px);line-height:.95;margin:0 0 6px;color:var(--gold)}
-.blackfri .bf-l{margin:0 auto;max-width:480px;font-style:italic;font-size:15px;line-height:1.45;text-wrap:balance}
-.blackfri .bf-l a,.blackfri .bf-go a{color:var(--gold)}
-.blackfri .bf-go a{white-space:nowrap}
-.blackfri .bf-go{margin:10px 0 0;font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
-@media (prefers-reduced-motion: no-preference){.blackfri .bf-win{animation:bf-glow 3.2s ease-in-out infinite alternate}@keyframes bf-glow{from{opacity:.55}to{opacity:1}}}
-.blackfri .bf-hat{margin-top:8px;font-size:13.5px;color:var(--ink-soft)}
+.sbs{margin:8px auto 16px;padding:14px 14px 12px;text-align:center;border-top:4px double var(--ink);border-bottom:4px double var(--ink);max-width:620px}
+.sbs .sbs-k{margin:0;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
+.sbs-row{display:flex;align-items:center;justify-content:center;gap:12px;margin:6px 0 4px}
+.sbs svg{width:88px;height:auto;flex:none}
+.sbs .sbs-t{font-family:var(--display);font-weight:900;font-size:clamp(28px,8vw,44px);line-height:.98;margin:0;color:var(--red);text-transform:uppercase;letter-spacing:.01em;text-align:left}
+.sbs .sbs-l{margin:6px auto 0;max-width:480px;font-style:italic;font-size:15px;line-height:1.45;text-wrap:balance}
+.sbs .sbs-go{margin:10px 0 0;font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
+.sbs .sbs-go a{color:var(--red);white-space:nowrap}
+.sbs .sbs-hat{margin-top:8px;font-size:13.5px;color:var(--ink-soft)}
 </style>
-<section class="blackfri" id="black-friday" aria-label="Black Friday, Shop Small Weekend">
-  <p class="bf-k">✦ Shop Small Weekend ✦</p>
-  <svg viewBox="0 0 200 170" role="img" aria-label="A drawn storefront at night, windows lit, an OPEN sign in the window">
-    <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M34 54h132v110H34z"/>
-      <path d="M26 30h148l-6 24H32z"/>
-      <path d="M32 54c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0"/>
-      <path d="M58 30l-4 24M92 30l-2 24M108 30l2 24M142 30l4 24" stroke-width="1.5"/>
-      <rect class="bf-win" x="46" y="78" width="52" height="48" fill="currentColor" fill-opacity=".28"/>
-      <path d="M72 78v48M46 102h52" stroke-width="2"/>
-      <rect class="bf-win" x="114" y="82" width="38" height="82" fill="currentColor" fill-opacity=".18"/>
-      <circle cx="144" cy="126" r="2.5" fill="currentColor"/>
-      <rect x="51" y="134" width="42" height="16" stroke-width="2"/>
-      <path d="M20 164h160" stroke-width="2"/>
-    </g>
-    <text x="72" y="146.5" font-family="Georgia,serif" font-size="11" font-weight="bold" text-anchor="middle" fill="currentColor">OPEN</text>
-  </svg>
-  <p class="bf-t">Black Friday</p>
-  <p class="bf-l">The Nugget goes to press in black today. If you're shopping, skip the mall and walk Broad Street: the downtown shops sit a few doors apart, and tomorrow is Small Business Saturday.</p>
-  <p class="bf-l bf-hat">Also on Broad Street: The Hat Store, 314 Broad St., open daily 11 AM to 5 PM. (It is the publisher's own shop.)</p>
+<section class="sbs" id="small-business-saturday" aria-label="Small Business Saturday, Shop Small Weekend">
+  <p class="sbs-k">✦ Shop Small Weekend ✦</p>
+  <div class="sbs-row">
+    <svg viewBox="0 0 200 180" role="img" aria-label="A drawn little storefront with a striped awning, a wreath on the door and an OPEN sign"><g fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M34 54h132v110H34z" fill="var(--panel)"/>
+      <path d="M26 30h148l-6 24H32z" fill="var(--paper)"/>
+      <path d="M32 54c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0c0 9 17 9 17 0" fill="var(--red)"/>
+      <rect x="46" y="78" width="52" height="46" fill="#f4c46a"/>
+      <path d="M72 78v46M46 101h52" stroke-width="2.5"/>
+      <rect x="114" y="82" width="38" height="82" fill="#7a4f24"/>
+      <circle cx="133" cy="104" r="11" stroke="#3f6a2a" stroke-width="6"/>
+      <rect x="51" y="134" width="42" height="16" fill="var(--paper)" stroke-width="2.5"/>
+    </g><text x="72" y="146.5" font-family="Georgia,serif" font-size="11" font-weight="bold" text-anchor="middle" fill="var(--red)">OPEN</text></svg>
+    <p class="sbs-t">Small<br>Business<br>Saturday</p>
+  </div>
+  <p class="sbs-l">Today's the day to spend it close to home. Start at the farmers market in Union Alley, 8:30 AM to 1 PM, then work your way up Broad Street and Commercial.</p>
+  <p class="sbs-l sbs-hat">Also on Broad Street: The Hat Store, 314 Broad St., open daily 11 AM to 5 PM. (It is the publisher's own shop.)</p>
   <!-- SHOP SMALL LISTINGS: who's open and what's special, if any arrive from tips@ by Nov 25, go here -->
-  <p class="bf-go"><a href="visitor.html#spotlight-on-downtown-nevada-city">Downtown shops ▸</a> &nbsp;·&nbsp; <a href="visitor.html#spotlight-on-seven-hills">Seven Hills ▸</a></p>
+  <p class="sbs-go"><a href="visitor.html#spotlight-on-downtown-nevada-city">Downtown shops ▸</a> &nbsp;·&nbsp; <a href="visitor.html#spotlight-on-seven-hills">Seven Hills ▸</a> &nbsp;·&nbsp; <a href="victorian-christmas.html">Victorian Christmas ▸</a></p>
 </section>
 
 <aside class="bymail" aria-label="Get the Nugget by email">
@@ -386,73 +377,65 @@ body{background-image:none}
 </aside>
 
 <div class="weatherline">
-  <span><span class="wl-k">The Weather</span>Mild, high 66, low 52; rain and possible thunder Sunday into Monday</span>
-  <span><span class="wl-k">Almanac</span>Sunrise 7:01 AM · Sunset 4:42 PM · Moon waning gibbous</span>
+  <span><span class="wl-k">The Weather</span>Partly sunny, high 66 to 68; rain and possible thunder Sunday into Monday</span>
+  <span><span class="wl-k">Almanac</span>Sunrise 7:02 AM · Sunset 4:41 PM · Moon waning gibbous</span>
   <span><span class="wl-k">Alerts</span>None in effect</span>
 </div>
-<p style="margin:-22px 0 0;text-align:center;font-style:italic;font-size:14.5px;color:var(--ink-mid)">Evening update, 5:00 PM — The Union's newest police log adds a Nevada City call, and the Highway 20 closure notice this morning called upcoming turns out to cover dates already past; see Corrections.</p>
 
-<nav class="inside2" aria-label="Inside today"><div><a href="#section-a"><b>The Paper</b></a><span class="l"><br>City Hall · Weather · Here &amp; There · Blotter · Merchant of the Day · Arts &amp; Culture · Amusements · Back Page · On the Record · Docket · Civic Calendar · Legal Notices</span></div><div><a href="visitor.html"><b>Visitor Guide ▸</b></a><span class="l"><br>Bill of Fare · Trail of the Day · Bar Guide · Where to Stay · Day Trips</span></div></nav>
+<nav class="inside2" aria-label="Inside today"><div><a href="#section-a"><b>The Paper</b></a><span class="l"><br>City Hall · Weather · Here &amp; There · Blotter · Merchant of the Day · Arts &amp; Culture · Amusements · Menagerie · Back Page · On the Record · Docket · Civic Calendar · Legal Notices</span></div><div><a href="visitor.html"><b>Visitor Guide ▸</b></a><span class="l"><br>Bill of Fare · Trail of the Day · Bar Guide · Where to Stay · Day Trips</span></div></nav>
 
 <section id="section-a">
   <h2 class="kicker"><span class="label">City Hall &amp; Politics</span></h2>
 
   <article class="lede">
-    <p class="meta">City Hall · The Week Ahead</p>
-    <h3>City Hall Switches To A Four-Day Week Next Friday</h3>
-    <p class="subdeck">Public counter closes Fridays through Sundays from Dec. 4 · Arts Commission takes up an arts district Tuesday · Spring Street closes Wednesday for Hometown Christmas · Council next meets Dec. 10</p>
-    <p>Next Friday, Dec. 4, is the first day Nevada City Hall, 317 Broad St., stays closed to the public on a weekday. From then on the city says the building will be open Monday through Thursday, 8:30 AM to 5:30 PM, through the lunch hour, and closed to the public Friday through Sunday. The city's announcement said the change is meant to improve accessibility and efficiency and to line up with existing city schedules.</p>
-    <p><b>Before then.</b> The Public Arts Commission holds a special meeting Tuesday, Dec. 1, at 5:30 PM in City Hall's Beryl P. Robinson, Jr. Conference Room, in place of its Dec. 2 meeting, which was cancelled for Hometown Christmas. Two items touch downtown: a discussion of an arts district, proposed by the Chamber of Commerce, with City Planner Jessica Hankins outlining the regulatory and nonregulatory kinds, and a review of six proposals from groups hoping to run exhibitions in the CHAMP Gallery inside City Hall. The full agenda is in The Docket.</p>
-    <p><b>Wednesday downtown.</b> The Chamber's first Hometown Christmas, billed as a night for locals, closes Spring Street from Pine Street to the Miners Foundry for a street fair from 4:30 to 8:30 PM Wednesday, Dec. 2, after a 4:30 tree lighting at Robinson Plaza.</p>
-    <p><b>The council.</b> No new council agenda had posted to the city's Agenda Center this morning. The council next meets Thursday, Dec. 10, at 6 PM, a half hour earlier than usual, and the Planning Commission on Thursday, Dec. 17, at 1:30 PM.</p>
-    <p class="src">Sources: <a href="https://yubanet.com/regional/city-of-nevada-city-announces-updated-city-hall-public-hours/">City of Nevada City via YubaNet, Nov. 24</a>; <a href="https://www.nevadacityca.gov/AgendaCenter/ViewFile/Agenda/_12012026-682">Public Arts Commission agenda, Dec. 1</a> and <a href="https://www.nevadacityca.gov/AgendaCenter/ViewFile/Agenda/_12022026-681">cancellation notice</a>; <a href="https://yubanet.com/regional/introducing-hometown-christmas-in-nevada-city/">Nevada City Chamber of Commerce via YubaNet</a>; <a href="https://www.nevadacityca.gov/AgendaCenter">City Agenda Center</a>, checked this morning.</p>
+    <p class="meta">City Hall · Public Arts Commission · Tuesday</p>
+    <h3>An Arts District For Downtown? The Talk Starts Tuesday</h3>
+    <p class="subdeck">Arts Commission takes up a Chamber proposal and six CHAMP Gallery bids Tuesday · City Hall goes to four public days a week from Friday · Hometown Christmas closes Spring Street Wednesday · Council next meets Dec. 10</p>
+    <p>The first piece of city business after the holiday is the Public Arts Commission's special meeting Tuesday, Dec. 1, at 5:30 PM in City Hall's Beryl P. Robinson, Jr. Conference Room, 317 Broad St. It replaces the commission's Dec. 2 meeting, cancelled for Hometown Christmas, and two of its items reach downtown.</p>
+    <p><b>An arts district.</b> The Chamber of Commerce has proposed an arts district. City Planner Jessica Hankins is to outline the two broad kinds, regulatory and nonregulatory, and the commission is to talk through goals before anything is formally designated. The agenda lists it for discussion and direction, not a vote on a designation.</p>
+    <p><b>The CHAMP Gallery.</b> Six proposals came in under the city's Oct. 20 call for partners to run exhibitions in the CHAMP Gallery inside City Hall. The commission reviews them and may authorize staff to work out scheduling and installation with the partner or partners it picks. Comment goes to publiccomment@nevadacityca.gov by 3 PM Tuesday; the meeting is also shown on the city's YouTube channel and cable channel 17. The full agenda is in The Docket.</p>
+    <p><b>Fewer public days.</b> From Friday, Dec. 4, City Hall's counter is open to the public Monday through Thursday, 8:30 AM to 5:30 PM, lunch hour included, and closed Friday through Sunday, the city said in an announcement The Union carried Friday.</p>
+    <p><b>Wednesday downtown.</b> The Chamber's first Hometown Christmas lights the tree at Robinson Plaza at 4:30 PM Wednesday, Dec. 2, then closes Spring Street from Pine Street to the Miners Foundry for a street fair until 8:30. No new council or Planning Commission agenda had posted this morning; the council meets next on Thursday, Dec. 10, at 6 PM.</p>
+    <p class="src">Sources: <a href="https://www.nevadacityca.gov/AgendaCenter/ViewFile/Agenda/_12012026-682">Public Arts Commission agenda, Dec. 1</a> and <a href="https://www.nevadacityca.gov/DocumentCenter/View/3028">agenda packet</a>; <a href="https://www.theunion.com/news/city-of-nevada-city-announces-updated-city-hall-public-hours/article_3e83a748-6dfb-4b7e-8f8d-58f19d1885ce.html">City of Nevada City via The Union, Nov. 27</a>; <a href="https://yubanet.com/regional/introducing-hometown-christmas-in-nevada-city/">Nevada City Chamber of Commerce via YubaNet, Nov. 25</a>; <a href="https://www.nevadacityca.gov/AgendaCenter">City Agenda Center</a>, checked this morning.</p>
   </article>
 
   <article>
-    <p class="meta">County · Animal Services · Comments Due Monday</p>
-    <h3>Monday Is The Deadline To Comment On The New County Animal Shelter</h3>
-    <p>Written comments on the environmental document for Nevada County's planned animal shelter at 12270 La Barr Meadows Road, south of Grass Valley, are due by 5 PM Monday, Nov. 30. The project is estimated at about $17 million, and the county has asked Nevada City and Grass Valley, which share the aging Freeman Lane shelter, to join a regional facility, The Union reported.</p>
-    <p>The Mitigated Negative Declaration flags potentially significant impacts on biological, cultural and tribal cultural resources, noise and utilities. Comments go to Assistant Planner Aleena Church, county Planning Department, 950 Maidu Ave., Suite 170, Nevada City. The county Zoning Administrator takes final action after a hearing not yet scheduled.</p>
-    <p class="src">Source: <a href="https://www.theunion.com/news/comment-period-for-environmental-documents-for-new-animal-shelter-open-through-november-30/article_78f124ad-b95d-4f4a-a805-2697a0dd73fe.html">The Union, Nov. 19</a>.</p>
+    <p class="meta">County · Comments Due Monday</p>
+    <h3>Two Comment Deadlines Fall On Monday</h3>
+    <p>Monday, Nov. 30, closes two public comment periods. Written comments on the environmental document for Nevada County's planned animal shelter at 12270 La Barr Meadows Road, south of Grass Valley, are due by 5 PM; the project is estimated at about $17 million, and the county has asked Nevada City and Grass Valley, which share the aging Freeman Lane shelter, to join a regional facility, The Union reported.</p>
+    <p>Shelter comments go to Assistant Planner Aleena Church, county Planning Department, 950 Maidu Ave., Suite 170, Nevada City; the county Zoning Administrator acts after a hearing not yet set. The same day, at 2 PM Pacific, is the federal deadline for comments on RamaFlux Sierra PSH LLC's application for a preliminary permit to study a 750-megawatt pumped storage project on Fish Creek near Washington, docket P-15429, which SYRCL has urged residents to oppose.</p>
+    <p class="src">Sources: <a href="https://www.theunion.com/news/comment-period-for-environmental-documents-for-new-animal-shelter-open-through-november-30/article_78f124ad-b95d-4f4a-a805-2697a0dd73fe.html">The Union, Nov. 19</a>; <a href="https://yubanet.com/regional/syrcl-raises-serious-concerns-over-proposed-dams-on-fish-creek-calls-on-community-to-file-public-comments-before-november-30-deadline/">SYRCL via YubaNet, Nov. 9</a>.</p>
   </article>
 
   <article>
     <p class="meta">County · Library · Tuesday</p>
     <h3>Library Tax Watchdogs Meet The Interim County Librarian</h3>
-    <p>The citizens' committee that oversees the county's Library Measure A sales tax meets Tuesday, Dec. 1, from 3 to 4 PM in the Gene Albaugh Community Room at the Madelyn Helling Library. Its agenda introduces the county's new interim librarian and asks for an update on the status and timeline for filling the permanent county librarian job.</p>
-    <p>Also on the agenda: Brown Act compliance, a Measure A tax revenue and spending update, public comment, and planning for a January meeting. The agenda does not name the interim librarian. The full list is in The Docket.</p>
+    <p>The citizens' committee that oversees the county's Library Measure A sales tax meets Tuesday, Dec. 1, from 3 to 4 PM in the Gene Albaugh Community Room at the Madelyn Helling Library. Its agenda introduces the county's new interim librarian and asks for the status and timeline for filling the permanent county librarian job.</p>
+    <p>Also on the agenda: Brown Act compliance, a Measure A revenue and spending update, public comment, and planning for a January meeting. The agenda does not name the interim librarian. The full list is in The Docket.</p>
     <p class="src">Source: <a href="https://www.nevadacountyca.gov/AgendaCenter/ViewFile/Agenda/_12012026-2092">Library Measure A Citizen's Oversight Committee agenda, Dec. 1</a>, Nevada County Agenda Center.</p>
   </article>
 
   <article>
     <p class="meta">County · Cannabis · Apply By Dec. 21</p>
-    <h3>The County Opens A Third Round Of Cannabis Grants</h3>
-    <p>Nevada County is taking applications through 5 PM Monday, Dec. 21, for round three of its Good to Grow grants, financial help for licensed cannabis businesses and people trying to enter the legal market. The program is run with the Sierra Business Council, and a workshop is planned for Dec. 1.</p>
-    <details class="fold"><summary>Read the whole story</summary><p>Applications opened Nov. 20, The Union reported from the county's release, and grants are not awarded first-come, first-served. The program is described as distributing about $680,000. The Nugget did not find the workshop's time or place this morning.</p></details>
+    <h3>Cannabis Grant Applications Run Through Dec. 21</h3>
+    <p>Nevada County is taking applications through 5 PM Monday, Dec. 21, for round three of its Good to Grow grants for licensed cannabis businesses and people entering the legal market. A workshop is planned for Tuesday, Dec. 1.</p>
+    <details class="fold"><summary>Read the whole story</summary><p>The program, run with the Sierra Business Council, opened Nov. 20 and is described as distributing about $680,000; grants are not first-come, first-served, The Union reported from the county's release. The Nugget did not find the workshop's time or place this morning.</p></details>
     <p class="src">Source: <a href="https://www.theunion.com/news/good-to-grow-grants-program-opens-round-three/article_9ce7a6f6-1403-4f79-98c3-630074862968.html">Nevada County via The Union, Nov. 24</a>.</p>
   </article>
 
   <article>
     <p class="meta">County · Code Enforcement · Comment Through Dec. 16</p>
-    <h3>Penn Valley's Advisory Council Backs The County Nuisance Ordinance</h3>
-    <p>Penn Valley's Municipal Advisory Council voted 7 to 1 to support Nevada County's proposed Public Nuisance Abatement Ordinance, The Union reported. The ordinance would apply in the unincorporated county, not inside Nevada City, and the county takes comment through Dec. 16.</p>
-    <details class="fold"><summary>Read the whole story</summary><p>Code and Cannabis Compliance Director Matt Kelley told the council the ordinance is meant to clarify enforcement, not to create new land-use rules, according to The Union. The draft, a new Chapter 7.02 of the county code, defines nuisances such as unsafe structures, fire hazards, illegal dumping and recurring noise or traffic problems, and the county says it would seek voluntary compliance first. A first reading before the Board of Supervisors is expected in January 2027. Comments go to CodeCompliance@nevadacountyca.gov with "Public Nuisance Abatement Ordinance" in the subject line.</p></details>
+    <h3>The County Nuisance Ordinance Is Still Open For Comment</h3>
+    <p>Comment on Nevada County's proposed Public Nuisance Abatement Ordinance runs through Dec. 16. It would apply in the unincorporated county, not inside Nevada City.</p>
+    <details class="fold"><summary>Read the whole story</summary><p>The draft, a new Chapter 7.02 of the county code, defines nuisances such as unsafe structures, fire hazards, illegal dumping and recurring noise or traffic problems, and the county says it would seek voluntary compliance first. Penn Valley's Municipal Advisory Council voted 7 to 1 to support it, The Union reported. A first reading before the Board of Supervisors is expected in January 2027. Comments go to CodeCompliance@nevadacountyca.gov with "Public Nuisance Abatement Ordinance" in the subject line.</p></details>
     <p class="src">Sources: <a href="https://www.theunion.com/news/penn-valley-mac-supports-county-approach-to-public-nuisance-talks-water-rights-theft/article_99da76ac-ec24-4142-b517-3f909312424e.html">The Union, Nov. 25</a>; <a href="https://www.theunion.com/news/share-your-feedback-on-nevada-county-s-proposed-public-nuisance-abatement-ordinance-public-comment-period/article_0772107e-9576-42b7-b1d7-1ea4ef136034.html">Nevada County via The Union, Nov. 19</a>.</p>
   </article>
 
   <article>
-    <p class="meta">Election · Measure Q · Certified</p>
-    <h3>Measure Q's Final Count Stands At 994 To 659</h3>
-    <p>The county's certified results, issued Wednesday, show Nevada City's short-term rental measure passing with 60.13 percent. The Nugget found no city announcement this morning on when the new permit system takes effect.</p>
-    <details class="fold"><summary>Read the whole story</summary><p>Registrar of Voters Armando Salud-Ambriz certified the Nov. 3 General Election on Nov. 25. Measure Q, which replaces the city's short-term rental registration rules with a permitting system, drew 1,653 votes across all four city precincts. In Grass Valley, the certified results seat Scott Beesley and Bob Branstrom on the City Council. Countywide turnout was 71 percent, 54,485 of 76,687 registered voters.</p></details>
-    <p class="src">Source: <a href="https://yubanet.com/regional/nevada-countys-november-2026-general-election-results-certified/">Nevada County Elections via YubaNet, Nov. 25</a>.</p>
-  </article>
-
-  <article>
     <p class="meta">Statements · Activism</p>
-    <h3>A Holiday Lull On The Record</h3>
-    <p>The Nugget found no new public statements from council members since yesterday's edition, and no protests, rallies or petition drives announced in western Nevada County for the holiday weekend.</p>
-    <p class="src">Sources: <a href="https://yubanet.com">YubaNet</a>; <a href="https://www.theunion.com/news/local/">The Union, local news</a>; <a href="https://kvmrnews.transistor.fm/episodes">KVMR News</a>; <a href="https://knco.com">KNCO</a>; web searches, Nov. 27.</p>
+    <h3>Still Quiet On The Record</h3>
+    <p>The Nugget found no new public statements from council members since yesterday's edition, and no protests, rallies or petition drives announced in western Nevada County for the holiday weekend. A slow news day, plainly.</p>
+    <p class="src">Sources: <a href="https://yubanet.com">YubaNet</a>; <a href="https://www.theunion.com/news/local/">The Union, local news</a>; <a href="https://kvmrnews.transistor.fm/episodes">KVMR News</a>; <a href="https://knco.com">KNCO</a>; web searches, Nov. 28.</p>
   </article>
 </section>
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
@@ -460,16 +443,16 @@ body{background-image:none}
 <section id="weather">
   <h2 class="kicker"><span class="label">Weather</span></h2>
   <article class="lede">
-    <p class="meta">Weather · The Weekend</p>
-    <h3>A Warm Storm Sunday, And Maybe Another Midweek</h3>
-    <p class="subdeck">Dry and near 68 through Saturday · Rain, breezy south winds and a chance of thunder Sunday into Monday · Snow only above 7,500 feet · A second, less certain storm Tuesday and Wednesday</p>
-    <p>Shop in the sun today and tomorrow. The National Weather Service in Sacramento, in a Thursday morning note relayed by YubaNet, called for dry weather and seasonable temperatures through Saturday, then a warmer storm from Saturday night through Monday with higher snow levels, above 7,500 feet, and minor travel impacts. It listed breezy southerly winds and isolated thunderstorms for Sunday.</p>
-    <p><b>How much.</b> The weather service's map for Nov. 29 and 30 showed mostly a quarter inch to an inch and a half across Northern California, up to 3 inches near Blue Canyon. A second storm is favored for Tuesday and Wednesday, Dec. 1 and 2, but the service said the exact details are uncertain.</p>
-    <p><b>Temperatures.</b> OpenSnow's Nevada City forecast has 66 and 52 today, 68 and 54 Saturday, then 54 Sunday, 49 Monday and 53 Tuesday. KNCO's Grass Valley forecast calls Sunday rain, then showers and thunderstorms, and light rain Monday and Tuesday.</p>
-    <p><b>Fog and smoke.</b> A dense fog advisory ran until noon today for the Central Valley, not Nevada County. Thursday was a No Burn day; burning is always prohibited inside Nevada City limits.</p>
-    <p><b>Be ready.</b> The county's winter checklist: sign up for Nevada County Alerts, clear gutters and drains, charge phones before the storm, and keep chains, blankets and water in the car; resources at ReadyNevadaCounty.org. Sierra Roots opens its emergency weather shelter at the Veterans Hall, 415 N. Pine St., when the forecast meets its triggers, among them four or more straight days of rain or a flood watch; information at 2-1-1.</p>
-    <p><b>Fire and power.</b> YubaNet's fire page lists no active wildfire in the county or nearby foothills, and PG&amp;E's shutoff page shows no event since Oct. 17.</p>
-    <p class="src">Sources: <a href="https://yubanet.com/featured/now/">NWS Sacramento via YubaNet Happening Now, Nov. 26, 7:08 AM and 10:01 PM</a>; <a href="https://opensnow.com/location/nevada-city-ca-us/weather">OpenSnow, Nevada City</a>, read this morning; <a href="https://knco.com">KNCO weather</a>; <a href="https://yubanet.com/regional/ready-set-snow-tis-the-season-for-winter-preparedness/">Nevada County OES via YubaNet</a>; <a href="https://www.theunion.com/news/sierra-roots-opens-emergency-weather-shelter/article_9fb87f35-7e43-4015-8e22-5f1eb13c771e.html">Sierra Roots via The Union, Nov. 20</a>; <a href="https://yubanet.com/fires/">YubaNet Fire News</a>; <a href="https://www.pge.com/en/newsroom/currents/safety/pge-may-need-to-turn-off-power-for-safety.html">PG&amp;E newsroom</a>.</p>
+    <p class="meta">Weather · Sunday And Monday</p>
+    <h3>Shop In The Sun Today; The Rain Comes Sunday</h3>
+    <p class="subdeck">Dry and mild through today · Rain, gusty south winds and a chance of thunder Sunday into Monday · Snow only above 7,500 feet · The midweek storm is trending south</p>
+    <p>Small Business Saturday gets the last dry day. The National Weather Service in Sacramento, in its Friday morning update relayed by YubaNet, kept the forecast dry and seasonable through Saturday, then called for minor impacts Sunday and Monday: slick roads and ponding water.</p>
+    <p><b>How much.</b> The service's map for the storm put the highest totals, 2 to 3 inches, near Blue Canyon, and 1 to 1.5 inches around Auburn and Quincy. Snow levels start above 8,000 feet Sunday and drop to about 7,500 Monday, so chains should stay in the trunk below the summit.</p>
+    <p><b>Thunder.</b> Isolated thunderstorms are possible Sunday and Monday, most likely Sunday afternoon from Redding to Sacramento, with lightning, small hail, brief heavy rain and gusty winds. Breezy to gusty southerly winds are expected both days.</p>
+    <p><b>Midweek.</b> The second storm the service had been watching for Tuesday and Wednesday is trending farther south, with less rain expected and possibly breezy to gusty north winds instead.</p>
+    <p><b>Temperatures.</b> KNCO's Grass Valley forecast: partly sunny and 66 today, light rain then showers and thunderstorms Sunday at 55, light rain Monday at 50, partly sunny Tuesday at 55 and sunny Wednesday at 58. OpenSnow's Nevada City page, read Friday, runs a couple of degrees warmer today.</p>
+    <p><b>Fire and power.</b> YubaNet's fire page lists no active wildfire in the county or nearby foothills; Friday's only smoke came from a prescribed burn near Meyers Ravine. PG&amp;E's shutoff page shows no event since Oct. 17. Burning is always prohibited inside Nevada City limits.</p>
+    <p class="src">Sources: <a href="https://yubanet.com/featured/now/">NWS Sacramento via YubaNet Happening Now, Nov. 27, 7:18 AM</a>; <a href="https://knco.com">KNCO weather</a>, read this morning; <a href="https://opensnow.com/location/nevada-city-ca-us/weather">OpenSnow, Nevada City</a>; <a href="https://yubanet.com/fires/">YubaNet Fire News</a>; <a href="https://www.pge.com/en/newsroom/currents/safety/pge-may-need-to-turn-off-power-for-safety.html">PG&amp;E newsroom</a>.</p>
   </article>
 </section>
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
@@ -478,64 +461,40 @@ body{background-image:none}
   <h2 class="kicker"><span class="label">Here &amp; There</span></h2>
   <div class="factrow">
     <article>
-      <p class="meta">Highway 49 · Thursday Night</p>
-      <h3 style="font-size:19px">Crash Near Broad Street Needs An Extrication</h3>
-      <p>Units were sent about 9:39 PM Thanksgiving night to a crash on northbound Highway 49 between Broad Street and Cement Hill Road, and firefighters had completed an extrication by 9:43, YubaNet's log noted. The log gave no word on injuries.</p>
-      <p class="src">Source: <a href="https://yubanet.com/featured/now/">YubaNet Happening Now, Nov. 26</a></p>
+      <p class="meta">'Uba Seo · Broad Street</p>
+      <h3 style="font-size:19px">Last Days For The Pamblo Exhibition</h3>
+      <p>The exhibition at 'Uba Seo: Nisenan Arts &amp; Culture, 225 Broad St., is listed by HUṠWEJ as running from October 2025 to November 2026, so this weekend is the last chance to see it. The gallery's posted hours are Friday and Saturday 10 to 5 and Thursday and Sunday 11 to 5, subject to Tribal needs; call ahead, 530-955-5134.</p>
+      <p class="src">Sources: <a href="https://www.huswej.org/events">HUṠWEJ events</a>; <a href="https://ubaseo.org">'Uba Seo</a>, read Nov. 28</p>
     </article>
     <article>
-      <p class="meta">Grass Valley · Fridays</p>
-      <h3 style="font-size:19px">Cornish Christmas Starts Tonight</h3>
-      <p>The 58th Cornish Christmas fills Mill and West Main streets in downtown Grass Valley tonight, and again Dec. 4, 11 and 18, from 6 to 9 PM, free and rain or shine, the Grass Valley Downtown Association says. The Grass Valley Cornish Carol Choir marks 150 years this season.</p>
-      <p class="src">Source: <a href="https://yubanet.com/regional/grass-valley-celebrates-its-cornish-heritage-with-the-58th-annual-cornish-christmas/">YubaNet, Nov. 25</a></p>
+      <p class="meta">Elks Lodge · Dec. 5</p>
+      <h3 style="font-size:19px">Santa's Christmas Shoppe Opens Dec. 5</h3>
+      <p>Santa's Christmas Shoppe opens Saturday, Dec. 5, from 9 AM to noon at the Nevada City Elks Lodge, The Union reports.</p>
+      <p class="src">Source: <a href="https://www.theunion.com/news/santas-christmas-shoppe-opens-dec-5/article_161a3da1-409d-4124-8abc-a6cc3dcf3ad2.html">The Union</a></p>
     </article>
     <article>
-      <p class="meta">Spring Street · Wednesday</p>
-      <h3 style="font-size:19px">Hometown Christmas, Wednesday</h3>
-      <p>The first Hometown Christmas runs Wednesday, Dec. 2, 4:30 to 8:30 PM: a tree lighting at 4:30 at Robinson Plaza, Spring Street closed from Pine Street to the Miners Foundry for a street fair with chestnuts, mulled wine and carolers, Santa at the Foundry from 5 to 8, and a shopping passport with gift card prizes.</p>
-      <p class="src">Source: <a href="https://yubanet.com/regional/introducing-hometown-christmas-in-nevada-city/">Nevada City Chamber of Commerce via YubaNet</a></p>
+      <p class="meta">Highway 49 · Friday</p>
+      <h3 style="font-size:19px">A Rollover North On 49</h3>
+      <p>Units were sent about 1:42 PM Friday to a crash on Highway 49 just before Marysville Road, where a car was reported overturned, YubaNet's log noted. The log gave no word on injuries.</p>
+      <p class="src">Source: <a href="https://yubanet.com/featured/now/">YubaNet Happening Now, Nov. 27</a></p>
     </article>
     <article>
-      <p class="meta">Public Safety · Pink Patch</p>
-      <h3 style="font-size:19px">Badges Raise A Record For Breast Cancer Care</h3>
-      <p>Nine Nevada County law enforcement and fire agencies, Nevada City Police among them, raised a record $11,265 selling pink patches this year: $10,000 to the Sierra Nevada Memorial Hospital Foundation and $1,265 to the Tahoe Forest Health System Foundation, the Sheriff's Office said.</p>
-      <p class="src">Source: <a href="https://yubanet.com/regional/law-enforcement-and-fire-break-donation-record-in-fight-against-breast-cancer/">Nevada County Sheriff's Office via YubaNet, Nov. 25</a></p>
+      <p class="meta">Meyers Ravine · Friday</p>
+      <h3 style="font-size:19px">That Smoke Was On Purpose</h3>
+      <p>Terra Fuego was running a prescribed burn near Meyers Ravine Friday morning, YubaNet's log noted at 10:46 AM. Friday was a permissive burn day in the unincorporated county, 9 AM to 3 PM.</p>
+      <p class="src">Source: <a href="https://yubanet.com/featured/now/">YubaNet Happening Now, Nov. 27</a></p>
     </article>
     <article>
-      <p class="meta">Grass Valley · Police</p>
-      <h3 style="font-size:19px">Grass Valley Names A Police Chief</h3>
-      <p>Grass Valley City Manager Alex Gammelgard has named Steve Johnson, 26 years in local law enforcement, the city's seventh police chief, leading a department of more than 30 employees, the city announced.</p>
-      <p class="src">Source: <a href="https://yubanet.com/regional/city-of-grass-valley-announces-appointment-of-steve-johnson-as-chief-of-police/">City of Grass Valley via YubaNet, Nov. 25</a></p>
+      <p class="meta">County · Citizens' Academy</p>
+      <h3 style="font-size:19px">A Ten-Week Look Inside County Government</h3>
+      <p>Nevada County's free Citizens' Academy is taking applications through Jan. 8, KVMR News reports: ten weeks of sessions on how the county works, from information technology to public safety.</p>
+      <p class="src">Source: <a href="https://kvmrnews.transistor.fm/episodes/nevada-countys-citizens-academy-is-taking-applications">KVMR News, Nov. 24</a>; deadline per the county, at nevadacountyca.gov/citizensacademy</p>
     </article>
     <article>
-      <p class="meta">Searls Library · A Key</p>
-      <h3 style="font-size:19px">A Key To Grass Valley For Gen. Steele</h3>
-      <p>Grass Valley gave retired Marine Gen. Orlo K. Steele, 94, a key to the city. The occasion grew from Dakota Stroh's work gathering the general's papers for the Searls Library in Nevada City, Gage McKinney wrote for YubaNet.</p>
-      <p class="src">Source: <a href="https://yubanet.com/regional/grass-valley-recognizes-general-steele-with-key-to-the-city/">YubaNet, Nov. 25</a></p>
-    </article>
-    <article>
-      <p class="meta">County · Assessor</p>
-      <h3 style="font-size:19px">Another Record Roll, Growing Slower</h3>
-      <p>Nevada County's assessment roll reached a record $29.5 billion, KNCO reported, though growth is slowing with a cooler real estate market.</p>
-      <p class="src">Source: <a href="https://knco.com/article/6b05f26960d6a81e3bc6418b">KNCO, Nov. 25</a></p>
-    </article>
-    <article>
-      <p class="meta">Highway 20 · Bridge Work (updated 5 PM)</p>
-      <h3 style="font-size:19px">That Eastbound 20 Closure Notice Was An Old One</h3>
-      <p>The Caltrans notice KNCO carries under the headline "Eastbound State Route 20 Closure Scheduled Next Week" was posted Nov. 16 and covered a closure from 8 PM Monday, Nov. 16, to 5 PM Tuesday, Nov. 17, between the Omega Scenic Overlook and the Interstate 80 junction, for the $112 million Yuba Pass bridge project. The Caltrans District 3 release, published Nov. 3, covered an earlier one, Nov. 9 to 10. Neither announces a closure for the coming week. Caltrans expects the project to finish by the end of 2027.</p>
-      <p class="src">Sources: <a href="https://knco.com/on-the-wire/6afb44056d24311e5034c5bc">KNCO On The Wire, Nov. 16</a>; <a href="https://dot.ca.gov/caltrans-near-me/district-3/d3-news/d3-news-release-26-173">Caltrans District 3, "Next Eastbound State Route 20 Closure Scheduled," Nov. 3</a>; both read this evening.</p>
-    </article>
-    <article>
-      <p class="meta">Weekend · Craft Fairs</p>
-      <h3 style="font-size:19px">Two Craft Fairs This Weekend</h3>
-      <p>The 41st Country Christmas Faire runs at the Fairgrounds, 11228 McCourtney Road, today and Saturday 10 AM to 5 PM and Sunday 10 to 4, $5. The 15th Nevada City Winter Craft Fair fills the Miners Foundry, 325 Spring St., Sunday 10 AM to 5 PM, $7, free for 12 and under.</p>
-      <p class="src">Sources: <a href="https://www.theunion.com/news/just-hear-those-sleigh-bells-jingling-nevada-county-fairgrounds-rings-in-the-holiday-season-with/article_58ff09e2-7475-48a3-8da0-3d3d403b18c6.html">The Union, Nov. 24</a>; <a href="https://yubanet.com/regional/nevada-city-winter-craft-fair-returns-to-miners-foundry-for-its-15th-annual-show/">YubaNet, Nov. 23</a></p>
-    </article>
-    <article>
-      <p class="meta">Outside Press</p>
-      <h3 style="font-size:19px">Quiet Beyond The County Line</h3>
-      <p>A search of the Sacramento Bee, SFGate, CapRadio, the Los Angeles Times and the AP turned up no fresh Nevada City coverage. The Sierra Sun's page offered nothing on the county or the west side this morning.</p>
-      <p class="src">Sources: web searches, Nov. 27; <a href="https://www.sierrasun.com">Sierra Sun</a></p>
+      <p class="meta">Grass Valley · Tonight</p>
+      <h3 style="font-size:19px">Golden Shoulders Plays Down The Hill</h3>
+      <p>Nevada City's Golden Shoulders, the band led by songwriter Adam Kline, plays tonight as a seven-piece with The Moore Brothers at The Center for the Arts, 314 W. Main St., Grass Valley; doors 7, show 8 PM.</p>
+      <p class="src">Sources: <a href="https://yubanet.com/regional/nevada-citys-golden-shoulders-brings-a-seven-piece-hometown-lineup-to-the-center-for-the-arts-with-special-guests-the-moore-brothers/">YubaNet, Nov. 20</a>; <a href="https://www.theunion.com/news/golden-state-nevada-city-s-golden-shoulders-returns-for-thanksgiving-weekend-show/article_7f85cb07-07e0-470f-8c15-e8263a21bcea.html">The Union</a></p>
     </article>
   </div>
 </section>
@@ -544,12 +503,12 @@ body{background-image:none}
 <section>
   <h2 class="kicker"><span class="label">Police Blotter</span></h2>
   <div class="smallads">
-    <p>On Ridge Road Tuesday afternoon, a caller told Nevada City police about an extension cord strung across the street to a power pole, where it had been lying for about a week.</p>
-    <p>On West McKnight Way Monday afternoon, a shoplifter was detained and left with a citation instead of the merchandise.</p>
-    <p>On Brunswick Road Monday morning, a business asked police to move along a group whose offense, as reported, was standing there.</p>
-    <p>On Sutton Way Monday afternoon, a woman declined to leave a store, a position the store did not share.</p>
-    <p>On Rough and Ready Highway Monday morning, a deputy collected a contained and friendly dog, the best kind of call there is.</p>
-    <p class="cutline" style="text-align:left;margin-top:8px">Drawn from police logs via The Union: <a href="https://www.theunion.com/news/nevada-county-police-blotter-911-caller-reports-customer-screaming-about-diarrhea/article_24bd2356-c18d-49bb-97d3-b7446bf245ac.html">Nov. 27, covering Tuesday</a> (updated 5 PM), whose only Nevada City Police entry is the Ridge Road call; and <a href="https://www.theunion.com/news/nevada-county-police-blotter-woman-reports-bat-making-guttural-noises-in-bedroom/article_7ea3ad2c-6256-456c-8b97-e0936e43da79.html">Nov. 25, covering Monday</a>.</p>
+    <p>On Nile Street at noon on Thanksgiving, a 911 caller reached Nevada City police only to wish them a happy Thanksgiving and say thanks.</p>
+    <p>On South Pine Street Thanksgiving morning, a resident reported a peacock loose on the porch, presumably dressed for the holiday.</p>
+    <p>At a Zion Street hotel late Wednesday night, a guest called 911 to report that he was locked out of his room.</p>
+    <p>On Nevada City Highway Thanksgiving morning, a fast-food worker called 911 from outside the locked restaurant, with turkeys cooking inside and every other keyholder an hour away.</p>
+    <p>On West McKnight Way Wednesday morning, a verbal altercation broke out over Pokemon cards.</p>
+    <p class="cutline" style="text-align:left;margin-top:8px">Drawn from police logs via The Union: <a href="https://www.theunion.com/news/nevada-county-police-blotter-911-caller-wishes-law-enforcement-a-happy-thanksgiving/article_94d55198-d1a1-4c23-ba75-184103d9b750.html">Nov. 28, covering Wednesday and Thanksgiving</a>.</p>
   </div>
 </section>
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
@@ -563,20 +522,20 @@ body{background-image:none}
   <h2 class="kicker"><span class="label">Merchant of the Day</span></h2>
 
   <article class="lede">
-    <p class="meta">Black Friday · Hats · 314 Broad Street</p>
-    <h3>The Hat Store: All Types Of Hats For All Types Of People</h3>
-    <p class="subdeck">Fedoras, western hats, Panamas, caps and sun hats for men, women and children · Hat bands and scarves · Open seven days a week on Broad Street</p>
-    <p><b>A word first.</b> The Hat Store belongs to the Nugget's publisher, Todd Wahoske. It runs here on Black Friday because he asked for it, so read it the way you would read any shopkeeper talking about his own window.</p>
-    <p>At No. 314 Broad Street, the shop's own motto is the whole pitch: "All types of hats for all types of people." The racks run from formal to casual, from wedding hats and fedoras to gardening and sun-protection brims, baseball caps, western hats and genuine handwoven Panamas, in men's, women's and children's sizes.</p>
-    <p><b>On the shelves.</b> Makers named by the shop include Stetson, Borsalino, Bailey, Kangol, Signes and Fernandez y Roche of Spain, and Alfonso D'Este of Italy. Beyond the hats: hat bands, scarves and wallets. Gift certificates are available, which may settle a stocking or two.</p>
+    <p class="meta">No. 25 · Restaurant &amp; Taproom · 232 Commercial Street</p>
+    <h3>The River Downtown: Small Plates And A Wall Of River Rock On Commercial Street</h3>
+    <p class="subdeck">A family-owned restaurant and taproom · The Gold Room and a new upstairs Balcony Bar · Beer, kombucha, wine and zero-proof drinks</p>
+    <p>The River Downtown sums itself up in four words: "Small plates. Big personality." The family-owned restaurant and taproom sits in a historic downtown building at 232 Commercial Street, and its beer pours from taps set in a wall of river rock.</p>
+    <p><b>Who runs it.</b> The restaurant names four co-owners: Jimmy, Christine, Charlie and Liv. Christine has been a local since she moved to the area in 2005, according to the restaurant's own account.</p>
+    <p><b>On the menu.</b> Smashed tacos, seasonal plates and shareable plates, with local and regional beer, hard and soft kombucha, rotating wines and zero-proof drinks. Private parties can take the Gold Room or the Balcony Bar, a new upstairs lounge that serves drinks only on Friday and Saturday evenings. Reservations are taken online, and walk-ins are welcome.</p>
   </article>
 
   <div class="notebox">
-    <p style="margin:0"><b>Pay a visit:</b> 314 Broad St., Nevada City. (530) 265-4070. Open daily 11 AM to 5 PM, as posted at <a href="https://the-hat-store.com/">the-hat-store.com</a>. Instagram @thehatstorenc.</p>
+    <p style="margin:0"><b>Pay a visit:</b> 232 Commercial St., Nevada City. 530-273-0000. Hours as the restaurant posts them: Monday and Thursday 4 to 8 p.m., Friday and Saturday 4 to 9 p.m., Sunday 11:30 a.m. to 8 p.m., closed Tuesday and Wednesday. Happy hour Monday, Thursday and Friday, 4 to 5 p.m. Holiday hours may differ. <a href="https://www.theriverdowntown.com/">theriverdowntown.com</a></p>
   </div>
 
-  <p class="src">Merchant of the Day profiles one Nevada City business each morning, chosen by the Nugget from the public record and the merchant's own published words. Today's pick is the publisher's own shop; no one pays to appear. Corrections and suggestions: news@nevadacitynugget.com.</p>
-  <p class="src">Sources: The Hat Store, <a href="https://the-hat-store.com/">the-hat-store.com</a> (read Nov. 25, 2026); the shop's advertisement in the Nugget.</p>
+  <p class="src">Merchant of the Day profiles one Nevada City business each morning, chosen by the Nugget from the public record and the merchant's own published words. Corrections and suggestions: news@nevadacitynugget.com.</p>
+  <p class="src">Sources: The River Downtown, <a href="https://www.theriverdowntown.com/">theriverdowntown.com</a> and <a href="https://www.theriverdowntown.com/about">About</a> (read Nov. 26, 2026).</p>
 </section>
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
@@ -603,7 +562,6 @@ body{background-image:none}
 
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
-
 <section id="amusements">
   <h2 class="kicker"><span class="label">Amusements</span></h2>
   <div>
@@ -621,22 +579,22 @@ body{background-image:none}
       <p class="venue">The Onyx</p>
       <p class="addr">107 Argall Way · Two Screens, The Magic &amp; The Dream</p>
       <p class="day">Club Kid</p>
-      <p class="bill"><b>Fri through Thu:</b> <span class="times">12:40, 4:10 &amp; 7:40</span><span class="note">Comedy-drama, rated R, 2 hr 6 min. Jordan Firstman directs and stars as a burned-out New York party promoter who learns he has a 10-year-old son. <a href="https://www.theonyxtheatre.com">Tickets</a>.</span></p>
+      <p class="bill"><b>Sat through Thu:</b> <span class="times">12:40, 4:10 &amp; 7:40</span><span class="note">Comedy-drama, rated R, 2 hr 6 min. Jordan Firstman directs and stars as a burned-out New York party promoter who learns he has a 10-year-old son. <a href="https://www.theonyxtheatre.com">Tickets</a>.</span></p>
       <p class="day">Wild Horse Nine</p>
-      <p class="bill"><b>Fri through Thu:</b> <span class="times">12:20, 3:50 &amp; 7:20</span><span class="note">Martin McDonagh dark comedy, rated R, 1 hr 58 min. John Malkovich and Sam Rockwell play CIA agents on a mission from Santiago to Easter Island in the run-up to Chile's 1973 coup. <a href="https://www.theonyxtheatre.com">Tickets</a>.</span></p>
+      <p class="bill"><b>Sat through Thu:</b> <span class="times">12:20, 3:50 &amp; 7:20</span><span class="note">Martin McDonagh dark comedy, rated R, 1 hr 58 min. John Malkovich and Sam Rockwell play CIA agents on a mission from Santiago to Easter Island in the run-up to Chile's 1973 coup. <a href="https://www.theonyxtheatre.com">Tickets</a>.</span></p>
       <p class="day">Coming Up · Onyx Downtown &amp; Specials</p>
-      <p class="bill"><span class="note">Tuesday, Dec. 1, is $8 Tuesday: every film, every showtime. The theater's Onyx Downtown Sunday Nights page lists <a href="https://www.theonyxtheatre.com/movies/15524-the-daytrippers/">The Daytrippers</a>, <a href="https://www.theonyxtheatre.com/movies/339-gremlins-1984/">Gremlins</a> (1984), <a href="https://www.theonyxtheatre.com/movies/1363-playtime-1967/">Playtime</a> (1967) and <a href="https://www.theonyxtheatre.com/movies/1000050116-wallace-and-gromit-the-classic-shorts/">Wallace &amp; Gromit: The Classic Shorts</a>, but no date or time could be confirmed; call (530) 265-8262.</span></p>
-      <p class="fine">Showtimes may change without notice. (530) 265-8262. Times per the <a href="https://www.bigscreen.com/Marquee.php?theater=7989">Big Screen listing for the Onyx</a>, read Nov 27 for Nov 27 through Dec 3. No showing is marked sold out.</p>
+      <p class="bill"><span class="note">Tuesday, Dec. 1, is $8 Tuesday: every film, every showtime. The theater's Onyx Downtown Sunday Nights page lists <a href="https://www.theonyxtheatre.com/movies/15524-the-daytrippers/">The Daytrippers</a>, <a href="https://www.theonyxtheatre.com/movies/339-gremlins-1984/">Gremlins</a> (1984), <a href="https://www.theonyxtheatre.com/movies/1363-playtime-1967/">Playtime</a> (1967) and <a href="https://www.theonyxtheatre.com/movies/1000050116-wallace-and-gromit-the-classic-shorts/">Wallace &amp; Gromit: The Classic Shorts</a>, but no date or time could be confirmed; call (530) 265-8262. Times from Friday, Dec. 4, are not yet posted.</span></p>
+      <p class="fine">Showtimes may change without notice. (530) 265-8262. Times per the <a href="https://www.bigscreen.com/Marquee.php?theater=7989">Big Screen listing for the Onyx</a>, read Nov 28 for Nov 28 through Dec 3. No showing is marked sold out.</p>
     </div>
     <div class="adbox">
       <p class="venue">Nevada Theatre</p>
       <p class="addr">401 Broad Street · California's Oldest Theatre Building</p>
-      <p class="day">Saturday, Nov 28</p>
+      <p class="day">Tonight, Saturday, Nov 28</p>
       <p class="bill"><b>Divas of Rock and Pop:</b> <span class="times">7:30</span><span class="note">LeGacy presents. <a href="https://nevadatheatre.com/events/legacy-presents-divas-of-rock-and-pop/">Details</a>.</span></p>
       <p class="day">Dec 4 to 17</p>
       <p class="bill"><b>Little Women:</b> <span class="times">Dec 4, 5, 10 &amp; 11 at 7:30</span></p>
-      <p class="bill"><span class="times">Dec 12 &amp; 17 at 7:00 · Dec 6 &amp; 13 at 2:00</span><span class="note">LeGacy presents Sands Hall's adaptation; the run is listed through Dec 27. <a href="https://nevadatheatre.com/events/legacy-presents-little-women/">Details</a>.</span></p>
-      <p class="fine">Nothing is listed tonight. <a href="https://nevadatheatre.com/events/">Full listings at nevadatheatre.com</a>, read Nov 27; the page loads more dates on request.</p>
+      <p class="bill"><span class="times">Dec 12 &amp; 17 at 7:00 · Dec 6 &amp; 13 at 2:00</span><span class="note">LeGacy presents; the run is listed through Dec 27. <a href="https://nevadatheatre.com/events/legacy-presents-little-women/">Details</a>.</span></p>
+      <p class="fine"><a href="https://nevadatheatre.com/events/">Full listings at nevadatheatre.com</a>, read Nov 28; the page loads more dates on request.</p>
     </div>
     <div class="adbox">
       <p class="venue">Off Broadstreet</p>
@@ -645,24 +603,24 @@ body{background-image:none}
       <p class="bill"><b>Sat Nov 28:</b> <span class="times">7:15</span> · <b>Sun Nov 29:</b> <span class="times">2:00</span></p>
       <p class="bill"><b>Fri Dec 4:</b> <span class="times">7:15</span> · <b>Sat Dec 5:</b> <span class="times">7:15, sold out</span> · <b>Sun Dec 6:</b> <span class="times">2:00, sold out</span></p>
       <p class="bill"><b>Fri Dec 11:</b> <span class="times">7:15</span> · <b>Sat Dec 12:</b> <span class="times">7:15, sold out</span> · <b>Sun Dec 13:</b> <span class="times">2:00, sold out</span></p>
-      <p class="bill"><b>Sat Dec 19:</b> <span class="times">2:00 &amp; 7:15</span> · <b>Sun Dec 20:</b> <span class="times">2:00, sold out</span><span class="note">The house's holiday revue, billed as full of humor, nostalgia and music and suitable for all ages, with wine, dessert and coffee served at the table. Opens tomorrow. (530) 265-8686. <a href="https://offbroadstreet.thundertix.com/events/271691">Tickets</a>.</span></p>
-      <p class="fine">Dates and sold-out marks per <a href="https://www.offbroadstreet.com/calendar.htm">offbroadstreet.com</a> and its <a href="https://offbroadstreet.thundertix.com/events/271691">ThunderTix box office</a>, read Nov 27.</p>
+      <p class="bill"><b>Sat Dec 19:</b> <span class="times">2:00 &amp; 7:15</span> · <b>Sun Dec 20:</b> <span class="times">2:00, sold out</span><span class="note">The house's holiday revue, billed as full of humor, nostalgia and music and suitable for all ages, with wine, dessert and coffee served at the table. Opens tonight. (530) 265-8686. <a href="https://offbroadstreet.thundertix.com/events/271691">Tickets</a>.</span></p>
+      <p class="fine">Dates and sold-out marks per <a href="https://www.offbroadstreet.com/calendar.htm">offbroadstreet.com</a> and its <a href="https://offbroadstreet.thundertix.com/events/271691">ThunderTix box office</a>, read Nov 28.</p>
     </div>
   </div>
   <div class="smallads">
-    <p><b>The weekend.</b> Tonight, early blues and a late DJ at Crazy Horse, and Cornish Christmas down the hill in Grass Valley. Saturday, Holiday Express opens at Off Broadstreet, Divas of Rock and Pop plays the Nevada Theatre, Golden Shoulders plays The Center for the Arts and Caltucky holds Friendsgiving at Crazy Horse. Sunday, the Winter Craft Fair at the Miners Foundry. The Onyx runs its regular times all weekend.</p>
-    <p><b>Crazy Horse Saloon &amp; Grill</b> (230 Commercial St.). Fri Nov 27: <a href="https://crazyhorsenc.com/show/grease-grit-grime-early-bird-blues-2/">Grease, Grit &amp; Grime Early Bird Blues</a>, 5:00 PM, free; <a href="https://crazyhorsenc.com/show/fridays-funky-funktion-w-dj-amburgers/">Friday's Funky Funktion with DJ Amburgers</a>, 9:30 PM, free. Sat Nov 28: <a href="https://crazyhorsenc.com/show/caltucky-2/">Caltucky's Friendsgiving</a>, 9:00 PM, $15. Thu Dec 3: <a href="https://crazyhorsenc.com/show/the-heeters-ft-members-of-the-california-honeydrops-2/">The Heeters, with members of The California Honeydrops</a>, 9:00 PM, $20. Fri Dec 4: <a href="https://crazyhorsenc.com/show/uk-france-dnb-titan-monty-w-dust-beau-lb-konfusion-and-higgins/">Monty, with Dust + Beau, LB &amp; Konfusion and Higgins</a>, drum and bass, 9:30 PM, $20. Sat Dec 5: <a href="https://crazyhorsenc.com/show/broken-compass-bluegrass/">Broken Compass Bluegrass</a>, 9:00 PM, $30; Sun Dec 6: <a href="https://crazyhorsenc.com/show/broken-compass-bluegrass-2/">Night Two</a>, 8:30 PM, $30. Wed Dec 9: <a href="https://crazyhorsenc.com/show/dj-k-bueno-victorian-christmas-after-party/">DJ K. Bueno, Victorian Christmas After Party</a>, 9:00 PM, free. Fri Dec 11: <a href="https://crazyhorsenc.com/show/the-geezer-gig-9/">The Geezer Gig</a>, 5:00 PM, free; <a href="https://crazyhorsenc.com/show/siren-seer-w-museaic/">Siren &amp; Seer with MUSEAIC</a>, 9:45 PM, $25 to $30. Sat Dec 12: <a href="https://crazyhorsenc.com/show/the-humidors-2/">The Humidors</a>, 9:30 PM, $15. Wed Dec 16: <a href="https://crazyhorsenc.com/show/fabians-excellent-adventure-a-victorian-christmas-80s-throwback/">Fabian's Excellent Adventure, a Victorian Christmas '80s throwback</a>, 9:00 PM, free. Thu Dec 17: <a href="https://crazyhorsenc.com/show/band-beyond-description-8/">Band Beyond Description</a>, 9:00 PM, $20. Fri Dec 18: <a href="https://crazyhorsenc.com/show/jessica-malone/">Jessica Malone</a>, 9:00 PM, $20. Sat Dec 19: <a href="https://crazyhorsenc.com/show/the-crooked-stuff-w-kronosaurus-flex-2/">The Crooked Stuff with Kronosaurus Flex</a>, 9:00 PM, $15. Per <a href="https://crazyhorsenc.com/shows/">crazyhorsenc.com</a>, Nov 27.</p>
-    <p><b>Miners Foundry</b> (325 Spring St.). Sun Nov 29: <a href="https://minersfoundry.org/event/nevada-city-winter-craft-fair-11/">Nevada City Winter Craft Fair</a>, 10:00 AM. Thu Dec 3: <a href="https://minersfoundry.org/event/the-foundry-sings-holly-jolly-holiday-sing-along/">The Foundry Sings! Holly Jolly Holiday Sing Along</a>, 6:00 PM. Fri Dec 4: <a href="https://minersfoundry.org/event/desert-dwellers-3/">Desert Dwellers</a>, 8:00 PM. Sat Dec 5: <a href="https://minersfoundry.org/event/martinis-mistletoe-5/">Martinis &amp; Mistletoe</a>, 7:00 PM. Dec 6, 9, 13, 16 &amp; 20: <a href="https://minersfoundry.org/event/victorian-christmas-at-the-foundry-2/">Victorian Christmas at the Foundry</a>. Dec 19 &amp; 20: <a href="https://minersfoundry.org/event/the-pops-chorale-presents-candlelight-carols/">The Pops Chorale Presents: Candlelight Carols</a>, 7:30 PM. Per <a href="https://minersfoundry.org/all-events/">minersfoundry.org</a>, Nov 27.</p>
-    <p><b>Down the hill.</b> Tonight and the next three Fridays: <a href="https://yubanet.com/regional/grass-valley-celebrates-its-cornish-heritage-with-the-58th-annual-cornish-christmas/">Cornish Christmas</a>, Mill and West Main streets, Grass Valley, 6 to 9 PM, free. Sat Nov 28: Nevada City's Golden Shoulders, led by songwriter Adam Kline, plays as a seven-piece with The Moore Brothers at The Center for the Arts, 314 W. Main St., Grass Valley; doors 7, show 8 PM; TheCenterForTheArts.org or (530) 274-8384, per <a href="https://yubanet.com/regional/nevada-citys-golden-shoulders-brings-a-seven-piece-hometown-lineup-to-the-center-for-the-arts-with-special-guests-the-moore-brothers/">YubaNet, Nov 20</a>.</p>
+    <p><b>The weekend.</b> Tonight, Holiday Express opens at Off Broadstreet, Divas of Rock and Pop plays the Nevada Theatre, Caltucky holds Friendsgiving at Crazy Horse, and Golden Shoulders plays The Center for the Arts in Grass Valley. Sunday, the Winter Craft Fair at the Miners Foundry. The Onyx runs its regular times all weekend.</p>
+    <p><b>Crazy Horse Saloon &amp; Grill</b> (230 Commercial St.). Sat Nov 28: <a href="https://crazyhorsenc.com/show/caltucky-2/">Caltucky's Friendsgiving</a>, 9:00 PM, $15. Thu Dec 3: <a href="https://crazyhorsenc.com/show/the-heeters-ft-members-of-the-california-honeydrops-2/">The Heeters, with members of The California Honeydrops</a>, 9:00 PM, $20. Fri Dec 4: <a href="https://crazyhorsenc.com/show/uk-france-dnb-titan-monty-w-dust-beau-lb-konfusion-and-higgins/">Monty, with Dust + Beau, LB &amp; Konfusion and Higgins</a>, drum and bass, 9:30 PM, $20. Sat Dec 5: <a href="https://crazyhorsenc.com/show/broken-compass-bluegrass/">Broken Compass Bluegrass</a>, 9:00 PM, $30; Sun Dec 6: <a href="https://crazyhorsenc.com/show/broken-compass-bluegrass-2/">Night Two</a>, 8:30 PM, $30. Wed Dec 9: <a href="https://crazyhorsenc.com/show/dj-k-bueno-victorian-christmas-after-party/">DJ K. Bueno, Victorian Christmas After Party</a>, 9:00 PM, free. Fri Dec 11: <a href="https://crazyhorsenc.com/show/the-geezer-gig-9/">The Geezer Gig</a>, 5:00 PM, free; <a href="https://crazyhorsenc.com/show/siren-seer-w-museaic/">Siren &amp; Seer with MUSEAIC</a>, 9:45 PM, $25 to $30. Sat Dec 12: <a href="https://crazyhorsenc.com/show/the-humidors-2/">The Humidors</a>, 9:30 PM, $15. Wed Dec 16: <a href="https://crazyhorsenc.com/show/fabians-excellent-adventure-a-victorian-christmas-80s-throwback/">Fabian's Excellent Adventure, a Victorian Christmas '80s throwback</a>, 9:00 PM, free. Thu Dec 17: <a href="https://crazyhorsenc.com/show/band-beyond-description-8/">Band Beyond Description</a>, 9:00 PM, $20. Fri Dec 18: <a href="https://crazyhorsenc.com/show/jessica-malone/">Jessica Malone</a>, 9:00 PM, $20. Sat Dec 19: <a href="https://crazyhorsenc.com/show/the-crooked-stuff-w-kronosaurus-flex-2/">The Crooked Stuff with Kronosaurus Flex</a>, 9:00 PM, $15. Per <a href="https://crazyhorsenc.com/shows/">crazyhorsenc.com</a>, Nov 28.</p>
+    <p><b>Miners Foundry</b> (325 Spring St.). Sun Nov 29: <a href="https://minersfoundry.org/event/nevada-city-winter-craft-fair-11/">Nevada City Winter Craft Fair</a>, 10:00 AM. Thu Dec 3: <a href="https://minersfoundry.org/event/the-foundry-sings-holly-jolly-holiday-sing-along/">The Foundry Sings! Holly Jolly Holiday Sing Along</a>, 6:00 PM. Fri Dec 4: <a href="https://minersfoundry.org/event/desert-dwellers-3/">Desert Dwellers</a>, 8:00 PM. Sat Dec 5: <a href="https://minersfoundry.org/event/martinis-mistletoe-5/">Martinis &amp; Mistletoe</a>, 7:00 PM. Dec 6, 9, 13, 16 &amp; 20: <a href="https://minersfoundry.org/event/victorian-christmas-at-the-foundry-2/">Victorian Christmas at the Foundry</a>. Dec 19 &amp; 20: <a href="https://minersfoundry.org/event/the-pops-chorale-presents-candlelight-carols/">The Pops Chorale Presents: Candlelight Carols</a>, 7:30 PM. Per <a href="https://minersfoundry.org/all-events/">minersfoundry.org</a>, Nov 28.</p>
+    <p><b>Elsewhere in town.</b> Today at 2 PM: Annie, the musical, at the Don Baggett Theatre, 11761 Ridge Rd., $22 to $28, per <a href="https://knco.com">KNCO's community calendar</a>. Down the hill tonight: Golden Shoulders with The Moore Brothers at The Center for the Arts, 314 W. Main St., Grass Valley; doors 7, show 8 PM; TheCenterForTheArts.org or (530) 274-8384, per <a href="https://yubanet.com/regional/nevada-citys-golden-shoulders-brings-a-seven-piece-hometown-lineup-to-the-center-for-the-arts-with-special-guests-the-moore-brothers/">YubaNet, Nov 20</a>. Fridays through Dec 18: <a href="https://yubanet.com/regional/grass-valley-celebrates-its-cornish-heritage-with-the-58th-annual-cornish-christmas/">Cornish Christmas</a>, Mill and West Main streets, Grass Valley, 6 to 9 PM, free.</p>
     <p><b>The Fern</b> (235 Commercial St.). Pub Quiz Mondays; Open Mic Comedy every other Tuesday. Its posted calendar is an image from October and its dates page would not load, so no dated listing could be read; check <a href="https://thefernnevadacity.com/">thefernnevadacity.com</a>.</p>
-    <p><b>'Uba Seo: Nisenan Arts &amp; Culture</b> (225 Broad St.). The Nevada City Rancheria Nisenan Tribe's gallery; hours change with Tribal needs, so call ahead, 530-955-5134. Sat Dec 5: <a href="https://www.huswej.org/events/am-je-fire-feathers-grand-opening">ṡam je· – Fire Feathers | Grand Opening</a>, 3 PM at Wildflower Ridge Preserve. Per <a href="https://www.huswej.org/events">huswej.org</a>, Nov 27.</p>
-    <p><b>Wild &amp; Scenic.</b> The 25th annual festival runs Feb. 18 to 22, 2027, in Nevada City and Grass Valley; its art exhibition call had a late deadline of Monday, Nov. 30, and it is seeking lodging hosts for visiting filmmakers, per its site as read Nov 26. <a href="https://wildandscenicfilmfestival.org">wildandscenicfilmfestival.org</a>; <a href="https://wildandscenicfilmfestival.org/lodging-host-information/">lodging hosts</a>.</p>
+    <p><b>'Uba Seo: Nisenan Arts &amp; Culture</b> (225 Broad St.). The Nevada City Rancheria Nisenan Tribe's gallery; the Pamblo exhibition is listed through November. Hours change with Tribal needs, so call ahead, 530-955-5134. Sat Dec 5: <a href="https://www.huswej.org/events/am-je-fire-feathers-grand-opening">ṡam je· – Fire Feathers | Grand Opening</a>, 3 PM at Wildflower Ridge Preserve. Per <a href="https://www.huswej.org/events">huswej.org</a>, Nov 28.</p>
+    <p><b>Wild &amp; Scenic.</b> The 25th annual festival runs Feb. 18 to 22, 2027, in Nevada City and Grass Valley, under the theme "Momentum." Its art exhibition call closes with a late deadline Monday, Nov. 30, and it is seeking lodging hosts for visiting filmmakers; early-bird passes are offered at $25 off, per its site as read Nov 28. <a href="https://wildandscenicfilmfestival.org">wildandscenicfilmfestival.org</a>; <a href="https://wildandscenicfilmfestival.org/lodging-host-information/">lodging hosts</a>.</p>
     <p><b>More listings.</b> KVMR keeps a community <a href="https://www.kvmr.org/arts-calendar/">arts calendar</a> of area events.</p>
   </div>
 
   <div class="adbox" style="margin-top:0">
     <p class="venue">Radio Log</p>
-    <p class="addr">KVMR 89.5 FM · Nevada City · Friday's Programs</p>
+    <p class="addr">KVMR 89.5 FM · Nevada City · Saturday's Programs</p>
     <a class="listenlive" href="https://www.radiorethink.com/tuner/index.cfm?stationCode=KVMR&amp;stream=hi&amp;launchedFrom=secureStreamRedirect">▸ Listen Live · KVMR 89.5 FM</a>
 <style>
 .uti-replay{margin:0 0 10px;text-align:center}
@@ -689,34 +647,30 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
 </div>
 
     <p style="margin:0 0 10px;text-align:center;font-size:13.5px">This paper's publisher on the air: <a href="https://widgets.spinitron.com/KVMR/show/257224/Under-The-Influence"><b>Under the Influence</b></a>, playlists and air dates on Spinitron (next on the third Wednesday of December, Dec. 16, 8 to 10 PM) · Local news: <a href="https://www.kvmr.org/show/kvmr-news/">KVMR News</a> (latest: <a href="https://kvmrnews.transistor.fm/episodes/nevada-countys-citizens-academy-is-taking-applications">Citizens' Academy Applications, Nov 24</a>)</p>
-    <p class="radioline">7 AM Friday Morning Show · 10 AM Celtic Cadence · Noon Beyond Borders · 2 PM The Beat Bizarre · 4 PM Friday Music Magazine · 6 PM The California Report · 7 PM Democracy Now! · 8 PM Ital Culture · 10 PM Trance It Lounge</p>
+    <p class="radioline">To 7 AM Hoofprints · 7 AM Backroads · 10 AM County Line Bluegrass · 4 PM Click Your Heels Together · 6 PM Diamonds and Rust · 8 PM Dead Air</p>
     <details class="fold"><summary>Unfold the full log, with hosts</summary><ul class="cal" style="font-size:15px">
-      <li><span class="d">12:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/301017/The-Road-House">The Road House</a></b><span class="sub">Allicat or BobB · every other Friday; it last aired Nov 13, which makes this its week (The Twilight Zone takes the other weeks)</span></span></li>
-      <li><span class="d">2:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/291673/Ctrl-Alt-The-Beat">Ctrl Alt The Beat</a></b><span class="sub">DJ Nate · every other Friday; it last aired Nov 13, which makes this its week. <a href="https://spinitron.com/KVMR/show/273327/Dog-Bar-Dreams">Dog Bar Dreams</a> also holds the slot every fourth Friday</span></span></li>
-      <li><span class="d">5:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/263434/Medium-Roast">Medium Roast</a></b><span class="sub">The Dave Guy</span></span></li>
-      <li><span class="d">7:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/79434/Friday-Morning-Show">Friday Morning Show</a></b><span class="sub">Lisa the Kitten</span></span></li>
-      <li><span class="d">10:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58451/Celtic-Cadence">Celtic Cadence</a></b><span class="sub">Annie O'Dea Hestbeck · every other Friday; the live Spinitron listing shows it today</span></span></li>
-      <li><span class="d">12:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/254972/Beyond-Borders">Beyond Borders</a></b><span class="sub">Rotating hosts</span></span></li>
-      <li><span class="d">2:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/274483/The-Beat-Bizarre">The Beat Bizarre</a></b><span class="sub">Sabrina Blackburn</span></span></li>
-      <li><span class="d">4:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58394/Friday-Music-Magazine">Friday Music Magazine</a></b><span class="sub">Hap Hazard</span></span></li>
-      <li><span class="d">6:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/59250/The-California-Report">The California Report</a></b><span class="sub">Syndicated</span></span></li>
-      <li><span class="d">7:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58751/Democracy-Now">Democracy Now!</a></b><span class="sub">Syndicated</span></span></li>
-      <li><span class="d">8:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58799/Ital-Culture">Ital Culture</a></b><span class="sub">DJ Redlocks</span></span></li>
-      <li><span class="d">10:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58382/Trance-It-Lounge">Trance It Lounge</a></b><span class="sub">Bill Emerson</span></span></li>
+      <li><span class="d">12:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58841/Redeye-Radio">Redeye Radio</a></b><span class="sub">Various · weekly; tonight's playlist is posted</span></span></li>
+      <li><span class="d">5:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/259461/Hoofprints">Hoofprints</a></b><span class="sub">Susie Rex today (alternates with BobB) · listed as alternating weeks, but this morning's playlist is posted</span></span></li>
+      <li><span class="d">7:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58298/Backroads">Backroads</a></b><span class="sub">Larry Hillberg</span></span></li>
+      <li><span class="d">10:00 AM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58292/County-Line-Bluegrass">County Line Bluegrass</a></b><span class="sub">Eric Rice</span></span></li>
+      <li><span class="d">12:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58304/Ragged-But-Right">Ragged But Right</a></b><span class="sub">Thomas Greener · every other Saturday; its last playlist was Nov 7, which puts today in its off week. The show filling the slot today was not posted</span></span></li>
+      <li><span class="d">4:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58430/Click-Your-Heels-Together">Click Your Heels Together</a></b><span class="sub">Ruby Slippers</span></span></li>
+      <li><span class="d">6:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58532/Diamonds-and-Rust">Diamonds and Rust</a></b><span class="sub">Laura Miller</span></span></li>
+      <li><span class="d">8:00 PM</span><span class="what"><b><a href="https://spinitron.com/KVMR/show/58568/Dead-Air">Dead Air</a></b><span class="sub">Various</span></span></li>
     </ul></details>
-    <p class="fine">Today's lineup per each program's own <a href="https://spinitron.com/KVMR">Spinitron</a> page; slots that rotate by week are marked. No holiday programming was posted. Full schedule at <a href="https://www.kvmr.org/kvmr-schedule/">kvmr.org</a>; listen at 89.5 FM.</p>
+    <p class="fine">Today's lineup per each program's own <a href="https://spinitron.com/KVMR">Spinitron</a> page; slots that rotate by week are marked. Full schedule at <a href="https://www.kvmr.org/kvmr-schedule/">kvmr.org</a>; listen at 89.5 FM.</p>
 <div class="kvmrx" style="margin:16px 0 0;padding-top:4px;border-top:2px solid var(--ink)">
-    <p class="addr">KVMRx 105.7 FM · KVMR's Sister Station · Friday's Programs</p>
+    <p class="addr">KVMRx 105.7 FM · KVMR's Sister Station · Saturday's Programs</p>
     <a class="listenlive" href="https://www.radiorethink.com/tuner/?stationCode=KVMRX&amp;stream=hi">▸ Listen Live · KVMRx 105.7 FM</a>
-    <p class="radioline">6 AM Gone Scrumping (rerun) · 8 AM Papaya Rock · 10 AM Million Sunrises (rerun) · Noon Made in Brazil · 2 PM Stereo Cosmic Jellyfish · 4 PM Energy Hour · 6 PM Sonic Soulstice · 8 PM Underground Will Live Forever · 10 PM The Underground Den</p>
+    <p class="radioline">6 AM bangs in my tear duct (rerun) · 8 AM Around With Sound · Noon The Cretaceous Space · 2 PM Dream Warriors · 4 PM The Island (rerun) · 6 PM Yip Yap (rerun) · 8 PM The Dance Floor</p>
     <details class="fold"><summary>Unfold the KVMRx week</summary><div style="font-size:14.5px;line-height:1.5;margin-top:6px">
-      <p style="margin:0 0 8px"><b>Friday (today).</b> 12 AM Play Anything… (rerun) · 2 AM Space Travel Rock 'n' Roll (rerun) · 4 AM Random Rules (rerun) · 6 AM Gone Scrumping (rerun) · 8 AM Papaya Rock · 10 AM Million Sunrises (rerun) · Noon Made in Brazil · 2 PM Stereo Cosmic Jellyfish · 4 PM Energy Hour · 6 PM Sonic Soulstice · 8 PM Underground Will Live Forever · 10 PM The Underground Den</p>
-      <p style="margin:0 0 8px"><b>Saturday.</b> 12 AM Get Off the Dance Floor (rerun) · 2 AM Sky Burial (rerun) · 4 AM The Get Up · 6 AM bangs in my tear duct (rerun) · 8 AM Around With Sound · Noon The Cretaceous Space · 2 PM Dream Warriors · 4 PM The Island (rerun) · 6 PM Yip Yap (rerun) · 8 PM The Dance Floor</p>
+      <p style="margin:0 0 8px"><b>Saturday (today).</b> 12 AM Get Off the Dance Floor (rerun) · 2 AM Sky Burial (rerun) · 4 AM The Get Up · 6 AM bangs in my tear duct (rerun) · 8 AM Around With Sound · Noon The Cretaceous Space · 2 PM Dream Warriors · 4 PM The Island (rerun) · 6 PM Yip Yap (rerun) · 8 PM The Dance Floor</p>
       <p style="margin:0 0 8px"><b>Sunday.</b> 12 AM Transmissions from Zero (rerun) · 2 AM From the Institute of Horology (rerun) · 4 AM Belly Up Get Down (rerun) · 6 AM The Deepest Blue (rerun) · 8 AM Mawkish Twaddle · 10 AM You didn’t hear it from me · Noon Cabbage Sandwich Records · 2 PM All Mixed Up · 4 PM Play Anything… · 6 PM Live &amp; Direct · 8 PM Random Rules · 10 PM 13</p>
       <p style="margin:0 0 8px"><b>Monday.</b> 12 AM Known Pleasures (rerun) · 2 AM Microdose (rerun) · 4 AM Sonic Soulstice (rerun) · 6 AM The Get Up (rerun) · 8 AM Shiny Things · 10 AM Gone Scrumping · Noon Yip Yap · 2 PM bangs in my tear duct · 4 PM Digital Anarchy · 6 PM The Moore Bros. DJ Game · 8 PM Open Floor Mat</p>
       <p style="margin:0 0 8px"><b>Tuesday.</b> 12 AM Stereo Cosmic Jellyfish (rerun) · 2 AM Energy Hour (rerun) · 4 AM Twisted Stars (rerun) · 6 AM Papaya Rock (rerun) · 8 AM The upShift · 10 AM Known Pleasures · Noon The Mirror of Ink · 2 PM Million Sunrises · 4 PM From the Institute of Horology · 6 PM Microdose · 8 PM Transmissions from Zero · 10 PM Get Off the Dance Floor</p>
       <p style="margin:0 0 8px"><b>Wednesday.</b> 12 AM Midnight Sesh · 2 AM Around with Sound (rerun) · 6 AM Daydream Nation (rerun) · 8 AM Sky Burial · 10 AM The Moore Bros. DJ Game (rerun) · Noon The Mixtape Rewind · 2 PM The Greg Cipes Experience · 4 PM Cabbage Sandwich Records (rerun) · 6 PM Space Travel Rock 'n' Roll · 8 PM The Funk Train Express · 10 PM The Island</p>
       <p style="margin:0 0 8px"><b>Thursday.</b> 12 AM The Cretaceous Space (rerun) · 2 AM Open Floor Mat (rerun) · 6 AM Second Breakfast · 8 AM The Deepest Blue · 10 AM Daydream Nation · Noon Twisted Stars · 2 PM Queer &amp; Now · 4 PM Bing Bong · 6 PM Belly Up Get Down · 8 PM Snowflake · 10 PM Reliquary</p>
+      <p style="margin:0 0 8px"><b>Friday.</b> 12 AM Play Anything… (rerun) · 2 AM Space Travel Rock 'n' Roll (rerun) · 4 AM Random Rules (rerun) · 6 AM Gone Scrumping (rerun) · 8 AM Papaya Rock · 10 AM Million Sunrises (rerun) · Noon Made in Brazil · 2 PM Stereo Cosmic Jellyfish · 4 PM Energy Hour · 6 PM Sonic Soulstice · 8 PM Underground Will Live Forever · 10 PM The Underground Den</p>
     </div></details>
     <p class="fine">KVMRx lineup per the station's <a href="https://spinitron.com/KVMRx/calendar">Spinitron calendar</a>, as read Nov. 19, 2026; reruns marked. On the air right now: <a href="https://spinitron.com/KVMRx/">spinitron.com/KVMRx</a>. Station site: <a href="http://kvmrx.org">kvmrx.org</a>.</p>
   </div>
@@ -725,7 +679,19 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
 </section>
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
-<section><h2 class="kicker"><span class="label">Visiting?</span></h2><p class="ptr" style="font-size:16px">In today's Visitor Guide: the Victorian Christmas Guide, The Bill of Fare at three prices, the bars, After Dark for the nightlife, the Trail of the Day along the Deer Creek Tribute Trail downtown, Galleries &amp; Stages, the Red Dot's Winter Art Market, Downtown and Seven Hills, where to park, the public restrooms, the beds, and day trips from Sacramento and Truckee: <a href="visitor.html"><b>The Nevada City Visitor Guide ▸</b></a></p></section>
+<section><h2 class="kicker"><span class="label">Visiting?</span></h2><p class="ptr" style="font-size:16px">In today's Visitor Guide: the Victorian Christmas Guide, the bars, After Dark for the nightlife, Galleries &amp; Stages, the Red Dot's Winter Art Market, Downtown and Seven Hills, where to park, the public restrooms, the beds, and day trips from Sacramento and Truckee: <a href="visitor.html"><b>The Nevada City Visitor Guide ▸</b></a></p></section>
+<p class="stars">✱ ✱ ✱ ✱ ✱</p>
+
+<section>
+  <h2 class="kicker"><span class="label">The Menagerie</span></h2>
+  <div class="notebox">
+    <p><b>Looking for a friend?</b> The Nevada County Animal Shelter, 14647 McCourtney Rd., Grass Valley, is open Wednesday through Saturday, noon to 5 PM (closed Sunday through Tuesday), run by the county in partnership with Sammie's Friends. See who's waiting: <a href="https://www.sammiesfriends.org/adopt">animals for adoption at Sammie's Friends</a>.</p>
+    <p><b>Lost one, or found one?</b> File the county's <a href="https://nevadacounty.jotform.com/262736714850058">lost or found animal report</a>, then write the Nugget with a description and the contact you want printed. Notices run free and come down once the animal is home.</p>
+    <p><b>Show off your pet.</b> Send a photo to <a href="mailto:news@nevadacitynugget.com">news@nevadacitynugget.com</a> with the pet's name, your name as you'd like it printed, and a line saying the Nugget may run it.</p>
+  </div>
+  <p class="src">Source: <a href="https://nevadacountyca.gov/4120/Animal-Services">Nevada County Animal Services</a>; shelter hours as the county posts them.</p>
+</section>
+
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
 <section>
@@ -738,22 +704,23 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
 
   <article>
     <p class="meta">This Day In History</p>
-    <p><b>1978.</b> San Francisco Mayor George Moscone and Supervisor Harvey Milk, one of the first openly gay elected officials in the country, were shot and killed at San Francisco City Hall by former Supervisor Dan White.</p>
-    <p class="src">Sources: <a href="https://www.history.com/this-day-in-history/november-27/san-francisco-leaders-george-moscone-and-harvey-milk-are-murdered">HISTORY.com, "San Francisco leaders George Moscone and Harvey Milk are murdered"</a>; <a href="https://www.smithsonianmag.com/smart-news/harvey-milk-one-of-the-worlds-first-openly-gay-politicians-was-assassinated-on-this-day-in-1978-180985464/">Smithsonian Magazine</a></p>
+    <p><b>1520.</b> After 38 days, Ferdinand Magellan's expedition finished the first passage through the strait that now bears his name and sailed into the Pacific Ocean.</p>
+    <p><b>1943.</b> Franklin D. Roosevelt, Winston Churchill and Joseph Stalin opened the Tehran Conference, where Stalin pressed for an Allied invasion of France.</p>
+    <p class="src">Sources: <a href="https://en.wikipedia.org/wiki/28_Nov">Wikipedia, November 28</a>; <a href="https://www.britannica.com/on-this-day/November-28">Britannica, This Day in History: November 28</a></p>
   </article>
 
   <article>
     <p class="meta">Niel's Knick Knacks</p>
-    <p><b><a href="https://www.checkiday.com/debae6ad42712facb7b52cf509586268/black-friday">Black Friday</a>.</b> The Nugget went to press in black for it. Broad Street is the mall, and it has better architecture.</p>
-    <p><b><a href="https://www.checkiday.com/60e04323f395d98a91f2c5f89160d6b0/buy-nothing-day">Buy Nothing Day</a>.</b> Shares the date with Black Friday, which makes for an awkward elevator ride.</p>
-    <p><b><a href="https://www.checkiday.com/f086a6cfb609a6fc9297dba00a5560d4/national-leftovers-day">National Leftovers Day</a>.</b> The refrigerator's high holy day. See the recipe below.</p>
-    <p><b><a href="https://www.checkiday.com/2802a86066b94455d62b89bec3e1a8a6/national-native-american-heritage-day">National Native American Heritage Day</a>.</b> In Nevada City, a good day to visit 'Uba Seo, the Nisenan gallery at 225 Broad St.; call ahead, 530-955-5134.</p>
-    <p class="src">Source: <a href="https://www.checkiday.com">Checkiday, Nov 27</a></p>
+    <p><b><a href="https://www.checkiday.com/4262f193a957c8d2d8dc16c68b101941/small-business-saturday">Small Business Saturday</a>.</b> Broad Street has been observing it since the 1850s; it just never had a name for it.</p>
+    <p><b><a href="https://www.checkiday.com/921b49a306be721aa4412c39eff92154/turkey-leftover-day">Turkey Leftover Day</a>.</b> Day two of the bird. By Monday it will have its own parking permit.</p>
+    <p><b><a href="https://www.checkiday.com/fa3110e6e7a7f1802a9900e59bfcce54/national-french-toast-day">National French Toast Day</a>.</b> See the recipe below, which arrived at the same conclusion independently.</p>
+    <p><b><a href="https://www.checkiday.com/0c3a49bb2344d153c7a98f7e1f3bf398/red-planet-day">Red Planet Day</a>.</b> Mars is out there somewhere above the clouds coming in Sunday. Look tonight while you can.</p>
+    <p class="src">Source: <a href="https://www.checkiday.com/11/28/2026">Checkiday, Nov 28</a></p>
   </article>
 
   <article>
     <p class="meta">Hey Good Lookin', Whatcha Got Cookin'</p>
-    <p><b>Leftover Turkey And Sweet Potato Hash With Crisped Sage</b> (a Nugget original). Cut a large sweet potato and a russet into half-inch dice, leaving the skins on, and parboil them in salted water for five minutes, then drain well and let them steam dry. In your biggest cast-iron skillet heat three tablespoons of olive oil over medium-high, lay in a dozen fresh sage leaves for thirty seconds until they crisp, and lift them out onto a paper towel. Into the same oil go the potatoes in a single layer; leave them alone for a good six minutes to brown, then turn them and add a diced onion, a diced red pepper and a pinch of salt. When the onion softens, after about five minutes more, stir in two cups of shredded leftover turkey, a half teaspoon of smoked paprika, a few grinds of black pepper and a splash of turkey stock or water, and press it all flat with a spatula so the bottom crusts. Make four wells, crack an egg into each, cover the pan and cook on low until the whites set, about five minutes. Crumble the fried sage over the top, add a spoon of cranberry sauce on the side if any survived, and serve from the skillet. Feeds four, takes half an hour, and uses up the bird without anyone having to say the word sandwich.</p>
+    <p><b>Pumpkin Pie French Toast With Brown Butter Apples</b> (a Nugget original). If a wedge or two of pumpkin pie survived Thursday, scoop the filling away from the crust into a wide bowl, about a cup of it, and whisk in three eggs, two-thirds of a cup of milk, a pinch of salt and a little extra cinnamon until smooth; no pie, and a cup of canned pumpkin with two spoonfuls of brown sugar and a pinch of nutmeg does the same job. Cut six thick slices of day-old bread, sourdough or a stale country loaf, and let each one soak in the custard for half a minute a side. Meanwhile melt three tablespoons of butter in a skillet over medium heat and let it foam and turn nutty brown, then add two Gold Country apples, cored and cut in thin wedges, with a spoonful of brown sugar, and cook them until they slump and glaze, about six minutes; tip them into a bowl. Wipe the pan, add a little more butter, and fry the soaked bread over medium-low, three or four minutes a side, until deep golden and set in the middle. Pile the apples on top, finish with maple syrup and a few toasted walnuts or pecans, and serve hot. Feeds four, takes twenty-five minutes, and lets the pie have one more morning in the sun before the rain.</p>
     <p class="src">Readers' own recipes are welcome through the house channel and run with credit and permission.</p>
   </article>
 
@@ -761,18 +728,18 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
     <p class="venue" style="font-size:20px">The Stars Over Deer Creek</p>
     <p class="addr" style="border-bottom:none;margin-bottom:0">A Horoscope Composed Fresh Each Morning In Nevada City</p>
     <div class="factrow" style="margin-top:8px">
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aries.</b> Black Friday and Buy Nothing Day share a date. Split the difference: buy one hat.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Taurus.</b> Leftovers Day was made for you. The hash recipe is on this page; the second helping is between you and the skillet.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Gemini.</b> Two films at the Onyx, both at the same times all week. Your indecision finally has a schedule.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Cancer.</b> City Hall closes Fridays starting next week. Do your errands Thursday and gloat by Friday.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Leo.</b> The moon is waning gibbous. So is your patience with relatives. Both recover by mid-December.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Virgo.</b> Sixty-eight on Saturday, thunder on Sunday. Clean the gutters now and feel superior in the downpour.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Libra.</b> A shopping passport awaits at Hometown Christmas. Get it stamped; your actual passport can wait.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Scorpio.</b> A woman on Sutton Way refused to leave a store. Admire her resolve; do not copy her technique.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Sagittarius.</b> Snow levels stay above 7,500 feet. Your chains may remain in the trunk, unloved and untangled.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Capricorn.</b> The Morgue is dark today. Make some history of your own, preferably the kind that fits in a blotter.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aquarius.</b> A friendly dog was collected on Rough and Ready Highway. Somewhere a friendly dog is hoping to collect you.</p></article>
-      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Pisces.</b> Two craft fairs this weekend. You will come home with a candle you did not need and will love anyway.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aries.</b> Small Business Saturday rewards the bold. Walk into a shop you have passed a hundred times and say hello.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Taurus.</b> Turkey Leftover Day and French Toast Day share a calendar square. You were born for this alignment.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Gemini.</b> Thunder is possible Sunday afternoon. So is a change of heart about that umbrella you never bought.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Cancer.</b> A peacock appeared on a South Pine Street porch. Your own surprise visitor is likelier to be a cousin.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Leo.</b> The arts district discussion is Tuesday. You have always considered yourself a district of one.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Virgo.</b> City Hall closes Fridays starting next week. Make a list; you were going to anyway.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Libra.</b> Two films at the Onyx, same times every day. Balance is easy when the schedule does it for you.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Scorpio.</b> Someone locked themselves out of a hotel room on Zion Street. Check your pockets twice this week.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Sagittarius.</b> The moon is waning gibbous and the snow stays above 7,500 feet. The mountain can wait for you.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Capricorn.</b> A 911 caller phoned only to say happy Thanksgiving. Send a thank-you note today, by ordinary mail.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Aquarius.</b> Red Planet Day asks you to look up. Do it on Broad Street, where the curb is a known hazard.</p></article>
+      <article style="margin-bottom:10px"><p style="font-size:14.5px"><b>Pisces.</b> Sunday's rain is your weather. Find a window seat and let the gutters do the talking.</p></article>
     </div>
     <p class="fine">For entertainment purposes. The stars are not registered lobbyists.</p>
   </div>
@@ -783,9 +750,9 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
   <h2 class="kicker"><span class="label">City Hall on the Record</span></h2>
 <div class="daisq">
   <p style="text-align:center;margin:0;font:800 11px var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-mid)">From the Dais</p>
-  <p style="text-align:center;font-family:var(--display,Georgia,serif);font-size:20px;font-weight:600;font-style:italic;line-height:1.35;margin:4px 6% 0">&ldquo;I love the designs.&rdquo;</p>
-  <p class="meta" style="text-align:center"><b>Council Member Adam Kline</b>, on the city&#x27;s new pre-approved backyard cottage (ADU) designs</p>
-  <p class="src" style="text-align:center">City Council, Sept. 9, 2026 · <a href="https://www.youtube.com/watch?v=P8eQfdaM-3o&t=4626s">watch at 1:17:06</a> · <a href="https://nevadacitynugget.com/meetings/council-2026-09-09.html">full transcript</a>. Words as heard in the city's video via automatic captions; the video is the record.</p>
+  <p style="text-align:center;font-family:var(--display,Georgia,serif);font-size:20px;font-weight:600;font-style:italic;line-height:1.35;margin:4px 6% 0">&ldquo;I would wager though that the story began before Measure W, long before.&rdquo;</p>
+  <p class="meta" style="text-align:center"><b>Mayor Daniela Fernández</b>, after a colleague traced the long road to the city&#x27;s housing rules back to Measure W</p>
+  <p class="src" style="text-align:center">City Council, Sept. 9, 2026 · <a href="https://www.youtube.com/watch?v=P8eQfdaM-3o&t=4423s">watch at 1:13:43</a> · <a href="https://nevadacitynugget.com/meetings/council-2026-09-09.html">full transcript</a>. Words as heard in the city's video via automatic captions; the video is the record.</p>
 </div>
 
   <p class="ptr">Mayor Daniela Fernández · Vice Mayor Gary Petersen · Council Members Adam Kline, Doug Fleming and Micayla Sortland · City Manager Carrie J. Wright (appointed)</p>
@@ -822,25 +789,24 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
     <p><b>To take part.</b> The agenda lists a public comment period; it gives no remote-attendance details.</p>
     <p class="src">Source: <a href="https://www.nevadacountyca.gov/AgendaCenter/ViewFile/Agenda/_12012026-2092">Agenda, Dec. 1</a>, Nevada County Agenda Center.</p>
   </details></article>
-  <p class="src" style="text-align:center">Sources: <a href="https://www.nevadacityca.gov/AgendaCenter">City of Nevada City Agenda Center</a>; <a href="https://www.nevadacountyca.gov/AgendaCenter">Nevada County Agenda Center</a>, checked Nov. 27.</p>
+  <p class="src" style="text-align:center">Sources: <a href="https://www.nevadacityca.gov/AgendaCenter">City of Nevada City Agenda Center</a>; <a href="https://www.nevadacountyca.gov/AgendaCenter">Nevada County Agenda Center</a>, checked Nov. 28.</p>
 </section>
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
 <section>
   <h2 class="kicker"><span class="label">Civic Calendar</span></h2>
-  <p class="gline"><b>Counting down:</b> <a href="https://www.nevadacitychamber.com/nevada-city-events/thanksgiving-weekend-events/">Thanksgiving Weekend</a>, today through Sunday · <a href="https://www.nevadacitychamber.com/nevada-city-events/victorian-christmas/">Victorian Christmas</a>, 9 days · <a href="https://wildandscenicfilmfestival.org">Wild &amp; Scenic Film Festival, 25th annual</a>, 83 days</p>
+  <p class="gline"><b>Counting down:</b> <a href="https://www.nevadacitychamber.com/nevada-city-events/thanksgiving-weekend-events/">Thanksgiving Weekend</a>, today and Sunday · <a href="https://www.nevadacitychamber.com/nevada-city-events/victorian-christmas/">Victorian Christmas</a>, 8 days · <a href="https://wildandscenicfilmfestival.org">Wild &amp; Scenic Film Festival, 25th annual</a>, 82 days</p>
   <ul class="cal">
-    <li><span class="d">Fri, Nov 27</span><span class="what"><b>Black Friday · Country Christmas Faire, Fairgrounds, through Sunday · Holiday Craft Faire, Nevada City United Methodist Church · Cornish Christmas, Grass Valley, 6 to 9 PM</b><span class="sub">Country Christmas Faire, 11228 McCourtney Rd., Fri and Sat 10 AM to 5 PM, Sun 10 to 4, $5; the Chamber lists the church Craft Faire at 433 Broad St., Fri and Sat 10 AM to 5 PM and Sun noon to 4, without dates; Cornish Christmas on Mill and West Main streets, free</span></span></li>
-    <li><span class="d">Sat, Nov 28</span><span class="what"><b>Holiday Express opens at Off Broadstreet, 7:15 PM · Divas of Rock and Pop, Nevada Theatre, 7:30 PM · Golden Shoulders with The Moore Brothers, 8 PM</b><span class="sub">Off Broadstreet, 305 Commercial St.; Nevada Theatre, 401 Broad St.; The Center for the Arts, 314 W. Main St., Grass Valley</span></span></li>
-    <li><span class="d">Sun, Nov 29</span><span class="what"><b>Nevada City Winter Craft Fair, 10 AM to 5 PM · Thanksgiving Weekend ends</b><span class="sub">Miners Foundry, 325 Spring St., $7</span></span></li>
+    <li><span class="d">Sat, Nov 28</span><span class="what"><b>Small Business Saturday · Holiday Express opens at Off Broadstreet, 7:15 PM · Divas of Rock and Pop, Nevada Theatre, 7:30 PM · Golden Shoulders with The Moore Brothers, 8 PM · Country Christmas Faire, Fairgrounds</b><span class="sub">Off Broadstreet, 305 Commercial St.; Nevada Theatre, 401 Broad St.; The Center for the Arts, 314 W. Main St., Grass Valley; Country Christmas Faire, 11228 McCourtney Rd., 10 AM to 5 PM, through Sunday</span></span></li>
+    <li><span class="d">Sun, Nov 29</span><span class="what"><b>Nevada City Winter Craft Fair, 10 AM · Thanksgiving Weekend ends · Rain arrives</b><span class="sub">Miners Foundry, 325 Spring St.</span></span></li>
     <li><span class="d">Mon, Nov 30</span><span class="what"><b>Animal shelter comments due, 5 PM · FERC comment deadline on the Fish Creek pumped storage proposal, 2 PM · Wild &amp; Scenic art call closes</b><span class="sub">Shelter comments to the county Planning Department; FERC docket P-15429; the festival art exhibition's late deadline</span></span></li>
-    <li><span class="d">Tue, Dec 1</span><span class="what"><b>Library Measure A oversight committee, 3 PM · Medi-Cal changes talk, 4 PM · Public Arts Commission special meeting, 5:30 PM · Good to Grow grant workshop · Library Winter Reading Challenge begins · 4-H fair animal deadline · $8 Tuesday at the Onyx</b><span class="sub">Oversight committee at the Madelyn Helling Library, per the <a href="https://www.nevadacountyca.gov/AgendaCenter/ViewFile/Agenda/_12012026-2092">county agenda</a>; talk at the Grass Valley Library, free; commission at City Hall, Beryl P. Robinson, Jr. Conference Room, per the <a href="https://www.nevadacityca.gov/AgendaCenter/ViewFile/Agenda/_12022026-681">city's notice</a>; workshop time not found; reading challenge at every county library branch through Jan 30</span></span></li>
+    <li><span class="d">Tue, Dec 1</span><span class="what"><b>Library Measure A oversight committee, 3 PM · Public Arts Commission special meeting, 5:30 PM · County Fish and Wildlife Commission, 6 PM · Good to Grow grant workshop · $8 Tuesday at the Onyx</b><span class="sub">Oversight committee at the Madelyn Helling Library, per the <a href="https://www.nevadacountyca.gov/AgendaCenter/ViewFile/Agenda/_12012026-2092">county agenda</a>; Arts Commission at City Hall, per the <a href="https://www.nevadacityca.gov/AgendaCenter/ViewFile/Agenda/_12012026-682">city agenda</a>; Fish and Wildlife in the Board Chambers, Rood Center, 950 Maidu Ave., per the <a href="https://www.nevadacountyca.gov/AgendaCenter/ViewFile/Agenda/_12012026-2094">county agenda</a>; workshop time not found</span></span></li>
     <li><span class="d">Wed, Dec 2</span><span class="what"><b>Hometown Christmas for locals, 4:30 to 8:30 PM</b><span class="sub">Tree lighting 4:30 PM at Robinson Plaza; Spring Street fair from Pine Street to the Miners Foundry; Santa at the Foundry 5 to 8 PM, per the <a href="https://yubanet.com/regional/introducing-hometown-christmas-in-nevada-city/">Chamber via YubaNet</a></span></span></li>
     <li><span class="d">Thu, Dec 3</span><span class="what"><b>The Foundry Sings! Holly Jolly Holiday Sing Along, 6 PM · Nevada Union band "Holiday Stories" winter concert</b><span class="sub">Miners Foundry, 325 Spring St.; concert per <a href="https://www.theunion.com/news/nevada-union-high-school-band-presents-holiday-stories---2026-winter-concert-on-dec/article_c3163aa5-f0e6-4300-a5fe-769416a70ba3.html">The Union</a> (headline)</span></span></li>
+    <li><span class="d">Fri, Dec 4</span><span class="what"><b>City Hall's four-day public schedule begins · Little Women opens at the Nevada Theatre, 7:30 PM · Cornish Christmas, Grass Valley, 6 to 9 PM</b><span class="sub">City Hall open Monday through Thursday, 8:30 AM to 5:30 PM; closed to the public Friday through Sunday, per the <a href="https://www.theunion.com/news/city-of-nevada-city-announces-updated-city-hall-public-hours/article_3e83a748-6dfb-4b7e-8f8d-58f19d1885ce.html">city via The Union</a></span></span></li>
   </ul>
   <details class="fold"><summary>Unfold the calendar further out (14 more dates)</summary><ul class="cal">
-    <li><span class="d">Fri, Dec 4</span><span class="what"><b>City Hall's four-day public schedule begins · Little Women opens at the Nevada Theatre, 7:30 PM · Cornish Christmas, Grass Valley, 6 to 9 PM</b><span class="sub">City Hall open Monday through Thursday, 8:30 AM to 5:30 PM; closed to the public Friday through Sunday, per the <a href="https://yubanet.com/regional/city-of-nevada-city-announces-updated-city-hall-public-hours/">city</a></span></span></li>
-    <li><span class="d">Sat, Dec 5</span><span class="what"><b>SPECIAL Holiday Repair Café, drop in 2 to 5 PM · ṡam je· – Fire Feathers grand opening, 3 PM</b><span class="sub">Repair Café Nevada County at Banner Grange, 12629 McCourtney Rd, Grass Valley, CA 95945, free, per <a href="https://repaircafenevadacounty.org/events">Repair Café Nevada County</a>; Fire Feathers at Wildflower Ridge Preserve</span></span></li>
+    <li><span class="d">Sat, Dec 5</span><span class="what"><b>SPECIAL Holiday Repair Café, drop in 2 to 5 PM · Santa's Christmas Shoppe opens, 9 AM to noon · ṡam je· – Fire Feathers grand opening, 3 PM</b><span class="sub">Repair Café Nevada County at Banner Grange, 12629 McCourtney Rd, Grass Valley, CA 95945, free, per <a href="https://repaircafenevadacounty.org/events">Repair Café Nevada County</a>; Shoppe at the Nevada City Elks Lodge, per <a href="https://www.theunion.com/news/santas-christmas-shoppe-opens-dec-5/article_161a3da1-409d-4124-8abc-a6cc3dcf3ad2.html">The Union</a>; Fire Feathers at Wildflower Ridge Preserve</span></span></li>
     <li><span class="d">Sun, Dec 6</span><span class="what"><b>Victorian Christmas, first day, 1:30 to 6 PM</b><span class="sub">Rain or shine; shuttles 1 to 7 PM, $8 adults, under 15 free, per the Chamber</span></span></li>
     <li><span class="d">Tue, Dec 8</span><span class="what"><b>County Community Corrections Partnership, 2 PM</b><span class="sub">Probation Department, 109 1/2 N. Pine St., Nevada City, or by Teams, per the <a href="https://www.nevadacountyca.gov/AgendaCenter/ViewFile/Agenda/_12082026-2093">county agenda</a></span></span></li>
     <li><span class="d">Wed, Dec 9</span><span class="what"><b>Victorian Christmas, 5 to 9 PM</b><span class="sub">Shuttles 4:45 to 10 PM, per the Chamber</span></span></li>
@@ -852,9 +818,10 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
     <li><span class="d">Fri, Dec 18</span><span class="what"><b>Donation Day Parade, 10 AM, Grass Valley</b><span class="sub">The 143rd; canned goods for Interfaith Food Ministry</span></span></li>
     <li><span class="d">Sun, Dec 20</span><span class="what"><b>Victorian Christmas, last day, 1:30 to 6 PM</b><span class="sub">Per the Chamber</span></span></li>
     <li><span class="d">Mon, Dec 21</span><span class="what"><b>Good to Grow cannabis grant applications due, 5 PM</b><span class="sub">Nevada County, with the Sierra Business Council, per <a href="https://www.theunion.com/news/good-to-grow-grants-program-opens-round-three/article_9ce7a6f6-1403-4f79-98c3-630074862968.html">The Union</a></span></span></li>
-    <li><span class="d">Fri, Jan 8</span><span class="what"><b>Citizen's Academy applications due</b><span class="sub">At nevadacountyca.gov/citizensacademy</span></span></li>
+    <li><span class="d">Fri, Jan 8</span><span class="what"><b>Citizens' Academy applications due</b><span class="sub">At nevadacountyca.gov/citizensacademy, per <a href="https://kvmrnews.transistor.fm/episodes/nevada-countys-citizens-academy-is-taking-applications">KVMR News</a></span></span></li>
+    <li><span class="d">Feb 18 to 22</span><span class="what"><b>Wild &amp; Scenic Film Festival, 25th annual</b><span class="sub">Nevada City and Grass Valley, per <a href="https://wildandscenicfilmfestival.org">the festival</a></span></span></li>
   </ul></details>
-  <p class="src" style="text-align:center">Council dates per the <a href="https://www.nevadacityca.gov/calendar.aspx?CID=24%2C14">city calendar</a>; election certification per <a href="https://yubanet.com/regional/nevada-countys-november-2026-general-election-results-certified/">YubaNet, Nov 25</a>; Golden Shoulders per <a href="https://yubanet.com/regional/nevada-citys-golden-shoulders-brings-a-seven-piece-hometown-lineup-to-the-center-for-the-arts-with-special-guests-the-moore-brothers/">YubaNet, Nov 20</a>; Holiday Express per <a href="https://offbroadstreet.thundertix.com/events/271691">Off Broadstreet's box office</a>; Nevada Theatre per <a href="https://nevadatheatre.com/events/">nevadatheatre.com</a>; animal shelter per <a href="https://www.theunion.com/news/comment-period-for-environmental-documents-for-new-animal-shelter-open-through-november-30/article_78f124ad-b95d-4f4a-a805-2697a0dd73fe.html">The Union, Nov 19</a>; nuisance ordinance per <a href="https://www.theunion.com/news/share-your-feedback-on-nevada-county-s-proposed-public-nuisance-abatement-ordinance-public-comment-period/article_0772107e-9576-42b7-b1d7-1ea4ef136034.html">Nevada County via The Union</a>; Medi-Cal talk per <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/9020">Nevada County Library</a>; reading challenge per <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/9025">Nevada County Library</a>; 4-H deadline per <a href="https://yubanet.com/regional/december-1-deadline-for-4-h-youth-planning-to-show-animals-at-the-2027-nevada-county-fair/">YubaNet</a>; Food and Toy Run per <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/9022">Nevada County</a>; Citizen's Academy per <a href="https://www.nevadacountyca.gov/m/newsflash/Home/Detail/9023">Nevada County</a>; Fish Creek per <a href="https://yubanet.com/regional/syrcl-raises-serious-concerns-over-proposed-dams-on-fish-creek-calls-on-community-to-file-public-comments-before-november-30-deadline/">SYRCL via YubaNet, Nov 9</a>; Wild &amp; Scenic per <a href="https://wildandscenicfilmfestival.org">the festival</a> and <a href="https://yubanet.com/regional/syrcls-25th-annual-wild-scenic-film-festival-releases-limited-number-of-early-bird-passes-and-preview-of-2027-film-selections/">SYRCL via YubaNet, Nov 14</a>; craft fair per <a href="https://yubanet.com/regional/nevada-city-winter-craft-fair-returns-to-miners-foundry-for-its-15th-annual-show/">YubaNet</a> and the <a href="https://minersfoundry.org/all-events/">Miners Foundry</a>; Country Christmas Faire per <a href="https://www.theunion.com/news/just-hear-those-sleigh-bells-jingling-nevada-county-fairgrounds-rings-in-the-holiday-season-with/article_58ff09e2-7475-48a3-8da0-3d3d403b18c6.html">The Union, Nov 24</a>; Thanksgiving Weekend and church Craft Faire per the <a href="https://www.nevadacitychamber.com/nevada-city-events/thanksgiving-weekend-events/">Chamber's Thanksgiving page</a>; Victorian Christmas per the <a href="https://www.nevadacitychamber.com/nevada-city-events/victorian-christmas/">Chamber</a>; parade per <a href="https://yubanet.com/regional/donation-day-parade-set-for-dec-18/">YubaNet, Nov 13</a>; Fire Feathers per <a href="https://www.huswej.org/events/am-je-fire-feathers-grand-opening">HUṠWEJ</a>; Repair Café per <a href="https://repaircafenevadacounty.org/events">Repair Café Nevada County</a>; Cornish Christmas per <a href="https://yubanet.com/regional/grass-valley-celebrates-its-cornish-heritage-with-the-58th-annual-cornish-christmas/">YubaNet, Nov 25</a>; Good to Grow per <a href="https://www.theunion.com/news/good-to-grow-grants-program-opens-round-three/article_9ce7a6f6-1403-4f79-98c3-630074862968.html">The Union</a>; county committees per the <a href="https://www.nevadacountyca.gov/AgendaCenter">county Agenda Center</a>, read Nov 27.</p>
+  <p class="src" style="text-align:center">Council dates per the <a href="https://www.nevadacityca.gov/calendar.aspx?CID=24%2C14">city calendar</a>; Victorian Christmas per the <a href="https://www.nevadacitychamber.com/nevada-city-events/victorian-christmas/">Chamber</a>; Holiday Express per <a href="https://offbroadstreet.thundertix.com/events/271691">Off Broadstreet's box office</a>; Nevada Theatre per <a href="https://nevadatheatre.com/events/">nevadatheatre.com</a>; Miners Foundry per <a href="https://minersfoundry.org/all-events/">minersfoundry.org</a>; animal shelter per <a href="https://www.theunion.com/news/comment-period-for-environmental-documents-for-new-animal-shelter-open-through-november-30/article_78f124ad-b95d-4f4a-a805-2697a0dd73fe.html">The Union, Nov 19</a>; Fish Creek per <a href="https://yubanet.com/regional/syrcl-raises-serious-concerns-over-proposed-dams-on-fish-creek-calls-on-community-to-file-public-comments-before-november-30-deadline/">SYRCL via YubaNet</a>; nuisance ordinance per <a href="https://www.theunion.com/news/share-your-feedback-on-nevada-county-s-proposed-public-nuisance-abatement-ordinance-public-comment-period/article_0772107e-9576-42b7-b1d7-1ea4ef136034.html">Nevada County via The Union</a>; Repair Café per <a href="https://repaircafenevadacounty.org/events">Repair Café Nevada County</a>, read Nov 28.</p>
 </section>
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
@@ -891,9 +858,9 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
 <section>
   <h2 class="kicker"><span class="label">Tomorrow in the Nugget</span></h2>
   <div class="notebox">
-    <p><b>A fresh paper every morning by 6.</b> Scheduled for Saturday, November 28:</p>
+    <p><b>A fresh paper every morning by 6.</b> Scheduled for Sunday, November 29:</p>
     <ul>
-      <li><b>The Menagerie:</b> adoptable animals and the week at the county shelter</li>
+      <li><b>Local History Unearthed:</b> Mr. Carnegie Answered By Return Mail</li>
     </ul>
   </div>
 </section>
@@ -906,19 +873,11 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
 <p class="stars">✱ ✱ ✱ ✱ ✱</p>
 
 <section>
-  <h2 class="kicker"><span class="label">Corrections</span></h2>
-  <div class="notebox">
-    <p style="margin:0"><b>Highway 20.</b> This morning's Here &amp; There item said another eastbound Highway 20 closure was coming next week. It was not: the KNCO notice behind it, posted Nov. 16, covered a closure on Nov. 16 and 17, and the linked Caltrans release covered Nov. 9 and 10. Neither announces a closure for the coming week. The item has been corrected.</p>
-  </div>
-</section>
-<p class="stars">✱ ✱ ✱ ✱ ✱</p>
-
-<section>
   <h2 class="kicker"><span class="label">Previously</span></h2>
   <ul class="cal">
+    <li><span class="d">Fri, Nov 27</span><span class="what"><b><a href="editions/2026-11-27.html">No. 37 · City Hall Switches To A Four-Day Week Next Friday</a></b></span></li>
     <li><span class="d">Thu, Nov 26</span><span class="what"><b><a href="editions/2026-11-26.html">No. 36 · Measure Q Passes With 60 Percent As The County Certifies The Vote</a></b></span></li>
     <li><span class="d">Wed, Nov 25</span><span class="what"><b><a href="editions/2026-11-25.html">No. 35 · Roo Cantada, Who Built A Library On The Ridge And Rocked KVMR After Dark</a></b></span></li>
-    <li><span class="d">Tue, Nov 24</span><span class="what"><b><a href="editions/2026-11-24.html">No. 34 · Last Day For The Trails Survey As City Hall Breaks For Thanksgiving</a></b></span></li>
     <li><span class="d">Archive</span><span class="what"><b><a href="https://nevadacitynugget.com/editions/">All editions ▸</a></b></span></li>
   </ul>
 </section>
@@ -1986,4 +1945,5 @@ details.uti-player audio{display:block;width:100%;margin:0 0 6px}
 </script>
 
 </body></html>
+
 </body></html>
